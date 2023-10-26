@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/simonadraghici/RiderProjects/SEP3Rider/WebAPI/WebAPI.csproj": {}
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj": {
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
+        "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
-        "packagesPath": "/Users/simonadraghici/.nuget/packages/",
-        "outputPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/obj/",
+        "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/simonadraghici/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj": {
-                "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj"
+              "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
               }
             }
           }
@@ -77,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj": {
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj",
-        "packagesPath": "/Users/simonadraghici/.nuget/packages/",
-        "outputPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/obj/",
+        "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/simonadraghici/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -130,21 +130,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/simonadraghici/RiderProjects/SEP3Rider/WebAPI/WebAPI.csproj": {
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/simonadraghici/RiderProjects/SEP3Rider/WebAPI/WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/WebAPI/WebAPI.csproj",
-        "packagesPath": "/Users/simonadraghici/.nuget/packages/",
-        "outputPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/WebAPI/obj/",
+        "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/simonadraghici/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -156,8 +156,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj": {
-                "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj"
+              "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj"
               }
             }
           }
@@ -200,7 +200,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

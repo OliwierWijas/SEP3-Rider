@@ -414,19 +414,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/simonadraghici/.nuget/packages/": {}
+    "C:\\Users\\Mara\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
+      "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
-      "packagesPath": "/Users/simonadraghici/.nuget/packages/",
-      "outputPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/obj/",
+      "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/simonadraghici/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -438,8 +438,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj": {
-              "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj"
+            "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
             }
           }
         }
@@ -489,7 +489,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

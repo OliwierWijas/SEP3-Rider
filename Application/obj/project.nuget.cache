@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "lxQjzvGdbophM9t4+gdNY8jw+jA8klAC+aPm0zn/CyPbQJ2BR/+Ni2QoQlWhCrQakfqwOlc7G6urSfNEUdJgnA==",
+  "dgSpecHash": "OCHpIIPe8d/jzGZnkmqm6Nj/XKXgwgR5v0ST7LToNUfbLZ6+O3AFNHh52jqbXwN6MJQ7l5hyVTlHuhWYO2v4Nw==",
   "success": true,
-  "projectFilePath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
+  "projectFilePath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
   "expectedPackageFiles": [
-    "/Users/simonadraghici/.nuget/packages/google.protobuf/3.24.4/google.protobuf.3.24.4.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/grpc.core/2.46.6/grpc.core.2.46.6.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/grpc.core.api/2.58.0/grpc.core.api.2.58.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/grpc.net.client/2.58.0/grpc.net.client.2.58.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/grpc.net.common/2.58.0/grpc.net.common.2.58.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/grpc.tools/2.58.0/grpc.tools.2.58.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\Mara\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.tools\\2.58.0\\grpc.tools.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }
