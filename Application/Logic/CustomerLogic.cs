@@ -11,8 +11,12 @@ public class CustomerLogic : ICustomerLogic
 {
     public async Task CreateAsync(CustomerCreationDTO dto)
     {
-        var client = GetClientConnection();
-        var reply = await client.CreateCustomerAsync(new CreateCustomerRequest
+        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
+        {
+            Credentials = ChannelCredentials.Insecure
+        });
+        var client = new CustomerService.CustomerServiceClient(channel);
+        await client.CreateCustomerAsync(new CreateCustomerRequest
         {
             FirstName = dto.FirstName,
             LastName = dto.LastName,
@@ -24,7 +28,11 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task UpdateEmail(CustomerUpdateDTO dto)
     {
-        var client = GetClientConnection();
+        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
+        {
+            Credentials = ChannelCredentials.Insecure
+        });
+        var client = new CustomerService.CustomerServiceClient(channel);
         var reply = await client.UpdateEmailAsync(new UpdateEmailRequest
         {
             AccountId = dto.AccountId,
@@ -34,21 +42,16 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task UpdatePassword(CustomerUpdateDTO dto)
     {
-        var client = GetClientConnection();
+        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
+        {
+            Credentials = ChannelCredentials.Insecure
+        });
+        var client = new CustomerService.CustomerServiceClient(channel);
         await client.UpdatePasswordAsync(new UpdatePasswordRequest
         {
             AccountId = dto.AccountId,
             Password = dto.Password
         });
     }
-
-    private static CustomerService.CustomerServiceClient GetClientConnection()
-    {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-        return client;
-    }
+    
 }
