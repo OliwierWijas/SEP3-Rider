@@ -22,4 +22,15 @@ public class CustomerHttpClient : ICustomerService
             throw new Exception(content);
         }
     }
+
+    public async Task UpdateAsync(CustomerUpdateDTO dto)
+    {
+        HttpResponseMessage message = await _client.PatchAsJsonAsync("/Customers", dto);
+        if (!message.IsSuccessStatusCode)
+        {
+            string content = await message.Content.ReadAsStringAsync();
+            throw new Exception(content);
+        }
+    }
+    
 }

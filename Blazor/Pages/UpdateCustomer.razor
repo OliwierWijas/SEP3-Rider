@@ -1,0 +1,46 @@
+﻿@page "/UpdateCustomer"
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject ICustomerService CustomerService
+<h3>UpdateCustomer</h3>
+<div class="card">
+    <div class="form-group field">
+        <label>Email:</label>
+        <input type="text" @bind="Email" @bind:event="oninput"/>
+        <label>Password:</label>
+        <input type="text" @bind="Password" @bind:event="oninput"/>
+      
+        @if (!string.IsNullOrEmpty(ErrorMsg))
+        {
+            <label style="color: red">@ErrorMsg</label>
+        }
+    </div>
+    <div class="button-row">
+        <button @onclick="UpdateEmail" class="acceptbtn">Update Info</button>
+    </div>
+</div>
+
+@code {
+    private int AccountId; /// auth
+    private string Email = "";
+    private string Password = "";
+    private string ErrorMsg = "";
+
+    private async void UpdateEmail()
+    {
+        ErrorMsg = "";
+        try
+        {
+            await CustomerService.UpdateAsync(new CustomerUpdateDTO(AccountId,  Email, Password));
+            Email = "";
+            Password = "";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            ErrorMsg = e.Message;
+            throw;
+        }
+    }
+    
+}
