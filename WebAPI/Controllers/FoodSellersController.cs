@@ -1,28 +1,26 @@
-using Application.LogicInterfaces;
+﻿using Application.LogicInterfaces;
 using Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-
 [ApiController]
 [Route("[controller]")]
-
-public class CustomersController: ControllerBase
+public class FoodSellersController : ControllerBase
 {
-    private readonly ICustomerLogic customerLogic;
+    private readonly IFoodSellerLogic foodSellerLogic;
 
-    public CustomersController(ICustomerLogic customerLogic)
+    public FoodSellersController(IFoodSellerLogic foodSellerLogic)
     {
-        this.customerLogic = customerLogic;
+        this.foodSellerLogic = foodSellerLogic;
     }
-
+    
     [HttpPost]
-    public async Task<ActionResult> CreateAsync(CustomerCreationDTO dto)
+    public async Task<ActionResult> CreateAsync(FoodSellerCreationDTO dto)
     {
         try
         {
-            await customerLogic.CreateAsync(dto);
+            await foodSellerLogic.CreateAsync(dto);
             return Ok();
         }
         catch (Exception e)
@@ -31,24 +29,35 @@ public class CustomersController: ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
     [HttpPatch]
-    public async Task<ActionResult> UpdateAsync(CustomerUpdateDTO dto)
+    public async Task<ActionResult> UpdateAsync(FoodSellerUpdateDTO dto)
     {
         try
         {
+            if (!string.IsNullOrEmpty(dto.Name))
+            {
+                await foodSellerLogic.UpdateName(dto);
+            }
+            
+            if (!string.IsNullOrEmpty(dto.Address))
+            {
+                await foodSellerLogic.UpdateAddress(dto);
+            }
+            
             if (!string.IsNullOrEmpty(dto.Email))
             {
-                await customerLogic.UpdateEmail(dto);
+                await foodSellerLogic.UpdateEmail(dto);
             }
             
             if (!string.IsNullOrEmpty(dto.Password))
             {
-                await customerLogic.UpdatePassword(dto);
+                await foodSellerLogic.UpdatePassword(dto);
             }
             
             if (!string.IsNullOrEmpty(dto.PhoneNumber))
             {
-                await customerLogic.UpdatePhoneNumber(dto);
+                await foodSellerLogic.UpdatePhoneNumber(dto);
             }
             
             return Ok();
@@ -59,13 +68,13 @@ public class CustomersController: ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-
+    
     [HttpDelete("{accountId:int}")]
     public async Task<ActionResult> DeleteAsync([FromRoute] int accountId)
     {
         try
         {
-            await customerLogic.DeleteAccount(accountId);
+            await foodSellerLogic.DeleteAccount(accountId);
             return Ok();
         }
         catch (Exception e)

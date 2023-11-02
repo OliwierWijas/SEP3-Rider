@@ -1,0 +1,55 @@
+﻿syntax = "proto3";
+option java_multiple_files = true;
+package foodSeller;
+option csharp_namespace = "GrpcClient";
+
+message CreateFoodSellerRequest {
+  string name = 1;
+  string address = 2;
+  string phone_number = 3;
+  string email = 4;
+  string password = 5;
+}
+
+message UpdateFoodSellerNameRequest {
+  int32 accountId = 1;
+  string name = 2;
+}
+
+message UpdateFoodSellerAddressRequest {
+  int32 accountId = 1;
+  string address = 2;
+}
+
+message UpdateFoodSellerPhoneNumberRequest {
+  int32 accountId = 1;
+  string phoneNumber = 2;
+}
+
+message UpdateFoodSellerEmailRequest {
+  int32 accountId = 1;
+  string email = 2;
+}
+
+message UpdateFoodSellerPasswordRequest {
+  int32 accountId = 1;
+  string password = 2;
+}
+
+message DeleteFoodSellerAccountRequest {
+  int32 accountId = 1;
+}
+
+message FoodSellerEmptyResponse {
+
+}
+
+service FoodSellerService {
+  rpc CreateFoodSeller(CreateFoodSellerRequest) returns (FoodSellerEmptyResponse);
+  rpc UpdateName(UpdateFoodSellerNameRequest) returns (FoodSellerEmptyResponse);
+  rpc UpdateAddress(UpdateFoodSellerAddressRequest) returns (FoodSellerEmptyResponse);
+  rpc UpdateEmail(UpdateFoodSellerEmailRequest) returns (FoodSellerEmptyResponse);
+  rpc UpdatePassword(UpdateFoodSellerPasswordRequest) returns (FoodSellerEmptyResponse);
+  rpc UpdatePhoneNumber(UpdateFoodSellerPhoneNumberRequest) returns (FoodSellerEmptyResponse);
+  rpc DeleteAccount(DeleteFoodSellerAccountRequest) returns (FoodSellerEmptyResponse);
+}

@@ -10,4 +10,5 @@ public interface ICustomerLogic
     Task UpdateEmail(CustomerUpdateDTO dto);
     Task UpdatePassword(CustomerUpdateDTO dto);
     Task UpdatePhoneNumber(CustomerUpdateDTO dto);
+    Task DeleteAccount(int accountId);
 }

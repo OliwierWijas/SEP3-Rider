@@ -23,6 +23,9 @@
     <div class="button-row">
         <button @onclick="Update" class="acceptbtn">Update Info</button>
     </div>
+    <div class="button-row">
+        <button @onclick="Delete" class="acceptbtn">Delete Account</button>
+    </div>
 </div>
 
 @if (!string.IsNullOrEmpty(Message))
@@ -59,6 +62,20 @@
                 PhoneNumber = "";
                 Message = "Update proceeded.";
             }
+        }
+        catch (Exception e)
+        {
+            Message = e.Message;
+        }
+    }
+
+    private async void Delete()
+    {
+        try
+        {
+            Message = "";
+            await CustomerService.DeleteAsync(dto.AccountId);
+            Message = "Delete proceeded.";
         }
         catch (Exception e)
         {

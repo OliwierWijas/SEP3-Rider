@@ -48,7 +48,7 @@ public class CustomerLogic : ICustomerLogic
 
         try
         {
-            await client.UpdateEmailAsync(new UpdateEmailRequest
+            await client.UpdateEmailAsync(new UpdateCustomerEmailRequest
             {
                 AccountId = dto.AccountId,
                 Email = dto.Email
@@ -76,7 +76,7 @@ public class CustomerLogic : ICustomerLogic
 
         try
         {
-            await client.UpdatePasswordAsync(new UpdatePasswordRequest
+            await client.UpdatePasswordAsync(new UpdateCustomerPasswordRequest
             {
                 AccountId = dto.AccountId,
                 Password = dto.Password
@@ -103,7 +103,7 @@ public class CustomerLogic : ICustomerLogic
 
         try
         {
-            await client.UpdatePhoneNumberAsync(new UpdatePhoneNumberRequest
+            await client.UpdatePhoneNumberAsync(new UpdateCustomerPhoneNumberRequest
             {
                 AccountId = dto.AccountId,
                 PhoneNumber = dto.PhoneNumber
@@ -115,5 +115,28 @@ public class CustomerLogic : ICustomerLogic
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }
+    }
+
+    public async Task DeleteAccount(int accountId)
+    {
+        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
+        {
+            Credentials = ChannelCredentials.Insecure
+        });
+        var client = new CustomerService.CustomerServiceClient(channel);
+
+        try
+        {
+            await client.DeleteAccountAsync(new DeleteCustomerAccountRequest
+            {
+                AccountId = accountId
+            });    
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            string[] message = e.Message.Split("\"");
+            throw new Exception(message[3]);
+        }    
     }
 }

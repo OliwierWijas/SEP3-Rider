@@ -4,18 +4,18 @@ using HttpClients.ClientInterfaces;
 
 namespace HttpClients.ClientImplementations;
 
-public class CustomerHttpClient : ICustomerService
+public class FoodSellerHttpClient : IFoodSellerService
 {
     private readonly HttpClient _client;
 
-    public CustomerHttpClient(HttpClient client)
+    public FoodSellerHttpClient(HttpClient client)
     {
         _client = client;
     }
-
-    public async Task CreateAsync(CustomerCreationDTO dto)
+    
+    public async Task CreateAsync(FoodSellerCreationDTO dto)
     {
-        HttpResponseMessage message = await _client.PostAsJsonAsync("/Customers", dto);
+        HttpResponseMessage message = await _client.PostAsJsonAsync("/FoodSellers", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
@@ -23,23 +23,21 @@ public class CustomerHttpClient : ICustomerService
         }
     }
 
-    public async Task UpdateAsync(CustomerUpdateDTO dto)
+    public async Task UpdateAsync(FoodSellerUpdateDTO dto)
     {
-        HttpResponseMessage message = await _client.PatchAsJsonAsync("/Customers", dto);
+        HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodSellers", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        }
-    }
+        }    }
 
     public async Task DeleteAsync(int accountId)
     {
-        HttpResponseMessage response = await _client.DeleteAsync($"/Customers/{accountId}");
+        HttpResponseMessage response = await _client.DeleteAsync($"/FoodSellers/{accountId}");
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
-        }
-    }
+        }    }
 }

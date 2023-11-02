@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<ICustomerService, CustomerHttpClient>();
+builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7195") });
 var app = builder.Build();
 
