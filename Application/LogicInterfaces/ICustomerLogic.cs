@@ -9,6 +9,5 @@ public interface ICustomerLogic
     Task CreateAsync(CustomerCreationDTO dto);
     Task UpdateEmail(CustomerUpdateDTO dto);
     Task UpdatePassword(CustomerUpdateDTO dto);
-
-
+    Task UpdatePhoneNumber(CustomerUpdateDTO dto);
 }

@@ -30,24 +30,24 @@ namespace GrpcClient {
             "GAQgASgJEhAKCHBhc3N3b3JkGAUgASgJIjYKElVwZGF0ZUVtYWlsUmVxdWVz",
             "dBIRCglhY2NvdW50SWQYASABKAUSDQoFZW1haWwYAiABKAkiPAoVVXBkYXRl",
             "UGFzc3dvcmRSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBRIQCghwYXNzd29y",
-            "ZBgCIAEoCSIYChZDcmVhdGVDdXN0b21lclJlc3BvbnNlIhUKE1VwZGF0ZUVt",
-            "YWlsUmVzcG9uc2UiGAoWVXBkYXRlUGFzc3dvcmRSZXNwb25zZTKHAgoPQ3Vz",
-            "dG9tZXJTZXJ2aWNlElMKDkNyZWF0ZUN1c3RvbWVyEh8uY3VzdG9tZXIuQ3Jl",
-            "YXRlQ3VzdG9tZXJSZXF1ZXN0GiAuY3VzdG9tZXIuQ3JlYXRlQ3VzdG9tZXJS",
-            "ZXNwb25zZRJKCgtVcGRhdGVFbWFpbBIcLmN1c3RvbWVyLlVwZGF0ZUVtYWls",
-            "UmVxdWVzdBodLmN1c3RvbWVyLlVwZGF0ZUVtYWlsUmVzcG9uc2USUwoOVXBk",
-            "YXRlUGFzc3dvcmQSHy5jdXN0b21lci5VcGRhdGVQYXNzd29yZFJlcXVlc3Qa",
-            "IC5jdXN0b21lci5VcGRhdGVQYXNzd29yZFJlc3BvbnNlQg9QAaoCCkdycGND",
-            "bGllbnRiBnByb3RvMw=="));
+            "ZBgCIAEoCSJCChhVcGRhdGVQaG9uZU51bWJlclJlcXVlc3QSEQoJYWNjb3Vu",
+            "dElkGAEgASgFEhMKC3Bob25lTnVtYmVyGAIgASgJIg8KDUVtcHR5UmVzcG9u",
+            "c2UywQIKD0N1c3RvbWVyU2VydmljZRJKCg5DcmVhdGVDdXN0b21lchIfLmN1",
+            "c3RvbWVyLkNyZWF0ZUN1c3RvbWVyUmVxdWVzdBoXLmN1c3RvbWVyLkVtcHR5",
+            "UmVzcG9uc2USRAoLVXBkYXRlRW1haWwSHC5jdXN0b21lci5VcGRhdGVFbWFp",
+            "bFJlcXVlc3QaFy5jdXN0b21lci5FbXB0eVJlc3BvbnNlEkoKDlVwZGF0ZVBh",
+            "c3N3b3JkEh8uY3VzdG9tZXIuVXBkYXRlUGFzc3dvcmRSZXF1ZXN0GhcuY3Vz",
+            "dG9tZXIuRW1wdHlSZXNwb25zZRJQChFVcGRhdGVQaG9uZU51bWJlchIiLmN1",
+            "c3RvbWVyLlVwZGF0ZVBob25lTnVtYmVyUmVxdWVzdBoXLmN1c3RvbWVyLkVt",
+            "cHR5UmVzcG9uc2VCD1ABqgIKR3JwY0NsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateCustomerRequest), global::GrpcClient.CreateCustomerRequest.Parser, new[]{ "FirstName", "LastName", "PhoneNumber", "Email", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateEmailRequest), global::GrpcClient.UpdateEmailRequest.Parser, new[]{ "AccountId", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdatePasswordRequest), global::GrpcClient.UpdatePasswordRequest.Parser, new[]{ "AccountId", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateCustomerResponse), global::GrpcClient.CreateCustomerResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateEmailResponse), global::GrpcClient.UpdateEmailResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdatePasswordResponse), global::GrpcClient.UpdatePasswordResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdatePhoneNumberRequest), global::GrpcClient.UpdatePhoneNumberRequest.Parser, new[]{ "AccountId", "PhoneNumber" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.EmptyResponse), global::GrpcClient.EmptyResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -843,16 +843,16 @@ namespace GrpcClient {
 
   }
 
-  public sealed partial class CreateCustomerResponse : pb::IMessage<CreateCustomerResponse>
+  public sealed partial class UpdatePhoneNumberRequest : pb::IMessage<UpdatePhoneNumberRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CreateCustomerResponse> _parser = new pb::MessageParser<CreateCustomerResponse>(() => new CreateCustomerResponse());
+    private static readonly pb::MessageParser<UpdatePhoneNumberRequest> _parser = new pb::MessageParser<UpdatePhoneNumberRequest>(() => new UpdatePhoneNumberRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CreateCustomerResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<UpdatePhoneNumberRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -868,7 +868,7 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreateCustomerResponse() {
+    public UpdatePhoneNumberRequest() {
       OnConstruction();
     }
 
@@ -876,31 +876,59 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreateCustomerResponse(CreateCustomerResponse other) : this() {
+    public UpdatePhoneNumberRequest(UpdatePhoneNumberRequest other) : this() {
+      accountId_ = other.accountId_;
+      phoneNumber_ = other.phoneNumber_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreateCustomerResponse Clone() {
-      return new CreateCustomerResponse(this);
+    public UpdatePhoneNumberRequest Clone() {
+      return new UpdatePhoneNumberRequest(this);
+    }
+
+    /// <summary>Field number for the "accountId" field.</summary>
+    public const int AccountIdFieldNumber = 1;
+    private int accountId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AccountId {
+      get { return accountId_; }
+      set {
+        accountId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phoneNumber" field.</summary>
+    public const int PhoneNumberFieldNumber = 2;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CreateCustomerResponse);
+      return Equals(other as UpdatePhoneNumberRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CreateCustomerResponse other) {
+    public bool Equals(UpdatePhoneNumberRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (AccountId != other.AccountId) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -908,6 +936,8 @@ namespace GrpcClient {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (AccountId != 0) hash ^= AccountId.GetHashCode();
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -926,6 +956,14 @@ namespace GrpcClient {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (AccountId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(AccountId);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PhoneNumber);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -936,6 +974,14 @@ namespace GrpcClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AccountId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(AccountId);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PhoneNumber);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -946,6 +992,12 @@ namespace GrpcClient {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (AccountId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccountId);
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -954,9 +1006,15 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CreateCustomerResponse other) {
+    public void MergeFrom(UpdatePhoneNumberRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.AccountId != 0) {
+        AccountId = other.AccountId;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -973,6 +1031,14 @@ namespace GrpcClient {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            AccountId = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -988,6 +1054,14 @@ namespace GrpcClient {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            AccountId = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -995,16 +1069,16 @@ namespace GrpcClient {
 
   }
 
-  public sealed partial class UpdateEmailResponse : pb::IMessage<UpdateEmailResponse>
+  public sealed partial class EmptyResponse : pb::IMessage<EmptyResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UpdateEmailResponse> _parser = new pb::MessageParser<UpdateEmailResponse>(() => new UpdateEmailResponse());
+    private static readonly pb::MessageParser<EmptyResponse> _parser = new pb::MessageParser<EmptyResponse>(() => new EmptyResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<UpdateEmailResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<EmptyResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1020,7 +1094,7 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateEmailResponse() {
+    public EmptyResponse() {
       OnConstruction();
     }
 
@@ -1028,25 +1102,25 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateEmailResponse(UpdateEmailResponse other) : this() {
+    public EmptyResponse(EmptyResponse other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateEmailResponse Clone() {
-      return new UpdateEmailResponse(this);
+    public EmptyResponse Clone() {
+      return new EmptyResponse(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as UpdateEmailResponse);
+      return Equals(other as EmptyResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(UpdateEmailResponse other) {
+    public bool Equals(EmptyResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1106,159 +1180,7 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(UpdateEmailResponse other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-        }
-      }
-    }
-    #endif
-
-  }
-
-  public sealed partial class UpdatePasswordResponse : pb::IMessage<UpdatePasswordResponse>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<UpdatePasswordResponse> _parser = new pb::MessageParser<UpdatePasswordResponse>(() => new UpdatePasswordResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<UpdatePasswordResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcClient.CustomerServiceReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdatePasswordResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdatePasswordResponse(UpdatePasswordResponse other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdatePasswordResponse Clone() {
-      return new UpdatePasswordResponse(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as UpdatePasswordResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(UpdatePasswordResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(UpdatePasswordResponse other) {
+    public void MergeFrom(EmptyResponse other) {
       if (other == null) {
         return;
       }

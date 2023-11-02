@@ -40,10 +40,13 @@ public class CustomersController: ControllerBase
             {
                 await customerLogic.UpdatePassword(dto);
             }
-
             if (!string.IsNullOrEmpty(dto.Email))
             {
                 await customerLogic.UpdateEmail(dto);
+            }
+            if (!string.IsNullOrEmpty(dto.PhoneNumber))
+            {
+                await customerLogic.UpdatePhoneNumber(dto);
             }
             
             return Ok();

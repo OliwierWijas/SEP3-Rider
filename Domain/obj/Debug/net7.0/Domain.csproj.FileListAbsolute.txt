@@ -20,3 +20,14 @@ C:\Users\Dominika\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\Dominika\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\Dominika\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\Dominika\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Domain\obj\Debug\net7.0\ref\Domain.dll

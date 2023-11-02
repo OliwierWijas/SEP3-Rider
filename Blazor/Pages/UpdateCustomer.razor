@@ -5,18 +5,22 @@
 <h3>UpdateCustomer</h3>
 <div class="card">
     <div class="form-group field">
+        <label>Account Id:</label>
+        <input type="text" @bind="AccountId" @bind:event="oninput"/>
         <label>Email:</label>
         <input type="text" @bind="Email" @bind:event="oninput"/>
         <label>Password:</label>
         <input type="text" @bind="Password" @bind:event="oninput"/>
-      
+        <label>Phone number:</label>
+        <input type="text" @bind="PhoneNumber" @bind:event="oninput"/>
+
         @if (!string.IsNullOrEmpty(ErrorMsg))
         {
             <label style="color: red">@ErrorMsg</label>
         }
     </div>
     <div class="button-row">
-        <button @onclick="UpdateEmail" class="acceptbtn">Update Info</button>
+        <button @onclick="Update" class="acceptbtn">Update Info</button>
     </div>
 </div>
 
@@ -24,23 +28,28 @@
     private int AccountId; /// auth
     private string Email = "";
     private string Password = "";
+    private string PhoneNumber = "";
     private string ErrorMsg = "";
 
-    private async void UpdateEmail()
+    private async void Update()
     {
-        ErrorMsg = "";
         try
         {
-            await CustomerService.UpdateAsync(new CustomerUpdateDTO(AccountId,  Email, Password));
-            Email = "";
-            Password = "";
+            if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(PhoneNumber))
+                ErrorMsg = "No information provided.";
+            else
+            {
+                await CustomerService.UpdateAsync(new CustomerUpdateDTO(AccountId,  Email, Password, PhoneNumber));
+                AccountId = 0;
+                Email = "";
+                Password = "";
+                PhoneNumber = "";
+                ErrorMsg = "Update proceeded.";
+            }
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
             ErrorMsg = e.Message;
-            throw;
         }
     }
-    
 }

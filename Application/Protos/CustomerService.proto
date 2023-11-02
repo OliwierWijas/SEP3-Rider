@@ -10,27 +10,29 @@ message CreateCustomerRequest {
   string email = 4;
   string password = 5;
 }
+
 message UpdateEmailRequest{
   int32 accountId = 1;
   string email =2;
 }
+
 message UpdatePasswordRequest{
   int32 accountId = 1;
   string password =2;
 }
 
-message CreateCustomerResponse {
+message UpdatePhoneNumberRequest{
+  int32 accountId = 1;
+  string phoneNumber = 2;
+}
+
+message EmptyResponse {
 
 }
 
-message UpdateEmailResponse{
-
-}
-message UpdatePasswordResponse{
-
-}
 service CustomerService {
-  rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse);
-  rpc UpdateEmail(UpdateEmailRequest) returns (UpdateEmailResponse);
-  rpc UpdatePassword(UpdatePasswordRequest) returns (UpdatePasswordResponse);
+  rpc CreateCustomer(CreateCustomerRequest) returns (EmptyResponse);
+  rpc UpdateEmail(UpdateEmailRequest) returns (EmptyResponse);
+  rpc UpdatePassword(UpdatePasswordRequest) returns (EmptyResponse);
+  rpc UpdatePhoneNumber(UpdatePhoneNumberRequest) returns (EmptyResponse);
 }

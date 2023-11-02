@@ -48,39 +48,45 @@ namespace GrpcClient {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcClient.CreateCustomerRequest> __Marshaller_customer_CreateCustomerRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.CreateCustomerRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcClient.CreateCustomerResponse> __Marshaller_customer_CreateCustomerResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.CreateCustomerResponse.Parser));
+    static readonly grpc::Marshaller<global::GrpcClient.EmptyResponse> __Marshaller_customer_EmptyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.EmptyResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcClient.UpdateEmailRequest> __Marshaller_customer_UpdateEmailRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.UpdateEmailRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcClient.UpdateEmailResponse> __Marshaller_customer_UpdateEmailResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.UpdateEmailResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcClient.UpdatePasswordRequest> __Marshaller_customer_UpdatePasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.UpdatePasswordRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcClient.UpdatePasswordResponse> __Marshaller_customer_UpdatePasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.UpdatePasswordResponse.Parser));
+    static readonly grpc::Marshaller<global::GrpcClient.UpdatePhoneNumberRequest> __Marshaller_customer_UpdatePhoneNumberRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.UpdatePhoneNumberRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcClient.CreateCustomerRequest, global::GrpcClient.CreateCustomerResponse> __Method_CreateCustomer = new grpc::Method<global::GrpcClient.CreateCustomerRequest, global::GrpcClient.CreateCustomerResponse>(
+    static readonly grpc::Method<global::GrpcClient.CreateCustomerRequest, global::GrpcClient.EmptyResponse> __Method_CreateCustomer = new grpc::Method<global::GrpcClient.CreateCustomerRequest, global::GrpcClient.EmptyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateCustomer",
         __Marshaller_customer_CreateCustomerRequest,
-        __Marshaller_customer_CreateCustomerResponse);
+        __Marshaller_customer_EmptyResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcClient.UpdateEmailRequest, global::GrpcClient.UpdateEmailResponse> __Method_UpdateEmail = new grpc::Method<global::GrpcClient.UpdateEmailRequest, global::GrpcClient.UpdateEmailResponse>(
+    static readonly grpc::Method<global::GrpcClient.UpdateEmailRequest, global::GrpcClient.EmptyResponse> __Method_UpdateEmail = new grpc::Method<global::GrpcClient.UpdateEmailRequest, global::GrpcClient.EmptyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateEmail",
         __Marshaller_customer_UpdateEmailRequest,
-        __Marshaller_customer_UpdateEmailResponse);
+        __Marshaller_customer_EmptyResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcClient.UpdatePasswordRequest, global::GrpcClient.UpdatePasswordResponse> __Method_UpdatePassword = new grpc::Method<global::GrpcClient.UpdatePasswordRequest, global::GrpcClient.UpdatePasswordResponse>(
+    static readonly grpc::Method<global::GrpcClient.UpdatePasswordRequest, global::GrpcClient.EmptyResponse> __Method_UpdatePassword = new grpc::Method<global::GrpcClient.UpdatePasswordRequest, global::GrpcClient.EmptyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdatePassword",
         __Marshaller_customer_UpdatePasswordRequest,
-        __Marshaller_customer_UpdatePasswordResponse);
+        __Marshaller_customer_EmptyResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GrpcClient.UpdatePhoneNumberRequest, global::GrpcClient.EmptyResponse> __Method_UpdatePhoneNumber = new grpc::Method<global::GrpcClient.UpdatePhoneNumberRequest, global::GrpcClient.EmptyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdatePhoneNumber",
+        __Marshaller_customer_UpdatePhoneNumberRequest,
+        __Marshaller_customer_EmptyResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -116,64 +122,84 @@ namespace GrpcClient {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.CreateCustomerResponse CreateCustomer(global::GrpcClient.CreateCustomerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GrpcClient.EmptyResponse CreateCustomer(global::GrpcClient.CreateCustomerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateCustomer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.CreateCustomerResponse CreateCustomer(global::GrpcClient.CreateCustomerRequest request, grpc::CallOptions options)
+      public virtual global::GrpcClient.EmptyResponse CreateCustomer(global::GrpcClient.CreateCustomerRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_CreateCustomer, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.CreateCustomerResponse> CreateCustomerAsync(global::GrpcClient.CreateCustomerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> CreateCustomerAsync(global::GrpcClient.CreateCustomerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateCustomerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.CreateCustomerResponse> CreateCustomerAsync(global::GrpcClient.CreateCustomerRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> CreateCustomerAsync(global::GrpcClient.CreateCustomerRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateCustomer, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.UpdateEmailResponse UpdateEmail(global::GrpcClient.UpdateEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GrpcClient.EmptyResponse UpdateEmail(global::GrpcClient.UpdateEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateEmail(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.UpdateEmailResponse UpdateEmail(global::GrpcClient.UpdateEmailRequest request, grpc::CallOptions options)
+      public virtual global::GrpcClient.EmptyResponse UpdateEmail(global::GrpcClient.UpdateEmailRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateEmail, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.UpdateEmailResponse> UpdateEmailAsync(global::GrpcClient.UpdateEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdateEmailAsync(global::GrpcClient.UpdateEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateEmailAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.UpdateEmailResponse> UpdateEmailAsync(global::GrpcClient.UpdateEmailRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdateEmailAsync(global::GrpcClient.UpdateEmailRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateEmail, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.UpdatePasswordResponse UpdatePassword(global::GrpcClient.UpdatePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GrpcClient.EmptyResponse UpdatePassword(global::GrpcClient.UpdatePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdatePassword(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcClient.UpdatePasswordResponse UpdatePassword(global::GrpcClient.UpdatePasswordRequest request, grpc::CallOptions options)
+      public virtual global::GrpcClient.EmptyResponse UpdatePassword(global::GrpcClient.UpdatePasswordRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdatePassword, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.UpdatePasswordResponse> UpdatePasswordAsync(global::GrpcClient.UpdatePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdatePasswordAsync(global::GrpcClient.UpdatePasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdatePasswordAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcClient.UpdatePasswordResponse> UpdatePasswordAsync(global::GrpcClient.UpdatePasswordRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdatePasswordAsync(global::GrpcClient.UpdatePasswordRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdatePassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcClient.EmptyResponse UpdatePhoneNumber(global::GrpcClient.UpdatePhoneNumberRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdatePhoneNumber(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcClient.EmptyResponse UpdatePhoneNumber(global::GrpcClient.UpdatePhoneNumberRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdatePhoneNumber, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdatePhoneNumberAsync(global::GrpcClient.UpdatePhoneNumberRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdatePhoneNumberAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.EmptyResponse> UpdatePhoneNumberAsync(global::GrpcClient.UpdatePhoneNumberRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdatePhoneNumber, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

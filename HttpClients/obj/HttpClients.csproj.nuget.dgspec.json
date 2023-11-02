@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {}
+    "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
+    "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,21 +53,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {
+    "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
+        "projectUniqueName": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
         "projectName": "HttpClients",
-        "projectPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
-        "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\HttpClients\\obj\\",
+        "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
+        "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -79,8 +79,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
+              "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
               }
             }
           }
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

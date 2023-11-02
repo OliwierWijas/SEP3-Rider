@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "rcRKIDZx26QxNG/73pdYJLXvJ5hdbe9zsc/ptpZ2AOV1bZUIbe1VJuXH5BtUW5Olazs1njHTqxA6E8/T40Arbw==",
+  "dgSpecHash": "YxzF5K1tHJkjk4Vsoncr/ivDnDipOH7uoMEUaC51vUllGwZLB+4kx9wbDsL8sxGXC3ytRwLUvm32Kj1zK/VqSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dominika\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.tools\\2.58.0\\grpc.tools.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\oliwi\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\grpc.tools\\2.58.0\\grpc.tools.2.58.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }
