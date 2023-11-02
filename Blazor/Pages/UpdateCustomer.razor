@@ -6,50 +6,63 @@
 <div class="card">
     <div class="form-group field">
         <label>Account Id:</label>
-        <input type="text" @bind="AccountId" @bind:event="oninput"/>
+        <input type="text" @bind="dto.AccountId" @bind:event="oninput"/>
+    </div>
+    <div class="form-group field">
         <label>Email:</label>
-        <input type="text" @bind="Email" @bind:event="oninput"/>
+        <input type="text" @bind="dto.Email" @bind:event="oninput"/>
+    </div>
+    <div class="form-group field">
         <label>Password:</label>
-        <input type="text" @bind="Password" @bind:event="oninput"/>
+        <input type="text" @bind="dto.Password" @bind:event="oninput"/>
+    </div>
+    <div class="form-group field">
         <label>Phone number:</label>
-        <input type="text" @bind="PhoneNumber" @bind:event="oninput"/>
-
-        @if (!string.IsNullOrEmpty(ErrorMsg))
-        {
-            <label style="color: red">@ErrorMsg</label>
-        }
+        <input type="text" @bind="dto.PhoneNumber" @bind:event="oninput"/>
     </div>
     <div class="button-row">
         <button @onclick="Update" class="acceptbtn">Update Info</button>
     </div>
 </div>
 
+@if (!string.IsNullOrEmpty(Message))
+{
+    <label style="color: red">@Message</label>
+}
+
 @code {
-    private int AccountId; /// auth
+    private CustomerUpdateDTO dto = null!;
+    private int AccountId = 0; /// auth
     private string Email = "";
     private string Password = "";
     private string PhoneNumber = "";
-    private string ErrorMsg = "";
+    private string Message = "";
 
+    protected override void OnInitialized()
+    {
+        dto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
+    }
+    
     private async void Update()
     {
         try
         {
-            if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(PhoneNumber))
-                ErrorMsg = "No information provided.";
+            Message = "";
+            if (string.IsNullOrEmpty(dto.Email) && string.IsNullOrEmpty(dto.Password) && string.IsNullOrEmpty(dto.PhoneNumber))
+                Message = "No information provided.";
             else
             {
-                await CustomerService.UpdateAsync(new CustomerUpdateDTO(AccountId,  Email, Password, PhoneNumber));
+                await CustomerService.UpdateAsync(dto);
                 AccountId = 0;
                 Email = "";
                 Password = "";
                 PhoneNumber = "";
-                ErrorMsg = "Update proceeded.";
+                Message = "Update proceeded.";
             }
         }
         catch (Exception e)
         {
-            ErrorMsg = e.Message;
+            Message = e.Message;
         }
     }
 }

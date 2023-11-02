@@ -37,7 +37,7 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task UpdateEmail(CustomerUpdateDTO dto)
     {
-        if (!string.IsNullOrEmpty(dto.Email) && dto.Email.Length > 100)
+        if (dto.Email.Length > 100)
             throw new InvalidDataException("Email cannot be longer than 100 characters.");
         
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
@@ -56,6 +56,7 @@ public class CustomerLogic : ICustomerLogic
         }
         catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }
@@ -64,7 +65,7 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task UpdatePassword(CustomerUpdateDTO dto)
     {
-        if (!string.IsNullOrEmpty(dto.Password) && (dto.Password.Length > 16 || dto.Password.Length < 8))
+        if (dto.Password.Length > 16 || dto.Password.Length < 8)
             throw new InvalidDataException("Password must have between 8 and 16 characters.");
         
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
@@ -83,6 +84,7 @@ public class CustomerLogic : ICustomerLogic
         }
         catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }
@@ -90,7 +92,7 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task UpdatePhoneNumber(CustomerUpdateDTO dto)
     {
-        if (!string.IsNullOrEmpty(dto.PhoneNumber) && dto.PhoneNumber.Length > 20)
+        if (dto.PhoneNumber.Length > 20)
             throw new InvalidDataException("Phone number cannot be longer than 20 characters.");
         
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
@@ -109,6 +111,7 @@ public class CustomerLogic : ICustomerLogic
         }
         catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }

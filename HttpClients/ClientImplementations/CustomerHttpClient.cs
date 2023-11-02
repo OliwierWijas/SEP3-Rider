@@ -32,5 +32,4 @@ public class CustomerHttpClient : ICustomerService
             throw new Exception(content);
         }
     }
-    
 }

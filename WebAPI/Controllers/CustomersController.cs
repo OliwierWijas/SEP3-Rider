@@ -36,14 +36,16 @@ public class CustomersController: ControllerBase
     {
         try
         {
-            if (!string.IsNullOrEmpty(dto.Password))
-            {
-                await customerLogic.UpdatePassword(dto);
-            }
             if (!string.IsNullOrEmpty(dto.Email))
             {
                 await customerLogic.UpdateEmail(dto);
             }
+            
+            if (!string.IsNullOrEmpty(dto.Password))
+            {
+                await customerLogic.UpdatePassword(dto);
+            }
+            
             if (!string.IsNullOrEmpty(dto.PhoneNumber))
             {
                 await customerLogic.UpdatePhoneNumber(dto);
