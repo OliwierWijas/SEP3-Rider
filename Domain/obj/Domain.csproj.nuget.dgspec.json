@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
+    "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

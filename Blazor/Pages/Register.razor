@@ -1,0 +1,85 @@
+﻿@page "/CreateCustomer"
+@using HttpClients.ClientInterfaces
+@using Domain.DTOs
+@inject ICustomerService CustomerService
+@inject IFoodSellerService FoodSellerService
+<h3>Register</h3>
+
+<div class="card">
+    <div class="form-group field">
+        <label>Firstname:</label>
+        <input type="text" @bind="CustomerFirstName" @bind:event="oninput"/>
+        <label>Lastname:</label>
+        <input type="text" @bind="CustomerLastName" @bind:event="oninput"/>
+        <label>Email:</label>
+        <input type="text" @bind="Email" @bind:event="oninput"/>
+        <label>Phone number:</label>
+        <input type="text" @bind="PhoneNumber" @bind:event="oninput"/>
+        <label>Password:</label>
+        <input type="text" @bind="Password" @bind:event="oninput"/>
+        <label>Name:</label>
+        <input type="text" @bind="SellerName" @bind:event="oninput"/>
+        <label>Address:</label>
+        <input type="text" @bind="SellerAddress" @bind:event="oninput"/>
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <label style="color: red">@ErrorMessage</label>
+        }
+    </div>
+    <div class="button-row">
+        <button @onclick="RegisterCustomer" class="acceptbtn">Register as customer</button>
+        <button @onclick="RegisterFoodSeller" class="acceptbtn">Register as food seller</button>
+    </div>
+</div>
+
+@code {
+    private string CustomerFirstName = "";
+    private string CustomerLastName = "";
+    private string Email = "";
+    private string PhoneNumber = "";
+    private string Password = "";
+    private string ErrorMessage = "";
+    
+    private string SellerName = "";
+    private string SellerAddress = "";
+
+    private async Task RegisterCustomer()
+    {
+        ErrorMessage = "";
+        try
+        {
+            await CustomerService.CreateAsync(new CustomerCreationDTO(CustomerFirstName, CustomerLastName, Email, PhoneNumber, Password));
+            CustomerFirstName = "";
+            CustomerLastName = "";
+            Email = "";
+            PhoneNumber = "";
+            Password = "";
+            ErrorMessage = "";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            ErrorMessage = e.Message;
+        }
+    }
+    
+    private async Task RegisterFoodSeller()
+    {
+        ErrorMessage = "";
+        try
+        {
+            await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, SellerAddress ,Email, PhoneNumber, Password));
+            SellerName = "";
+            SellerAddress = "";
+            Email = "";
+            PhoneNumber = "";
+            Password = "";
+            ErrorMessage = "";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            ErrorMessage = e.Message;
+        }
+    }
+}
