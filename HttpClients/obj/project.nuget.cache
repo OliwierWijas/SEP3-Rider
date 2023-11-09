@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "9fZZG6A5oHnaWvNcWn2wEWzS50iKgcm3BXgy6GnD+SHxutDApb6KKtflMvBzSZwsfqq+Fj/+ndaZ/i1s1+3OFA==",
+  "dgSpecHash": "o6as0CmXwpYWLXpzGKkYqAS2/klDQK1dyB2YTaycOdzovHMnAhoi16PSk5oTedjEfYB21YPbyBpDNxZM8aot+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.13\\microsoft.aspnetcore.authorization.7.0.13.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.13\\microsoft.aspnetcore.metadata.7.0.13.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
