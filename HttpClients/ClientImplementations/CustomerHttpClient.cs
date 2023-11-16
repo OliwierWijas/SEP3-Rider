@@ -1,16 +1,22 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
+
 
 namespace HttpClients.ClientImplementations;
 
 public class CustomerHttpClient : ICustomerService
 {
     private readonly HttpClient _client;
+    private readonly IAuthService _authService;
 
-    public CustomerHttpClient(HttpClient client)
+    public CustomerHttpClient(HttpClient client, IAuthService authService)
     {
         _client = client;
+        _authService = authService;
+        
+
     }
 
     public async Task CreateAsync(CustomerCreationDTO dto)
@@ -25,6 +31,7 @@ public class CustomerHttpClient : ICustomerService
 
     public async Task UpdateAsync(CustomerUpdateDTO dto)
     {
+        //_client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.);
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/Customers", dto);
         if (!message.IsSuccessStatusCode)
         {
@@ -35,6 +42,7 @@ public class CustomerHttpClient : ICustomerService
 
     public async Task DeleteAsync(int accountId)
     {
+       // _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.Jwt);
         HttpResponseMessage response = await _client.DeleteAsync($"/Customers/{accountId}");
         if (!response.IsSuccessStatusCode)
         {

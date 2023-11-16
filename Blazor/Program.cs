@@ -17,6 +17,7 @@ builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
 builder.Services.AddScoped<IAuthService, JwtAuthHttpClient>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
 AuthorizationPolicies.AddPolicies(builder.Services);
+builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7195") });
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -35,5 +36,4 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
-
 app.Run();

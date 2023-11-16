@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
 
@@ -7,10 +8,11 @@ namespace HttpClients.ClientImplementations;
 public class FoodSellerHttpClient : IFoodSellerService
 {
     private readonly HttpClient _client;
-
-    public FoodSellerHttpClient(HttpClient client)
+    private readonly IAuthService _authService;
+    public FoodSellerHttpClient(HttpClient client, IAuthService authService)
     {
         _client = client;
+        _authService = authService;
     }
     
     public async Task CreateAsync(FoodSellerCreationDTO dto)
@@ -25,6 +27,7 @@ public class FoodSellerHttpClient : IFoodSellerService
 
     public async Task UpdateAsync(FoodSellerUpdateDTO dto)
     {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.OnAuthStateChanged.ToString());
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodSellers", dto);
         if (!message.IsSuccessStatusCode)
         {
@@ -33,7 +36,8 @@ public class FoodSellerHttpClient : IFoodSellerService
         }    }
 
     public async Task DeleteAsync(int accountId)
-    {
+    { 
+        //_client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.Jwt);
         HttpResponseMessage response = await _client.DeleteAsync($"/FoodSellers/{accountId}");
         if (!response.IsSuccessStatusCode)
         {

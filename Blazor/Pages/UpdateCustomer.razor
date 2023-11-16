@@ -5,7 +5,8 @@
 @using Microsoft.VisualBasic.CompilerServices
 @inject IAuthService AuthService;
 @inject ICustomerService CustomerService
-<AuthorizeView>
+@attribute [Authorize]
+<AuthorizeView Policy="MustBeCustomer">
 <h3>UpdateCustomer</h3>
 <div class="card">
     <div class="form-group field">
@@ -47,20 +48,21 @@
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
+
     private bool _isLoggedIn;
 
-    protected  override async void OnInitialized()
+    protected override async void OnInitialized()
     {
         AuthenticationState authState = await AuthState;
         ClaimsPrincipal user = authState.User;
         _isLoggedIn = user.Identity != null;
-        
+
         if (!_isLoggedIn) return;
         IEnumerable<Claim> userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         dto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
     }
-    
+
     private async void Update()
     {
         try
@@ -97,4 +99,5 @@
             Message = e.Message;
         }
     }
+
 }

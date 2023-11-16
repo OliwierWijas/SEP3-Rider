@@ -35,6 +35,7 @@ public class CustomersController: ControllerBase
     [HttpPatch, Authorize("MustBeCustomer")]
     public async Task<ActionResult> UpdateAsync(CustomerUpdateDTO dto)
     {
+        Console.WriteLine("somesing");
         try
         {
             if (!string.IsNullOrEmpty(dto.Email))
@@ -51,7 +52,6 @@ public class CustomersController: ControllerBase
             {
                 await customerLogic.UpdatePhoneNumber(dto);
             }
-            
             return Ok();
         }
         catch (Exception e)

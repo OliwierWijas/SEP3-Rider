@@ -12,6 +12,8 @@ public class JwtAuthHttpClient : IAuthService
     private readonly HttpClient _client;
     public static string? Jwt { get; private set; } = "";
     public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; } = null!;
+    public string JwtCopy { get; private set; }
+ 
 
     public JwtAuthHttpClient(HttpClient client)
     {
