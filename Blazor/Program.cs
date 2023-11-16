@@ -1,8 +1,11 @@
+using Blazor.Auth;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Blazor.Data;
+using Domain.Auth;
 using HttpClients.ClientImplementations;
 using HttpClients.ClientInterfaces;
+using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +16,9 @@ builder.Services.AddScoped<ICustomerService, CustomerHttpClient>();
 builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7195") });
 builder.Services.AddScoped<IAuthService, JwtAuthHttpClient>();
-
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
 var app = builder.Build();
-
+AuthorizationPolicies.AddPolicies(builder.Services);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

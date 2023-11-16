@@ -1,5 +1,6 @@
 using Application.LogicInterfaces;
 using Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -7,7 +8,7 @@ namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-
+[Authorize]
 public class CustomersController: ControllerBase
 {
     private readonly ICustomerLogic customerLogic;
@@ -17,7 +18,7 @@ public class CustomersController: ControllerBase
         this.customerLogic = customerLogic;
     }
 
-    [HttpPost]
+    [HttpPost, AllowAnonymous]
     public async Task<ActionResult> CreateAsync(CustomerCreationDTO dto)
     {
         try
@@ -31,7 +32,7 @@ public class CustomersController: ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    [HttpPatch]
+    [HttpPatch, Authorize("MustBeCustomer")]
     public async Task<ActionResult> UpdateAsync(CustomerUpdateDTO dto)
     {
         try
@@ -60,7 +61,7 @@ public class CustomersController: ControllerBase
         }
     }
 
-    [HttpDelete("{accountId:int}")]
+    [HttpDelete("{accountId:int}"), Authorize("MustBeCustomer")]
     public async Task<ActionResult> DeleteAsync([FromRoute] int accountId)
     {
         try

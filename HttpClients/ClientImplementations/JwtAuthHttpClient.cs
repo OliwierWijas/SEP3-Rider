@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using Domain.DTOs;
@@ -19,12 +20,13 @@ public class JwtAuthHttpClient : IAuthService
 
     public async Task LoginAsync(string username, string password)
     {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
         LoginDTO userLoginDto = new()
         {
             Email = username,
             Password = password
         };
-
+        
         string userAsJson = JsonSerializer.Serialize(userLoginDto);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
 

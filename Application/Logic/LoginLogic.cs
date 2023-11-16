@@ -16,11 +16,16 @@ public class LoginLogic : ILoginLogic
             Credentials = ChannelCredentials.Insecure
         });
 
-        var client = new LoginService.CustomerServiceClient(channel);
+        var client = new LoginService.LoginServiceClient(channel);
 
         try
         {
-            UserBasicDTO? user = await client.LoginAsync(dto);
+            LoginResponse response = await client.LoginAsync(new LoginRequest()
+            {
+                Email = dto.Email,
+                Password = dto.Password
+            });
+            UserBasicDTO user = new UserBasicDTO(response.Id, response.Email, response.Password, response.PhoneNumber, response.Address, response.Name, response.FirstName, response.LastName, response.Type);
             if (user == null)
                 throw new Exception($"User with the given email {dto.Email} was not found.");
             return user;
@@ -31,6 +36,7 @@ public class LoginLogic : ILoginLogic
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }
-     
+       
+
     }
 }

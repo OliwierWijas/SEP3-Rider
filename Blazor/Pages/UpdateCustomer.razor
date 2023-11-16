@@ -1,7 +1,11 @@
 ﻿@page "/UpdateCustomer"
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
+@using System.Security.Claims
+@using Microsoft.VisualBasic.CompilerServices
+@inject IAuthService AuthService;
 @inject ICustomerService CustomerService
+<AuthorizeView>
 <h3>UpdateCustomer</h3>
 <div class="card">
     <div class="form-group field">
@@ -27,7 +31,7 @@
         <button @onclick="Delete" class="acceptbtn">Delete Account</button>
     </div>
 </div>
-
+</AuthorizeView>
 @if (!string.IsNullOrEmpty(Message))
 {
     <label style="color: red">@Message</label>
@@ -35,14 +39,25 @@
 
 @code {
     private CustomerUpdateDTO dto = null!;
-    private int AccountId = 0; /// auth
+    private int AccountId;
     private string Email = "";
     private string Password = "";
     private string PhoneNumber = "";
     private string Message = "";
 
-    protected override void OnInitialized()
+
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+
+    protected  override async void OnInitialized()
     {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        
+        if (!_isLoggedIn) return;
+        IEnumerable<Claim> userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         dto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
     }
     

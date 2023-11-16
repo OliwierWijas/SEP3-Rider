@@ -32,6 +32,7 @@ public class AuthController : ControllerBase
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                         new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                         new Claim("MustBeCustomer", dto.Type),
+                        new Claim("ID", dto.Id.ToString())
                     };
             return claims.ToList();
         }
@@ -43,8 +44,10 @@ public class AuthController : ControllerBase
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                 new Claim("MustBeFoodSeller", dto.Type),
+                new Claim("ID", dto.Id.ToString())
             };
             return claims.ToList();
+            
         }
     }
     
@@ -77,7 +80,6 @@ public class AuthController : ControllerBase
         {
             UserBasicDTO user = await _loginLogic.LoginAsync(dto);
             string token = GenerateJwt(user);
-    
             return Ok(token);
         }
         catch (Exception e)

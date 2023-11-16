@@ -9,13 +9,15 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  string email = 1;
-  string password = 2;
-  string phoneNumber = 3;
-  string firstName = 4;
-  string lastName = 5;
-  string name = 6;
-  string address = 7;
+  int32 id = 1;
+  string email = 2;
+  string password = 3;
+  string phoneNumber = 4;
+  string type = 5;
+  string firstName = 6;
+  string lastName = 7;
+  string name = 8;
+  string address = 9;
 }
 
 service LoginService
