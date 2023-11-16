@@ -18,12 +18,12 @@ public class JwtAuthHttpClient : IAuthService
        _client = client;
     }
 
-    public async Task LoginAsync(string username, string password)
+    public async Task LoginAsync(string email, string password)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
         LoginDTO userLoginDto = new()
         {
-            Email = username,
+            Email = email,
             Password = password
         };
         

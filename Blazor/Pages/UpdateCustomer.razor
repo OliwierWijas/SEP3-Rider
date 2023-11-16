@@ -45,7 +45,7 @@
     private string PhoneNumber = "";
     private string Message = "";
 
-
+    [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
 
