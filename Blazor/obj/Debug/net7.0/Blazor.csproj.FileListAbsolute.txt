@@ -109,3 +109,7 @@ C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\refint\Blazor.dl
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\Blazor.pdb
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\Blazor.genruntimeconfig.cache
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\ref\Blazor.dll
+C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

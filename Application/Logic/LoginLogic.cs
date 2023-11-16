@@ -15,8 +15,9 @@ public class LoginLogic : ILoginLogic
         {
             Credentials = ChannelCredentials.Insecure
         });
-        var client = new CustomerService.CustomerServiceClient(channel);
-        
+
+        var client = new LoginService.CustomerServiceClient(channel);
+
         try
         {
             UserBasicDTO? user = await client.LoginAsync(dto);
@@ -30,5 +31,6 @@ public class LoginLogic : ILoginLogic
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }
+     
     }
 }
