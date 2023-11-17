@@ -10,4 +10,5 @@ public interface IAuthService
 
     public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; }
     public static string? Jwt { get; }
+    public string? token { get; }
 }

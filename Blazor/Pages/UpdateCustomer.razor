@@ -2,12 +2,10 @@
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
 @using System.Security.Claims
-@using Microsoft.VisualBasic.CompilerServices
-@inject IAuthService AuthService;
 @inject ICustomerService CustomerService
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeCustomer">
 <h3>UpdateCustomer</h3>
+<AuthorizeView Policy="MustBeCustomer">
 <div class="card">
     <div class="form-group field">
         <label>Account Id:</label>
@@ -48,17 +46,16 @@
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
-
     private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
 
     protected override async void OnInitialized()
     {
         AuthenticationState authState = await AuthState;
         ClaimsPrincipal user = authState.User;
         _isLoggedIn = user.Identity != null;
-
         if (!_isLoggedIn) return;
-        IEnumerable<Claim> userClaims = user.Claims.AsEnumerable();
+        userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         dto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
     }

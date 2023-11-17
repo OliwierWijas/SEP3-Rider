@@ -10,9 +10,9 @@ public class AuthorizationPolicies
         services.AddAuthorizationCore(options =>
         {
             options.AddPolicy("MustBeCustomer", a =>
-                a.RequireAuthenticatedUser().RequireClaim("Type", "customer"));
+                a.RequireAuthenticatedUser().RequireClaim("MustBeCustomer", "customer"));
             options.AddPolicy("MustBeFoodSeller", a =>
-                a.RequireAuthenticatedUser().RequireClaim("Type", "foodseller"));
+                a.RequireAuthenticatedUser().RequireClaim("MustBEFoodSeller", "foodseller"));
         });
     }
 }

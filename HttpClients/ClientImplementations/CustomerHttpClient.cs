@@ -9,13 +9,13 @@ namespace HttpClients.ClientImplementations;
 public class CustomerHttpClient : ICustomerService
 {
     private readonly HttpClient _client;
-    private readonly IAuthService _authService;
+    private static IAuthService _authService;
 
     public CustomerHttpClient(HttpClient client, IAuthService authService)
     {
         _client = client;
         _authService = authService;
-        
+
 
     }
 
@@ -31,7 +31,8 @@ public class CustomerHttpClient : ICustomerService
 
     public async Task UpdateAsync(CustomerUpdateDTO dto)
     {
-        //_client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/Customers", dto);
         if (!message.IsSuccessStatusCode)
         {

@@ -4,7 +4,8 @@ using System.Text;
 using System.Text.Json;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
-
+using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
 namespace HttpClients.ClientImplementations;
 
 public class JwtAuthHttpClient : IAuthService
@@ -12,17 +13,20 @@ public class JwtAuthHttpClient : IAuthService
     private readonly HttpClient _client;
     public static string? Jwt { get; private set; } = "";
     public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; } = null!;
-    public string JwtCopy { get; private set; }
+    public string? token { get; set; }= "";
+    
+    private readonly IHttpClientFactory _httpClientFactory;
  
 
-    public JwtAuthHttpClient(HttpClient client)
+    public JwtAuthHttpClient(IHttpClientFactory httpClientFactory)
     {
-       _client = client;
+        _httpClientFactory = httpClientFactory;
+        _client = _httpClientFactory.CreateClient();
+       
     }
 
     public async Task LoginAsync(string email, string password)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
         LoginDTO userLoginDto = new()
         {
             Email = email,
@@ -32,7 +36,7 @@ public class JwtAuthHttpClient : IAuthService
         string userAsJson = JsonSerializer.Serialize(userLoginDto);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
 
-        HttpResponseMessage response = await _client.PostAsync("/Auth/login", content);
+        HttpResponseMessage response = await _client.PostAsync("https://localhost:7195/Auth/login", content);
         string responseContent = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)
@@ -40,7 +44,7 @@ public class JwtAuthHttpClient : IAuthService
             throw new Exception(responseContent);
         }
 
-        string token = responseContent;
+        token = responseContent;
         Jwt = token;
 
         ClaimsPrincipal principal = CreateClaimsPrincipal();

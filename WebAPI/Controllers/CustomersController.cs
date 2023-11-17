@@ -32,10 +32,9 @@ public class CustomersController: ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    [HttpPatch, Authorize("MustBeCustomer")]
+    [HttpPatch, Authorize(Policy = "MustBeCustomer")]
     public async Task<ActionResult> UpdateAsync(CustomerUpdateDTO dto)
     {
-        Console.WriteLine("somesing");
         try
         {
             if (!string.IsNullOrEmpty(dto.Email))

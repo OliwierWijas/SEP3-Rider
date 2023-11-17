@@ -27,7 +27,6 @@ public class FoodSellerHttpClient : IFoodSellerService
 
     public async Task UpdateAsync(FoodSellerUpdateDTO dto)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.OnAuthStateChanged.ToString());
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodSellers", dto);
         if (!message.IsSuccessStatusCode)
         {

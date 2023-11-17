@@ -1,3 +1,4 @@
+using Blazor;
 using Blazor.Auth;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -8,13 +9,14 @@ using HttpClients.ClientInterfaces;
 using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<IAuthService, JwtAuthHttpClient>();
 builder.Services.AddScoped<ICustomerService, CustomerHttpClient>();
 builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
-builder.Services.AddScoped<IAuthService, JwtAuthHttpClient>();
+//builder.Services.AddScoped<IAuthService, JwtAuthHttpClient>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
 AuthorizationPolicies.AddPolicies(builder.Services);
 builder.Services.AddAuthorizationCore();
