@@ -15,4 +15,6 @@ public class AuthorizationPolicies
                 a.RequireAuthenticatedUser().RequireClaim("MustBEFoodSeller", "foodseller"));
         });
     }
+    
+    /* abc simona */
 }
