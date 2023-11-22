@@ -32,7 +32,6 @@ public class LoginLogic : ILoginLogic
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
             string[] message = e.Message.Split("\"");
             throw new Exception(message[3]);
         }

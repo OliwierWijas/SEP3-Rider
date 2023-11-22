@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "jOVbaC3XFhreiwGsyKUQ68ZWo8TKrTAhNf8XTwA2Mgb55vHeC2Wag0DhZpQCoqW0WWHcL70pg4r16AVMep88FA==",
+  "dgSpecHash": "ymH6dhzayOjN+E5HYCrG3cEKozVqp44PrYAVLiCkOyM8F/k0yO3qXbbnC7Rbk4yoZ8JxHQlXyh75r+d7sjuq/g==",
   "success": true,
-  "projectFilePath": "/Users/simonadraghici/RiderProjects/SEP3Rider/HttpClients/HttpClients.csproj",
+  "projectFilePath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj",
   "expectedPackageFiles": [
-    "/Users/simonadraghici/.nuget/packages/microsoft.aspnetcore.authorization/7.0.13/microsoft.aspnetcore.authorization.7.0.13.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.aspnetcore.metadata/7.0.13/microsoft.aspnetcore.metadata.7.0.13.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.dependencyinjection/5.0.0/microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.http/5.0.0/microsoft.extensions.http.5.0.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.logging/5.0.0/microsoft.extensions.logging.5.0.0.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.1/microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
-    "/Users/simonadraghici/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.13\\microsoft.aspnetcore.authorization.7.0.13.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.13\\microsoft.aspnetcore.metadata.7.0.13.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.http\\5.0.0\\microsoft.extensions.http.5.0.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\oliwi\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

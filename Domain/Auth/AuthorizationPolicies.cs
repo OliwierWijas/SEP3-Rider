@@ -12,8 +12,7 @@ public class AuthorizationPolicies
             options.AddPolicy("MustBeCustomer", a =>
                 a.RequireAuthenticatedUser().RequireClaim("MustBeCustomer", "customer"));
             options.AddPolicy("MustBeFoodSeller", a =>
-                a.RequireAuthenticatedUser().RequireClaim("MustBeFoodSeller", "foodseller"));
+                a.RequireAuthenticatedUser().RequireClaim("MustBEFoodSeller", "foodseller"));
         });
     }
-    
 }
