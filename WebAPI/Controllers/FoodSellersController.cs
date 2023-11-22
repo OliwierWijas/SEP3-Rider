@@ -1,11 +1,13 @@
 ﻿using Application.LogicInterfaces;
 using Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class FoodSellersController : ControllerBase
 {
     private readonly IFoodSellerLogic foodSellerLogic;
@@ -15,7 +17,7 @@ public class FoodSellersController : ControllerBase
         this.foodSellerLogic = foodSellerLogic;
     }
     
-    [HttpPost]
+    [HttpPost, AllowAnonymous]
     public async Task<ActionResult> CreateAsync(FoodSellerCreationDTO dto)
     {
         try
@@ -30,7 +32,7 @@ public class FoodSellersController : ControllerBase
         }
     }
     
-    [HttpPatch]
+    [HttpPatch, Authorize(Policy = "MustBeFoodSeller")]
     public async Task<ActionResult> UpdateAsync(FoodSellerUpdateDTO dto)
     {
         try
@@ -69,7 +71,7 @@ public class FoodSellersController : ControllerBase
         }
     }
     
-    [HttpDelete("{accountId:int}")]
+    [HttpDelete("{accountId:int}"), Authorize(Policy = "MustBeFoodSeller")]
     public async Task<ActionResult> DeleteAsync([FromRoute] int accountId)
     {
         try

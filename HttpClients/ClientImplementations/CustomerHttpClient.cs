@@ -43,7 +43,8 @@ public class CustomerHttpClient : ICustomerService
 
     public async Task DeleteAsync(int accountId)
     {
-       // _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.Jwt);
+       _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+       _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage response = await _client.DeleteAsync($"/Customers/{accountId}");
         if (!response.IsSuccessStatusCode)
         {

@@ -12,9 +12,8 @@ public class AuthorizationPolicies
             options.AddPolicy("MustBeCustomer", a =>
                 a.RequireAuthenticatedUser().RequireClaim("MustBeCustomer", "customer"));
             options.AddPolicy("MustBeFoodSeller", a =>
-                a.RequireAuthenticatedUser().RequireClaim("MustBEFoodSeller", "foodseller"));
+                a.RequireAuthenticatedUser().RequireClaim("MustBeFoodSeller", "foodseller"));
         });
     }
     
-    /* abc simona */
 }

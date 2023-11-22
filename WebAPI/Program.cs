@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICustomerLogic, CustomerLogic>();
 builder.Services.AddScoped<IFoodSellerLogic, FoodSellerLogic>();
 builder.Services.AddScoped<ILoginLogic, LoginLogic>();
+builder.Services.AddScoped<IFoodOfferLogic, FoodOfferLogic>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;

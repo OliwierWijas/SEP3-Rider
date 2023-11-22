@@ -1,0 +1,52 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package customer;
+option csharp_namespace = "GrpcClient";
+
+message CreateFoodOfferRequest
+{
+    int32 foodSellerId = 1;
+    string title = 2;
+    string description = 3;
+    double price = 4;
+    string startPickUpTime = 5;
+    string endPickUpTime = 6;
+}
+
+message ReadAvailableFoodOffersRequest {}
+
+message ReadFoodOffersByFoodSellerIdRequest
+{
+    int32 foodSellerId = 1;
+}
+
+message UpdateFoodOfferRequest
+{
+    int32 foodOfferId = 1;
+    string title = 2;
+    string description = 3;
+    double price = 4;
+    string startPickUpTime = 5;
+    string endPickUpTime = 6;
+}
+
+message DeleteFoodOfferRequest
+{
+    int32 foodOfferId = 1;
+}
+
+
+message FoodOfferEmptyResponse {}
+
+message ReadFoodOffersListResponse
+{
+    string list = 1;
+}
+
+service FoodOfferService {
+    rpc createFoodOffer(CreateFoodOfferRequest) returns (FoodOfferEmptyResponse);
+    rpc readAvailableFoodOffers(ReadAvailableFoodOffersRequest) returns (ReadFoodOffersListResponse);
+    rpc readFoodOffersByFoodSellerId(ReadFoodOffersByFoodSellerIdRequest) returns (ReadFoodOffersListResponse);
+    rpc updateFoodOffer(UpdateFoodOfferRequest) returns (FoodOfferEmptyResponse);
+    rpc deleteFoodOffer(DeleteFoodOfferRequest) returns (FoodOfferEmptyResponse);
+}

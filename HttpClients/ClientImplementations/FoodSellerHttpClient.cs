@@ -27,20 +27,25 @@ public class FoodSellerHttpClient : IFoodSellerService
 
     public async Task UpdateAsync(FoodSellerUpdateDTO dto)
     {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodSellers", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        }    }
+        }    
+    }
 
     public async Task DeleteAsync(int accountId)
     { 
-        //_client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.Jwt);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
         HttpResponseMessage response = await _client.DeleteAsync($"/FoodSellers/{accountId}");
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
-        }    }
+        }    
+    }
 }
