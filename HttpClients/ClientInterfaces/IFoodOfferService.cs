@@ -8,6 +8,6 @@ public interface IFoodOfferService
     Task CreateAsync(FoodOfferCreationDTO dto);
     Task UpdateAsync(FoodOffer foodOffer);
     Task DeleteAsync(int foodOfferId);
-    Task<List<FoodOffer>> GetAvailableFoodOffersAsync();
-    Task<List<FoodOffer>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId);
+    Task<List<ReadFoodOffersDTO>> GetAvailableFoodOffersAsync();
+    Task<List<ReadFoodOffersDTO>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId);
 }

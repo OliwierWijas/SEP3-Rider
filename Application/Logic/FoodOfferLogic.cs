@@ -26,8 +26,16 @@ public class FoodOfferLogic: IFoodOfferLogic
                 Title = dto.Title,
                 Description = dto.Description,
                 Price = dto.Price,
-                StartPickUpTime = JsonSerializer.Serialize(dto.StartPickupTime),
-                EndPickUpTime = JsonSerializer.Serialize(dto.EndPickupTime)
+                StartPickUpTime = JsonSerializer.Serialize(dto.StartPickupTime, new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                }),
+                EndPickUpTime = JsonSerializer.Serialize(dto.EndPickupTime, new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                })
             });
         }
         catch (Exception e)
@@ -51,7 +59,8 @@ public class FoodOfferLogic: IFoodOfferLogic
             string Json = response.List;
             JsonSerializerOptions options = new JsonSerializerOptions
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                WriteIndented = true,
+                PropertyNameCaseInsensitive = true
             };
 
             List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(Json, options);
@@ -81,12 +90,21 @@ public class FoodOfferLogic: IFoodOfferLogic
             });
             
             string Json = response.List;
+            Console.WriteLine(Json);
+
             JsonSerializerOptions options = new JsonSerializerOptions
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                WriteIndented = true,
+                PropertyNameCaseInsensitive = true
             };
-
+            
             List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(Json, options);
+
+            foreach (var VARIABLE in foodOffers)
+            {
+                Console.WriteLine(VARIABLE.Title);
+                Console.WriteLine(VARIABLE.StartPickupTime.ToString());
+            }
 
             return foodOffers;
         }

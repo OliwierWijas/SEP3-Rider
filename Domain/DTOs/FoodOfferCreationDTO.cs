@@ -6,10 +6,10 @@ public class FoodOfferCreationDTO
     public string Title { get; set; }
     public string Description { get; set; }
     public double Price { get; set; }
-    public Date StartPickupTime { get; set; }
-    public Date EndPickupTime { get; set; }
+    public MyDate StartPickupTime { get; set; }
+    public MyDate EndPickupTime { get; set; }
 
-    public FoodOfferCreationDTO(int foodSellerId, string title, string description, double price, Date startPickupTime, Date endPickupTime)
+    public FoodOfferCreationDTO(int foodSellerId, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime)
     {
         FoodSellerId = foodSellerId;
         Title = title;

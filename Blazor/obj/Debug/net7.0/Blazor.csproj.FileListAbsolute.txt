@@ -195,3 +195,5 @@ C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\projec
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\Blazor.csproj.CopyComplete
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\Blazor.genruntimeconfig.cache
 C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\ref\Blazor.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\Radzen.Blazor.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll

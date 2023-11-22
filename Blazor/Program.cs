@@ -17,7 +17,6 @@ builder.Services.AddSingleton<IAuthService, JwtAuthHttpClient>();
 builder.Services.AddScoped<ICustomerService, CustomerHttpClient>();
 builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
 builder.Services.AddScoped<IFoodOfferService, FoodOfferHttpClient>();
-//builder.Services.AddScoped<IAuthService, JwtAuthHttpClient>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
 AuthorizationPolicies.AddPolicies(builder.Services);
 builder.Services.AddAuthorizationCore();

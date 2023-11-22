@@ -20,6 +20,8 @@ public class FoodOfferHttpClient : IFoodOfferService
     
     public async Task CreateAsync(FoodOfferCreationDTO dto)
     {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
         HttpResponseMessage message = await _client.PostAsJsonAsync("/FoodOffers", dto);
         if (!message.IsSuccessStatusCode)
         {
@@ -52,7 +54,7 @@ public class FoodOfferHttpClient : IFoodOfferService
         }    
     }
 
-    public async Task<List<FoodOffer>> GetAvailableFoodOffersAsync()
+    public async Task<List<ReadFoodOffersDTO>> GetAvailableFoodOffersAsync()
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync("/FoodOffers");
@@ -62,11 +64,11 @@ public class FoodOfferHttpClient : IFoodOfferService
             throw new Exception(content);
         }
 
-        List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return foodOffers;
     }
 
-    public async Task<List<FoodOffer>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId)
+    public async Task<List<ReadFoodOffersDTO>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/FoodOffers/{foodSellerId}");
@@ -76,7 +78,7 @@ public class FoodOfferHttpClient : IFoodOfferService
             throw new Exception(content);
         }
 
-        List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return foodOffers;
     }
 }

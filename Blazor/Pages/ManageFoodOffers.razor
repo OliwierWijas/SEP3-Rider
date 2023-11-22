@@ -8,26 +8,47 @@
 @attribute [Authorize]
 <h3>FoodOffersOverview</h3>
 <AuthorizeView Policy="MustBeFoodSeller">
-<div class="card">
-    <div class="form-group field">
-        <label>Title:</label>
-        <input type="text" @bind="Title" @bind:event="oninput"/>
+    @if (_foodOffers == null)
+        {
+        }
+        else if (!_foodOffers.Any())
+        {
+            <p>No food offers to display</p>
+        }
+        else
+        {
+            @foreach (var item in _foodOffers)
+            {
+                <div class="card" style=" height: 200px; width: 100%">
+                    <h3>@item.Title</h3>
+                    <h6>@item.Description</h6>
+                    <h6>@item.Price</h6>
+                    <h6>@item.StartPickupTime.ToString()</h6>
+                    <h6>@item.EndPickupTime.ToString()</h6>
+                </div>
+            }
+            
+        }
+    <div class="card">
+        <div class="form-group field">
+            <label>Title:</label>
+            <input type="text" @bind="Title" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+            <label>Description:</label>
+            <input type="text" @bind="Description" @bind:event="oninput"/></div>
+        <div class="form-group field">
+            <label>Price:</label>
+            <input type="number" @bind="Price" @bind:event="oninput"/>
+        </div>
+        <div class="rz-p-12 rz-text-align-center">
+            <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+            <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+        </div>
+        <div class="button-row">
+            <button @onclick="CreateAsync" class="acceptbtn">Create Food Offer</button>
+        </div>
     </div>
-    <div class="form-group field">
-        <label>Description:</label>
-        <input type="text" @bind="Description" @bind:event="oninput"/></div>
-    <div class="form-group field">
-        <label>Price:</label>
-        <input type="number" @bind="Price" @bind:event="oninput"/>
-    </div>
-    <div class="rz-p-12 rz-text-align-center">
-        <RadzenDatePicker @bind="StartPickupTime" @bind:event="oninput" ShowTime="true" ShowSeconds="false" HoursStep="1.5" MinutesStep="5" SecondsStep="0" DateFormat="MM/dd/yyyy HH:mm" />
-        <RadzenDatePicker @bind="EndPickupTime" @bind:event="oninput" ShowTime="true" ShowSeconds="false" HoursStep="1.5" MinutesStep="5" SecondsStep="0" DateFormat="MM/dd/yyyy HH:mm" />
-    </div>
-    <div class="button-row">
-        <button @onclick="CreateAsync" class="acceptbtn">Create Food Offer</button>
-    </div>
-</div>
 </AuthorizeView>
 @if (!string.IsNullOrEmpty(ErrorMessage))
 {
@@ -36,13 +57,13 @@
 
 @code {
     private int AccountId;
-    private List<FoodOffer> _foodOffers;
+    private List<ReadFoodOffersDTO> _foodOffers;
     private string ErrorMessage = "";
     private string Title = "";
     private string Description = "";
     private double Price = 0.0;
-    private DateTime? StartPickupTime = DateTime.Now;
-    private DateTime? EndPickupTime = DateTime.Now;
+    private DateTime StartPickupTime = DateTime.Now;
+    private DateTime EndPickupTime = DateTime.Now;
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -57,7 +78,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        //_foodOffers = await FoodOfferService.GetFoodOffersByFoodSellerIdAsync(AccountId);
+        _foodOffers = await FoodOfferService.GetFoodOffersByFoodSellerIdAsync(AccountId);
     }
 
     private async Task CreateAsync()
@@ -65,8 +86,7 @@
         ErrorMessage = "";
         try
         {
-            if (StartPickupTime is not null && EndPickupTime is not null) 
-                await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new Date(StartPickupTime?.Year, StartPickupTime?.Month, StartPickupTime?.Day, StartPickupTime?.Hour, StartPickupTime?.Minute), new Date(EndPickupTime?.Year, EndPickupTime?.Month, EndPickupTime?.Day, EndPickupTime?.Hour, EndPickupTime?.Minute)));
+            await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute)));
         }
         catch (Exception e)
         {

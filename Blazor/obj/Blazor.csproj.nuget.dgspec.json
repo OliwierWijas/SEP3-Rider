@@ -45,6 +45,10 @@
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.21.3, )"
             }
           },
           "imports": [
