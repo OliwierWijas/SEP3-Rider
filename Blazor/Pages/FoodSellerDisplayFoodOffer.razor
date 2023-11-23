@@ -8,31 +8,35 @@
 @attribute [Authorize]
 <h3>DisplayFoodOffer</h3>
 
-<div class="card">
+
+@if (foodOffer is not null)
+{
+    <div class="card">
         <div class="form-group field">
             <label>Title:</label>
             <input type="text" @bind="Title" @bind:event="oninput"/>
         </div>
-    <div class="form-group field">
-        <label>Description:</label>
-        <input type="text" @bind="Description" @bind:event="oninput"/>
+        <div class="form-group field">
+            <label>Description:</label>
+            <input type="text" @bind="Description" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+            <label>Price:</label>
+            <input type="number" @bind="Price" @bind:event="oninput"/>
+        </div>
+        <div class="rz-p-12 rz-text-align-center">
+            <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+            <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+        </div>
+        <div class="button-row">
+            <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
+        </div>
+        <div class="button-row">
+            <button @onclick="UpdateAsync" class="acceptbtn">Delete Food Offer</button>
+        </div>
+
     </div>
-    <div class="form-group field">
-        <label>Price:</label>
-        <input type="number" @bind="Price" @bind:event="oninput"/>
-    </div>
-    <div class="rz-p-12 rz-text-align-center">
-                <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-                <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-            </div>
-    <div class="button-row">
-        <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
-    </div>
-    <div class="button-row">
-        <button @onclick="UpdateAsync" class="acceptbtn">Delete Food Offer</button>
-    </div>
-    
-</div>
+}
 
 @code {
     private int AccountId;
@@ -61,6 +65,7 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         foodOffer = await foodOfferService.GetFoodOfferByFoodOfferIdAsync(AccountId, id);
+        Console.WriteLine(foodOffer.Title);
         Title = foodOffer.Title;
         Description = foodOffer.Description;
         Price = foodOffer.Price;
@@ -68,6 +73,7 @@
         StartPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
         date = foodOffer.EndPickupTime;
         EndPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
+        
     }
 
     private async void UpdateAsync()

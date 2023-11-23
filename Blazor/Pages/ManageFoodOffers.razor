@@ -4,6 +4,7 @@
 @using System.Security.Claims
 @using HttpClients.ClientInterfaces
 @using Microsoft.AspNetCore.Components
+@inject NavigationManager NavMgr
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
 <h3>FoodOffersOverview</h3>
@@ -19,7 +20,7 @@
         {
             @foreach (var item in _foodOffers)
             {
-                <div class="card" style=" height: 200px; width: 100%">
+                <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
                     <h3>@item.Title</h3>
                     <h6>@item.Description</h6>
                     <h6>@item.Price</h6>

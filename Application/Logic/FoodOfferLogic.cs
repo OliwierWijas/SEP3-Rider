@@ -90,7 +90,6 @@ public class FoodOfferLogic: IFoodOfferLogic
             });
             
             string Json = response.List;
-            Console.WriteLine(Json);
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
@@ -122,7 +121,7 @@ public class FoodOfferLogic: IFoodOfferLogic
             await client.updateFoodOfferAsync(new UpdateFoodOfferRequest
             {
                 
-                FoodOfferId = foodOffer.FoodOfferId,
+                FoodOfferId = foodOffer.Id,
                 Title = foodOffer.Title,
                 Description = foodOffer.Description,
                 Price = foodOffer.Price,

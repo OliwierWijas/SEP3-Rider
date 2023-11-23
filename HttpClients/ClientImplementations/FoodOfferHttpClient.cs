@@ -93,7 +93,7 @@ public class FoodOfferHttpClient : IFoodOfferService
         }
 
         IEnumerable<FoodOffer> foodOffers = JsonSerializer.Deserialize<IEnumerable<FoodOffer>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
-        FoodOffer foodOffer = foodOffers.FirstOrDefault(f => f.FoodOfferId == foodOfferId);
+        FoodOffer foodOffer = foodOffers.FirstOrDefault(f => f.Id == foodOfferId);
         return foodOffer;
     }
 }
