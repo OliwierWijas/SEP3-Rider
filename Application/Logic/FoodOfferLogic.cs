@@ -99,13 +99,7 @@ public class FoodOfferLogic: IFoodOfferLogic
             };
             
             List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(Json, options);
-
-            foreach (var VARIABLE in foodOffers)
-            {
-                Console.WriteLine(VARIABLE.Title);
-                Console.WriteLine(VARIABLE.StartPickupTime.ToString());
-            }
-
+            
             return foodOffers;
         }
         catch (Exception e)

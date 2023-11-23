@@ -17,6 +17,8 @@ builder.Services.AddScoped<ICustomerLogic, CustomerLogic>();
 builder.Services.AddScoped<IFoodSellerLogic, FoodSellerLogic>();
 builder.Services.AddScoped<ILoginLogic, LoginLogic>();
 builder.Services.AddScoped<IFoodOfferLogic, FoodOfferLogic>();
+builder.Services.AddScoped<IReservationLogic, ReservationLogic>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;

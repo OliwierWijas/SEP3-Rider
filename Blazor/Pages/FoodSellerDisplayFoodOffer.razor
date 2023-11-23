@@ -1,0 +1,94 @@
+﻿@page "/FoodSellerDisplayFoodOffer/{id:int}"
+@using System.Security.Claims
+@using Domain
+@using HttpClients.ClientInterfaces
+@inject NavigationManager Navmgr
+@inject IFoodOfferService foodOfferService
+@inject IReservationService reservationService
+@attribute [Authorize]
+<h3>DisplayFoodOffer</h3>
+
+<div class="card">
+        <div class="form-group field">
+            <label>Title:</label>
+            <input type="text" @bind="Title" @bind:event="oninput"/>
+        </div>
+    <div class="form-group field">
+        <label>Description:</label>
+        <input type="text" @bind="Description" @bind:event="oninput"/>
+    </div>
+    <div class="form-group field">
+        <label>Price:</label>
+        <input type="number" @bind="Price" @bind:event="oninput"/>
+    </div>
+    <div class="rz-p-12 rz-text-align-center">
+                <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+            </div>
+    <div class="button-row">
+        <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
+    </div>
+    <div class="button-row">
+        <button @onclick="UpdateAsync" class="acceptbtn">Delete Food Offer</button>
+    </div>
+    
+</div>
+
+@code {
+    private int AccountId;
+    private string ErrorMessage = "";
+    private string Title = "";
+    private string Description = "";
+    private double Price = 0.0;
+    private DateTime StartPickupTime = DateTime.Now;
+    private DateTime EndPickupTime = DateTime.Now;
+    [Parameter] 
+    public int id { get; set; }
+
+    private FoodOffer foodOffer { get; set; }
+
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        foodOffer = await foodOfferService.GetFoodOfferByFoodOfferIdAsync(AccountId, id);
+        Title = foodOffer.Title;
+        Description = foodOffer.Description;
+        Price = foodOffer.Price;
+        MyDate date = foodOffer.StartPickupTime;
+        StartPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
+        date = foodOffer.EndPickupTime;
+        EndPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
+    }
+
+    private async void UpdateAsync()
+    {
+        try
+        {
+            ErrorMessage = "";
+            if (string.IsNullOrEmpty(Title) || string.IsNullOrEmpty(Description) || Price <= 0 || EndPickupTime.CompareTo(StartPickupTime) <= 0)
+            {
+                ErrorMessage = "Some information is incorrect.";
+            }
+            else
+            {
+                foodOffer = new FoodOffer(id, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute));
+                await foodOfferService.UpdateAsync(foodOffer);
+            }
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
+    }
+    
+}

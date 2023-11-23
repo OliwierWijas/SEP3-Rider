@@ -1,0 +1,46 @@
+﻿syntax = "proto3";
+option java_multiple_files = true;
+package reservation;
+option csharp_namespace = "GrpcClient";
+
+message CreateReservationRequest
+{
+  int32 customerId = 1;
+  int32 foodOfferId = 2;
+}
+
+message DeleteReservationRequest
+{
+  int32 reservationNumber = 1;
+}
+
+message ReadCustomerReservationsRequest
+{
+  int32 customerId = 1;
+}
+
+message ReadFoodSellerReservationsRequest
+{
+  int32 foodSellerId = 1;
+}
+
+message CompleteReservationRequest
+{
+  int32 reservationNumber = 1;
+}
+
+message ReservationEmptyResponse {}
+
+message ReadReservationsListResponse
+{
+  string list = 1;
+}
+
+service ReservationService
+{
+  rpc createReservation(CreateReservationRequest) returns (ReservationEmptyResponse);
+  rpc deleteReservation(DeleteReservationRequest) returns (ReservationEmptyResponse);
+  rpc readCustomerReservations(ReadCustomerReservationsRequest) returns (ReadReservationsListResponse);
+  rpc readFoodSellerReservations(ReadFoodSellerReservationsRequest) returns(ReadReservationsListResponse);
+  rpc completeReservation(CompleteReservationRequest) returns (ReservationEmptyResponse);
+}

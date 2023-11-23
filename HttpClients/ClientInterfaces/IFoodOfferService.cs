@@ -10,4 +10,5 @@ public interface IFoodOfferService
     Task DeleteAsync(int foodOfferId);
     Task<List<ReadFoodOffersDTO>> GetAvailableFoodOffersAsync();
     Task<List<ReadFoodOffersDTO>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId);
+    Task<FoodOffer> GetFoodOfferByFoodOfferIdAsync(int foodSellerId, int foodOfferId);
 }
