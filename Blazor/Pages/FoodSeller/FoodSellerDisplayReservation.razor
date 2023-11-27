@@ -1,0 +1,81 @@
+﻿@page "/FoodSellerDisplayReservation/{id:int}"
+@using HttpClients.ClientInterfaces
+@using Domain.DTOs
+@using System.Security.Claims;
+@inject IReservationService ReservationService;
+@attribute [Authorize]
+
+@if (reservation is not null)
+{
+    <div class="card">
+        <div>
+            <label>Title: @reservation.Title</label>
+        </div>
+        <div>
+            <label>Description: @reservation.Description</label>
+        </div>
+        <div>
+            <label>Price: @reservation.Price</label>
+        </div>
+        <div>
+            <label>Reserved by : @reservation.CustomerFirstName @reservation.CustomerLastName </label>
+        </div>
+   @if (reservation.IsCompleted)
+   {
+       <label>This reservation is already completed, therefore you cannot perform any actions.</label>
+        <div class="button-row">
+            <button @onclick="CompleteAsync" class="acceptbtn" disabled>Complete Reservation</button>
+            </div>
+   }
+   else
+   {
+       <div class="button-row">
+           <button @onclick="CompleteAsync" class="acceptbtn">Complete Reservation</button>
+       </div>
+   }
+        <label>@ErrorMessage</label>
+
+    </div>
+}
+
+@code {
+    private int AccountId;
+    private string ErrorMessage = "";
+    [Parameter] 
+    public int id { get; set; }
+
+    private ReadFoodSellerReservationDTO reservation { get; set; }
+
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        IEnumerable<ReadFoodSellerReservationDTO> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
+        reservation = temp.FirstOrDefault(r => r.ReservationNumber == id)!;
+        
+    }
+    
+    private async void CompleteAsync()
+    {
+        try
+        {
+            ErrorMessage = "";
+            await ReservationService.CompleteAsync(id);
+
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
+    }
+    
+}

@@ -6,9 +6,8 @@
 @inject IFoodOfferService foodOfferService
 @inject IReservationService reservationService
 @attribute [Authorize]
-<h3>DisplayFoodOffer</h3>
 
-
+<AuthorizeView Policy="MustBeFoodSeller">
 @if (foodOffer is not null)
 {
     <div class="card">
@@ -28,16 +27,30 @@
             <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
             <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
         </div>
+   @if (foodOffer.IsCompleted || foodOffer.IsReserved)
+   {
+       <label>This food offer is completed or reserved, therefore you cannot perform any actions.</label>
         <div class="button-row">
-            <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
-        </div>
-        <div class="button-row">
-            <button @onclick="UpdateAsync" class="acceptbtn">Delete Food Offer</button>
-        </div>
+            <button @onclick="UpdateAsync" class="acceptbtn" disabled>Edit Food Offer</button>
+            </div>
+       <div class="button-row">
+           <button @onclick="DeleteAsync" class="acceptbtn" disabled>Delete Food Offer</button>
+           </div>
+   }
+   else
+   {
+       <div class="button-row">
+           <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
+       </div>
+       <div class="button-row">
+           <button @onclick="DeleteAsync" class="acceptbtn" >Delete Food Offer</button>
+       </div>
+   }
+        <label>@ErrorMessage</label>
 
     </div>
 }
-
+</AuthorizeView>
 @code {
     private int AccountId;
     private string ErrorMessage = "";
@@ -87,7 +100,7 @@
             }
             else
             {
-                foodOffer = new FoodOffer(id, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute));
+                foodOffer = new FoodOffer(id, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute), foodOffer.IsReserved, foodOffer.IsCompleted);
                 await foodOfferService.UpdateAsync(foodOffer);
             }
         }
@@ -96,5 +109,21 @@
             ErrorMessage = e.Message;
         }
     }
+
+    private async void DeleteAsync()
+    {
+        try
+        {
+            ErrorMessage = "";
+            await foodOfferService.DeleteAsync(id);
+            Navmgr.NavigateTo("/ManageFoodOffers");
+
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
+    }
     
+}
 }

@@ -7,8 +7,10 @@ public interface IReservationService
     Task CreateAsync(ReservationCreationDTO dto);
     Task CompleteAsync(int reservationNumber);
     Task DeleteAsync(int reservationNumber);
-    Task<List<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId);
-    Task<List<ReadCustomerReservationDTO>> ReadCompletedCustomerReservations(int customerId);
-    Task<List<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId);
-    Task<List<ReadFoodSellerReservationDTO>> ReadCompletedFoodSellerReservations(int foodSellerId);
+    
+    Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId);
+
+    Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId);
+
+    
 }

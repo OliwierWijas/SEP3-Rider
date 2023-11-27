@@ -9,7 +9,7 @@ namespace Application.Logic;
 
 public class ReservationLogic : IReservationLogic
 {
-    public async Task<List<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
+    public async Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
     {
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
         {
@@ -32,8 +32,8 @@ public class ReservationLogic : IReservationLogic
                 WriteIndented = true,
                 PropertyNameCaseInsensitive = true
             };
-            
-            List<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<List<ReadCustomerReservationDTO>>(Json, options);
+                
+            IEnumerable<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadCustomerReservationDTO>>(Json, options);
 
             return reservations;
         }
@@ -44,7 +44,7 @@ public class ReservationLogic : IReservationLogic
         }
     }
 
-    public async Task<List<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
+    public async Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
     {
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
         {
@@ -59,17 +59,14 @@ public class ReservationLogic : IReservationLogic
                 FoodSellerId = foodSellerId
             });
             
-            string Json = response.List;
-            Console.WriteLine(Json);
-
+            string Json = response.List; 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
                 PropertyNameCaseInsensitive = true
             };
             
-            List<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<List<ReadFoodSellerReservationDTO>>(Json, options);
-
+            IEnumerable<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadFoodSellerReservationDTO>>(Json, options);
             return reservations;
         }
         catch (Exception e)

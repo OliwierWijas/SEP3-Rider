@@ -53,9 +53,10 @@ public class ReservationHttpClient : IReservationService
         }    
     }
 
-    public async Task<List<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
+    public async Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage response = await _client.GetAsync($"/CustomerReservations/{customerId}");
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
@@ -64,52 +65,24 @@ public class ReservationHttpClient : IReservationService
         }
 
         IEnumerable<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadCustomerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
-        reservations = reservations.Where(r => r.IsCompleted = false);
-        return reservations.ToList();
+        return reservations;
     }
-
-    public async Task<List<ReadCustomerReservationDTO>> ReadCompletedCustomerReservations(int customerId)
+    
+    public async Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
-        HttpResponseMessage response = await _client.GetAsync($"/CustomerReservations/{customerId}");
-        string content = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception(content);
-        }
-
-        IEnumerable<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadCustomerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
-        reservations = reservations.Where(r => r.IsCompleted = true);
-        return reservations.ToList();
-    }
-
-    public async Task<List<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
-    {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
         HttpResponseMessage response = await _client.GetAsync($"/FoodSellerReservations/{foodSellerId}");
         string content = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(content);
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(content);
         }
 
         IEnumerable<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadFoodSellerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
-        reservations = reservations.Where(r => r.IsCompleted = false);
-        return reservations.ToList();
+     
+        return reservations;
     }
-
-    public async Task<List<ReadFoodSellerReservationDTO>> ReadCompletedFoodSellerReservations(int foodSellerId)
-    {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
-        HttpResponseMessage response = await _client.GetAsync($"/FoodSellerReservations/{foodSellerId}");
-        string content = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception(content);
-        }
-
-        IEnumerable<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadFoodSellerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
-        reservations = reservations.Where(r => r.IsCompleted = true);
-        return reservations.ToList();
-    }
+    
 }

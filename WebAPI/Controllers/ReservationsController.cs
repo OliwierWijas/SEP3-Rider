@@ -48,7 +48,7 @@ public class ReservationsController : ControllerBase
     }
     
     [HttpGet, Route("CustomerReservations/{customerId:int}"), Authorize(Policy = "MustBeCustomer")]
-    public async Task<ActionResult<List<ReadCustomerReservationDTO>>> GetCustomerReservationsAsync([FromRoute]int customerId)
+    public async Task<ActionResult<IEnumerable<ReadCustomerReservationDTO>>> GetCustomerReservationsAsync([FromRoute]int customerId)
     {
         try
         {
@@ -63,7 +63,7 @@ public class ReservationsController : ControllerBase
     }
     
     [HttpGet, Route("FoodSellerReservations/{foodSellerId:int}"), Authorize(Policy = "MustBeFoodSeller")]
-    public async Task<ActionResult<List<ReadFoodSellerReservationDTO>>> GetFoodSellerReservationsAsync([FromRoute]int foodSellerId)
+    public async Task<ActionResult<IEnumerable<ReadFoodSellerReservationDTO>>> GetFoodSellerReservationsAsync([FromRoute]int foodSellerId)
     {
         try
         {

@@ -29,4 +29,6 @@ public class ReadFoodSellerReservationDTO
         CustomerLastName = customerLastName;
         IsCompleted = isCompleted;
     }
+    
+    
 }

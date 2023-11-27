@@ -1,4 +1,4 @@
-﻿@page "/UpdateCustomer"
+﻿@page "/ManageAccount"
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
 @using System.Security.Claims
@@ -49,7 +49,7 @@
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
 
-    protected override async void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         AuthenticationState authState = await AuthState;
         ClaimsPrincipal user = authState.User;
@@ -90,6 +90,7 @@
             Message = "";
             await CustomerService.DeleteAsync(dto.AccountId);
             Message = "Delete proceeded.";
+            ////to index and log out
         }
         catch (Exception e)
         {

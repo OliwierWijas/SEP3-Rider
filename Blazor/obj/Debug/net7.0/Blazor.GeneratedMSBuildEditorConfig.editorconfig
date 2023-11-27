@@ -24,12 +24,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodOffersOverview.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZE9mZmVyc092ZXJ2aWV3LnJhem9y
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/FoodOffersOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRm9vZE9mZmVyc092ZXJ2aWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSellerDisplayFoodOffer.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlckRpc3BsYXlGb29kT2ZmZXIucmF6b3I=
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayFoodOffer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxGb29kU2VsbGVyRGlzcGxheUZvb2RPZmZlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayReservation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxGb29kU2VsbGVyRGlzcGxheVJlc2VydmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageFoodOffers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxNYW5hZ2VGb29kT2ZmZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageReservations.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxNYW5hZ2VSZXNlcnZhdGlvbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Index.razor]
@@ -44,12 +56,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/ManageFoodOffers.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlRm9vZE9mZmVycy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/UpdateCustomer.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlQ3VzdG9tZXIucmF6b3I=
+[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/ManageAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Shared/SurveyPrompt.razor]

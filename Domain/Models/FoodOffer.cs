@@ -8,8 +8,10 @@ public class FoodOffer
     public double Price { get; set; }
     public MyDate StartPickupTime { get; set; }
     public MyDate EndPickupTime { get; set; }
+    public bool IsReserved { get; set; }
+    public bool IsCompleted { get; set; }
 
-    public FoodOffer(int id, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime)
+    public FoodOffer(int id, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime, bool isReserved, bool isCompleted)
     {
         Id = id;
         Title = title;
@@ -17,5 +19,7 @@ public class FoodOffer
         Price = price;
         StartPickupTime = startPickupTime;
         EndPickupTime = endPickupTime;
+        IsReserved = isReserved;
+        IsCompleted = isCompleted;
     }
 }
