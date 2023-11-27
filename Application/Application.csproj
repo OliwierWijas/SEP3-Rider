@@ -16,6 +16,7 @@
         <Protobuf Include="Protos\LoginService.proto" GrpcServices="Client" />
         <Protobuf Include="Protos\FoodOfferService.proto" GrpcServices="Client" />
         <Protobuf Include="Protos\ReservationService.proto" GrpcServices="Client" />
+        <Protobuf Include="Protos\RatingAndCommentService.proto" GrpcServices="Client" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Google.Protobuf" Version="3.24.4" />

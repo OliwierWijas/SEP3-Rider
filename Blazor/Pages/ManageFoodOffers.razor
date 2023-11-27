@@ -6,7 +6,6 @@
 @using Microsoft.AspNetCore.Components
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
-<h3>FoodOffersOverview</h3>
 <AuthorizeView Policy="MustBeFoodSeller">
     @if (_foodOffers == null)
         {

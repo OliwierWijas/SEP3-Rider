@@ -1,0 +1,53 @@
+﻿syntax = "proto3";
+option java_multiple_files = true;
+package ratingAndComment;
+option csharp_namespace = "GrpcClient";
+
+message CreateAndUpdateRatingRequest{
+    int32 foodSellerId =1;
+    int32 customerId =2;
+    int32 rate =3;
+}
+message CreateCommentRequest{
+    int32 foodSellerId = 1;
+    int32 customerId =2;
+    string comment =3;
+}
+message DeleteCommentRequest{
+    int32 commentId =1;
+}
+message ReadCommentsByFoodSellerIdRequest{
+    int32 foodSellerId=1;
+}
+message ReadAverageRatingByFoodSellerIdRequest{
+    int32 foodSellerId =1;
+}
+message ReadRatingRequest{
+    int32 customerId=1;
+    int32 foodSellerId =2;
+}
+
+
+message RatingAndCommentEmptyResponse{};
+message ReadCommentsByFoodSellerIdResponse{
+    string list =1;
+}
+message ReadAverageRatingByFoodSellerIdResponse{
+    double rate =1;
+}
+message ReadRatingResponse{
+    int32 rate =1;
+}
+
+service RatingAndCommentService{
+    rpc createRating(CreateAndUpdateRatingRequest) returns (RatingAndCommentEmptyResponse);
+    rpc createComment(CreateCommentRequest) returns (RatingAndCommentEmptyResponse);
+    rpc updateRating(CreateAndUpdateRatingRequest) returns (RatingAndCommentEmptyResponse);
+    rpc deleteComment(DeleteCommentRequest) returns (RatingAndCommentEmptyResponse);
+    rpc readCommentsByFoodSellerId(ReadCommentsByFoodSellerIdRequest) returns (ReadCommentsByFoodSellerIdResponse);
+    rpc readAverageRatingByFoodSellerId(ReadAverageRatingByFoodSellerIdRequest) returns (ReadAverageRatingByFoodSellerIdResponse);
+    rpc readRating(ReadRatingRequest) returns (ReadRatingResponse);
+}
+
+
+
