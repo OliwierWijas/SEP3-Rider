@@ -1,22 +1,48 @@
 ﻿@page "/DisplayFoodSeller"
 @using System.Security.Claims
 @using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject IFoodSellerService FoodSellerService
+@inject IRatingAndCommentService RatingAndCommentService
 @attribute [Authorize]
 <AuthorizeView>
     <div class="card">
         <div class="form-group field">
-            <label>Name:</label>
+            <label>Name: @dto.Name </label>
         </div>
         <div class="form-group field">
-            <label>Email:</label>
+            <label>Email: @dto.Email </label>
         </div>
         <div class="form-group field">
-            <label>Address:</label>
+            <label>Address: @dto.Address </label>
         </div>
         <div class="form-group field">
-            <label>Phone number:</label>
+            <label>Phone number: @dto.PhoneNumber </label>
         </div>
+        <div class="form-group field">
+            <label>Average rating: @averageRating </label>
+        </div>
+        
     </div>
+     @if (comments == null)
+            {
+            }
+            else if (!comments.Any())
+            {
+                <p>No comments to display.</p>
+            }
+            else
+            {
+                @foreach (var item in comments)
+                {
+                    <div class="card" style=" height: 200px; width: 100%">
+                        <h3>@item.CustomerFirstName @item.CustomerLastName</h3>
+                        <h6>@item.Date.ToString()</h6>
+                        <h6>@item.Content</h6>
+                    </div>
+                }
+                
+            }
 </AuthorizeView>
 @code {
     [CascadingParameter]
@@ -24,7 +50,10 @@
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
     private int AccountId;
-    
+    private ReadFoodSellerDTO dto;
+    private List<ReadCommentDTO> comments;
+    private double averageRating;
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -34,9 +63,8 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        
-        
-       
-    }
-
+        dto = await FoodSellerService.GetAsync(AccountId);
+        comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(AccountId);
+        averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(AccountId);
+    }   
 }

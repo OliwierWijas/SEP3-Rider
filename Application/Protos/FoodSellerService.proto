@@ -39,9 +39,18 @@ message UpdateFoodSellerPasswordRequest {
 message DeleteFoodSellerAccountRequest {
   int32 accountId = 1;
 }
+message GetFoodSellerByIdRequest{
+  int32 accountId =1;
+}
 
 message FoodSellerEmptyResponse {
-
+}
+message GetFoodSellerByIdResponse{
+  int32 accountId =1;
+  string email=2;
+  string phoneNumber=3;
+  string name=4;
+  string address=5;
 }
 
 service FoodSellerService {
@@ -52,4 +61,5 @@ service FoodSellerService {
   rpc UpdatePassword(UpdateFoodSellerPasswordRequest) returns (FoodSellerEmptyResponse);
   rpc UpdatePhoneNumber(UpdateFoodSellerPhoneNumberRequest) returns (FoodSellerEmptyResponse);
   rpc DeleteAccount(DeleteFoodSellerAccountRequest) returns (FoodSellerEmptyResponse);
+  rpc GetFoodSellerById(GetFoodSellerByIdRequest) returns (GetFoodSellerByIdResponse);
 }

@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text.Json;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
 
@@ -47,5 +48,21 @@ public class FoodSellerHttpClient : IFoodSellerService
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }    
+    }
+
+    public async Task<ReadFoodSellerDTO> GetAsync(int accountId)
+    {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        HttpResponseMessage response = await _client.GetAsync($"/FoodSellers/{accountId}");
+        string content = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(content);
+        }
+        ReadFoodSellerDTO dto = JsonSerializer.Deserialize<ReadFoodSellerDTO>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
+        return dto;
     }
 }

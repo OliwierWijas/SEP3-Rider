@@ -1,6 +1,7 @@
 ﻿using Application.LogicInterfaces;
 using Domain.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -78,6 +79,21 @@ public class FoodSellersController : ControllerBase
         {
             await foodSellerLogic.DeleteAccount(accountId);
             return Ok();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpGet("{accountId:int}")]
+    public async Task<ActionResult<ReadFoodSellerDTO>> GetAsync([FromRoute] int accountId)
+    {
+        try
+        { 
+            var result  = await foodSellerLogic.GetFoodSellerById(accountId);
+            return Ok(result);
         }
         catch (Exception e)
         {

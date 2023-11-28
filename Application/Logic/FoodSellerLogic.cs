@@ -191,6 +191,31 @@ public class FoodSellerLogic : IFoodSellerLogic
             throw new Exception(message[3]);
         }     
     }
-    
-    
+
+    public async Task<ReadFoodSellerDTO> GetFoodSellerById(int accountId)
+    {
+        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
+        {
+            Credentials = ChannelCredentials.Insecure
+        });
+        var client = new FoodSellerService.FoodSellerServiceClient(channel);
+        
+        try
+        {
+             GetFoodSellerByIdResponse response = await client.GetFoodSellerByIdAsync(new GetFoodSellerByIdRequest
+            {
+                AccountId = accountId
+            });
+             ReadFoodSellerDTO dto = new ReadFoodSellerDTO(response.AccountId, response.Email, response.PhoneNumber,
+                 response.Name, response.Address);
+             return dto;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            string[] message = e.Message.Split("\"");
+            throw new Exception(message[3]);
+        }
+        
+    }
 }
