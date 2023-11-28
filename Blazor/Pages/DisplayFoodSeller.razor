@@ -24,8 +24,18 @@
             <div class="form-group field">
                 <label>Average rating: @averageRating </label>
             </div>
-
+            <AuthorizeView Policy="MustBeCustomer">
+                <div class="rz-p-sm-12 rz-text-align-center">
+                    <RadzenDropDown @bind-Value=@value Data=@rates Style="width: 100%; max-width: 400px;" />
+                </div>
+                <button @onclick="CreateRatingAsync">Rate</button>
+            </AuthorizeView>
         </div>
+        <label>Comments:</label>
+        <AuthorizeView Policy="MustBeCustomer">
+            <textarea placeholder="Write a comment..." type="text" @bind="comment"/>
+            <button @onclick="CreateCommentAsync">Comment</button>
+        </AuthorizeView>
         @if (comments == null)
         {
         }
@@ -52,10 +62,15 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
+    private int accountId;
     [Parameter] public int id { get; set; }
     private ReadFoodSellerDTO dto;
+    private string errorMessage = "";
     private List<ReadCommentDTO> comments;
+    private string comment = "";
     private double averageRating;
+    private int value = 5;
+    IEnumerable<int> rates;
 
 
     protected override async Task OnInitializedAsync()
@@ -65,8 +80,38 @@
         _isLoggedIn = user.Identity != null;
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
+        accountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         dto = await FoodSellerService.GetAsync(id);
         comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
         averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
-    }   
+        rates = new[] { 1, 2, 3, 4, 5 };
+    }
+
+    private async Task CreateCommentAsync()
+    {
+        errorMessage = "";
+        try
+        {
+            await RatingAndCommentService.CreateCommentAsync(new CommentBasicDTO(id, accountId, comment));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorMessage = e.Message;
+        }
+    }
+    private async Task CreateRatingAsync()
+    {
+        errorMessage = "";
+        try
+        {
+            await RatingAndCommentService.CreateRatingAsync(new RatingBasicDTO(id, accountId, value));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorMessage = e.Message;
+        }
+    }
+    
 }
