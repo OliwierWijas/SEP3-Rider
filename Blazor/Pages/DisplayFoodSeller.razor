@@ -24,18 +24,23 @@
             <div class="form-group field">
                 <label>Average rating: @averageRating </label>
             </div>
+        </div>
+    }
+        </AuthorizeView>
             <AuthorizeView Policy="MustBeCustomer">
                 <div class="rz-p-sm-12 rz-text-align-center">
-                    <RadzenDropDown @bind-Value=@value Data=@rates Style="width: 100%; max-width: 400px;" />
+                    <RadzenDropDown @bind-Value=@value Data=@rates Style="width: 100%; max-width: 400px;"/>
                 </div>
                 <button @onclick="CreateRatingAsync">Rate</button>
             </AuthorizeView>
-        </div>
-        <label>Comments:</label>
+    <AuthorizeView>
+    <label>Comments:</label>
+     </AuthorizeView> 
         <AuthorizeView Policy="MustBeCustomer">
             <textarea placeholder="Write a comment..." type="text" @bind="comment"/>
             <button @onclick="CreateCommentAsync">Comment</button>
         </AuthorizeView>
+<AuthorizeView>
         @if (comments == null)
         {
         }
@@ -55,7 +60,7 @@
             }
 
         }
-    }
+    
 </AuthorizeView>
 @code {
     [CascadingParameter]
@@ -93,6 +98,8 @@
         try
         {
             await RatingAndCommentService.CreateCommentAsync(new CommentBasicDTO(id, accountId, comment));
+            comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
+            comment = "";
         }
         catch (Exception e)
         {
@@ -106,6 +113,9 @@
         try
         {
             await RatingAndCommentService.CreateRatingAsync(new RatingBasicDTO(id, accountId, value));
+            averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
+            value = 5;
+
         }
         catch (Exception e)
         {

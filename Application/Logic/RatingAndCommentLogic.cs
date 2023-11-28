@@ -28,8 +28,24 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
         }
         catch (Exception e)
         {
-            string[] message = e.Message.Split("\"");
-            throw new Exception(message[3]);
+            if (e.Message.Contains("User already rated the Food Seller."))
+            {
+                try
+                {
+                    await UpdateRating(dto);
+                }
+                catch (Exception ex)
+                {
+                    string[] message1 = ex.Message.Split("\"");
+                    throw new Exception(message1[3]);
+                }
+                
+            }
+            else
+            {
+                string[] message = e.Message.Split("\"");
+                throw new Exception(message[3]);
+            } 
         }
     }
 
