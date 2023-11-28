@@ -11,6 +11,12 @@
 <AuthorizeView Policy="MustBeCustomer">
 @if (foodOffer is not null)
 {
+    @if (foodOffer.IsReserved)
+    {
+        <div class="form-group field">
+            <label>Reservation number: @reservationNumber</label>
+        </div>
+    }
     <div class="card">
         <div class="form-group field">
             <label>Title: @foodOffer.Title</label>
@@ -23,6 +29,12 @@
         </div>
         <div class="form-group field">
             <label>Pick-up time interval: @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</label>
+        </div>
+        <div class="form-group field">
+            <label>Food seller name: @foodOffer.FoodSellerName</label>
+        </div>
+        <div class="form-group field">
+            <label>Address: @foodOffer.FoodSellerAddress</label>
         </div>
         
         
@@ -52,9 +64,8 @@
     private string ErrorMessage = "";
     [Parameter] 
     public int id { get; set; }
-
     private ReadFoodOffersDTO foodOffer { get; set; }
-
+    private int reservationNumber;
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
@@ -69,6 +80,11 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         foodOffer = await foodOfferService.GetFoodOfferByIdAsync(id);
+        if (foodOffer.IsReserved)
+        {
+            IEnumerable<ReadCustomerReservationDTO> temp = await reservationService.ReadCustomerReservations(AccountId);
+            reservationNumber = temp.FirstOrDefault(r => r.FoodOfferId == id).ReservationNumber;
+        }
     }
 
     private async void CancelAsync()

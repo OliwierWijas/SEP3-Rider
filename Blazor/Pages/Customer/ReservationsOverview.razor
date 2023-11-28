@@ -1,0 +1,69 @@
+@page "/ReservationOverview"
+@using Domain
+@using Domain.DTOs
+@using System.Security.Claims
+@using HttpClients.ClientInterfaces
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavMgr
+@inject IFoodOfferService FoodOfferService
+@inject IReservationService ReservationService
+@attribute [Authorize]
+<AuthorizeView Policy="MustBeCustomer">
+    @if (_reservations == null)
+    {
+    }
+    else if (!_reservations.Any())
+    {
+        <p>No reservations to display.</p>
+    }
+    else
+    {
+        <label>Uncompleted reservations:</label>
+        @foreach (var item in _reservations)
+        {
+            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                <h3>@item.Title</h3>
+                <h6>@item.Price</h6>
+            </div>
+        }
+        <label>Completed reservations: </label>
+        @foreach (var item in _completedReservations)
+        {
+            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                <h3>@item.Title</h3>
+                <h6>@item.Price</h6>
+            </div>
+        }
+
+    }
+
+</AuthorizeView>
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <label style="color: red">@ErrorMessage</label>
+}
+
+@code {
+    private int AccountId;
+    private IEnumerable<ReadCustomerReservationDTO> _reservations;
+    private IEnumerable<ReadCustomerReservationDTO> _completedReservations;
+    private string ErrorMessage = "";
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        IEnumerable<ReadCustomerReservationDTO> temp = await ReservationService.ReadCustomerReservations(AccountId);
+        _reservations = temp.Where(r => r.IsCompleted == false);
+        _completedReservations = temp.Where(r => r.IsCompleted);
+    }
+    
+}
