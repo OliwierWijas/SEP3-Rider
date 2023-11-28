@@ -18,6 +18,7 @@ builder.Services.AddScoped<ICustomerService, CustomerHttpClient>();
 builder.Services.AddScoped<IFoodSellerService, FoodSellerHttpClient>();
 builder.Services.AddScoped<IFoodOfferService, FoodOfferHttpClient>();
 builder.Services.AddScoped<IReservationService, ReservationHttpClient>();
+builder.Services.AddScoped<IRatingAndCommentService, RatingAndCommentHttpClient>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
 AuthorizationPolicies.AddPolicies(builder.Services);

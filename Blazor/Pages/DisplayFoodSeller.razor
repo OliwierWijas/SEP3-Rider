@@ -24,21 +24,8 @@
             <div class="form-group field">
                 <label>Average rating: @averageRating </label>
             </div>
-            <AuthorizeView Policy="MustBeCustomer">
-                <div class="rz-p-sm-12 rz-text-align-center">
-                    <RadzenDropDown @bind-Value=@value Data=@rates Style="width: 100%; max-width: 400px;"/>
-                </div>
-                <button @onclick="CreateRateAsync">Rate</button>
-            </AuthorizeView>
-        </div>
-        <label>Comments: </label>
-        <AuthorizeView Policy="MustBeCustomer">
-            <div class="form-group field">
-                <textarea placeholder="Write a comment" @bind="comment"/>
-            </div>
-            <button @onclick="CreateCommentAsync">Send</button>
 
-        </AuthorizeView>
+        </div>
         @if (comments == null)
         {
         }
@@ -52,7 +39,7 @@
             {
                 <div class="card" style=" height: 200px; width: 100%">
                     <h3>@item.CustomerFirstName @item.CustomerLastName</h3>
-                    <h6>@item.Date.ToString()</h6>
+                    <h6>@item.Date.ToStringWithOutHourAndMinutes()</h6>
                     <h6>@item.Content</h6>
                 </div>
             }
@@ -65,16 +52,11 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
-    private int accountId;
     [Parameter] public int id { get; set; }
     private ReadFoodSellerDTO dto;
     private List<ReadCommentDTO> comments;
-    private string comment;
     private double averageRating;
-    private int rate;
-    private int value = 5;
-    private string errorMessage = "";
-    IEnumerable<int> rates;
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -83,36 +65,8 @@
         _isLoggedIn = user.Identity != null;
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
-        accountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         dto = await FoodSellerService.GetAsync(id);
         comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
         averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
-        rates = new[] { 1, 2, 3, 4, 5 };
-    }
-
-    private async Task CreateCommentAsync()
-    {
-        try
-        {
-            await RatingAndCommentService.CreateCommentAsync(new CommentBasicDTO(id, accountId, comment));
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            errorMessage = e.Message;
-        }
-    }
-
-    private async Task CreateRateAsync()
-    {
-        try
-        {
-            await RatingAndCommentService.CreateRatingAsync(new RatingBasicDTO(id, accountId, value));
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            errorMessage = e.Message;
-        }
-    }
+    }   
 }
