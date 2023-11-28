@@ -1,0 +1,102 @@
+@page "/CustomerDisplayFoodOffer/{id:int}"
+@using System.Security.Claims
+@using Domain
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject NavigationManager Navmgr
+@inject IFoodOfferService foodOfferService
+@inject IReservationService reservationService
+@attribute [Authorize]
+
+<AuthorizeView Policy="MustBeCustomer">
+@if (foodOffer is not null)
+{
+    <div class="card">
+        <div class="form-group field">
+            <label>Title: @foodOffer.Title</label>
+        </div>
+        <div class="form-group field">
+            <label>Description: @foodOffer.Description</label>
+        </div>
+        <div class="form-group field">
+            <label>Price: @foodOffer.Price</label>
+        </div>
+        <div class="form-group field">
+            <label>Pick-up time interval: @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</label>
+        </div>
+        
+        
+   @if (foodOffer.IsReserved)
+   {
+       <div class="button-row">
+           <button @onclick="CancelAsync" class="acceptbtn">Cancel reservation</button>
+           </div>
+   }
+   else if(foodOffer.IsCompleted)
+   {
+       <label>This food offer is completed.</label>
+   }
+   else
+   {
+       <div class="button-row">
+           <button @onclick="ReserveAsync" class="acceptbtn">Reserve</button>
+       </div>
+   }
+        <label>@ErrorMessage</label>
+
+    </div>
+}
+</AuthorizeView>
+@code {
+    private int AccountId;
+    private string ErrorMessage = "";
+    [Parameter] 
+    public int id { get; set; }
+
+    private FoodOffer foodOffer { get; set; }
+
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        foodOffer = await foodOfferService.GetFoodOfferByFoodOfferIdAsync(AccountId, id);
+        Console.WriteLine(foodOffer.Title);
+        
+    }
+
+    private async void CancelAsync()
+    {
+        try
+        {
+            await reservationService.DeleteAsync(id);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            ErrorMessage = e.Message;
+        }
+    }
+    
+    private async void ReserveAsync()
+    {
+        try
+        {
+            await reservationService.CreateAsync(new ReservationCreationDTO(AccountId, id));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            ErrorMessage = e.Message;
+        }
+    }
+
+}

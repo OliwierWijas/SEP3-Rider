@@ -641,19 +641,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dominika\\.nuget\\packages\\": {}
+    "/Users/simonadraghici/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+      "projectUniqueName": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Application\\obj\\",
+      "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/Application.csproj",
+      "packagesPath": "/Users/simonadraghici/.nuget/packages/",
+      "outputPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/simonadraghici/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -665,8 +665,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
+            "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj": {
+              "projectPath": "/Users/simonadraghici/RiderProjects/SEP3Rider/Domain/Domain.csproj"
             }
           }
         }
@@ -716,7 +716,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

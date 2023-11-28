@@ -1,6 +1,56 @@
 ﻿@page "/FoodOffersOverview"
-<h3>FoodOffersOverview</h3>
+@using Domain
+@using Domain.DTOs
+@using System.Security.Claims
+@using HttpClients.ClientInterfaces
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavMgr
+@inject IFoodOfferService FoodOfferService
+@attribute [Authorize]
+<AuthorizeView Policy="MustBeCustomer">
+    @if (_foodOffers == null)
+        {
+        }
+        else if (!_foodOffers.Any())
+        {
+            <p>No food offers to display</p>
+        }
+        else
+        {
+            @foreach (var item in _foodOffers)
+            {
+                <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
+                    <h3>@item.Title</h3>
+                    <h6>@item.Price</h6>
+                </div>
+            }
+            
+        }
+    
+</AuthorizeView>
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <label style="color: red">@ErrorMessage</label>
+}
 
 @code {
+    private int AccountId;
+    private List<ReadFoodOffersDTO> _foodOffers;
+    private string ErrorMessage = "";
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        _foodOffers = await FoodOfferService.GetAvailableFoodOffersAsync();
+    }
     
 }
