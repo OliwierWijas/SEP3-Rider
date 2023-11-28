@@ -1,4 +1,4 @@
-﻿@page "/DisplayFoodSeller"
+﻿@page "/DisplayFoodSeller/{id:int}"
 @using System.Security.Claims
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
@@ -49,7 +49,7 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
-    private int AccountId;
+    [Parameter] public int id { get; set; }
     private ReadFoodSellerDTO dto;
     private List<ReadCommentDTO> comments;
     private double averageRating;
@@ -62,9 +62,8 @@
         _isLoggedIn = user.Identity != null;
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
-        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        dto = await FoodSellerService.GetAsync(AccountId);
-        comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(AccountId);
-        averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(AccountId);
+        dto = await FoodSellerService.GetAsync(id);
+        comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
+        averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
     }   
 }
