@@ -31,7 +31,7 @@ public class ReservationsController : ControllerBase
         }
     }
 
-    [HttpDelete("{reservationNumber:int}"), Authorize(Policy = "MustBeCustomer")]
+    [HttpDelete("CustomerReservations/{reservationNumber:int}"), Authorize(Policy = "MustBeCustomer")]
     public async Task<ActionResult> DeleteAsync([FromRoute] int reservationNumber)
     {
 

@@ -38,15 +38,15 @@
         </div>
         
         
-   @if (foodOffer.IsReserved)
+   @if (foodOffer.IsCompleted)
+   {
+       <label>This food offer is completed.</label>
+   }
+   else if(foodOffer.IsReserved)
    {
        <div class="button-row">
            <button @onclick="CancelAsync" class="acceptbtn">Cancel reservation</button>
-           </div>
-   }
-   else if(foodOffer.IsCompleted)
-   {
-       <label>This food offer is completed.</label>
+       </div>
    }
    else
    {
@@ -91,7 +91,7 @@
     {
         try
         {
-            await reservationService.DeleteAsync(id);
+            await reservationService.DeleteAsync(reservationNumber);
         }
         catch (Exception e)
         {

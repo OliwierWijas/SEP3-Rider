@@ -136,18 +136,15 @@ public class FoodOfferLogic: IFoodOfferLogic
 
     public async Task<ReadFoodOffersDTO> ReadFoodOfferById(int id)
     {
-        Console.WriteLine(id);
-        
         try
         {
             ReadFoodOfferResponse response = await client.readFoodOfferByIdAsync(new ReadFoodOfferByIdRequest
             {
                 Id = id
             });
-            Console.WriteLine(response);
+            
             string JsonStartTime = response.StartPickUpTime;
             string JsonEndTime = response.EndPickUpTime;
-
             JsonSerializerOptions? options = new JsonSerializerOptions
             {
                 WriteIndented = true,
@@ -158,7 +155,6 @@ public class FoodOfferLogic: IFoodOfferLogic
             ReadFoodOffersDTO dto = new ReadFoodOffersDTO(response.Id, response.FoodSellerId, response.Title, response.Description,
                 response.Price, start, end, response.FoodSellerName, response.FoodSellerAddress, response.IsReserved,
                 response.IsCompleted);
-            Console.WriteLine(dto.Title);
             return dto;
         }
         catch (Exception e)

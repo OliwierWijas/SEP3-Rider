@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Security.AccessControl;
+using System.Text.Json;
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Grpc.Core;
@@ -25,7 +26,6 @@ public class ReservationLogic : IReservationLogic
             });
             
             string Json = response.List;
-            Console.WriteLine(Json);
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
@@ -99,6 +99,7 @@ public class ReservationLogic : IReservationLogic
         catch (Exception e)
         {
             string[] message = e.Message.Split("\"");
+            Console.WriteLine(e.Message);
             throw new Exception(message[3]);
         }
     }

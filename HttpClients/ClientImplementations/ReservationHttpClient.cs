@@ -45,10 +45,11 @@ public class ReservationHttpClient : IReservationService
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
-        HttpResponseMessage response = await _client.DeleteAsync($"/Reservations/{reservationNumber}");
+        HttpResponseMessage response = await _client.DeleteAsync($"/CustomerReservations/{reservationNumber}");
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
             throw new Exception(content);
         }    
     }
