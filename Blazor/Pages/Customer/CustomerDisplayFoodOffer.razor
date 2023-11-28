@@ -53,7 +53,7 @@
     [Parameter] 
     public int id { get; set; }
 
-    private FoodOffer foodOffer { get; set; }
+    private ReadFoodOffersDTO foodOffer { get; set; }
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -68,9 +68,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        foodOffer = await foodOfferService.GetFoodOfferByFoodOfferIdAsync(AccountId, id);
-        Console.WriteLine(foodOffer.Title);
-        
+        foodOffer = await foodOfferService.GetFoodOfferByIdAsync(id);
     }
 
     private async void CancelAsync()

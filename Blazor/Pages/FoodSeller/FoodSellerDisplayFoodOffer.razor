@@ -77,7 +77,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        foodOffer = await foodOfferService.GetFoodOfferByFoodOfferIdAsync(AccountId, id);
+        foodOffer = await foodOfferService.GetFoodOfferAsync(AccountId, id);
         Console.WriteLine(foodOffer.Title);
         Title = foodOffer.Title;
         Description = foodOffer.Description;

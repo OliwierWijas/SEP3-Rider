@@ -133,4 +133,38 @@ public class FoodOfferLogic: IFoodOfferLogic
             throw new Exception(message[3]);
         }
     }
+
+    public async Task<ReadFoodOffersDTO> ReadFoodOfferById(int id)
+    {
+        Console.WriteLine(id);
+        
+        try
+        {
+            ReadFoodOfferResponse response = await client.readFoodOfferByIdAsync(new ReadFoodOfferByIdRequest
+            {
+                Id = id
+            });
+            Console.WriteLine(response);
+            string JsonStartTime = response.StartPickUpTime;
+            string JsonEndTime = response.EndPickUpTime;
+
+            JsonSerializerOptions? options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNameCaseInsensitive = true
+            };
+            MyDate? start = JsonSerializer.Deserialize<MyDate>(JsonStartTime, options);
+            MyDate? end = JsonSerializer.Deserialize<MyDate>(JsonEndTime, options);
+            ReadFoodOffersDTO dto = new ReadFoodOffersDTO(response.Id, response.FoodSellerId, response.Title, response.Description,
+                response.Price, start, end, response.FoodSellerName, response.FoodSellerAddress, response.IsReserved,
+                response.IsCompleted);
+            Console.WriteLine(dto.Title);
+            return dto;
+        }
+        catch (Exception e)
+        {
+            string[] message = e.Message.Split("\"");
+            throw new Exception(message[3]);
+        }
+    }
 }

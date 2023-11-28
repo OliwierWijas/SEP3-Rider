@@ -93,4 +93,22 @@ public class FoodOffersController: ControllerBase
         }
     }
 
+    [HttpGet, Route("FoodOffer/{id:int}"), Authorize(Policy = "MustBeCustomer")]
+    public async Task<ActionResult<ReadFoodOffersDTO>> GetFoodOfferByIdAsync([FromRoute] int id)
+    {
+        Console.WriteLine("Here");
+ 
+        try
+        {
+            var result = await foodOfferLogic.ReadFoodOfferById(id);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+
 }

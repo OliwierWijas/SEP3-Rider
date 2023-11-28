@@ -10,4 +10,5 @@ public interface IFoodOfferLogic
     Task<List<ReadFoodOffersDTO>> ReadFoodOffersByFoodSellerId(int foodSellerId);
     Task UpdateFoodOffer(FoodOffer foodOffer);
     Task DeleteFoodOffer(int foodOfferId);
+    Task<ReadFoodOffersDTO> ReadFoodOfferById(int id);
 }
