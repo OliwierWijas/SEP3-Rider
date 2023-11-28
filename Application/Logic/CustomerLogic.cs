@@ -9,14 +9,14 @@ namespace Application.Logic;
 
 public class CustomerLogic : ICustomerLogic
 {
+    private CustomerService.CustomerServiceClient client;
+    public CustomerLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new CustomerService.CustomerServiceClient(channel);
+    }
     public async Task CreateAsync(CustomerCreationDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-        
         try
         {
             await client.CreateCustomerAsync(new CreateCustomerRequest
@@ -39,13 +39,6 @@ public class CustomerLogic : ICustomerLogic
     {
         if (dto.Email.Length > 100)
             throw new InvalidDataException("Email cannot be longer than 100 characters.");
-        
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-
         try
         {
             await client.UpdateEmailAsync(new UpdateCustomerEmailRequest
@@ -67,13 +60,6 @@ public class CustomerLogic : ICustomerLogic
     {
         if (dto.Password.Length > 16 || dto.Password.Length < 8)
             throw new InvalidDataException("Password must have between 8 and 16 characters.");
-        
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-
         try
         {
             await client.UpdatePasswordAsync(new UpdateCustomerPasswordRequest
@@ -94,13 +80,6 @@ public class CustomerLogic : ICustomerLogic
     {
         if (dto.PhoneNumber.Length > 20)
             throw new InvalidDataException("Phone number cannot be longer than 20 characters.");
-        
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-
         try
         {
             await client.UpdatePhoneNumberAsync(new UpdateCustomerPhoneNumberRequest
@@ -119,12 +98,6 @@ public class CustomerLogic : ICustomerLogic
 
     public async Task DeleteAccount(int accountId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new CustomerService.CustomerServiceClient(channel);
-
         try
         {
             await client.DeleteAccountAsync(new DeleteCustomerAccountRequest

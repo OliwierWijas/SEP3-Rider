@@ -10,14 +10,14 @@ namespace Application.Logic;
 
 public class FoodOfferLogic: IFoodOfferLogic
 {
+    private FoodOfferService.FoodOfferServiceClient client;
+    public FoodOfferLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new FoodOfferService.FoodOfferServiceClient(channel);
+    }
     public async Task CreateAsync(FoodOfferCreationDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodOfferService.FoodOfferServiceClient(channel);
-        
         try
         {
             await client.createFoodOfferAsync(new CreateFoodOfferRequest
@@ -47,12 +47,6 @@ public class FoodOfferLogic: IFoodOfferLogic
 
     public async Task<List<ReadFoodOffersDTO>> ReadAvailableFoodOffers()
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodOfferService.FoodOfferServiceClient(channel);
-        
         try
         {
             ReadFoodOffersListResponse response = await client.readAvailableFoodOffersAsync(new ReadAvailableFoodOffersRequest());
@@ -76,12 +70,6 @@ public class FoodOfferLogic: IFoodOfferLogic
 
     public async Task<List<ReadFoodOffersDTO>> ReadFoodOffersByFoodSellerId(int foodSellerId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodOfferService.FoodOfferServiceClient(channel);
-        
         try
         {
             ReadFoodOffersListResponse response = await client.readFoodOffersByFoodSellerIdAsync(new ReadFoodOffersByFoodSellerIdRequest
@@ -110,12 +98,6 @@ public class FoodOfferLogic: IFoodOfferLogic
 
     public async Task UpdateFoodOffer(FoodOffer foodOffer)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodOfferService.FoodOfferServiceClient(channel);
-        
         try
         {
             await client.updateFoodOfferAsync(new UpdateFoodOfferRequest
@@ -138,12 +120,6 @@ public class FoodOfferLogic: IFoodOfferLogic
 
     public async Task DeleteFoodOffer(int foodOfferId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodOfferService.FoodOfferServiceClient(channel);
-        
         try
         {
             await client.deleteFoodOfferAsync(new DeleteFoodOfferRequest

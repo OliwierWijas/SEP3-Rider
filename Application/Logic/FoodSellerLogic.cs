@@ -8,14 +8,15 @@ namespace Application.Logic;
 
 public class FoodSellerLogic : IFoodSellerLogic
 {
+    private  FoodSellerService.FoodSellerServiceClient client;
+    public FoodSellerLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new  FoodSellerService.FoodSellerServiceClient(channel);
+    }
     public async Task CreateAsync(FoodSellerCreationDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodSellerService.FoodSellerServiceClient(channel);
-        
+      
         try
         {
             await client.CreateFoodSellerAsync(new CreateFoodSellerRequest()
@@ -38,12 +39,6 @@ public class FoodSellerLogic : IFoodSellerLogic
     {
         if (dto.Name.Length > 100)
             throw new InvalidDataException("Name cannot be longer than 100 characters.");
-        
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodSellerService.FoodSellerServiceClient(channel);
 
         try
         {
@@ -65,12 +60,6 @@ public class FoodSellerLogic : IFoodSellerLogic
     {
         if (dto.Address.Length > 200)
             throw new InvalidDataException("Address cannot be longer than 200 characters.");
-        
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodSellerService.FoodSellerServiceClient(channel);
 
         try
         {

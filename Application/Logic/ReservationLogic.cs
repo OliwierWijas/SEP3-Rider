@@ -8,15 +8,15 @@ using GrpcClient;
 namespace Application.Logic;
 
 public class ReservationLogic : IReservationLogic
-{
+{ 
+    private   ReservationService.ReservationServiceClient client;
+    public ReservationLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new  ReservationService.ReservationServiceClient(channel);
+    }
     public async Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new ReservationService.ReservationServiceClient(channel);
-        
         try
         {
             ReadReservationsListResponse response = await client.readCustomerReservationsAsync(new ReadCustomerReservationsRequest
@@ -46,12 +46,6 @@ public class ReservationLogic : IReservationLogic
 
     public async Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new ReservationService.ReservationServiceClient(channel);
-        
         try
         {
             ReadReservationsListResponse response = await client.readFoodSellerReservationsAsync(new ReadFoodSellerReservationsRequest
@@ -78,12 +72,6 @@ public class ReservationLogic : IReservationLogic
     
     public async Task CreateAsync(ReservationCreationDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new ReservationService.ReservationServiceClient(channel);
-        
         try
         {
             await client.createReservationAsync(new CreateReservationRequest
@@ -101,12 +89,6 @@ public class ReservationLogic : IReservationLogic
 
     public async Task DeleteAsync(int reservationNumber)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new ReservationService.ReservationServiceClient(channel);
-        
         try
         {
             await client.deleteReservationAsync(new DeleteReservationRequest
@@ -123,12 +105,6 @@ public class ReservationLogic : IReservationLogic
 
     public async Task CompleteReservationAsync(int reservationNumber)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new ReservationService.ReservationServiceClient(channel);
-        
         try
         {
             await client.completeReservationAsync(new CompleteReservationRequest

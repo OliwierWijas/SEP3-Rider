@@ -9,15 +9,15 @@ namespace Application.Logic;
 
 public class LoginLogic : ILoginLogic
 {
+
+    private LoginService.LoginServiceClient client;
+    public LoginLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new LoginService.LoginServiceClient(channel);
+    }
     public async Task<UserBasicDTO> LoginAsync(LoginDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-
-        var client = new LoginService.LoginServiceClient(channel);
-
         try
         {
             LoginResponse response = await client.LoginAsync(new LoginRequest()

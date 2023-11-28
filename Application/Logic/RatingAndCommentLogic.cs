@@ -8,15 +8,15 @@ using GrpcClient;
 namespace Application.Logic;
 
 public class RatingAndCommentLogic : IRatingAndCommentLogic
-{
+{   
+    private  RatingAndCommentService.RatingAndCommentServiceClient client;
+    public RatingAndCommentLogic(GRPCService service)
+    {
+        GrpcChannel channel = service.Channel;
+        client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
+    }
     public async Task CreateRating(RatingBasicDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             await client.createRatingAsync(new CreateAndUpdateRatingRequest
@@ -51,12 +51,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task CreateComment(CommentBasicDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             await client.createCommentAsync(new CreateCommentRequest
@@ -75,12 +69,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task UpdateRating(RatingBasicDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             await client.updateRatingAsync(new CreateAndUpdateRatingRequest
@@ -99,12 +87,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task DeleteComment(int commentId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             await client.deleteCommentAsync(new DeleteCommentRequest
@@ -121,12 +103,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task<List<ReadCommentDTO>> ReadCommentsByFoodSellerId(int foodSellerId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             ReadCommentsByFoodSellerIdResponse response = await client.readCommentsByFoodSellerIdAsync(new ReadCommentsByFoodSellerIdRequest
@@ -155,12 +131,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task<double> ReadAverageRatingByFoodSellerId(int foodSellerId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             ReadAverageRatingByFoodSellerIdResponse response = await client.readAverageRatingByFoodSellerIdAsync(new ReadAverageRatingByFoodSellerIdRequest
@@ -179,12 +149,6 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
 
     public async Task<int> ReadRating(ReadRatingDTO dto)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new RatingAndCommentService.RatingAndCommentServiceClient(channel);
-        
         try
         {
             ReadRatingResponse response = await client.readRatingAsync(new ReadRatingRequest
