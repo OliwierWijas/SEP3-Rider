@@ -21,4 +21,10 @@ public class MyDate
     {
         return $"{day}/{month}/{year} {hour}:{minute}";
     }
+
+    public string ToStringWithOutHourAndMinutes()
+    {
+        return $"{day}/{month}/{year}";
+    }
+    
 }

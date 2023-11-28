@@ -6,43 +6,46 @@
 @inject IRatingAndCommentService RatingAndCommentService
 @attribute [Authorize]
 <AuthorizeView>
-    <div class="card">
-        <div class="form-group field">
-            <label>Name: @dto.Name </label>
+    @if (dto != null)
+    {
+        <div class="card">
+            <div class="form-group field">
+                <label>Name: @dto.Name </label>
+            </div>
+            <div class="form-group field">
+                <label>Email: @dto.Email </label>
+            </div>
+            <div class="form-group field">
+                <label>Address: @dto.Address </label>
+            </div>
+            <div class="form-group field">
+                <label>Phone number: @dto.PhoneNumber </label>
+            </div>
+            <div class="form-group field">
+                <label>Average rating: @averageRating </label>
+            </div>
+
         </div>
-        <div class="form-group field">
-            <label>Email: @dto.Email </label>
-        </div>
-        <div class="form-group field">
-            <label>Address: @dto.Address </label>
-        </div>
-        <div class="form-group field">
-            <label>Phone number: @dto.PhoneNumber </label>
-        </div>
-        <div class="form-group field">
-            <label>Average rating: @averageRating </label>
-        </div>
-        
-    </div>
-     @if (comments == null)
+        @if (comments == null)
+        {
+        }
+        else if (!comments.Any())
+        {
+            <p>No comments to display.</p>
+        }
+        else
+        {
+            @foreach (var item in comments)
             {
+                <div class="card" style=" height: 200px; width: 100%">
+                    <h3>@item.CustomerFirstName @item.CustomerLastName</h3>
+                    <h6>@item.Date.ToStringWithOutHourAndMinutes()</h6>
+                    <h6>@item.Content</h6>
+                </div>
             }
-            else if (!comments.Any())
-            {
-                <p>No comments to display.</p>
-            }
-            else
-            {
-                @foreach (var item in comments)
-                {
-                    <div class="card" style=" height: 200px; width: 100%">
-                        <h3>@item.CustomerFirstName @item.CustomerLastName</h3>
-                        <h6>@item.Date.ToString()</h6>
-                        <h6>@item.Content</h6>
-                    </div>
-                }
-                
-            }
+
+        }
+    }
 </AuthorizeView>
 @code {
     [CascadingParameter]
