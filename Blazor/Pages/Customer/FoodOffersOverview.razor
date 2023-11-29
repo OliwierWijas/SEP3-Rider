@@ -1,50 +1,80 @@
-﻿@page "/FoodOffersOverview"
-@using Domain
+﻿@page "/ManageAccount"
 @using Domain.DTOs
-@using System.Security.Claims
 @using HttpClients.ClientInterfaces
-@using Microsoft.AspNetCore.Components
-@inject NavigationManager NavMgr
-@inject IFoodOfferService FoodOfferService
+@using System.Security.Claims
+@inject ICustomerService CustomerService
+@inject IFoodSellerService FoodSellerService
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeCustomer">
-   
-    <input placeholder="Search..." type="text" @bind="searchParameter" @bind:event="oninput"/>
-    <div class="button-row">
-        <button @onclick="Search" class="acceptbtn">Search</button>
-    </div>
-    
-    @if (_foodOffers == null)
-    {
-    }
-    else if (!_foodOffers.Any())
-    {
-        <p>No food offers to display</p>
-    }
-    else
-    {
-        @foreach (var item in _foodOffers)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
-                <h3>@item.Title</h3>
-                <h6>@item.FoodSellerName</h6>
-                <h6>@item.Price</h6>
-            </div>
-        }
 
-    }
+<AuthorizeView Policy="MustBeCustomer">
+    <div class="card">
+        <div class="form-group field">
+            <label>Email:</label>
+            <input type="text" @bind="customerDto.Email" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+            <label>Password:</label>
+            <input type="text" @bind="customerDto.Password" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+            <label>Phone number:</label>
+            <input type="text" @bind="customerDto.PhoneNumber" @bind:event="oninput"/>
+        </div>
+        <div class="button-row">
+            <button @onclick="Update" class="acceptbtn">Update Info</button>
+        </div>
+        <div class="button-row">
+            <button @onclick="Delete" class="acceptbtn">Delete Account</button>
+        </div>
+    </div>
 </AuthorizeView>
 
-@if (!string.IsNullOrEmpty(ErrorMessage))
+<AuthorizeView Policy="MustBeFoodSeller">
+    <div class="card">
+        <div class="form-group field">
+                <label>Name:</label>
+                <input type="text" @bind="foodSellerDto.Name" @bind:event="oninput"/>
+            </div>
+        <div class="form-group field">
+            <label>Email:</label>
+            <input type="text" @bind="foodSellerDto.Email" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+                    <label>Phone number:</label>
+                    <input type="text" @bind="foodSellerDto.PhoneNumber" @bind:event="oninput"/>
+                </div>
+        <div class="form-group field">
+            <label>Address:</label>
+            <input type="text" @bind="foodSellerDto.Address" @bind:event="oninput"/>
+        </div>
+        <div class="form-group field">
+            <label>Password:</label>
+            <input type="text" @bind="foodSellerDto.Password" @bind:event="oninput"/>
+        </div>
+        <div class="button-row">
+            <button @onclick="Update" class="acceptbtn">Update Info</button>
+        </div>
+        <div class="button-row">
+            <button @onclick="Delete" class="acceptbtn">Delete Account</button>
+        </div>
+    </div>
+</AuthorizeView>
+@if (!string.IsNullOrEmpty(Message))
 {
-    <label style="color: red">@ErrorMessage</label>
+    <label style="color: red">@Message</label>
 }
 
 @code {
+    private CustomerUpdateDTO customerDto = null!;
+    private FoodSellerUpdateDTO foodSellerDto = null!;
     private int AccountId;
-    private IEnumerable<ReadFoodOffersDTO> _foodOffers;
-    private string searchParameter = "";
-    private string ErrorMessage = "";
+    private string Email = "";
+    private string Password = "";
+    private string PhoneNumber = "";
+    private string Message = "";
+    private string Name = "";
+    private string Address = "";
+
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
@@ -58,15 +88,74 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        _foodOffers = await FoodOfferService.GetAvailableFoodOffersAsync();
-        Search();
+        customerDto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
+        foodSellerDto = new FoodSellerUpdateDTO(AccountId, Name, Address, Email, Password, PhoneNumber);
     }
 
-    private void Search()
+    private async void Update()
     {
-        if (!string.IsNullOrEmpty(searchParameter))
+        Claim isCustomer = userClaims.FirstOrDefault(c => c.Type.Equals("MustBeCustomer"));
+        if (isCustomer is not null)
         {
-            _foodOffers = _foodOffers.Where(f => f.Title.Contains(searchParameter) || f.FoodSellerName.Contains(searchParameter));
+            try
+                    {
+                        Message = "";
+                        if (string.IsNullOrEmpty(customerDto.Email) && string.IsNullOrEmpty(customerDto.Password) && string.IsNullOrEmpty(customerDto.PhoneNumber))
+                            Message = "No information provided.";
+                        else
+                        {
+                            await CustomerService.UpdateAsync(customerDto);
+                            Email = "";
+                            Password = "";
+                            PhoneNumber = "";
+                            Message = "Update proceeded.";
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Message = e.Message;
+                    }
+        }
+        else
+        {
+            //
+            try
+            {
+                Message = "";
+                if (string.IsNullOrEmpty(foodSellerDto.Email) && string.IsNullOrEmpty(foodSellerDto.Password) && string.IsNullOrEmpty(foodSellerDto.PhoneNumber) && string.IsNullOrEmpty(foodSellerDto.Name) && string.IsNullOrEmpty(foodSellerDto.Address))
+                    Message = "No information provided.";
+                else
+                {
+                    await FoodSellerService.UpdateAsync(foodSellerDto);
+                    Email = "";
+                    Password = "";
+                    PhoneNumber = "";
+                    Name = "";
+                    Address = "";
+                    Message = "Update proceeded.";
+                }
+            }
+            catch (Exception e)
+            {
+                Message = e.Message;
+            }
+        }
+        
+    }
+
+    private async void Delete()
+    {
+        try
+        {
+            Message = "";
+            await CustomerService.DeleteAsync(customerDto.AccountId);
+            Message = "Delete proceeded.";
+            ////to index and log out
+        }
+        catch (Exception e)
+        {
+            Message = e.Message;
         }
     }
+
 }
