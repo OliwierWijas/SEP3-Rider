@@ -1,9 +1,58 @@
 ﻿@page "/"
-
 <PageTitle>Index</PageTitle>
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Display &#x2022 Reservation</a>
+        </div>
+        <div class="content-central">
+            <div class="image-upload">
+                <h4 class="upload-item">Upload Image</h4>
+                <InputFile class="upload-item upload-input" accept="image/*" OnChange="@(args => HandleFileChange(args))"/>
+                <button class="upload-item" id="upload-button" @onclick="HandleUpload">Upload</button>
+            </div>
+            @if (!string.IsNullOrEmpty(base64String))
+            {
+                <img src="@($"data:image/png;base64,{base64String}")" alt="Uploaded Image"/>
+            }
+        </div>
+        
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
+@code {
+    string base64String = string.Empty;
 
-Welcome to your new app.
+    async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
 
-<SurveyPrompt Title="How is Blazor working for you?"/>
+        using (var stream = file.OpenReadStream())
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await stream.CopyToAsync(memoryStream);
+                base64String = Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+    }
+
+    void HandleUpload()
+    {
+    // Process the base64String as needed
+        Console.WriteLine(base64String);
+    }
+}

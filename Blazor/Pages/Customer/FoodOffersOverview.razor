@@ -8,10 +8,12 @@
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
 <AuthorizeView Policy="MustBeCustomer">
-    <input type="text" @bind="searchParameter" @bind:event="oninput"/>
+   
+    <input placeholder="Search..." type="text" @bind="searchParameter" @bind:event="oninput"/>
     <div class="button-row">
         <button @onclick="Search" class="acceptbtn">Search</button>
     </div>
+    
     @if (_foodOffers == null)
     {
     }
@@ -25,12 +27,12 @@
         {
             <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
                 <h3>@item.Title</h3>
+                <h6>@item.FoodSellerName</h6>
                 <h6>@item.Price</h6>
             </div>
         }
 
     }
-
 </AuthorizeView>
 
 @if (!string.IsNullOrEmpty(ErrorMessage))
@@ -57,6 +59,7 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         _foodOffers = await FoodOfferService.GetAvailableFoodOffersAsync();
+        Search();
     }
 
     private void Search()
