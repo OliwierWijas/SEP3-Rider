@@ -65,4 +65,21 @@ public class FoodSellerHttpClient : IFoodSellerService
         })!;
         return dto;
     }
+
+    public async Task<List<ReadFoodSellerDTO>> GetAllAsync()
+    {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
+        HttpResponseMessage response = await _client.GetAsync($"/FoodSellers");
+        string content = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(content);
+        }
+        List<ReadFoodSellerDTO> dtos = JsonSerializer.Deserialize<List<ReadFoodSellerDTO>>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
+        return dtos;
+    }
 }

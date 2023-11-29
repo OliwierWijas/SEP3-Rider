@@ -101,4 +101,19 @@ public class FoodSellersController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+
+    [HttpGet, Authorize(Policy = "MustBeCustomer")]
+    public async Task<ActionResult<List<ReadFoodSellerDTO>>> GetAllAsync()
+    {
+        try
+        {
+            var result = await foodSellerLogic.GetAllFoodSellers();
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

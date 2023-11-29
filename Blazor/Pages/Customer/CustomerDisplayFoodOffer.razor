@@ -92,6 +92,7 @@
         try
         {
             await reservationService.DeleteAsync(reservationNumber);
+            Navmgr.NavigateTo("/ReservationOverview");
         }
         catch (Exception e)
         {

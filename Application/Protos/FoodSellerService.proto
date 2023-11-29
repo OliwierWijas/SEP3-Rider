@@ -43,6 +43,10 @@ message GetFoodSellerByIdRequest{
   int32 accountId =1;
 }
 
+message GetAllFoodSellersRequest {
+
+}
+
 message FoodSellerEmptyResponse {
 }
 message GetFoodSellerByIdResponse{
@@ -51,6 +55,10 @@ message GetFoodSellerByIdResponse{
   string phoneNumber=3;
   string name=4;
   string address=5;
+}
+
+message GetAllFoodSellersResponse {
+  string list = 1;
 }
 
 service FoodSellerService {
@@ -62,4 +70,5 @@ service FoodSellerService {
   rpc UpdatePhoneNumber(UpdateFoodSellerPhoneNumberRequest) returns (FoodSellerEmptyResponse);
   rpc DeleteAccount(DeleteFoodSellerAccountRequest) returns (FoodSellerEmptyResponse);
   rpc GetFoodSellerById(GetFoodSellerByIdRequest) returns (GetFoodSellerByIdResponse);
+  rpc GetAllFoodSellers(GetAllFoodSellersRequest) returns (GetAllFoodSellersResponse);
 }

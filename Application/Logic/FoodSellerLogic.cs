@@ -1,4 +1,5 @@
-﻿using Application.LogicInterfaces;
+﻿using System.Text.Json;
+using Application.LogicInterfaces;
 using Domain.DTOs;
 using Grpc.Core;
 using Grpc.Net.Client;
@@ -206,5 +207,28 @@ public class FoodSellerLogic : IFoodSellerLogic
             throw new Exception(message[3]);
         }
         
+    }
+
+    public async Task<List<ReadFoodSellerDTO>> GetAllFoodSellers()
+    {
+        try
+        {
+            GetAllFoodSellersResponse response = await client.GetAllFoodSellersAsync(new GetAllFoodSellersRequest());
+            string Json = response.List;
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNameCaseInsensitive = true
+            };
+
+            List<ReadFoodSellerDTO> foodSellers = JsonSerializer.Deserialize<List<ReadFoodSellerDTO>>(Json, options)!;
+
+            return foodSellers;
+        }
+        catch (Exception e)
+        {
+            string[] message = e.Message.Split("\"");
+            throw new Exception(message[3]);
+        }
     }
 }

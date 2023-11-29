@@ -65,6 +65,10 @@ namespace GrpcClient {
     static readonly grpc::Marshaller<global::GrpcClient.GetFoodSellerByIdRequest> __Marshaller_foodSeller_GetFoodSellerByIdRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.GetFoodSellerByIdRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcClient.GetFoodSellerByIdResponse> __Marshaller_foodSeller_GetFoodSellerByIdResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.GetFoodSellerByIdResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GrpcClient.GetAllFoodSellersRequest> __Marshaller_foodSeller_GetAllFoodSellersRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.GetAllFoodSellersRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GrpcClient.GetAllFoodSellersResponse> __Marshaller_foodSeller_GetAllFoodSellersResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.GetAllFoodSellersResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcClient.CreateFoodSellerRequest, global::GrpcClient.FoodSellerEmptyResponse> __Method_CreateFoodSeller = new grpc::Method<global::GrpcClient.CreateFoodSellerRequest, global::GrpcClient.FoodSellerEmptyResponse>(
@@ -129,6 +133,14 @@ namespace GrpcClient {
         "GetFoodSellerById",
         __Marshaller_foodSeller_GetFoodSellerByIdRequest,
         __Marshaller_foodSeller_GetFoodSellerByIdResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GrpcClient.GetAllFoodSellersRequest, global::GrpcClient.GetAllFoodSellersResponse> __Method_GetAllFoodSellers = new grpc::Method<global::GrpcClient.GetAllFoodSellersRequest, global::GrpcClient.GetAllFoodSellersResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAllFoodSellers",
+        __Marshaller_foodSeller_GetAllFoodSellersRequest,
+        __Marshaller_foodSeller_GetAllFoodSellersResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -322,6 +334,26 @@ namespace GrpcClient {
       public virtual grpc::AsyncUnaryCall<global::GrpcClient.GetFoodSellerByIdResponse> GetFoodSellerByIdAsync(global::GrpcClient.GetFoodSellerByIdRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetFoodSellerById, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcClient.GetAllFoodSellersResponse GetAllFoodSellers(global::GrpcClient.GetAllFoodSellersRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllFoodSellers(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcClient.GetAllFoodSellersResponse GetAllFoodSellers(global::GrpcClient.GetAllFoodSellersRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetAllFoodSellers, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.GetAllFoodSellersResponse> GetAllFoodSellersAsync(global::GrpcClient.GetAllFoodSellersRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllFoodSellersAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.GetAllFoodSellersResponse> GetAllFoodSellersAsync(global::GrpcClient.GetAllFoodSellersRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetAllFoodSellers, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

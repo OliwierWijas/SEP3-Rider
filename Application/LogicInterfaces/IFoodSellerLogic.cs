@@ -12,4 +12,5 @@ public interface IFoodSellerLogic
     Task UpdatePhoneNumber(FoodSellerUpdateDTO dto);
     Task DeleteAccount(int accountId);
     Task<ReadFoodSellerDTO> GetFoodSellerById(int accountId);
+    Task<List<ReadFoodSellerDTO>> GetAllFoodSellers();
 }

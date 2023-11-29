@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "y8Dy7LCWtyPDs7Q5XeWgns3TNWbma5+MfGM1FJg5buFoQI8WHoexnk+C6C2cSIcfZvr1WWb6kMt4BrgKl4vCEA==",
+  "dgSpecHash": "dRer3OvVsaa+Dzq3v5PP9ptd8Gh0sa1A+54DQ05RewyNZxPgLEfltII0Me02MrOVeHpjYipnxHRmQ7cDLAWGBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dominika\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dominika\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\grpc.tools\\2.58.0\\grpc.tools.2.58.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.13\\microsoft.aspnetcore.authorization.7.0.13.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.13\\microsoft.aspnetcore.metadata.7.0.13.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\Dominika\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\Mara\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\grpc.tools\\2.58.0\\grpc.tools.2.58.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.13\\microsoft.aspnetcore.authorization.7.0.13.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.13\\microsoft.aspnetcore.metadata.7.0.13.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mara\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }

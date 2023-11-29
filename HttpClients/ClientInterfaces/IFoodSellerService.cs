@@ -8,4 +8,5 @@ public interface IFoodSellerService
     Task UpdateAsync(FoodSellerUpdateDTO dto);
     Task DeleteAsync(int accountId);
     Task<ReadFoodSellerDTO> GetAsync(int accountId);
+    Task<List<ReadFoodSellerDTO>> GetAllAsync();
 }

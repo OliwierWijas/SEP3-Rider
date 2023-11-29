@@ -5,23 +5,22 @@
 @using HttpClients.ClientInterfaces
 @using Microsoft.AspNetCore.Components
 @inject NavigationManager NavMgr
-@inject IFoodOfferService FoodOfferService
+@inject IFoodSellerService FoodSellerService
 @attribute [Authorize]
 <AuthorizeView Policy="MustBeCustomer">
-    @if (_foodOffers == null)
+    @if (foodSellers == null)
     {
     }
-    else if (!_foodOffers.Any())
+    else if (!foodSellers.Any())
     {
-        <p>No food offers to display</p>
+        <p>No food sellers to display</p>
     }
     else
     {
-        @foreach (var item in _foodOffers)
+        @foreach (var item in foodSellers)
         {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
-                <h3>@item.Title</h3>
-                <h6>@item.Price</h6>
+            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
+                <h3>@item.Name</h3>
             </div>
         }
             
@@ -35,7 +34,7 @@
 
 @code {
     private int AccountId;
-    private List<ReadFoodOffersDTO> _foodOffers;
+    private List<ReadFoodSellerDTO> foodSellers;
     private string ErrorMessage = "";
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -50,7 +49,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        _foodOffers = await FoodOfferService.GetAvailableFoodOffersAsync();
+        foodSellers = await FoodSellerService.GetAllAsync();
     }
     
 }
