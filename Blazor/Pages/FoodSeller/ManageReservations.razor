@@ -70,8 +70,13 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        IEnumerable<ReadFoodSellerReservationDTO> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
-        _reservations = temp.Where(r => r.IsCompleted == false);
-        _completedReservations = temp.Where(r => r.IsCompleted);
+        Claim isFoodSeller = userClaims.FirstOrDefault(c => c.Type.Equals("MustBeFoodSeller"));
+        if (isFoodSeller is not null)
+        {
+            IEnumerable<ReadFoodSellerReservationDTO> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
+            _reservations = temp.Where(r => r.IsCompleted == false);
+            _completedReservations = temp.Where(r => r.IsCompleted);
+        }
+        
     }
 }

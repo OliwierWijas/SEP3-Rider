@@ -8,26 +8,31 @@
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
 <AuthorizeView Policy="MustBeCustomer">
+    <input type="text" @bind="searchParameter" @bind:event="oninput"/>
+    <div class="button-row">
+        <button @onclick="Search" class="acceptbtn">Search</button>
+    </div>
     @if (_foodOffers == null)
+    {
+    }
+    else if (!_foodOffers.Any())
+    {
+        <p>No food offers to display</p>
+    }
+    else
+    {
+        @foreach (var item in _foodOffers)
         {
+            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
+                <h3>@item.Title</h3>
+                <h6>@item.Price</h6>
+            </div>
         }
-        else if (!_foodOffers.Any())
-        {
-            <p>No food offers to display</p>
-        }
-        else
-        {
-            @foreach (var item in _foodOffers)
-            {
-                <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
-                    <h3>@item.Title</h3>
-                    <h6>@item.Price</h6>
-                </div>
-            }
-            
-        }
-    
+
+    }
+
 </AuthorizeView>
+
 @if (!string.IsNullOrEmpty(ErrorMessage))
 {
     <label style="color: red">@ErrorMessage</label>
@@ -35,7 +40,8 @@
 
 @code {
     private int AccountId;
-    private List<ReadFoodOffersDTO> _foodOffers;
+    private IEnumerable<ReadFoodOffersDTO> _foodOffers;
+    private string searchParameter = "";
     private string ErrorMessage = "";
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -52,5 +58,12 @@
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         _foodOffers = await FoodOfferService.GetAvailableFoodOffersAsync();
     }
-    
+
+    private void Search()
+    {
+        if (!string.IsNullOrEmpty(searchParameter))
+        {
+            _foodOffers = _foodOffers.Where(f => f.Title.Contains(searchParameter) || f.FoodSellerName.Contains(searchParameter));
+        }
+    }
 }
