@@ -1,0 +1,2 @@
+obj\Debug\net7.0\Protos/FoodOfferService.cs \
+obj\Debug\net7.0\Protos/FoodOfferServiceGrpc.cs: Protos/FoodOfferService.proto
