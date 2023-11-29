@@ -4,6 +4,8 @@
 @using System.Security.Claims
 @inject ICustomerService CustomerService
 @inject IFoodSellerService FoodSellerService
+@inject IAuthService AuthService
+@inject NavigationManager NavMgr
 @attribute [Authorize]
 
 <AuthorizeView Policy="MustBeCustomer">
@@ -118,7 +120,6 @@
         }
         else
         {
-            //
             try
             {
                 Message = "";
@@ -150,7 +151,8 @@
             Message = "";
             await CustomerService.DeleteAsync(customerDto.AccountId);
             Message = "Delete proceeded.";
-            ////to index and log out
+            await AuthService.LogoutAsync();
+            NavMgr.NavigateTo("/");
         }
         catch (Exception e)
         {

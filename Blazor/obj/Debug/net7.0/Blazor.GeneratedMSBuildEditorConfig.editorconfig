@@ -9,93 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Blazor
 build_property.RootNamespace = Blazor
-build_property.ProjectDir = C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor\
+build_property.ProjectDir = C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Dominika\RiderProjects\SEP3-Rider\Blazor
+build_property.MSBuildProjectDirectory = C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/App.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/CreateAccount.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/CreateAccount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/CustomerDisplayFoodOffer.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/CustomerDisplayFoodOffer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ3VzdG9tZXJEaXNwbGF5Rm9vZE9mZmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/FoodOffersOverview.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRm9vZE9mZmVyc092ZXJ2aWV3LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/FoodSellersOverview.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/FoodSellersOverview.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRm9vZFNlbGxlcnNPdmVydmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/ReservationsOverview.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/ReservationsOverview.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcUmVzZXJ2YXRpb25zT3ZlcnZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/DisplayFoodSeller.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/DisplayFoodSeller.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUZvb2RTZWxsZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayFoodOffer.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayFoodOffer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxGb29kU2VsbGVyRGlzcGxheUZvb2RPZmZlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayReservation.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/FoodSellerDisplayReservation.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxGb29kU2VsbGVyRGlzcGxheVJlc2VydmF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageFoodOffers.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageFoodOffers.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxNYW5hZ2VGb29kT2ZmZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageReservations.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageReservations.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxNYW5hZ2VSZXNlcnZhdGlvbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Index.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Login.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/LoginButtons.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/LoginButtons.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/ManageAccount.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/ManageAccount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Shared/SurveyPrompt.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/_Imports.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Shared/MainLayout.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/FoodOffersOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRm9vZE9mZmVyc092ZXJ2aWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ld88kcxl59
+
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-r0yqwuvdyg
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Shared/NavMenu.razor]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-6hj6azdo60
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/Error.cshtml]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dominika/RiderProjects/SEP3-Rider/Blazor/Pages/_Host.cshtml]
+[C:/Users/oliwi/RiderProjects/SEP3-Rider/Blazor/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

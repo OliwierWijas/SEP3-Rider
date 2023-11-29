@@ -20,44 +20,44 @@
         <AuthorizeView>
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/ManageAccount">
-                    <span class="oi oi-home" aria-hidden="true"></span> My Account
+                    <span class="oi oi-person" aria-hidden="true"></span> My Account
                 </NavLink>
             </div>
         </AuthorizeView>
         <AuthorizeView Policy="MustBeCustomer">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/FoodOffersOverview">
-                    <span class="oi oi-home" aria-hidden="true"></span> Food Offers Overview
+                    <span class="oi oi-cart" aria-hidden="true"></span> Food Offers Overview
                 </NavLink>
             </div>
             <div class="nav-item px-3">
                  <NavLink class="nav-link" href="/ReservationsOverview">
-                     <span class="oi oi-home" aria-hidden="true"></span> Reservations Overview
+                     <span class="oi oi-book" aria-hidden="true"></span> Reservations Overview
                  </NavLink>
             </div>
         </AuthorizeView>
         <AuthorizeView Policy="MustBeFoodSeller">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/ManageFoodOffers">
-                    <span class="oi oi-home" aria-hidden="true"></span> Manage Food Offers
+                    <a> </a><span class="oi oi-cart" aria-hidden="true"></span> Manage Food Offers
                 </NavLink>
             </div>
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="/ManageReservations">
-                    <span class="oi oi-home" aria-hidden="true"></span> Manage Reservations
+                    <span class="oi oi-book" aria-hidden="true"></span> Manage Reservations
                 </NavLink>
             </div>
         </AuthorizeView>
         <AuthorizeView>
                     <div class="nav-item px-3">
                         <NavLink class="nav-link" href="" @onclick="() => { AuthService.LogoutAsync(); NavMgr.NavigateTo(uriLogOut);}">
-                            <span class="oi oi-home" aria-hidden="true"></span> Log out
+                            <span class="oi oi-account-logout" aria-hidden="true"></span> Log out
                         </NavLink>
                     </div>
                 </AuthorizeView>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" @onclick="() => { NavMgr.NavigateTo(uriLogIn);}">
-                <span class="oi oi-home" aria-hidden="true"></span> Log in
+                <span class="oi oi-account-login" aria-hidden="true"></span> Log in
             </NavLink>
         </div>
         

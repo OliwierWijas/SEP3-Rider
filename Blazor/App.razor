@@ -3,7 +3,29 @@
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
             <NotAuthorized>
-                <p>You have to log in!</p>
+                <div class="main-content">
+                    <div class="sidebar">
+                        <NavMenu/>
+                    </div>
+                    <div class="content">
+                        <div class="content-header">
+                            <a>Login &#x2022 Required</a>
+                        </div>
+                        <div class="content-central">
+                            <p>You have to log in!</p>
+                        </div>
+                        
+                        <div class="content-footer bottom-0">
+                            <div class="footer-title">Too Fresh Too Waste</div>
+                            <div class="footer-address">
+                                <a>Banegårdsgade 2</a>
+                                <a>8700 Horsens</a>
+                                <a>+45 50 36 14 56</a>
+                            </div>
+                            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+                        </div>
+                    </div>
+                </div>
             </NotAuthorized>
         </AuthorizeRouteView>
         <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
