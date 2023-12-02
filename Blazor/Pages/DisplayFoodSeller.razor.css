@@ -1,0 +1,45 @@
+﻿.content-central {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+.seller-info{
+    width: 70vh;
+    height: 20vh;
+   margin-bottom: 2vh;
+}
+.rate-drop{
+    width: 6vh;
+    height: 4vh;
+}
+
+.rate-but{
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    width: 6vh;
+    height: 4vh;
+    border: 1px solid lightgrey;
+   
+}
+.comment-text{
+    width: 70vh;
+    height: 40vh;
+    border: 1px solid lightgrey;
+   
+}
+
+.comment-but{
+    width: 10vh;
+    height: 4vh;
+    border: 1px solid lightgrey;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+.customer-comment{
+    width: 70vh;
+    height: 20vh;
+    border: 1px solid lightgrey;
+    
+    
+}

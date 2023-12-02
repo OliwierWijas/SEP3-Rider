@@ -2,7 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
+}
+
+.reservation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: center;
 }
 
 .search-bar {
@@ -27,12 +40,11 @@
 
 .product {
     display: flex;
+    flex-direction: column;
     width: 40vh;
     height: 50vh;
-    margin: 10px;
-    padding: 10px;
+    margin: 25px 10px 10px 10px;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
     border-radius: 5px;
     border: 1px solid #808080;

@@ -5,63 +5,85 @@
 @inject IFoodSellerService FoodSellerService
 @inject IRatingAndCommentService RatingAndCommentService
 @attribute [Authorize]
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Display &#x2022 Food &#x2022 Seller</a>
+        </div>
+        <div class="content-central">
 <AuthorizeView>
     @if (dto != null)
     {
-        <div class="card">
+        <div class="card seller-info" >
             <div class="form-group field">
-                <label>Name: @dto.Name </label>
+                <h5><b>Name:</b> @dto.Name </h5>
             </div>
             <div class="form-group field">
-                <label>Email: @dto.Email </label>
+                <h5><b>Email:</b> @dto.Email </h5>
             </div>
             <div class="form-group field">
-                <label>Address: @dto.Address </label>
+                <h5><b>Address:</b> @dto.Address </h5>
             </div>
             <div class="form-group field">
-                <label>Phone number: @dto.PhoneNumber </label>
+                <h5><b>Phone number:</b> @dto.PhoneNumber </h5>
             </div>
             <div class="form-group field">
-                <label>Average rating: @averageRating </label>
+                <h5><b>Average rating:</b> @averageRating </h5>
             </div>
         </div>
     }
         </AuthorizeView>
             <AuthorizeView Policy="MustBeCustomer">
-                <div class="rz-p-sm-12 rz-text-align-center">
-                    <RadzenDropDown @bind-Value=@value Data=@rates Style="width: 100%; max-width: 400px;"/>
+                <div class="rate-drop">
+                    <RadzenDropDown @bind-Value=@value Data=@rates/>
                 </div>
-                <button @onclick="CreateRatingAsync">Rate</button>
+                <button @onclick="CreateRatingAsync" class="rate-but">Rate</button>
             </AuthorizeView>
     <AuthorizeView>
-    <label>Comments:</label>
+        <label><b>Comments:</b></label>
      </AuthorizeView> 
         <AuthorizeView Policy="MustBeCustomer">
-            <textarea placeholder="Write a comment..." type="text" @bind="comment"/>
-            <button @onclick="CreateCommentAsync">Comment</button>
+            <textarea placeholder="Write a comment..." type="text" @bind="comment" class="comment-text"/>
+            <button @onclick="CreateCommentAsync" class="comment-but">Comment</button>
         </AuthorizeView>
-<AuthorizeView>
-        @if (comments == null)
-        {
-        }
-        else if (!comments.Any())
-        {
-            <p>No comments to display.</p>
-        }
-        else
-        {
-            @foreach (var item in comments)
+        <AuthorizeView>
+            @if (comments == null)
             {
-                <div class="card" style=" height: 200px; width: 100%">
-                    <h3>@item.CustomerFirstName @item.CustomerLastName</h3>
-                    <h6>@item.Date.ToStringWithOutHourAndMinutes()</h6>
-                    <h6>@item.Content</h6>
-                </div>
             }
+            else if (!comments.Any())
+            {
+                <p>No comments to display.</p>
+            }
+            else
+            {
+                @foreach (var item in comments)
+                {
+                    <div class="card customer-comment">
+                        <h5>@item.CustomerFirstName @item.CustomerLastName</h5>
+                        <h6>@item.Date.ToStringWithOutHourAndMinutes()</h6>
+                        <h6>@item.Content</h6>
+                    </div>
+                }
 
-        }
+            }
     
-</AuthorizeView>
+        </AuthorizeView>
+         </div>
+                <div class="content-footer bottom-0">
+                    <div class="footer-title">Too Fresh Too Waste</div>
+                    <div class="footer-address">
+                        <a>Banegårdsgade 2</a>
+                        <a>8700 Horsens</a>
+                        <a>+45 50 36 14 56</a>
+                    </div>
+                    <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;

@@ -1,0 +1,132 @@
+﻿.content-central {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foodOffer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    background-color: #f6f6f6;
+    border: none;
+}
+
+.subtitle {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-image {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 30vh;
+    border-radius: 5px;
+}
+
+.product-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.product-seller, .product-price,  .product-start, .product-end{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.title-field {
+    margin-top: 15px;
+    margin-left: 50px;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.input-field {
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 30px;
+    width: 44vh;
+}
+
+.input-field-description {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 100px;
+    width: 50vh;
+    font-size: 14px;
+}
+
+#date {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 30px;
+    width: 40vh;
+}
+
+#endDate {
+    margin-right: 16px;
+}
+
+.createbtn {
+    margin-top: 40px;
+    border: 1px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    height: 25px;
+    margin-left: 50px;
+}
+
+.createbtn:hover {
+    background-color: white;
+}
+
+#title {
+    margin-left: 10px;
+}
+
+#description {
+    margin-left: 50px;
+}
+
+#price {
+    margin-left: 8px;
+}
+
+

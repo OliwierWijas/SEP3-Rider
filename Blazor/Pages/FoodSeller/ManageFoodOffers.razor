@@ -7,53 +7,89 @@
 @inject NavigationManager NavMgr
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeFoodSeller">
-    @if (_foodOffers == null)
-        {
-        }
-        else if (!_foodOffers.Any())
-        {
-            <p>No food offers to display</p>
-        }
-        else
-        {
-            @foreach (var item in _foodOffers)
-            {
-                <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
-                    <h3>@item.Title</h3>
-                    <h6>@item.Description</h6>
-                    <h6>@item.Price</h6>
-                    <h6>@item.StartPickupTime.ToString()</h6>
-                    <h6>@item.EndPickupTime.ToString()</h6>
-                </div>
-            }
+
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>&#x2022 Your Food Offers &#x2022</a>
+        </div>
+        <div class="content-central">
+            <AuthorizeView Policy="MustBeFoodSeller">
+                @if (_foodOffers == null)
+                {
+                }
+                else if (!_foodOffers.Any())
+                {
+                <p>No food offers to display</p>
+                }
+                else
+                {
+                    <div class="foodOffer-container">
+                        @foreach (var item in _foodOffers)
+                        {
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
+                                <div class="product-image"></div>
+                                <div class="product-title"><b>@item.Title</b></div>
+                                <div class="product-price">@item.Price DKK</div>
+                                <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
+                                <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
+                            </div>
+                        }
+                    </div>
+                    
+                    <div class="subtitle"><h3>&#x2022 Create a new food offer &#x2022</h3></div>
+                    <div class="foodOffer-container">
+                        <div class="card">
+                            <div class="form-group field">
+                                <label class="title-field">Title:</label>
+                                <input class="input-field"  id="title" type="text" @bind="Title" @bind:event="oninput"/>
+                            </div>
+                            <div class="form-group field">
+                                <label class="title-field">Description:</label>
+                                <textarea class="input-field-description" id="description" type="text" @bind="Description" @bind:event="oninput"></textarea>
+                            </div>
+                            <div class="form-group field">
+                                <label class="title-field" id>Price:</label>
+                                <input class="input-field" id="price" type="number" @bind="Price" @bind:event="oninput"/>
+                            </div>
+                            <div class="form-group field">
+                                <label class="title-field">Start pick-up date:</label>
+                                <RadzenDatePicker id="date" @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                            </div>
+                            <div class="form-group field">
+                                <label class="title-field" id="endDate">End pick-up date:    </label>
+                                <RadzenDatePicker id="date" @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                            </div>
+                            <div class="button-row">
+                                <button @onclick="CreateAsync" class="createbtn">Create</button>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(ErrorMessage))
+                        {
+                            <label style="color: red">@ErrorMessage</label>
+                        }
+                    </div>
             
-        }
-    <div class="card">
-        <div class="form-group field">
-            <label>Title:</label>
-            <input type="text" @bind="Title" @bind:event="oninput"/>
+                }
+            
+            </AuthorizeView>
         </div>
-        <div class="form-group field">
-            <label>Description:</label>
-            <input type="text" @bind="Description" @bind:event="oninput"/></div>
-        <div class="form-group field">
-            <label>Price:</label>
-            <input type="number" @bind="Price" @bind:event="oninput"/>
-        </div>
-        <div class="rz-p-12 rz-text-align-center">
-            <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-            <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-        </div>
-        <div class="button-row">
-            <button @onclick="CreateAsync" class="acceptbtn">Create Food Offer</button>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
         </div>
     </div>
-</AuthorizeView>
-@if (!string.IsNullOrEmpty(ErrorMessage))
-{
-    <label style="color: red">@ErrorMessage</label>
-}
+</div>
+
 
 @code {
     private int AccountId;
@@ -61,7 +97,7 @@
     private string ErrorMessage = "";
     private string Title = "";
     private string Description = "";
-    private double Price = 0.0;
+    private double Price;
     private DateTime StartPickupTime = DateTime.Now;
     private DateTime EndPickupTime = DateTime.Now;
 

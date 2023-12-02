@@ -8,36 +8,69 @@
 @inject IFoodOfferService FoodOfferService
 @inject IReservationService ReservationService
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeCustomer">
-    @if (_reservations == null)
-    {
-    }
-    else if (!_reservations.Any())
-    {
-        <p>No reservations to display.</p>
-    }
-    else
-    {
-        <label>Uncompleted reservations:</label>
-        @foreach (var item in _reservations)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                <h3>@item.Title</h3>
-                <h6>@item.Price</h6>
-            </div>
-        }
-        <label>Completed reservations: </label>
-        @foreach (var item in _completedReservations)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                <h3>@item.Title</h3>
-                <h6>@item.Price</h6>
-            </div>
-        }
 
-    }
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Customer</a>
+            <a>&#x2022 Your Reservations &#x2022</a>
+        </div>
+        <div class="content-central">
+            <AuthorizeView Policy="MustBeCustomer">
+                @if (_reservations == null)
+                {
+                }
+                else if (!_reservations.Any())
+                {
+                    <p>No reservations to display.</p>
+                }
+                else
+                {
+                    <div class="subtitle"><h5>Uncompleted reservations:</h5></div>
+                    <div class="reservation-container">
+                        @foreach (var item in _reservations)
+                        {
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                <div class="product-image"></div>
+                                <div class="product-title"><b>@item.Title</b></div>
+                                <div class="product-seller">@item.FoodSellerName</div>
+                                <div class="product-price">@item.Price DKK</div>
+                            </div>
+                        }
+                    </div>
+                    
+                    <div class="subtitle"><h5>Completed reservations:</h5></div>
+                    <div class="reservation-container">
+                        @foreach (var item in _completedReservations)
+                        {
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                <div class="product-image" id="productElements"></div>
+                                <div class="product-title" id="productElements"><b>@item.Title</b></div>
+                                <div class="product-seller" id="productElements">@item.FoodSellerName</div>
+                                <div class="product-price" id="productElements">@item.Price DKK</div>
+                            </div>
+                        }
+                    </div>
+            
+                }
+            
+            </AuthorizeView>
+        </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
 
-</AuthorizeView>
 @if (!string.IsNullOrEmpty(ErrorMessage))
 {
     <label style="color: red">@ErrorMessage</label>
