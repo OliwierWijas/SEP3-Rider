@@ -347,3 +347,16 @@ C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\ref\Blazor.dll
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Customer\CustomerDisplayFoodOffer.razor.rz.scp.css
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\FoodSellerDisplayFoodOffer.razor.rz.scp.css
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\FoodSellerDisplayReservation.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\CreateAccount.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Customer\CustomerDisplayFoodOffer.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Customer\FoodOffersOverview.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Customer\FoodSellersOverview.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Customer\ReservationsOverview.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\DisplayFoodSeller.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\FoodSellerDisplayFoodOffer.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\FoodSellerDisplayReservation.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\ManageFoodOffers.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\FoodSeller\ManageReservations.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\Mara\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\ManageAccount.razor.rz.scp.css

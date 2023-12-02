@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: flex-start;
     width: 82vw;
-    height: auto;
+    height: fit-content;
     margin: 70px 5px 10px 0px;
     padding: 10px;
     border-radius: 5px;

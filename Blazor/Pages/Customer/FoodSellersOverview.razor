@@ -3,30 +3,54 @@
 @using Domain.DTOs
 @using System.Security.Claims
 @using HttpClients.ClientInterfaces
-@using Microsoft.AspNetCore.Components
 @inject NavigationManager NavMgr
 @inject IFoodSellerService FoodSellerService
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeCustomer">
-    @if (foodSellers == null)
-    {
-    }
-    else if (!foodSellers.Any())
-    {
-        <p>No food sellers to display</p>
-    }
-    else
-    {
-        @foreach (var item in foodSellers)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
-                <h3>@item.Name</h3>
+
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Food &#x2022 Sellers</a>
+        </div>
+        <div class="content-central">
+           <AuthorizeView Policy="MustBeCustomer">
+               @if (foodSellers == null)
+               {
+               }
+               else if (!foodSellers.Any())
+               {
+                   <p>No food sellers to display</p>
+               }
+               else
+               {
+                   @foreach (var item in foodSellers)
+                   {
+                       <div class="sellers col-6 col-lg-4"  @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
+                           <h3 class ="sellers-name">@item.Name</h3>
+                           <div class="sellers-address"><b>@item.Address</b></div>
+                           <div class="sellers-phoneNo"><b>@item.PhoneNumber</b></div>
+                       </div>
+                   }
+                       
+               }
+           </AuthorizeView>
+        </div>
+        
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
             </div>
-        }
-            
-    }
-    
-</AuthorizeView>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
 @if (!string.IsNullOrEmpty(ErrorMessage))
 {
     <label style="color: red">@ErrorMessage</label>

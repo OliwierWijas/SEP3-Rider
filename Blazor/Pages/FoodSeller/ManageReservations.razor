@@ -7,7 +7,7 @@
 @inject IReservationService ReservationService;
 
 @attribute [Authorize]
-<AuthorizeView Policy="MustBeFoodSeller">
+<!--<AuthorizeView Policy="MustBeFoodSeller">
     <label>Reservations: </label>
     @if (_reservations == null)
     {
@@ -50,6 +50,79 @@
     }
 
 </AuthorizeView>
+-->
+
+
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>&#x2022 All Reservations &#x2022</a>
+        </div>
+        <div class="content-central">
+            <AuthorizeView Policy="MustBeFoodSeller">
+                <div class="subtitle"><h5>Reservations:</h5></div>
+                @if (_reservations == null)
+                {
+                }
+                else if (!_reservations.Any())
+                {
+                    <p>No reservations to display.</p>
+                }
+                else
+                {
+                    <div class="reservation-container">
+                        @foreach (var item in _reservations)
+                        {
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                <div class="product-image"></div>
+                                <div class="product-title"><b>@item.Title</b></div>
+                                <div class="product-reznr">Reservation number: @item.ReservationNumber</div>
+                                <div class="product-time">@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</div>
+                            </div>
+                        }
+                    </div>
+                }
+                <div class="subtitle"><h5>Completed reservations:</h5></div>
+                @if (_completedReservations == null)
+                {
+                }
+                else if (!_completedReservations.Any())
+                    {
+                        <p>No completed reservations to display</p>
+                    }
+                else {
+                    <div class="reservation-container">
+                        @foreach (var item in _completedReservations)
+                        {
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                <div class="product-image"></div>
+                                <div class="product-title"><b>@item.Title</b></div>
+                                <div class="product-reznr">@item.ReservationNumber</div>
+                                <div class="product-time">@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</div>
+                            </div>
+                        }
+                    </div>
+
+                }
+
+            </AuthorizeView>
+        </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
+
 
 @code {
     private int AccountId;

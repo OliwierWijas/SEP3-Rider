@@ -80,7 +80,6 @@ public class ReservationsController : ControllerBase
     [HttpPatch, Route("FoodSellerReservations"), Authorize(Policy = "MustBeFoodSeller")]
     public async Task<ActionResult> CompleteReservationAsync([FromBody] int reservationNumber)
     {
-        Console.WriteLine("Here in webapi, reservation number : " +reservationNumber);
         try
         {
             await reservationLogic.CompleteReservationAsync(reservationNumber);

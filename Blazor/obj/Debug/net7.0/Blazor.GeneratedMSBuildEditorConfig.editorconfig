@@ -20,24 +20,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/CreateAccount.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/LoginButtons.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b25zLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/ManageAccount.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Shared/SurveyPrompt.razor]
@@ -47,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/CreateAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jfhtpmtltg
 
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/Customer/CustomerDisplayFoodOffer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ3VzdG9tZXJEaXNwbGF5Rm9vZE9mZmVyLnJhem9y
@@ -83,6 +71,18 @@ build_metadata.AdditionalFiles.CssScope = b-dq0f1li1lm
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/FoodSeller/ManageReservations.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vZFNlbGxlclxNYW5hZ2VSZXNlcnZhdGlvbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-w1ykbjgvi1
+
+[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ci4vf3jic1
+
+[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-n3b4hveadi
+
+[C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Pages/ManageAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-xvrugd6msb
 
 [C:/Users/Mara/RiderProjects/SEP3-Rider/Blazor/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

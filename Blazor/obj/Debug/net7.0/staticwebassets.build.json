@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tThUm4UEVW0+qTa2MzbKXxRYxxxTBjEfR9IN7KrlaYU=",
+  "Hash": "HBnig/Afm0bmtnspAwa2oVK5USC99YaggtyCfT57O2M=",
   "Source": "Blazor",
   "BasePath": "_content/Blazor",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Blazor\\wwwroot",
       "Source": "Blazor",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-base.css",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-dark-base.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-dark.css",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent-dark.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\fluent.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark-base.css",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark.css",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material-dark.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material.css",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-base.css",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-dark-base.css",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-dark.css",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3-dark.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3.css",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\material3.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-It.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\Mara\\.nuget\\packages\\radzen.blazor\\4.21.3\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Blazor.styles.css",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Blazor.styles.css",
       "SourceId": "Blazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "Blazor.styles.css",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Blazor.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Blazor.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Blazor.bundle.scp.css",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Blazor.bundle.scp.css",
       "SourceId": "Blazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "Blazor.bundle.scp.css",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Blazor.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Blazor.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\css\\site.css",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\favicon.png",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Blazor\\wwwroot\\",
       "BasePath": "_content/Blazor",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

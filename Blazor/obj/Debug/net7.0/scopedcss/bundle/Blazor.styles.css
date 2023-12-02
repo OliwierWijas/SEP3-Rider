@@ -1,9 +1,109 @@
+/* _content/Blazor/Pages/CreateAccount.razor.rz.scp.css */
+.content-central[b-jfhtpmtltg] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register[b-jfhtpmtltg] {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.register-hello[b-jfhtpmtltg], .register-action[b-jfhtpmtltg] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.register-hello[b-jfhtpmtltg] {
+    background-image: linear-gradient(180deg, #023020 0%, #185a37 90%);
+    color: white;
+    border-top-left-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .register[b-jfhtpmtltg] {
+        flex-direction: column;
+    }
+
+    .register-hello[b-jfhtpmtltg] {
+        border-top-right-radius: 5px;
+    }
+}
+
+@media (min-width: 992px) {
+    .register-hello[b-jfhtpmtltg] {
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.register-hello p[b-jfhtpmtltg] {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.register-hello b[b-jfhtpmtltg], .register-hello a[b-jfhtpmtltg] {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.register-field[b-jfhtpmtltg] {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 5px;
+    min-width: fit-content;
+    width: -webkit-fill-available;
+    margin: 5px 0;
+}
+
+.register-button[b-jfhtpmtltg], .continue-button[b-jfhtpmtltg] {
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: -webkit-fill-available;
+}
+
+.register-button[b-jfhtpmtltg] {
+    margin: 10px 0;
+}
+
+.register-button:hover[b-jfhtpmtltg], .continue-button:hover[b-jfhtpmtltg] {
+    background-color: rgba(0,0,0,0.1);
+    transition: background-color 400ms linear;
+}
+
+.continue[b-jfhtpmtltg] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.continue div[b-jfhtpmtltg] {
+    margin: 10px 5px;
+}
+
+.continue-text[b-jfhtpmtltg] {
+    text-align: center;
+}
 /* _content/Blazor/Pages/Customer/CustomerDisplayFoodOffer.razor.rz.scp.css */
 .food-offer[b-tf6k2kfai8]{
     display: flex;
     flex-direction: row;
     width: 82vw;
-    height: auto;
+    height: fit-content;
     margin: 70px 5px 10px 0px;
     padding: 10px;
     border-radius: 5px;
@@ -98,7 +198,7 @@
 }
 
 .product-image[b-ld88kcxl59] {
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
     width: 36vh;
     height: 36vh;
     border-radius: 5px;
@@ -115,13 +215,163 @@
     font-size: 16px;
     font-weight: 400;
 }
+/* _content/Blazor/Pages/Customer/FoodSellersOverview.razor.rz.scp.css */
+.content-central[b-tgucxdvbu8] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.sellers[b-tgucxdvbu8] {
+    display: flex;
+    width: 40vh;
+    height: 50vh;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sellers-name[b-tgucxdvbu8] {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sellers-address[b-tgucxdvbu8], .sellers-phoneNo[b-tgucxdvbu8] {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* _content/Blazor/Pages/Customer/ReservationsOverview.razor.rz.scp.css */
+.content-central[b-ysgubcewnn] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reservation-container[b-ysgubcewnn] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.subtitle[b-ysgubcewnn] {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar[b-ysgubcewnn] {
+    position: relative;
+    top: 8vh;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-button[b-ysgubcewnn] {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.search-input[b-ysgubcewnn] {
+    width: calc(0.8*82vw);
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.product[b-ysgubcewnn] {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-image[b-ysgubcewnn] {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+}
+
+.product-title[b-ysgubcewnn] {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.product-seller[b-ysgubcewnn], .product-price[b-ysgubcewnn] {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* _content/Blazor/Pages/DisplayFoodSeller.razor.rz.scp.css */
+.content-central[b-hvm59tntmh] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+.seller-info[b-hvm59tntmh]{
+    width: 70vh;
+    height: 20vh;
+   margin-bottom: 2vh;
+}
+.rate-drop[b-hvm59tntmh]{
+    width: 6vh;
+    height: 4vh;
+}
+
+.rate-but[b-hvm59tntmh]{
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    width: 6vh;
+    height: 4vh;
+    border: 1px solid lightgrey;
+   
+}
+.comment-text[b-hvm59tntmh]{
+    width: 70vh;
+    height: 40vh;
+    border: 1px solid lightgrey;
+   
+}
+
+.comment-but[b-hvm59tntmh]{
+    width: 10vh;
+    height: 4vh;
+    border: 1px solid lightgrey;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+.customer-comment[b-hvm59tntmh]{
+    width: 70vh;
+    height: 20vh;
+    border: 1px solid lightgrey;
+    
+    
+}
 /* _content/Blazor/Pages/FoodSeller/FoodSellerDisplayFoodOffer.razor.rz.scp.css */
 .food-offer[b-lytcjpabj0]{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     width: 82vw;
-    height: auto;
+    height: fit-content;
     margin: 70px 5px 10px 0px;
     padding: 10px;
     border-radius: 5px;
@@ -173,7 +423,7 @@ textarea[b-lytcjpabj0]{
     display: flex;
     flex-direction: row;
     width: 82vw;
-    height: auto;
+    height: fit-content;
     margin: 70px 5px 10px 0px;
     padding: 10px;
     border-radius: 5px;
@@ -224,6 +474,356 @@ textarea[b-lytcjpabj0]{
 }
 .btn:hover[b-hmsk5grchi] {
     transform: scale(1.1);
+}
+/* _content/Blazor/Pages/FoodSeller/ManageFoodOffers.razor.rz.scp.css */
+.content-central[b-dq0f1li1lm] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foodOffer-container[b-dq0f1li1lm] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.card[b-dq0f1li1lm] {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    background-color: #f6f6f6;
+    border: none;
+}
+
+.subtitle[b-dq0f1li1lm] {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.product[b-dq0f1li1lm] {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-image[b-dq0f1li1lm] {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 30vh;
+    border-radius: 5px;
+}
+
+.product-title[b-dq0f1li1lm] {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.product-seller[b-dq0f1li1lm], .product-price[b-dq0f1li1lm],  .product-start[b-dq0f1li1lm], .product-end[b-dq0f1li1lm]{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.title-field[b-dq0f1li1lm] {
+    margin-top: 15px;
+    margin-left: 50px;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.input-field[b-dq0f1li1lm] {
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 30px;
+    width: 44vh;
+}
+
+.input-field-description[b-dq0f1li1lm] {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 100px;
+    width: 50vh;
+    font-size: 14px;
+}
+
+#date[b-dq0f1li1lm] {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 30px;
+    width: 40vh;
+}
+
+#endDate[b-dq0f1li1lm] {
+    margin-right: 16px;
+}
+
+.createbtn[b-dq0f1li1lm] {
+    margin-top: 40px;
+    border: 1px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    height: 25px;
+    margin-left: 50px;
+}
+
+.createbtn:hover[b-dq0f1li1lm] {
+    background-color: white;
+}
+
+#title[b-dq0f1li1lm] {
+    margin-left: 10px;
+}
+
+#description[b-dq0f1li1lm] {
+    margin-left: 50px;
+}
+
+#price[b-dq0f1li1lm] {
+    margin-left: 8px;
+}
+
+
+/* _content/Blazor/Pages/FoodSeller/ManageReservations.razor.rz.scp.css */
+.content-central[b-w1ykbjgvi1] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reservation-container[b-w1ykbjgvi1] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.subtitle[b-w1ykbjgvi1] {
+    display: flex;
+    justify-content: center;
+}
+
+.product[b-w1ykbjgvi1] {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 25px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-image[b-w1ykbjgvi1] {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+}
+
+.product-title[b-w1ykbjgvi1] {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.product-seller[b-w1ykbjgvi1], .product-price[b-w1ykbjgvi1] {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* _content/Blazor/Pages/Index.razor.rz.scp.css */
+.description[b-ci4vf3jic1]{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 300;
+}
+.home-content[b-ci4vf3jic1]{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.home-item[b-ci4vf3jic1]{
+    display: flex;
+    width: 40vh;
+    height: 50vh;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* _content/Blazor/Pages/Login.razor.rz.scp.css */
+.content-central[b-n3b4hveadi] {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login[b-n3b4hveadi] {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: white;
+}
+
+.login-hello[b-n3b4hveadi] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: linear-gradient(180deg, #023020 0%, #185a37 90%);
+}
+
+.login-hello p[b-n3b4hveadi] {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.login-hello b[b-n3b4hveadi], .login-hello a[b-n3b4hveadi] {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.login-action[b-n3b4hveadi] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 30vh;
+    padding: 15px;
+}
+
+.login-field[b-n3b4hveadi] {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 5px;
+    min-width: fit-content;
+    width: -webkit-fill-available;
+    margin: 5px 0;
+}
+
+.register[b-n3b4hveadi] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.login-button[b-n3b4hveadi], .register-button[b-n3b4hveadi] {
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: -webkit-fill-available;
+}
+
+.login-button[b-n3b4hveadi] {
+    margin: 10px 0;
+}
+
+.register div[b-n3b4hveadi] {
+    margin: 10px 5px;
+}
+
+.login-button:hover[b-n3b4hveadi], .register-button:hover[b-n3b4hveadi] {
+    background-color: rgba(0,0,0,0.1);
+    transition: background-color 400ms linear;
+}
+
+.no-account[b-n3b4hveadi] {
+    text-align: center;
+}
+/* _content/Blazor/Pages/ManageAccount.razor.rz.scp.css */
+.content-central[b-xvrugd6msb] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-box[b-xvrugd6msb] {
+    background-image: linear-gradient(180deg, #023020 0%, #185a37 90%);
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.manage-account[b-xvrugd6msb] {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.manage-field[b-xvrugd6msb] {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 5px;
+    min-width: fit-content;
+    width: -webkit-fill-available;
+    margin: 5px 0;
+}
+
+.button[b-xvrugd6msb]{
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: -webkit-fill-available;
+    margin: 10px 5px;
+}
+
+.button:hover[b-xvrugd6msb] {
+    background-color: rgba(0,0,0,0.1);
+    transition: background-color 400ms linear;
+}
+
+.button-row[b-xvrugd6msb] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 /* _content/Blazor/Shared/MainLayout.razor.rz.scp.css */
 .page[b-r0yqwuvdyg] {
