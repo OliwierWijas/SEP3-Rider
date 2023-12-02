@@ -7,58 +7,65 @@
 @inject IFoodOfferService foodOfferService
 @inject IReservationService reservationService
 @attribute [Authorize]
-
-<AuthorizeView Policy="MustBeCustomer">
-@if (foodOffer is not null)
-{
-    @if (foodOffer.IsReserved)
-    {
-        <div class="form-group field">
-            <label>Reservation number: @reservationNumber</label>
-        </div>
-    }
-    <div class="card">
-        <div class="form-group field">
-            <label>Title: @foodOffer.Title</label>
-        </div>
-        <div class="form-group field">
-            <label>Description: @foodOffer.Description</label>
-        </div>
-        <div class="form-group field">
-            <label>Price: @foodOffer.Price</label>
-        </div>
-        <div class="form-group field">
-            <label>Pick-up time interval: @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</label>
-        </div>
-        <div class="form-group field">
-            <label>Food seller name: @foodOffer.FoodSellerName</label>
-        </div>
-        <div class="form-group field">
-            <label>Address: @foodOffer.FoodSellerAddress</label>
-        </div>
-        
-        
-   @if (foodOffer.IsCompleted)
-   {
-       <label>This food offer is completed.</label>
-   }
-   else if(foodOffer.IsReserved)
-   {
-       <div class="button-row">
-           <button @onclick="CancelAsync" class="acceptbtn">Cancel reservation</button>
-       </div>
-   }
-   else
-   {
-       <div class="button-row">
-           <button @onclick="ReserveAsync" class="acceptbtn">Reserve</button>
-       </div>
-   }
-        <label>@ErrorMessage</label>
-
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
     </div>
-}
-</AuthorizeView>
+    <div class="content">
+        <div class="content-header">
+            <a>Customer</a>
+            <a>Food &#x2022 Offer &#x2022 Details</a>
+        </div>
+        <AuthorizeView Policy="MustBeCustomer">
+        @if (foodOffer is not null)
+        {
+            <div class="food-offer">
+                <div class="product-image"></div>
+                <div class = "product-info">
+                    <div class = "product-title">@foodOffer.Title</div>
+                    @if (foodOffer.IsReserved)
+                                    {
+                                        <div style="font-weight: bold">Reservation number: @reservationNumber</div>
+                                    }
+                    <div><span class="oi oi-map-marker"/>  @foodOffer.FoodSellerName, @foodOffer.FoodSellerAddress</div>
+                    <div><span class="oi oi-clock"/>  @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</div>
+                    <div class = "product-price">@foodOffer.Price DKK</div>
+                    <div style="font-weight: bold">What is in the package?</div>
+                    <div >@foodOffer.Description</div>
+                </div>
+                  @if (foodOffer.IsCompleted)
+                                {
+                                    <label>This food offer is completed.</label>
+                                }
+                                else if (foodOffer.IsReserved)
+                                {
+                                    <div class="button-row">
+                                        <button @onclick="CancelAsync" class="btn">Cancel reservation</button>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="button-row">
+                                        <button @onclick="ReserveAsync" class="btn">Reserve</button>
+                                    </div>
+                                }
+            </div>
+                <label>@ErrorMessage</label>
+        }
+        </AuthorizeView>
+        
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
+
 @code {
     private int AccountId;
     private string ErrorMessage = "";
@@ -92,7 +99,7 @@
         try
         {
             await reservationService.DeleteAsync(reservationNumber);
-            Navmgr.NavigateTo("/ReservationOverview");
+            Navmgr.NavigateTo("/ReservationsOverview");
         }
         catch (Exception e)
         {
@@ -106,6 +113,7 @@
         try
         {
             await reservationService.CreateAsync(new ReservationCreationDTO(AccountId, id));
+            Navmgr.NavigateTo("/ReservationsOverview");
         }
         catch (Exception e)
         {

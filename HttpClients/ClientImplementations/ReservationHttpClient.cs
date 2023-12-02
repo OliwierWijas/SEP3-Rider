@@ -33,7 +33,7 @@ public class ReservationHttpClient : IReservationService
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
-        HttpResponseMessage message = await _client.PatchAsJsonAsync("/Reservations", reservationNumber);
+        HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodSellerReservations", reservationNumber);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
@@ -49,7 +49,6 @@ public class ReservationHttpClient : IReservationService
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(content);
             throw new Exception(content);
         }    
     }
@@ -75,7 +74,6 @@ public class ReservationHttpClient : IReservationService
         _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
         HttpResponseMessage response = await _client.GetAsync($"/FoodSellerReservations/{foodSellerId}");
         string content = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(content);
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(content);

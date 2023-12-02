@@ -6,17 +6,15 @@ html, body {
     background-color: #f6f6f6 !important;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
     min-height: fit-content;
+    overflow-x: hidden;
 }
 
 .main-content {
     display: flex;
     flex-direction: row;
-    width: 98vw;
+    width: 100vw;
     height: fit-content;
-    overflow: hidden;
     background-color: #f6f6f6 !important;
 }
 
@@ -65,14 +63,14 @@ html, body {
 .content {
     display: flex;
     flex-direction: column;
-    width: 82vw;
-    height: fit-content;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 
 .content-header {
     display: flex;
     height: 7vh;
-    width: 82vw;
+    width: -webkit-fill-available;
     position: fixed;
     background-color: white;
     font-size: 15px;
@@ -92,7 +90,7 @@ html, body {
     position: relative;
     top: 6vh;
     min-height: 74vh;
-    width: 82vw;
+    width: -webkit-fill-available;
     border-radius: 5px;
     margin:5px;
     padding: 20px 5px;
@@ -102,8 +100,8 @@ html, body {
 }
 
 .content-footer {
-    height: max-content;
-    width: 82vw;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
     background-color: white;
     margin: 10px 5px;
     padding: 30px;

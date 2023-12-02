@@ -3,40 +3,64 @@
 @using Domain.DTOs
 @using System.Security.Claims;
 @inject IReservationService ReservationService;
+@inject NavigationManager Navmgr
 @attribute [Authorize]
-
-@if (reservation is not null)
-{
-    <div class="card">
-        <div>
-            <label>Title: @reservation.Title</label>
-        </div>
-        <div>
-            <label>Description: @reservation.Description</label>
-        </div>
-        <div>
-            <label>Price: @reservation.Price</label>
-        </div>
-        <div>
-            <label>Reserved by : @reservation.CustomerFirstName @reservation.CustomerLastName </label>
-        </div>
-   @if (reservation.IsCompleted)
-   {
-       <label>This reservation is already completed, therefore you cannot perform any actions.</label>
-        <div class="button-row">
-            <button @onclick="CompleteAsync" class="acceptbtn" disabled>Complete Reservation</button>
-            </div>
-   }
-   else
-   {
-       <div class="button-row">
-           <button @onclick="CompleteAsync" class="acceptbtn">Complete Reservation</button>
-       </div>
-   }
-        <label>@ErrorMessage</label>
-
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
     </div>
-}
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Display &#x2022 Reservation</a>
+        </div>
+        <div class="content-central">
+         @if (reservation is not null)
+         {
+             <div class="food-offer">
+                 <div class="product-image"></div>
+                 <div class = "product-info">
+                     <div class="product-title">@reservation.Title</div>
+                     <div><span class="oi oi-clock"/>  @reservation.StartPickUpTime.ToString() - @reservation.EndPickUpTime.ToString()</div>
+                     <div class = "product-price">@reservation.Price DKK</div>
+                     <div style="display: flex">
+                         <label style="font-weight: bold">Reserved by :  </label>
+                         <div>  @reservation.CustomerFirstName @reservation.CustomerLastName </div>  
+                     </div>
+                     <div style="display: flex">
+                         <label style="font-weight: bold">Reservation number : </label>
+                         <div>  @reservation.ReservationNumber</div>  
+                     </div>
+                     <div style="font-weight: bold">What is in the package?</div>
+                     <div >@reservation.Description</div>
+                 
+                     @if (reservation.IsCompleted)
+                     {
+                         <div style="font-weight: bold">This reservation is already completed, therefore you cannot perform any actions.</div>
+                         <button @onclick="CompleteAsync" class="btn" disabled>Complete Reservation</button>
+                     }
+                     else
+                     {
+                         <button @onclick="CompleteAsync" class="btn">Complete Reservation</button>
+                     }
+                 </div>
+             </div>
+         }
+         <label>@ErrorMessage</label>
+        </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
+
+
 
 @code {
     private int AccountId;
@@ -70,6 +94,7 @@
         {
             ErrorMessage = "";
             await ReservationService.CompleteAsync(id);
+            Navmgr.NavigateTo("/ManageReservations");
 
         }
         catch (Exception e)

@@ -8,48 +8,69 @@
 @attribute [Authorize]
 
 <AuthorizeView Policy="MustBeFoodSeller">
-@if (foodOffer is not null)
-{
-    <div class="card">
-        <div class="form-group field">
-            <label>Title:</label>
-            <input type="text" @bind="Title" @bind:event="oninput"/>
+    <div class="main-content">
+        <div class="sidebar">
+            <NavMenu/>
         </div>
-        <div class="form-group field">
-            <label>Description:</label>
-            <input type="text" @bind="Description" @bind:event="oninput"/>
-        </div>
-        <div class="form-group field">
-            <label>Price:</label>
-            <input type="number" @bind="Price" @bind:event="oninput"/>
-        </div>
-        <div class="rz-p-12 rz-text-align-center">
-            <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-            <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-        </div>
-   @if (foodOffer.IsCompleted || foodOffer.IsReserved)
-   {
-       <label>This food offer is completed or reserved, therefore you cannot perform any actions.</label>
-        <div class="button-row">
-            <button @onclick="UpdateAsync" class="acceptbtn" disabled>Edit Food Offer</button>
+        <div class="content">
+            <div class="content-header">
+                <a>Food Seller</a>
+                <a>Food &#x2022 Offer &#x2022 Details</a>
             </div>
-       <div class="button-row">
-           <button @onclick="DeleteAsync" class="acceptbtn" disabled>Delete Food Offer</button>
-           </div>
-   }
-   else
-   {
-       <div class="button-row">
-           <button @onclick="UpdateAsync" class="acceptbtn">Edit Food Offer</button>
-       </div>
-       <div class="button-row">
-           <button @onclick="DeleteAsync" class="acceptbtn" >Delete Food Offer</button>
-       </div>
-   }
-        <label>@ErrorMessage</label>
+            <div class="content-central">
+                @if (foodOffer is not null)
+                   {
+                       <div class="food-offer">
+                           <div class="product-image"></div>
+                           <div class="product-info">
+                               <div style="margin-bottom: 3px">Title:</div>
+                               <input  type="text" @bind="Title" @bind:event="oninput"/>
+                               <div style="margin-bottom: 3px">Description:</div>
+                               <textarea type="text" @bind="Description" @bind:event="oninput"/>
+                               <div>
+                               <label style="margin-bottom: 3px">Price:</label>
+                               <input style="width: 50px" type="number" @bind="Price" @bind:event="oninput"/>
+                               <label style="margin-left: 28%"> Pick-up Interval: </label>
+                               <RadzenDatePicker @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/> - 
+                               <RadzenDatePicker @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                               
+                               </div>
+                                @if (foodOffer.IsCompleted || foodOffer.IsReserved)
+                                {
+                                    <label>This food offer is completed or reserved, therefore you cannot perform any actions.</label>
+                                    <div>
+                                    <button @onclick="UpdateAsync" class="btn" disabled>Edit Food Offer</button>
+                                    <button @onclick="DeleteAsync" class="btn" disabled>Delete Food Offer</button>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div>
+                                        <button @onclick="UpdateAsync" class="btn">Edit Food Offer</button>
+                                        <button @onclick="DeleteAsync" class="btn">Delete Food Offer</button>
+                                    </div>
+                                    
+                                }
+                               
+                           </div>
+                          
+                           <label>@ErrorMessage</label>
 
+                       </div>
+                   }
+            </div>
+            
+            <div class="content-footer bottom-0">
+                <div class="footer-title">Too Fresh Too Waste</div>
+                <div class="footer-address">
+                    <a>Banegårdsgade 2</a>
+                    <a>8700 Horsens</a>
+                    <a>+45 50 36 14 56</a>
+                </div>
+                <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+            </div>
+        </div>
     </div>
-}
 </AuthorizeView>
 @code {
     private int AccountId;
