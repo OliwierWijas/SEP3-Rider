@@ -3,32 +3,89 @@
 @using Domain.DTOs
 @inject ICustomerService CustomerService
 @inject IFoodSellerService FoodSellerService
-<h3>Register</h3>
-
-<div class="card">
-    <div class="form-group field">
-        <label>Firstname:</label>
-        <input type="text" @bind="CustomerFirstName" @bind:event="oninput"/>
-        <label>Lastname:</label>
-        <input type="text" @bind="CustomerLastName" @bind:event="oninput"/>
-        <label>Email:</label>
-        <input type="text" @bind="Email" @bind:event="oninput"/>
-        <label>Phone number:</label>
-        <input type="text" @bind="PhoneNumber" @bind:event="oninput"/>
-        <label>Password:</label>
-        <input type="text" @bind="Password" @bind:event="oninput"/>
-        <label>Name:</label>
-        <input type="text" @bind="SellerName" @bind:event="oninput"/>
-        <label>Address:</label>
-        <input type="text" @bind="SellerAddress" @bind:event="oninput"/>
-        @if (!string.IsNullOrEmpty(ErrorMessage))
-        {
-            <label style="color: red">@ErrorMessage</label>
-        }
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
     </div>
-    <div class="button-row">
-        <button @onclick="RegisterCustomer" class="acceptbtn">Register as customer</button>
-        <button @onclick="RegisterFoodSeller" class="acceptbtn">Register as food seller</button>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Display &#x2022 Reservation</a>
+        </div>
+        <div class="content-central">
+            <div class="register col-12 col-lg-8">
+                <div class="register-hello col-12 col-lg-6">
+                    <p>Welcome!</p>
+                    <b>Join our community!</b>
+                    @if (registerAsCustomer)
+                    {
+                        <a>Sign up as Customer and let's get started!</a>
+                    }
+                    else
+                    {
+                        <a>Sign up as Food Seller and let's get started!</a>
+                    }
+                </div>
+                <div class="register-action col-12 col-lg-6 align-items-center">
+                    @if (registerAsCustomer)
+                    {
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field"  placeholder="First Name" type="text" @bind="CustomerFirstName" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field" placeholder="Last Name" type="text" @bind="CustomerLastName" @bind:event="oninput"/>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field" placeholder="Name" type="text" @bind="SellerName" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field" placeholder="Address" type="text" @bind="SellerAddress" @bind:event="oninput"/>
+                        </div>
+                    }
+                    <div class="col-8 col-lg-12">
+                        <input class="register-field" placeholder="Email" type="email" @bind="Email" @bind:event="oninput"/>
+                    </div>
+                    <div class="col-8 col-lg-12">
+                        <input class="register-field" placeholder="Phone Number" type="text" @bind="PhoneNumber" @bind:event="oninput"/>
+                    </div>
+                    <div class="col-8 col-lg-12">
+                        <input class="register-field" placeholder="Password" type="password" @bind="Password" @bind:event="oninput"/>
+                    </div>
+                    @if (!string.IsNullOrEmpty(ErrorMessage))
+                    {
+                        <label class="register-field" style="color: red">@ErrorMessage</label>
+                    }
+                    <div class="col-8 col-lg-12">
+                        <button @onclick="Register" class="register-button">Sign Up</button>
+                    </div>
+                    <div class="continue col-8 col-lg-12">
+                        @if (registerAsCustomer)
+                        {
+                            <div class="continue-text">Or continue as Food Seller</div>
+                        }
+                        else
+                        {
+                            <div class="continue-text">Or continue as Customer</div>
+                        }
+                        <div class="col-4">
+                            <button class="continue-button" @onclick="() => registerAsCustomer = !registerAsCustomer">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
     </div>
 </div>
 
@@ -38,43 +95,41 @@
     private string Email = "";
     private string PhoneNumber = "";
     private string Password = "";
-    private string ErrorMessage = "";
-    
     private string SellerName = "";
     private string SellerAddress = "";
+    private string ErrorMessage = "";
 
-    private async Task RegisterCustomer()
+    private bool registerAsCustomer = true;
+
+    private async Task Register()
     {
         ErrorMessage = "";
         try
         {
-            await CustomerService.CreateAsync(new CustomerCreationDTO(CustomerFirstName, CustomerLastName, Email, PhoneNumber, Password));
-            CustomerFirstName = "";
-            CustomerLastName = "";
-            Email = "";
-            PhoneNumber = "";
-            Password = "";
-            ErrorMessage = "";
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            ErrorMessage = e.Message;
-        }
-    }
-    
-    private async Task RegisterFoodSeller()
-    {
-        ErrorMessage = "";
-        try
-        {
-            await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, SellerAddress ,Email, PhoneNumber, Password));
-            SellerName = "";
-            SellerAddress = "";
-            Email = "";
-            PhoneNumber = "";
-            Password = "";
-            ErrorMessage = "";
+            if (registerAsCustomer)
+            {
+                await CustomerService.CreateAsync(new CustomerCreationDTO(CustomerFirstName, CustomerLastName, Email, PhoneNumber, Password));
+                SellerName = "";
+                SellerAddress = "";
+                CustomerFirstName = "";
+                CustomerLastName = "";
+                Email = "";
+                PhoneNumber = "";
+                Password = "";
+                ErrorMessage = "";
+            }
+            else
+            {
+                await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, SellerAddress ,Email, PhoneNumber, Password));
+                CustomerFirstName = "";
+                CustomerLastName = "";
+                SellerName = "";
+                SellerAddress = "";
+                Email = "";
+                PhoneNumber = "";
+                Password = "";
+                ErrorMessage = "";
+            }
         }
         catch (Exception e)
         {

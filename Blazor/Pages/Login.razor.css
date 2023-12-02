@@ -1,0 +1,87 @@
+﻿.content-central {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: white;
+}
+
+.login-hello {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: linear-gradient(180deg, #023020 0%, #185a37 90%);
+}
+
+.login-hello p {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.login-hello b, .login-hello a {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.login-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 30vh;
+    padding: 15px;
+}
+
+.login-field {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 5px;
+    min-width: fit-content;
+    width: -webkit-fill-available;
+    margin: 5px 0;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.login-button, .register-button {
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: -webkit-fill-available;
+}
+
+.login-button {
+    margin: 10px 0;
+}
+
+.register div {
+    margin: 10px 5px;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: rgba(0,0,0,0.1);
+    transition: background-color 400ms linear;
+}
+
+.no-account {
+    text-align: center;
+}

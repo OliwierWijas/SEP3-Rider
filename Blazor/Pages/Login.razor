@@ -4,40 +4,63 @@
 @inject NavigationManager NavMgr
 <AuthorizeView>
     <NotAuthorized>
-        <div class="card">
-            <h3>Please login</h3>
-            <div class="field">
-                <input placeholder="Email" type="text" @bind="_email"/>
-            </div>
-            <div class="field">
-                <input placeholder="Password" type="password" @bind="_password"/>
-            </div>
-            @if (!string.IsNullOrEmpty(_errorLabel))
-            {
-                <div class="field">
-                    <label style="color: red">
-                        @_errorLabel
-                    </label>
-                </div>
-            }
-            <div class="field">
-                <button class="loginbtn" @onclick="LoginAsync">Log in</button>
-            </div>
-            <div class="field">
-                <button class="loginbtn" @onclick= "OnRegisterClick">Create Account</button>
-                </div>
+<div class="main-content">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a>Food Seller</a>
+            <a>Display &#x2022 Reservation</a>
         </div>
+        <div class="content-central">
+            <div class="login col-12 col-lg-6">
+                <div class="login-hello col-12">
+                    <p>Welcome!</p>
+                    <b>Join our community!</b>
+                    <a>Sign up if you're not a member!</a>
+                </div>
+                <div class="login-action col-12 align-items-center">
+                    <div class="col-12 col-lg-8">
+                        <input class="login-field" placeholder="Email" type="text" @bind="_email"/>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <input class="login-field" placeholder="Password" type="password" @bind="_password"/>
+                    </div>
+                    @if (!string.IsNullOrEmpty(_errorLabel))
+                    {
+                        <label class="login-field" style="color: red">@_errorLabel</label>
+                    }
+                    <div class="col-4">
+                        <button class="login-button" @onclick="LoginAsync">Login</button>
+                    </div>
+                    <div class="register col-12 col-lg-8">
+                        <div class="no-account">Don't have an account yet?</div>
+                        <div class="col-4">
+                            <button class="register-button" @onclick="() => NavMgr.NavigateTo(uri)">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
     </NotAuthorized>
-    <Authorized>
-        <div class="card">
-            <h3>Hello, you are logged in.</h3>
-        </div>
-    </Authorized>
 </AuthorizeView>
 @code {
     private string _email = "";
     private string _password ="";
     private string _errorLabel = "";
+    private string uri = "/CreateAccount";
 
     private async Task LoginAsync()
     {
@@ -52,10 +75,5 @@
             Console.WriteLine(e);
             _errorLabel = $"Error: {e.Message}";
         }
-    }
-
-    private void OnRegisterClick()
-    {
-        NavMgr.NavigateTo("/Register");
     }
 }
