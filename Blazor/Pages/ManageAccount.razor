@@ -15,7 +15,7 @@
     <div class="content">
         <div class="content-header">
             <a>Food Seller</a>
-            <a>Display &#x2022 Reservation</a>
+            <a>Manage &#x2022 Account</a>
         </div>
         <div class="content-central">
             <div class="border-box col-12 col-md-6">
@@ -25,7 +25,13 @@
                             <input class="manage-field" placeholder="Name" type="text" @bind="foodSellerDto.Name" @bind:event="oninput"/>
                         </div>
                         <div class="col-12 col-md-8">
-                            <input class="manage-field" placeholder="Address" type="text" @bind="foodSellerDto.Address" @bind:event="oninput"/>
+                            <input class="manage-field" placeholder="Street" type="text" @bind="foodSellerDto.Street" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <input class="manage-field" placeholder="Number" type="number" @bind="foodSellerDto.Number" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <input class="manage-field" placeholder="City" type="text" @bind="foodSellerDto.City" @bind:event="oninput"/>
                         </div>
                         <div class="col-12 col-md-8">
                             <input class="manage-field" placeholder="Email" type="email" @bind="foodSellerDto.Email" @bind:event="oninput"/>
@@ -84,7 +90,9 @@
     private string Password = "";
     private string PhoneNumber = "";
     private string Name = "";
-    private string Address = "";
+    private string Street = "";
+    private int Number = 0;
+    private string City = "";
     private string ErrorMessage = "";
 
     [CascadingParameter]
@@ -101,7 +109,7 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         customerDto = new CustomerUpdateDTO(AccountId, Email, Password, PhoneNumber);
-        foodSellerDto = new FoodSellerUpdateDTO(AccountId, Name, Address, Email, Password, PhoneNumber);
+        foodSellerDto = new FoodSellerUpdateDTO(AccountId, Name, Street, Number, City, Email, Password, PhoneNumber);
     }
 
     private async void Update()
@@ -133,7 +141,7 @@
             try
             {
                 ErrorMessage = "";
-                if (string.IsNullOrEmpty(foodSellerDto.Email) && string.IsNullOrEmpty(foodSellerDto.Password) && string.IsNullOrEmpty(foodSellerDto.PhoneNumber) && string.IsNullOrEmpty(foodSellerDto.Name) && string.IsNullOrEmpty(foodSellerDto.Address))
+                if (string.IsNullOrEmpty(foodSellerDto.Email) && string.IsNullOrEmpty(foodSellerDto.Password) && string.IsNullOrEmpty(foodSellerDto.PhoneNumber) && string.IsNullOrEmpty(foodSellerDto.Name) && (string.IsNullOrEmpty(foodSellerDto.Street) || Number <= 0 || string.IsNullOrEmpty(foodSellerDto.City)))
                     ErrorMessage = "No information provided.";
                 else
                 {
@@ -142,7 +150,9 @@
                     Password = "";
                     PhoneNumber = "";
                     Name = "";
-                    Address = "";
+                    Street = "";
+                    Number = 0;
+                    City = "";
                     ErrorMessage = "Update proceeded.";
                 }
             }

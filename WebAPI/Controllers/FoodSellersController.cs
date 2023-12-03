@@ -43,7 +43,7 @@ public class FoodSellersController : ControllerBase
                 await foodSellerLogic.UpdateName(dto);
             }
             
-            if (!string.IsNullOrEmpty(dto.Address))
+            if (!string.IsNullOrEmpty(dto.Street) && dto.Number > 0 && !string.IsNullOrEmpty(dto.City))
             {
                 await foodSellerLogic.UpdateAddress(dto);
             }

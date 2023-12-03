@@ -23,7 +23,9 @@ public class FoodSellerLogic : IFoodSellerLogic
             await client.CreateFoodSellerAsync(new CreateFoodSellerRequest()
             {
                 Name = dto.Name,
-                Address = dto.Address,
+                Street = dto.Street,
+                Number = dto.Number,
+                City = dto.City,
                 PhoneNumber = dto.PhoneNumber,
                 Email = dto.Email,
                 Password = dto.Password
@@ -59,15 +61,19 @@ public class FoodSellerLogic : IFoodSellerLogic
 
     public async Task UpdateAddress(FoodSellerUpdateDTO dto)
     {
-        if (dto.Address.Length > 200)
-            throw new InvalidDataException("Address cannot be longer than 200 characters.");
-
+        if (dto.Street.Length > 100)
+            throw new InvalidDataException("Street cannot be longer than 100 characters.");
+        if (dto.City.Length > 100)
+            throw new InvalidDataException("City cannot be longer than 100 characters.");
+        
         try
         {
             await client.UpdateAddressAsync(new UpdateFoodSellerAddressRequest()
             {
                 AccountId = dto.AccountId,
-                Address = dto.Address
+                Street = dto.Street,
+                Number = dto.Number,
+                City = dto.City
             });
         }
         catch (Exception e)

@@ -25,50 +25,52 @@ namespace GrpcClient {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5Qcm90b3MvRm9vZFNlbGxlclNlcnZpY2UucHJvdG8SCmZvb2RTZWxsZXIi",
-            "bwoXQ3JlYXRlRm9vZFNlbGxlclJlcXVlc3QSDAoEbmFtZRgBIAEoCRIPCgdh",
-            "ZGRyZXNzGAIgASgJEhQKDHBob25lX251bWJlchgDIAEoCRINCgVlbWFpbBgE",
-            "IAEoCRIQCghwYXNzd29yZBgFIAEoCSI+ChtVcGRhdGVGb29kU2VsbGVyTmFt",
-            "ZVJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFEgwKBG5hbWUYAiABKAkiRAoe",
-            "VXBkYXRlRm9vZFNlbGxlckFkZHJlc3NSZXF1ZXN0EhEKCWFjY291bnRJZBgB",
-            "IAEoBRIPCgdhZGRyZXNzGAIgASgJIkwKIlVwZGF0ZUZvb2RTZWxsZXJQaG9u",
-            "ZU51bWJlclJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFEhMKC3Bob25lTnVt",
-            "YmVyGAIgASgJIkAKHFVwZGF0ZUZvb2RTZWxsZXJFbWFpbFJlcXVlc3QSEQoJ",
-            "YWNjb3VudElkGAEgASgFEg0KBWVtYWlsGAIgASgJIkYKH1VwZGF0ZUZvb2RT",
-            "ZWxsZXJQYXNzd29yZFJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFEhAKCHBh",
-            "c3N3b3JkGAIgASgJIjMKHkRlbGV0ZUZvb2RTZWxsZXJBY2NvdW50UmVxdWVz",
-            "dBIRCglhY2NvdW50SWQYASABKAUiLQoYR2V0Rm9vZFNlbGxlckJ5SWRSZXF1",
-            "ZXN0EhEKCWFjY291bnRJZBgBIAEoBSIaChhHZXRBbGxGb29kU2VsbGVyc1Jl",
-            "cXVlc3QiGQoXRm9vZFNlbGxlckVtcHR5UmVzcG9uc2UicQoZR2V0Rm9vZFNl",
-            "bGxlckJ5SWRSZXNwb25zZRIRCglhY2NvdW50SWQYASABKAUSDQoFZW1haWwY",
-            "AiABKAkSEwoLcGhvbmVOdW1iZXIYAyABKAkSDAoEbmFtZRgEIAEoCRIPCgdh",
-            "ZGRyZXNzGAUgASgJIikKGUdldEFsbEZvb2RTZWxsZXJzUmVzcG9uc2USDAoE",
-            "bGlzdBgBIAEoCTKBBwoRRm9vZFNlbGxlclNlcnZpY2USXAoQQ3JlYXRlRm9v",
-            "ZFNlbGxlchIjLmZvb2RTZWxsZXIuQ3JlYXRlRm9vZFNlbGxlclJlcXVlc3Qa",
-            "Iy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJlc3BvbnNlEloKClVwZGF0",
-            "ZU5hbWUSJy5mb29kU2VsbGVyLlVwZGF0ZUZvb2RTZWxsZXJOYW1lUmVxdWVz",
-            "dBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVzcG9uc2USYAoNVXBk",
-            "YXRlQWRkcmVzcxIqLmZvb2RTZWxsZXIuVXBkYXRlRm9vZFNlbGxlckFkZHJl",
-            "c3NSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29kU2VsbGVyRW1wdHlSZXNwb25z",
-            "ZRJcCgtVcGRhdGVFbWFpbBIoLmZvb2RTZWxsZXIuVXBkYXRlRm9vZFNlbGxl",
-            "ckVtYWlsUmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVz",
-            "cG9uc2USYgoOVXBkYXRlUGFzc3dvcmQSKy5mb29kU2VsbGVyLlVwZGF0ZUZv",
-            "b2RTZWxsZXJQYXNzd29yZFJlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxs",
-            "ZXJFbXB0eVJlc3BvbnNlEmgKEVVwZGF0ZVBob25lTnVtYmVyEi4uZm9vZFNl",
-            "bGxlci5VcGRhdGVGb29kU2VsbGVyUGhvbmVOdW1iZXJSZXF1ZXN0GiMuZm9v",
-            "ZFNlbGxlci5Gb29kU2VsbGVyRW1wdHlSZXNwb25zZRJgCg1EZWxldGVBY2Nv",
-            "dW50EiouZm9vZFNlbGxlci5EZWxldGVGb29kU2VsbGVyQWNjb3VudFJlcXVl",
-            "c3QaIy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJlc3BvbnNlEmAKEUdl",
-            "dEZvb2RTZWxsZXJCeUlkEiQuZm9vZFNlbGxlci5HZXRGb29kU2VsbGVyQnlJ",
-            "ZFJlcXVlc3QaJS5mb29kU2VsbGVyLkdldEZvb2RTZWxsZXJCeUlkUmVzcG9u",
-            "c2USYAoRR2V0QWxsRm9vZFNlbGxlcnMSJC5mb29kU2VsbGVyLkdldEFsbEZv",
-            "b2RTZWxsZXJzUmVxdWVzdBolLmZvb2RTZWxsZXIuR2V0QWxsRm9vZFNlbGxl",
-            "cnNSZXNwb25zZUIPUAGqAgpHcnBjQ2xpZW50YgZwcm90bzM="));
+            "jAEKF0NyZWF0ZUZvb2RTZWxsZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSDgoG",
+            "c3RyZWV0GAIgASgJEg4KBm51bWJlchgDIAEoBRIMCgRjaXR5GAQgASgJEhQK",
+            "DHBob25lX251bWJlchgFIAEoCRINCgVlbWFpbBgGIAEoCRIQCghwYXNzd29y",
+            "ZBgHIAEoCSI+ChtVcGRhdGVGb29kU2VsbGVyTmFtZVJlcXVlc3QSEQoJYWNj",
+            "b3VudElkGAEgASgFEgwKBG5hbWUYAiABKAkiYQoeVXBkYXRlRm9vZFNlbGxl",
+            "ckFkZHJlc3NSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBRIOCgZzdHJlZXQY",
+            "AiABKAkSDgoGbnVtYmVyGAMgASgFEgwKBGNpdHkYBCABKAkiTAoiVXBkYXRl",
+            "Rm9vZFNlbGxlclBob25lTnVtYmVyUmVxdWVzdBIRCglhY2NvdW50SWQYASAB",
+            "KAUSEwoLcGhvbmVOdW1iZXIYAiABKAkiQAocVXBkYXRlRm9vZFNlbGxlckVt",
+            "YWlsUmVxdWVzdBIRCglhY2NvdW50SWQYASABKAUSDQoFZW1haWwYAiABKAki",
+            "RgofVXBkYXRlRm9vZFNlbGxlclBhc3N3b3JkUmVxdWVzdBIRCglhY2NvdW50",
+            "SWQYASABKAUSEAoIcGFzc3dvcmQYAiABKAkiMwoeRGVsZXRlRm9vZFNlbGxl",
+            "ckFjY291bnRSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBSItChhHZXRGb29k",
+            "U2VsbGVyQnlJZFJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFIhoKGEdldEFs",
+            "bEZvb2RTZWxsZXJzUmVxdWVzdCIZChdGb29kU2VsbGVyRW1wdHlSZXNwb25z",
+            "ZSJxChlHZXRGb29kU2VsbGVyQnlJZFJlc3BvbnNlEhEKCWFjY291bnRJZBgB",
+            "IAEoBRINCgVlbWFpbBgCIAEoCRITCgtwaG9uZU51bWJlchgDIAEoCRIMCgRu",
+            "YW1lGAQgASgJEg8KB2FkZHJlc3MYBSABKAkiKQoZR2V0QWxsRm9vZFNlbGxl",
+            "cnNSZXNwb25zZRIMCgRsaXN0GAEgASgJMoEHChFGb29kU2VsbGVyU2Vydmlj",
+            "ZRJcChBDcmVhdGVGb29kU2VsbGVyEiMuZm9vZFNlbGxlci5DcmVhdGVGb29k",
+            "U2VsbGVyUmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVz",
+            "cG9uc2USWgoKVXBkYXRlTmFtZRInLmZvb2RTZWxsZXIuVXBkYXRlRm9vZFNl",
+            "bGxlck5hbWVSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29kU2VsbGVyRW1wdHlS",
+            "ZXNwb25zZRJgCg1VcGRhdGVBZGRyZXNzEiouZm9vZFNlbGxlci5VcGRhdGVG",
+            "b29kU2VsbGVyQWRkcmVzc1JlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxs",
+            "ZXJFbXB0eVJlc3BvbnNlElwKC1VwZGF0ZUVtYWlsEiguZm9vZFNlbGxlci5V",
+            "cGRhdGVGb29kU2VsbGVyRW1haWxSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29k",
+            "U2VsbGVyRW1wdHlSZXNwb25zZRJiCg5VcGRhdGVQYXNzd29yZBIrLmZvb2RT",
+            "ZWxsZXIuVXBkYXRlRm9vZFNlbGxlclBhc3N3b3JkUmVxdWVzdBojLmZvb2RT",
+            "ZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVzcG9uc2USaAoRVXBkYXRlUGhvbmVO",
+            "dW1iZXISLi5mb29kU2VsbGVyLlVwZGF0ZUZvb2RTZWxsZXJQaG9uZU51bWJl",
+            "clJlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJlc3BvbnNl",
+            "EmAKDURlbGV0ZUFjY291bnQSKi5mb29kU2VsbGVyLkRlbGV0ZUZvb2RTZWxs",
+            "ZXJBY2NvdW50UmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5",
+            "UmVzcG9uc2USYAoRR2V0Rm9vZFNlbGxlckJ5SWQSJC5mb29kU2VsbGVyLkdl",
+            "dEZvb2RTZWxsZXJCeUlkUmVxdWVzdBolLmZvb2RTZWxsZXIuR2V0Rm9vZFNl",
+            "bGxlckJ5SWRSZXNwb25zZRJgChFHZXRBbGxGb29kU2VsbGVycxIkLmZvb2RT",
+            "ZWxsZXIuR2V0QWxsRm9vZFNlbGxlcnNSZXF1ZXN0GiUuZm9vZFNlbGxlci5H",
+            "ZXRBbGxGb29kU2VsbGVyc1Jlc3BvbnNlQg9QAaoCCkdycGNDbGllbnRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodSellerRequest), global::GrpcClient.CreateFoodSellerRequest.Parser, new[]{ "Name", "Address", "PhoneNumber", "Email", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodSellerRequest), global::GrpcClient.CreateFoodSellerRequest.Parser, new[]{ "Name", "Street", "Number", "City", "PhoneNumber", "Email", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerNameRequest), global::GrpcClient.UpdateFoodSellerNameRequest.Parser, new[]{ "AccountId", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerAddressRequest), global::GrpcClient.UpdateFoodSellerAddressRequest.Parser, new[]{ "AccountId", "Address" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerAddressRequest), global::GrpcClient.UpdateFoodSellerAddressRequest.Parser, new[]{ "AccountId", "Street", "Number", "City" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerPhoneNumberRequest), global::GrpcClient.UpdateFoodSellerPhoneNumberRequest.Parser, new[]{ "AccountId", "PhoneNumber" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerEmailRequest), global::GrpcClient.UpdateFoodSellerEmailRequest.Parser, new[]{ "AccountId", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerPasswordRequest), global::GrpcClient.UpdateFoodSellerPasswordRequest.Parser, new[]{ "AccountId", "Password" }, null, null, null, null),
@@ -119,7 +121,9 @@ namespace GrpcClient {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateFoodSellerRequest(CreateFoodSellerRequest other) : this() {
       name_ = other.name_;
-      address_ = other.address_;
+      street_ = other.street_;
+      number_ = other.number_;
+      city_ = other.city_;
       phoneNumber_ = other.phoneNumber_;
       email_ = other.email_;
       password_ = other.password_;
@@ -144,20 +148,44 @@ namespace GrpcClient {
       }
     }
 
-    /// <summary>Field number for the "address" field.</summary>
-    public const int AddressFieldNumber = 2;
-    private string address_ = "";
+    /// <summary>Field number for the "street" field.</summary>
+    public const int StreetFieldNumber = 2;
+    private string street_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Address {
-      get { return address_; }
+    public string Street {
+      get { return street_; }
       set {
-        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        street_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "number" field.</summary>
+    public const int NumberFieldNumber = 3;
+    private int number_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Number {
+      get { return number_; }
+      set {
+        number_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city" field.</summary>
+    public const int CityFieldNumber = 4;
+    private string city_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string City {
+      get { return city_; }
+      set {
+        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "phone_number" field.</summary>
-    public const int PhoneNumberFieldNumber = 3;
+    public const int PhoneNumberFieldNumber = 5;
     private string phoneNumber_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -169,7 +197,7 @@ namespace GrpcClient {
     }
 
     /// <summary>Field number for the "email" field.</summary>
-    public const int EmailFieldNumber = 4;
+    public const int EmailFieldNumber = 6;
     private string email_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,7 +209,7 @@ namespace GrpcClient {
     }
 
     /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 5;
+    public const int PasswordFieldNumber = 7;
     private string password_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -208,7 +236,9 @@ namespace GrpcClient {
         return true;
       }
       if (Name != other.Name) return false;
-      if (Address != other.Address) return false;
+      if (Street != other.Street) return false;
+      if (Number != other.Number) return false;
+      if (City != other.City) return false;
       if (PhoneNumber != other.PhoneNumber) return false;
       if (Email != other.Email) return false;
       if (Password != other.Password) return false;
@@ -220,7 +250,9 @@ namespace GrpcClient {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (Street.Length != 0) hash ^= Street.GetHashCode();
+      if (Number != 0) hash ^= Number.GetHashCode();
+      if (City.Length != 0) hash ^= City.GetHashCode();
       if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
@@ -246,20 +278,28 @@ namespace GrpcClient {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Address.Length != 0) {
+      if (Street.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Address);
+        output.WriteString(Street);
+      }
+      if (Number != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Number);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
       }
       if (PhoneNumber.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(PhoneNumber);
       }
       if (Email.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteString(Email);
       }
       if (Password.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(Password);
       }
       if (_unknownFields != null) {
@@ -276,20 +316,28 @@ namespace GrpcClient {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Address.Length != 0) {
+      if (Street.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Address);
+        output.WriteString(Street);
+      }
+      if (Number != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Number);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
       }
       if (PhoneNumber.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(PhoneNumber);
       }
       if (Email.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteString(Email);
       }
       if (Password.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(Password);
       }
       if (_unknownFields != null) {
@@ -305,8 +353,14 @@ namespace GrpcClient {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Address.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      if (Street.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Street);
+      }
+      if (Number != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
+      }
+      if (City.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
       }
       if (PhoneNumber.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
@@ -332,8 +386,14 @@ namespace GrpcClient {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Address.Length != 0) {
-        Address = other.Address;
+      if (other.Street.Length != 0) {
+        Street = other.Street;
+      }
+      if (other.Number != 0) {
+        Number = other.Number;
+      }
+      if (other.City.Length != 0) {
+        City = other.City;
       }
       if (other.PhoneNumber.Length != 0) {
         PhoneNumber = other.PhoneNumber;
@@ -364,18 +424,26 @@ namespace GrpcClient {
             break;
           }
           case 18: {
-            Address = input.ReadString();
+            Street = input.ReadString();
             break;
           }
-          case 26: {
-            PhoneNumber = input.ReadString();
+          case 24: {
+            Number = input.ReadInt32();
             break;
           }
           case 34: {
-            Email = input.ReadString();
+            City = input.ReadString();
             break;
           }
           case 42: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 50: {
+            Email = input.ReadString();
+            break;
+          }
+          case 58: {
             Password = input.ReadString();
             break;
           }
@@ -399,18 +467,26 @@ namespace GrpcClient {
             break;
           }
           case 18: {
-            Address = input.ReadString();
+            Street = input.ReadString();
             break;
           }
-          case 26: {
-            PhoneNumber = input.ReadString();
+          case 24: {
+            Number = input.ReadInt32();
             break;
           }
           case 34: {
-            Email = input.ReadString();
+            City = input.ReadString();
             break;
           }
           case 42: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 50: {
+            Email = input.ReadString();
+            break;
+          }
+          case 58: {
             Password = input.ReadString();
             break;
           }
@@ -682,7 +758,9 @@ namespace GrpcClient {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateFoodSellerAddressRequest(UpdateFoodSellerAddressRequest other) : this() {
       accountId_ = other.accountId_;
-      address_ = other.address_;
+      street_ = other.street_;
+      number_ = other.number_;
+      city_ = other.city_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -704,15 +782,39 @@ namespace GrpcClient {
       }
     }
 
-    /// <summary>Field number for the "address" field.</summary>
-    public const int AddressFieldNumber = 2;
-    private string address_ = "";
+    /// <summary>Field number for the "street" field.</summary>
+    public const int StreetFieldNumber = 2;
+    private string street_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Address {
-      get { return address_; }
+    public string Street {
+      get { return street_; }
       set {
-        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        street_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "number" field.</summary>
+    public const int NumberFieldNumber = 3;
+    private int number_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Number {
+      get { return number_; }
+      set {
+        number_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city" field.</summary>
+    public const int CityFieldNumber = 4;
+    private string city_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string City {
+      get { return city_; }
+      set {
+        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -732,7 +834,9 @@ namespace GrpcClient {
         return true;
       }
       if (AccountId != other.AccountId) return false;
-      if (Address != other.Address) return false;
+      if (Street != other.Street) return false;
+      if (Number != other.Number) return false;
+      if (City != other.City) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -741,7 +845,9 @@ namespace GrpcClient {
     public override int GetHashCode() {
       int hash = 1;
       if (AccountId != 0) hash ^= AccountId.GetHashCode();
-      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (Street.Length != 0) hash ^= Street.GetHashCode();
+      if (Number != 0) hash ^= Number.GetHashCode();
+      if (City.Length != 0) hash ^= City.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -764,9 +870,17 @@ namespace GrpcClient {
         output.WriteRawTag(8);
         output.WriteInt32(AccountId);
       }
-      if (Address.Length != 0) {
+      if (Street.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Address);
+        output.WriteString(Street);
+      }
+      if (Number != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Number);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -782,9 +896,17 @@ namespace GrpcClient {
         output.WriteRawTag(8);
         output.WriteInt32(AccountId);
       }
-      if (Address.Length != 0) {
+      if (Street.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Address);
+        output.WriteString(Street);
+      }
+      if (Number != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Number);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -799,8 +921,14 @@ namespace GrpcClient {
       if (AccountId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccountId);
       }
-      if (Address.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      if (Street.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Street);
+      }
+      if (Number != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
+      }
+      if (City.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -817,8 +945,14 @@ namespace GrpcClient {
       if (other.AccountId != 0) {
         AccountId = other.AccountId;
       }
-      if (other.Address.Length != 0) {
-        Address = other.Address;
+      if (other.Street.Length != 0) {
+        Street = other.Street;
+      }
+      if (other.Number != 0) {
+        Number = other.Number;
+      }
+      if (other.City.Length != 0) {
+        City = other.City;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -840,7 +974,15 @@ namespace GrpcClient {
             break;
           }
           case 18: {
-            Address = input.ReadString();
+            Street = input.ReadString();
+            break;
+          }
+          case 24: {
+            Number = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            City = input.ReadString();
             break;
           }
         }
@@ -863,7 +1005,15 @@ namespace GrpcClient {
             break;
           }
           case 18: {
-            Address = input.ReadString();
+            Street = input.ReadString();
+            break;
+          }
+          case 24: {
+            Number = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            City = input.ReadString();
             break;
           }
         }

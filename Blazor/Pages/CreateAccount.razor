@@ -9,8 +9,15 @@
     </div>
     <div class="content">
         <div class="content-header">
-            <a>Food Seller</a>
-            <a>Display &#x2022 Reservation</a>
+            <a>Create Account</a>
+            @if (registerAsCustomer)
+            {
+                <a>Register &#x2022 Customer</a>
+            }
+            else
+            {
+                <a>Register &#x2022 Food Seller</a>
+            }
         </div>
         <div class="content-central">
             <div class="register col-12 col-lg-8">
@@ -42,7 +49,13 @@
                             <input class="register-field" placeholder="Name" type="text" @bind="SellerName" @bind:event="oninput"/>
                         </div>
                         <div class="col-8 col-lg-12">
-                            <input class="register-field" placeholder="Address" type="text" @bind="SellerAddress" @bind:event="oninput"/>
+                            <input class="register-field" placeholder="Street" type="text" @bind="Street" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field" placeholder="Number" type="number" @bind="Number" @bind:event="oninput"/>
+                        </div>
+                        <div class="col-8 col-lg-12">
+                            <input class="register-field" placeholder="City" type="text" @bind="City" @bind:event="oninput"/>
                         </div>
                     }
                     <div class="col-8 col-lg-12">
@@ -96,7 +109,9 @@
     private string PhoneNumber = "";
     private string Password = "";
     private string SellerName = "";
-    private string SellerAddress = "";
+    private string Street = "";
+    private int Number = 0;
+    private string City = "";
     private string ErrorMessage = "";
 
     private bool registerAsCustomer = true;
@@ -110,7 +125,9 @@
             {
                 await CustomerService.CreateAsync(new CustomerCreationDTO(CustomerFirstName, CustomerLastName, Email, PhoneNumber, Password));
                 SellerName = "";
-                SellerAddress = "";
+                Street = "";
+                Number = 0;
+                City = "";
                 CustomerFirstName = "";
                 CustomerLastName = "";
                 Email = "";
@@ -120,11 +137,13 @@
             }
             else
             {
-                await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, SellerAddress ,Email, PhoneNumber, Password));
+                await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, Street, Number, City ,Email, PhoneNumber, Password));
                 CustomerFirstName = "";
                 CustomerLastName = "";
                 SellerName = "";
-                SellerAddress = "";
+                Street = "";
+                Number = 0;
+                City = "";
                 Email = "";
                 PhoneNumber = "";
                 Password = "";

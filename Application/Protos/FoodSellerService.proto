@@ -5,10 +5,12 @@ option csharp_namespace = "GrpcClient";
 
 message CreateFoodSellerRequest {
   string name = 1;
-  string address = 2;
-  string phone_number = 3;
-  string email = 4;
-  string password = 5;
+  string street = 2;
+  int32 number = 3;
+  string city = 4;
+  string phone_number = 5;
+  string email = 6;
+  string password = 7;
 }
 
 message UpdateFoodSellerNameRequest {
@@ -18,7 +20,9 @@ message UpdateFoodSellerNameRequest {
 
 message UpdateFoodSellerAddressRequest {
   int32 accountId = 1;
-  string address = 2;
+  string street = 2;
+  int32 number = 3;
+  string city = 4;
 }
 
 message UpdateFoodSellerPhoneNumberRequest {
