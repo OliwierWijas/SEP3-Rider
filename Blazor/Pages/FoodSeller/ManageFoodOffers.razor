@@ -65,27 +65,13 @@
                     <div class="foodOffer-container">
                         @foreach (var item in _foodOffers)
                         {
-                            if (!item.IsReserved)
-                            {
-                                <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
-                                    <div class="product-image"></div>
-                                    <div class="product-title"><b>@item.Title</b></div>
-                                    <div class="product-price">@item.Price DKK</div>
-                                    <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
-                                    <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.Id}"))">
-                                    <div class="product-image"></div>
-                                    <div class="product-title"><b>@item.Title</b></div>
-                                    <div class="product-price">@item.Price DKK</div>
-                                    <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
-                                    <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
-                                </div>
-                            }
-                            
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
+                                <div class="product-image"></div>
+                                <div class="product-title"><b>@item.Title</b></div>
+                                <div class="product-price">@item.Price DKK</div>
+                                <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
+                                <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
+                            </div>
                         }
                     </div>
                     

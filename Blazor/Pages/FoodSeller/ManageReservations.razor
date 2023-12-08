@@ -30,7 +30,7 @@
                     <div class="reservation-container">
                         @foreach (var item in _reservations)
                         {
-                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.FoodOfferId}"))">
+                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.FoodOfferId}"))">
                                 <div class="product-image"></div>
                                 <div class="product-title"><b>@item.Title</b></div>
                                 <div class="product-reznr">Reservation number: @item.ReservationNumber</div>

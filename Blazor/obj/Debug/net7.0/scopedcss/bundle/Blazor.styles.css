@@ -100,8 +100,6 @@
 }
 /* _content/Blazor/Pages/Customer/CustomerDisplayFoodOffer.razor.rz.scp.css */
 .food-offer[b-tf6k2kfai8]{
-    display: flex;
-    flex-direction: row;
     width: 82vw;
     height: fit-content;
     margin: 70px 5px 10px 0px;
@@ -110,9 +108,10 @@
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s;
-    justify-content: center;
-    
-    
+}
+[class*="col-"][b-tf6k2kfai8] {
+    float: left;
+    padding: 5px;
 }
 .product-image[b-tf6k2kfai8] {
     background-color: gray;
@@ -226,14 +225,21 @@
     display: flex;
     width: 40vh;
     height: 50vh;
-    margin: 10px;
     padding: 10px;
+    margin: 10px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sellers-image[b-tgucxdvbu8] {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
 }
 
 .sellers-name[b-tgucxdvbu8] {
@@ -324,52 +330,107 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
-.seller-info[b-hvm59tntmh]{
-    width: 70vh;
-    height: 20vh;
-   margin-bottom: 2vh;
-}
-.rate-drop[b-hvm59tntmh]{
-    width: 6vh;
-    height: 4vh;
+
+.subtitle[b-hvm59tntmh] {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-.rate-but[b-hvm59tntmh]{
-    margin-bottom: 2vh;
-    margin-top: 1vh;
-    width: 6vh;
-    height: 4vh;
-    border: 1px solid lightgrey;
-   
-}
-.comment-text[b-hvm59tntmh]{
-    width: 70vh;
+.seller-info[b-hvm59tntmh] {
+    display: flex;
+    width: 63vh;
     height: 40vh;
-    border: 1px solid lightgrey;
-   
+    margin: 10px;
+    padding: 10px;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.comment-but[b-hvm59tntmh]{
-    width: 10vh;
-    height: 4vh;
-    border: 1px solid lightgrey;
-    margin-top: 1vh;
-    margin-bottom: 2vh;
+.inf-container[b-hvm59tntmh] {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-top: 10px;
 }
-.customer-comment[b-hvm59tntmh]{
-    width: 70vh;
+
+.seller-image[b-hvm59tntmh] {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.rating[b-hvm59tntmh] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.rate-drop[b-hvm59tntmh] {
+    margin-right: 10px;
+}
+
+.btn[b-hvm59tntmh] {
+    margin: 10px 5px;
+    background-color: #185a37;
+    padding: 5px 20px 5px 20px;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: auto;
+    text-decoration-color: white;
+    color: white;
+}
+
+.createbtn:hover[b-hvm59tntmh] {
+    background-color: white;
+}
+
+.comment-text[b-hvm59tntmh] {
+    width: 62vh;
     height: 20vh;
     border: 1px solid lightgrey;
-    
-    
+    margin-bottom: 1vh;
+}
+
+.comment-container[b-hvm59tntmh] {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 40px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 991.98px) {
+    .seller-info[b-hvm59tntmh] {
+        width: 100%;
+        max-width: none;
+    }
+
+    .comment-text[b-hvm59tntmh] {
+        width: 100%;
+        max-width: none;
+    }
+
+    .comment-container[b-hvm59tntmh] {
+        width: 100%;
+        max-width: none;
+    }
 }
 /* _content/Blazor/Pages/FoodSeller/FoodSellerDisplayFoodOffer.razor.rz.scp.css */
 .food-offer[b-lytcjpabj0]{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     width: 82vw;
     height: fit-content;
     margin: 70px 5px 10px 0px;
@@ -378,9 +439,10 @@
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s;
-    justify-content: center;
-
-
+}
+[class*="col-"][b-lytcjpabj0] {
+    float: left;
+    padding: 5px;
 }
 .product-image[b-lytcjpabj0] {
     background-color: gray;
@@ -393,7 +455,6 @@
 .product-info[b-lytcjpabj0] {
     flex-direction: column;
     align-items: flex-start;
-    width: 80%;
 }
 input[b-lytcjpabj0], textarea[b-lytcjpabj0]{
     width: 100%;
@@ -420,8 +481,6 @@ textarea[b-lytcjpabj0]{
 }
 /* _content/Blazor/Pages/FoodSeller/FoodSellerDisplayReservation.razor.rz.scp.css */
 .food-offer[b-hmsk5grchi]{
-    display: flex;
-    flex-direction: row;
     width: 82vw;
     height: fit-content;
     margin: 70px 5px 10px 0px;
@@ -430,9 +489,10 @@ textarea[b-lytcjpabj0]{
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s;
-    justify-content: center;
-
-
+}
+[class*="col-"][b-hmsk5grchi] {
+    float: left;
+    padding: 5px;
 }
 .product-image[b-hmsk5grchi] {
     background-color: gray;
@@ -606,6 +666,52 @@ textarea[b-lytcjpabj0]{
 #price[b-dq0f1li1lm] {
     margin-left: 8px;
 }
+
+@media screen and (max-width: 768px) {
+    .card[b-dq0f1li1lm],
+    .product[b-dq0f1li1lm] {
+        width: 90%;
+        max-width: none;
+    }
+
+    .input-field[b-dq0f1li1lm],
+    .input-field-description[b-dq0f1li1lm],
+    .title-field[b-dq0f1li1lm],
+    #date[b-dq0f1li1lm],
+    #description[b-dq0f1li1lm],
+    #title[b-dq0f1li1lm],
+    #price[b-dq0f1li1lm]{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .createbtn[b-dq0f1li1lm] {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card[b-dq0f1li1lm],
+    .product[b-dq0f1li1lm] {
+        width: 100%;
+        max-width: none;
+        margin-left: 0px;
+    }
+
+    .input-field[b-dq0f1li1lm],
+    .input-field-description[b-dq0f1li1lm],
+    .title-field[b-dq0f1li1lm],
+    #date[b-dq0f1li1lm],
+    #description[b-dq0f1li1lm],
+    #title[b-dq0f1li1lm],
+    #price[b-dq0f1li1lm]{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .createbtn[b-dq0f1li1lm] {
+        margin-left: 0px;
+    }
+}
 /* _content/Blazor/Pages/FoodSeller/ManageReservations.razor.rz.scp.css */
 .content-central[b-w1ykbjgvi1] {
     display: flex;
@@ -658,7 +764,54 @@ textarea[b-lytcjpabj0]{
     font-size: 16px;
     font-weight: 400;
 }
+
+@media screen and (max-width: 768px) {
+    .card[b-w1ykbjgvi1],
+    .product[b-w1ykbjgvi1] {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+/* Media query for screens up to 480px */
+@media screen and (max-width: 480px) {
+    .card[b-w1ykbjgvi1],
+    .product[b-w1ykbjgvi1] {
+        width: 100%;
+        max-width: none;
+    }
+
+}
 /* _content/Blazor/Pages/Index.razor.rz.scp.css */
+@media (max-width: 991.98px) {
+    .row[b-ci4vf3jic1] {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-item[b-ci4vf3jic1] {
+        margin: 10px;
+        text-align: center;
+    }
+}
+.content-central[b-ci4vf3jic1] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subtitle[b-ci4vf3jic1] {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+
 .description[b-ci4vf3jic1]{
     margin-top: 10px;
     font-size: 12px;
@@ -668,19 +821,12 @@ textarea[b-lytcjpabj0]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     flex-direction: row;
 }
-
-.row[b-ci4vf3jic1] {
-    display: flex;
-    justify-content: center;
-}
-
 .home-item[b-ci4vf3jic1]{
     display: flex;
     width: 40vh;
-    height: 50vh;
+    min-height: 50vh;
     margin: 10px;
     padding: 10px;
     justify-content: center;
@@ -689,6 +835,24 @@ textarea[b-lytcjpabj0]{
     border-radius: 5px;
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.home-image[b-ci4vf3jic1]{
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+}
+
+/*.h-image{
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+}*/
+
+.row[b-ci4vf3jic1]{
+    margin: -10px;
+    margin-bottom: 10px;
 }
 /* _content/Blazor/Pages/Login.razor.rz.scp.css */
 .content-central[b-n3b4hveadi] {
