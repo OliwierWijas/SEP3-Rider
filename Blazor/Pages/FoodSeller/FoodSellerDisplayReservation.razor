@@ -82,8 +82,7 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         IEnumerable<Reservation> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
-        reservation = temp.FirstOrDefault(r => r.ReservationNumber == id)!;
-        
+        reservation = temp.FirstOrDefault(r => r.FoodOfferId == id)!;
     }
     
     private async void CompleteAsync()
