@@ -1,7 +1,7 @@
 ﻿@page "/FoodSellerDisplayReservation/{id:int}"
 @using HttpClients.ClientInterfaces
-@using Domain.DTOs
 @using System.Security.Claims;
+@using Domain.Models
 @inject IReservationService ReservationService;
 @inject NavigationManager Navmgr
 @attribute [Authorize]
@@ -18,14 +18,14 @@
          @if (reservation is not null)
          {
              <div class="food-offer">
-                 <div class="product-image"></div>
-                 <div class = "product-info">
+                 <div class="product-image col-sm-12 col-lg-3"></div>
+                 <div class = "product-info col-sm-12 col-lg-9">
                      <div class="product-title">@reservation.Title</div>
                      <div><span class="oi oi-clock"/>  @reservation.StartPickUpTime.ToString() - @reservation.EndPickUpTime.ToString()</div>
                      <div class = "product-price">@reservation.Price DKK</div>
                      <div style="display: flex">
                          <label style="font-weight: bold">Reserved by :  </label>
-                         <div>  @reservation.CustomerFirstName @reservation.CustomerLastName </div>  
+                         <div>  @reservation.Customer.FirstName @reservation.Customer.LastName </div>  
                      </div>
                      <div style="display: flex">
                          <label style="font-weight: bold">Reservation number : </label>
@@ -60,15 +60,13 @@
     </div>
 </div>
 
-
-
 @code {
     private int AccountId;
     private string ErrorMessage = "";
     [Parameter] 
     public int id { get; set; }
 
-    private ReadFoodSellerReservationDTO reservation { get; set; }
+    private Reservation reservation { get; set; }
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -83,7 +81,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        IEnumerable<ReadFoodSellerReservationDTO> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
+        IEnumerable<Reservation> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
         reservation = temp.FirstOrDefault(r => r.ReservationNumber == id)!;
         
     }
@@ -93,13 +91,14 @@
         try
         {
             ErrorMessage = "";
-            await ReservationService.CompleteAsync(id);
+            await ReservationService.CompleteAsync(reservation.ReservationNumber);
             Navmgr.NavigateTo("/ManageReservations");
 
         }
         catch (Exception e)
         {
             ErrorMessage = e.Message;
+            StateHasChanged();
         }
     }
     

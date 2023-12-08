@@ -1,8 +1,10 @@
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using Domain;
 using Domain.DTOs;
+using Domain.Models;
 using HttpClients.ClientInterfaces;
 
 namespace HttpClients.ClientImplementations;
@@ -34,7 +36,9 @@ public class FoodOfferHttpClient : IFoodOfferService
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
-        HttpResponseMessage message = await _client.PatchAsJsonAsync("/FoodOffers", foodOffer);
+        string foodOfferAsJson = JsonSerializer.Serialize(foodOffer);
+        StringContent body = new StringContent(foodOfferAsJson, Encoding.UTF8, "application/json");
+        HttpResponseMessage message = await _client.PatchAsync("/FoodOffers", body);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
@@ -54,7 +58,7 @@ public class FoodOfferHttpClient : IFoodOfferService
         }    
     }
 
-    public async Task<List<ReadFoodOffersDTO>> GetAvailableFoodOffersAsync()
+    public async Task<List<FoodOffer>> GetAvailableFoodOffersAsync()
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync("/FoodOffers");
@@ -64,11 +68,11 @@ public class FoodOfferHttpClient : IFoodOfferService
             throw new Exception(content);
         }
 
-        List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return foodOffers;
     }
 
-    public async Task<List<ReadFoodOffersDTO>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId)
+    public async Task<List<FoodOffer>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/FoodOffers/{foodSellerId}");
@@ -78,7 +82,7 @@ public class FoodOfferHttpClient : IFoodOfferService
             throw new Exception(content);
         }
 
-        List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return foodOffers;
     }
 
@@ -97,7 +101,7 @@ public class FoodOfferHttpClient : IFoodOfferService
         return foodOffer;
     }
 
-    public async Task<ReadFoodOffersDTO> GetFoodOfferByIdAsync(int id)
+    public async Task<FoodOffer> GetFoodOfferByIdAsync(int id)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/FoodOffers/FoodOffer/{id}");
@@ -107,7 +111,7 @@ public class FoodOfferHttpClient : IFoodOfferService
             throw new Exception(content);
         }
 
-        ReadFoodOffersDTO foodOffer = JsonSerializer.Deserialize<ReadFoodOffersDTO>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        FoodOffer foodOffer = JsonSerializer.Deserialize<FoodOffer>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         
         return foodOffer;
     }

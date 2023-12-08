@@ -2,6 +2,7 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 using Domain.DTOs;
+using Domain.Models;
 using HttpClients.ClientInterfaces;
 
 namespace HttpClients.ClientImplementations;
@@ -53,7 +54,7 @@ public class ReservationHttpClient : IReservationService
         }    
     }
 
-    public async Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
+    public async Task<IEnumerable<Reservation>> ReadCustomerReservations(int customerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
@@ -64,11 +65,11 @@ public class ReservationHttpClient : IReservationService
             throw new Exception(content);
         }
 
-        IEnumerable<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadCustomerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        IEnumerable<Reservation> reservations = JsonSerializer.Deserialize<IEnumerable<Reservation>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return reservations;
     }
     
-    public async Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
+    public async Task<IEnumerable<Reservation>> ReadFoodSellerReservations(int foodSellerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeFoodSeller", "foodseller");
@@ -79,7 +80,7 @@ public class ReservationHttpClient : IReservationService
             throw new Exception(content);
         }
 
-        IEnumerable<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadFoodSellerReservationDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        IEnumerable<Reservation> reservations = JsonSerializer.Deserialize<IEnumerable<Reservation>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
      
         return reservations;
     }

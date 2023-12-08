@@ -1,6 +1,7 @@
 ﻿@page "/DisplayFoodSeller/{id:int}"
 @using System.Security.Claims
 @using Domain.DTOs
+@using Domain.Models
 @using HttpClients.ClientInterfaces
 @inject IFoodSellerService FoodSellerService
 @inject IRatingAndCommentService RatingAndCommentService
@@ -15,75 +16,83 @@
             <a>Display &#x2022 Food &#x2022 Seller</a>
         </div>
         <div class="content-central">
-<AuthorizeView>
-    @if (dto != null)
-    {
-        <div class="card seller-info" >
-            <div class="form-group field">
-                <h5><b>Name:</b> @dto.Name </h5>
-            </div>
-            <div class="form-group field">
-                <h5><b>Email:</b> @dto.Email </h5>
-            </div>
-            <div class="form-group field">
-                <h5><b>Address:</b> @dto.Address </h5>
-            </div>
-            <div class="form-group field">
-                <h5><b>Phone number:</b> @dto.PhoneNumber </h5>
-            </div>
-            <div class="form-group field">
-                <h5><b>Average rating:</b> @averageRating </h5>
-            </div>
-        </div>
-    }
-        </AuthorizeView>
-            <AuthorizeView Policy="MustBeCustomer">
-                <div class="rate-drop">
-                    <RadzenDropDown @bind-Value=@value Data=@rates/>
-                </div>
-                <button @onclick="CreateRatingAsync" class="rate-but">Rate</button>
-            </AuthorizeView>
-    <AuthorizeView>
-        <label><b>Comments:</b></label>
-     </AuthorizeView> 
-        <AuthorizeView Policy="MustBeCustomer">
-            <textarea placeholder="Write a comment..." type="text" @bind="comment" class="comment-text"/>
-            <button @onclick="CreateCommentAsync" class="comment-but">Comment</button>
-        </AuthorizeView>
-        <AuthorizeView>
-            @if (comments == null)
-            {
-            }
-            else if (!comments.Any())
-            {
-                <p>No comments to display.</p>
-            }
-            else
-            {
-                @foreach (var item in comments)
+            <AuthorizeView>
+                @if (foodSeller != null)
                 {
-                    <div class="card customer-comment">
-                        <h5>@item.CustomerFirstName @item.CustomerLastName</h5>
-                        <h6>@item.Date.ToStringWithOutHourAndMinutes()</h6>
-                        <h6>@item.Content</h6>
+                    <div class="subtitle"><h3>&#x2022 Food Seller &#x2022</h3></div>
+                    <div class="card seller-info">
+                        <div class="seller-image"></div>
+                        <div class="inf-container">
+                            <div class="form-group field">
+                                <h5><b>Name:</b> @foodSeller.Name </h5>
+                            </div>
+                            <div class="form-group field">
+                                <h5><b>Email:</b> @foodSeller.Email </h5>
+                            </div>
+                            <div class="form-group field">
+                                <h5><b>Address:</b> @foodSeller.Address </h5>
+                            </div>
+                            <div class="form-group field">
+                                <h5><b>Phone number:</b> @foodSeller.PhoneNumber </h5>
+                            </div>
+                            <div class="form-group field">
+                                <h5><b>Average rating:</b> @averageRating </h5>
+                            </div>
+                        </div>
                     </div>
                 }
-
-            }
-    
-        </AuthorizeView>
-         </div>
-                <div class="content-footer bottom-0">
-                    <div class="footer-title">Too Fresh Too Waste</div>
-                    <div class="footer-address">
-                        <a>Banegårdsgade 2</a>
-                        <a>8700 Horsens</a>
-                        <a>+45 50 36 14 56</a>
+            </AuthorizeView>
+            <AuthorizeView Policy="MustBeCustomer">
+                <div class="rating">
+                    <div class="rate-drop">
+                        <RadzenDropDown @bind-Value=@value Data=@rates/>
                     </div>
-                    <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+                    <button @onclick="CreateRatingAsync" class="btn">Rate</button>
                 </div>
-            </div>
+            </AuthorizeView>
+            <AuthorizeView>
+                <h5><b>Comments:</b></h5>
+            </AuthorizeView> 
+            <AuthorizeView Policy="MustBeCustomer">
+                <textarea placeholder="Write a comment..." type="text" @bind="comment" class="comment-text"/>
+                <button @onclick="CreateCommentAsync" class="btn comment-but">Comment</button>
+            </AuthorizeView>
+            <AuthorizeView>
+                @if (comments == null)
+                {
+                }
+                else if (!comments.Any())
+                {
+                    <p>No comments to display.</p>
+                }
+                else
+                {
+            
+                    @foreach (var item in comments)
+                    {
+                        <div class="comment-container card col-6 col-lg-4">
+                            <div class="comment-name">@item.Customer.FirstName @item.Customer.LastName</div>
+                            <div class="comment-date">@item.Date.ToStringWithOutHourAndMinutes()</div>
+                            <div class="comment-content">@item.Content</div>
+                        </div>
+                    }
+               
+
+                }
+    
+            </AuthorizeView>
         </div>
+        <div class="content-footer bottom-0">
+            <div class="footer-title">Too Fresh Too Waste</div>
+            <div class="footer-address">
+                <a>Banegårdsgade 2</a>
+                <a>8700 Horsens</a>
+                <a>+45 50 36 14 56</a>
+            </div>
+            <div class="footer-copyrights">&copy Too Fresh Too Waste. All rights reserved.</div>
+        </div>
+    </div>
+</div>
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -91,9 +100,9 @@
     private IEnumerable<Claim> userClaims;
     private int accountId;
     [Parameter] public int id { get; set; }
-    private ReadFoodSellerDTO dto;
+    private Domain.FoodSeller foodSeller;
     private string errorMessage = "";
-    private List<ReadCommentDTO> comments;
+    private List<Comment> comments;
     private string comment = "";
     private double averageRating;
     private int value = 5;
@@ -108,7 +117,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         accountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        dto = await FoodSellerService.GetAsync(id);
+        foodSeller = await FoodSellerService.GetAsync(id);
         comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
         averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
         rates = new[] { 1, 2, 3, 4, 5 };
@@ -127,6 +136,7 @@
         {
             Console.WriteLine(e);
             errorMessage = e.Message;
+            StateHasChanged();
         }
     }
     private async Task CreateRatingAsync()
@@ -143,6 +153,7 @@
         {
             Console.WriteLine(e);
             errorMessage = e.Message;
+            StateHasChanged();
         }
     }
     

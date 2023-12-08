@@ -1,5 +1,6 @@
 using Domain;
 using Domain.DTOs;
+using Domain.Models;
 
 namespace HttpClients.ClientInterfaces;
 
@@ -8,8 +9,8 @@ public interface IFoodOfferService
     Task CreateAsync(FoodOfferCreationDTO dto);
     Task UpdateAsync(FoodOffer foodOffer);
     Task DeleteAsync(int foodOfferId);
-    Task<List<ReadFoodOffersDTO>> GetAvailableFoodOffersAsync();
-    Task<List<ReadFoodOffersDTO>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId);
+    Task<List<FoodOffer>> GetAvailableFoodOffersAsync();
+    Task<List<FoodOffer>> GetFoodOffersByFoodSellerIdAsync(int foodSellerId);
     Task<FoodOffer> GetFoodOfferAsync(int foodSellerId, int foodOfferId);
-    Task<ReadFoodOffersDTO> GetFoodOfferByIdAsync(int id);
+    Task<FoodOffer> GetFoodOfferByIdAsync(int id);
 }

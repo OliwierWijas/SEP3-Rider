@@ -49,3 +49,21 @@
     font-size: 16px;
     font-weight: 400;
 }
+
+@media screen and (max-width: 768px) {
+    .card,
+    .product {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+/* Media query for screens up to 480px */
+@media screen and (max-width: 480px) {
+    .card,
+    .product {
+        width: 100%;
+        max-width: none;
+    }
+
+}

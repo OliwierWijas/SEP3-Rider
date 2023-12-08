@@ -2,6 +2,7 @@
 using System.Text.Json;
 using Application.LogicInterfaces;
 using Domain.DTOs;
+using Domain.Models;
 using Grpc.Core;
 using Grpc.Net.Client;
 using GrpcClient;
@@ -16,7 +17,7 @@ public class ReservationLogic : IReservationLogic
         GrpcChannel channel = service.Channel;
         client = new  ReservationService.ReservationServiceClient(channel);
     }
-    public async Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId)
+    public async Task<IEnumerable<Reservation>> ReadCustomerReservations(int customerId)
     {
         try
         {
@@ -33,7 +34,7 @@ public class ReservationLogic : IReservationLogic
                 PropertyNameCaseInsensitive = true
             };
                 
-            IEnumerable<ReadCustomerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadCustomerReservationDTO>>(Json, options);
+            IEnumerable<Reservation> reservations = JsonSerializer.Deserialize<IEnumerable<Reservation>>(Json, options)!;
 
             return reservations;
         }
@@ -44,7 +45,7 @@ public class ReservationLogic : IReservationLogic
         }
     }
 
-    public async Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId)
+    public async Task<IEnumerable<Reservation>> ReadFoodSellerReservations(int foodSellerId)
     {
         try
         {
@@ -60,7 +61,7 @@ public class ReservationLogic : IReservationLogic
                 PropertyNameCaseInsensitive = true
             };
             
-            IEnumerable<ReadFoodSellerReservationDTO> reservations = JsonSerializer.Deserialize<IEnumerable<ReadFoodSellerReservationDTO>>(Json, options);
+            IEnumerable<Reservation> reservations = JsonSerializer.Deserialize<IEnumerable<Reservation>>(Json, options)!;
             return reservations;
         }
         catch (Exception e)

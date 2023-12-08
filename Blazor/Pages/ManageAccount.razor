@@ -134,6 +134,7 @@
             catch (Exception e)
             {
                 ErrorMessage = e.Message;
+                StateHasChanged();
             }
         }
         else
@@ -158,7 +159,9 @@
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 ErrorMessage = e.Message;
+                StateHasChanged();
             }
         }
         
@@ -180,6 +183,7 @@
             catch (Exception e)
             {
                 ErrorMessage = e.ToString();
+                StateHasChanged();
             }
         }
         else
@@ -194,7 +198,9 @@
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 ErrorMessage = $"Error: {e.Message}";
+                StateHasChanged();
             }
         }
     }

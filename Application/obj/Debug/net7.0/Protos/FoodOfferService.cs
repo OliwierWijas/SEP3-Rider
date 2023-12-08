@@ -37,25 +37,24 @@ namespace GrpcClient {
             "FQoNZW5kUGlja1VwVGltZRgGIAEoCSItChZEZWxldGVGb29kT2ZmZXJSZXF1",
             "ZXN0EhMKC2Zvb2RPZmZlcklkGAEgASgFIhgKFkZvb2RPZmZlckVtcHR5UmVz",
             "cG9uc2UiKgoaUmVhZEZvb2RPZmZlcnNMaXN0UmVzcG9uc2USDAoEbGlzdBgB",
-            "IAEoCSL4AQoVUmVhZEZvb2RPZmZlclJlc3BvbnNlEgoKAmlkGAEgASgFEhQK",
-            "DGZvb2RTZWxsZXJJZBgCIAEoBRINCgV0aXRsZRgDIAEoCRITCgtkZXNjcmlw",
-            "dGlvbhgEIAEoCRINCgVwcmljZRgFIAEoARIXCg9zdGFydFBpY2tVcFRpbWUY",
-            "BiABKAkSFQoNZW5kUGlja1VwVGltZRgHIAEoCRIWCg5mb29kU2VsbGVyTmFt",
-            "ZRgIIAEoCRIZChFmb29kU2VsbGVyQWRkcmVzcxgJIAEoCRISCgppc1Jlc2Vy",
-            "dmVkGAogASgIEhMKC2lzQ29tcGxldGVkGAsgASgIMt0EChBGb29kT2ZmZXJT",
-            "ZXJ2aWNlElcKD2NyZWF0ZUZvb2RPZmZlchIhLmZvb2RPZmZlci5DcmVhdGVG",
-            "b29kT2ZmZXJSZXF1ZXN0GiEuZm9vZE9mZmVyLkZvb2RPZmZlckVtcHR5UmVz",
-            "cG9uc2USawoXcmVhZEF2YWlsYWJsZUZvb2RPZmZlcnMSKS5mb29kT2ZmZXIu",
-            "UmVhZEF2YWlsYWJsZUZvb2RPZmZlcnNSZXF1ZXN0GiUuZm9vZE9mZmVyLlJl",
-            "YWRGb29kT2ZmZXJzTGlzdFJlc3BvbnNlEnUKHHJlYWRGb29kT2ZmZXJzQnlG",
-            "b29kU2VsbGVySWQSLi5mb29kT2ZmZXIuUmVhZEZvb2RPZmZlcnNCeUZvb2RT",
-            "ZWxsZXJJZFJlcXVlc3QaJS5mb29kT2ZmZXIuUmVhZEZvb2RPZmZlcnNMaXN0",
-            "UmVzcG9uc2USVwoPdXBkYXRlRm9vZE9mZmVyEiEuZm9vZE9mZmVyLlVwZGF0",
-            "ZUZvb2RPZmZlclJlcXVlc3QaIS5mb29kT2ZmZXIuRm9vZE9mZmVyRW1wdHlS",
-            "ZXNwb25zZRJXCg9kZWxldGVGb29kT2ZmZXISIS5mb29kT2ZmZXIuRGVsZXRl",
-            "Rm9vZE9mZmVyUmVxdWVzdBohLmZvb2RPZmZlci5Gb29kT2ZmZXJFbXB0eVJl",
-            "c3BvbnNlEloKEXJlYWRGb29kT2ZmZXJCeUlkEiMuZm9vZE9mZmVyLlJlYWRG",
-            "b29kT2ZmZXJCeUlkUmVxdWVzdBogLmZvb2RPZmZlci5SZWFkRm9vZE9mZmVy",
+            "IAEoCSLHAQoZUmVhZEZvb2RPZmZlckJ5SWRSZXNwb25zZRIKCgJpZBgBIAEo",
+            "BRISCgpmb29kU2VsbGVyGAIgASgJEg0KBXRpdGxlGAMgASgJEhMKC2Rlc2Ny",
+            "aXB0aW9uGAQgASgJEg0KBXByaWNlGAUgASgBEhcKD3N0YXJ0UGlja1VwVGlt",
+            "ZRgGIAEoCRIVCg1lbmRQaWNrVXBUaW1lGAcgASgJEhIKCmlzUmVzZXJ2ZWQY",
+            "CiABKAgSEwoLaXNDb21wbGV0ZWQYCyABKAgy4QQKEEZvb2RPZmZlclNlcnZp",
+            "Y2USVwoPY3JlYXRlRm9vZE9mZmVyEiEuZm9vZE9mZmVyLkNyZWF0ZUZvb2RP",
+            "ZmZlclJlcXVlc3QaIS5mb29kT2ZmZXIuRm9vZE9mZmVyRW1wdHlSZXNwb25z",
+            "ZRJrChdyZWFkQXZhaWxhYmxlRm9vZE9mZmVycxIpLmZvb2RPZmZlci5SZWFk",
+            "QXZhaWxhYmxlRm9vZE9mZmVyc1JlcXVlc3QaJS5mb29kT2ZmZXIuUmVhZEZv",
+            "b2RPZmZlcnNMaXN0UmVzcG9uc2USdQoccmVhZEZvb2RPZmZlcnNCeUZvb2RT",
+            "ZWxsZXJJZBIuLmZvb2RPZmZlci5SZWFkRm9vZE9mZmVyc0J5Rm9vZFNlbGxl",
+            "cklkUmVxdWVzdBolLmZvb2RPZmZlci5SZWFkRm9vZE9mZmVyc0xpc3RSZXNw",
+            "b25zZRJXCg91cGRhdGVGb29kT2ZmZXISIS5mb29kT2ZmZXIuVXBkYXRlRm9v",
+            "ZE9mZmVyUmVxdWVzdBohLmZvb2RPZmZlci5Gb29kT2ZmZXJFbXB0eVJlc3Bv",
+            "bnNlElcKD2RlbGV0ZUZvb2RPZmZlchIhLmZvb2RPZmZlci5EZWxldGVGb29k",
+            "T2ZmZXJSZXF1ZXN0GiEuZm9vZE9mZmVyLkZvb2RPZmZlckVtcHR5UmVzcG9u",
+            "c2USXgoRcmVhZEZvb2RPZmZlckJ5SWQSIy5mb29kT2ZmZXIuUmVhZEZvb2RP",
+            "ZmZlckJ5SWRSZXF1ZXN0GiQuZm9vZE9mZmVyLlJlYWRGb29kT2ZmZXJCeUlk",
             "UmVzcG9uc2VCD1ABqgIKR3JwY0NsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
@@ -68,7 +67,7 @@ namespace GrpcClient {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.DeleteFoodOfferRequest), global::GrpcClient.DeleteFoodOfferRequest.Parser, new[]{ "FoodOfferId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.FoodOfferEmptyResponse), global::GrpcClient.FoodOfferEmptyResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOffersListResponse), global::GrpcClient.ReadFoodOffersListResponse.Parser, new[]{ "List" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOfferResponse), global::GrpcClient.ReadFoodOfferResponse.Parser, new[]{ "Id", "FoodSellerId", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime", "FoodSellerName", "FoodSellerAddress", "IsReserved", "IsCompleted" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOfferByIdResponse), global::GrpcClient.ReadFoodOfferByIdResponse.Parser, new[]{ "Id", "FoodSeller", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime", "IsReserved", "IsCompleted" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1883,16 +1882,16 @@ namespace GrpcClient {
 
   }
 
-  public sealed partial class ReadFoodOfferResponse : pb::IMessage<ReadFoodOfferResponse>
+  public sealed partial class ReadFoodOfferByIdResponse : pb::IMessage<ReadFoodOfferByIdResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ReadFoodOfferResponse> _parser = new pb::MessageParser<ReadFoodOfferResponse>(() => new ReadFoodOfferResponse());
+    private static readonly pb::MessageParser<ReadFoodOfferByIdResponse> _parser = new pb::MessageParser<ReadFoodOfferByIdResponse>(() => new ReadFoodOfferByIdResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ReadFoodOfferResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<ReadFoodOfferByIdResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1908,7 +1907,7 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ReadFoodOfferResponse() {
+    public ReadFoodOfferByIdResponse() {
       OnConstruction();
     }
 
@@ -1916,16 +1915,14 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ReadFoodOfferResponse(ReadFoodOfferResponse other) : this() {
+    public ReadFoodOfferByIdResponse(ReadFoodOfferByIdResponse other) : this() {
       id_ = other.id_;
-      foodSellerId_ = other.foodSellerId_;
+      foodSeller_ = other.foodSeller_;
       title_ = other.title_;
       description_ = other.description_;
       price_ = other.price_;
       startPickUpTime_ = other.startPickUpTime_;
       endPickUpTime_ = other.endPickUpTime_;
-      foodSellerName_ = other.foodSellerName_;
-      foodSellerAddress_ = other.foodSellerAddress_;
       isReserved_ = other.isReserved_;
       isCompleted_ = other.isCompleted_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1933,8 +1930,8 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ReadFoodOfferResponse Clone() {
-      return new ReadFoodOfferResponse(this);
+    public ReadFoodOfferByIdResponse Clone() {
+      return new ReadFoodOfferByIdResponse(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -1949,15 +1946,15 @@ namespace GrpcClient {
       }
     }
 
-    /// <summary>Field number for the "foodSellerId" field.</summary>
-    public const int FoodSellerIdFieldNumber = 2;
-    private int foodSellerId_;
+    /// <summary>Field number for the "foodSeller" field.</summary>
+    public const int FoodSellerFieldNumber = 2;
+    private string foodSeller_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FoodSellerId {
-      get { return foodSellerId_; }
+    public string FoodSeller {
+      get { return foodSeller_; }
       set {
-        foodSellerId_ = value;
+        foodSeller_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2021,30 +2018,6 @@ namespace GrpcClient {
       }
     }
 
-    /// <summary>Field number for the "foodSellerName" field.</summary>
-    public const int FoodSellerNameFieldNumber = 8;
-    private string foodSellerName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FoodSellerName {
-      get { return foodSellerName_; }
-      set {
-        foodSellerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "foodSellerAddress" field.</summary>
-    public const int FoodSellerAddressFieldNumber = 9;
-    private string foodSellerAddress_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FoodSellerAddress {
-      get { return foodSellerAddress_; }
-      set {
-        foodSellerAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "isReserved" field.</summary>
     public const int IsReservedFieldNumber = 10;
     private bool isReserved_;
@@ -2072,12 +2045,12 @@ namespace GrpcClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as ReadFoodOfferResponse);
+      return Equals(other as ReadFoodOfferByIdResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ReadFoodOfferResponse other) {
+    public bool Equals(ReadFoodOfferByIdResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2085,14 +2058,12 @@ namespace GrpcClient {
         return true;
       }
       if (Id != other.Id) return false;
-      if (FoodSellerId != other.FoodSellerId) return false;
+      if (FoodSeller != other.FoodSeller) return false;
       if (Title != other.Title) return false;
       if (Description != other.Description) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Price, other.Price)) return false;
       if (StartPickUpTime != other.StartPickUpTime) return false;
       if (EndPickUpTime != other.EndPickUpTime) return false;
-      if (FoodSellerName != other.FoodSellerName) return false;
-      if (FoodSellerAddress != other.FoodSellerAddress) return false;
       if (IsReserved != other.IsReserved) return false;
       if (IsCompleted != other.IsCompleted) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -2103,14 +2074,12 @@ namespace GrpcClient {
     public override int GetHashCode() {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
-      if (FoodSellerId != 0) hash ^= FoodSellerId.GetHashCode();
+      if (FoodSeller.Length != 0) hash ^= FoodSeller.GetHashCode();
       if (Title.Length != 0) hash ^= Title.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Price != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Price);
       if (StartPickUpTime.Length != 0) hash ^= StartPickUpTime.GetHashCode();
       if (EndPickUpTime.Length != 0) hash ^= EndPickUpTime.GetHashCode();
-      if (FoodSellerName.Length != 0) hash ^= FoodSellerName.GetHashCode();
-      if (FoodSellerAddress.Length != 0) hash ^= FoodSellerAddress.GetHashCode();
       if (IsReserved != false) hash ^= IsReserved.GetHashCode();
       if (IsCompleted != false) hash ^= IsCompleted.GetHashCode();
       if (_unknownFields != null) {
@@ -2135,9 +2104,9 @@ namespace GrpcClient {
         output.WriteRawTag(8);
         output.WriteInt32(Id);
       }
-      if (FoodSellerId != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(FoodSellerId);
+      if (FoodSeller.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FoodSeller);
       }
       if (Title.Length != 0) {
         output.WriteRawTag(26);
@@ -2158,14 +2127,6 @@ namespace GrpcClient {
       if (EndPickUpTime.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(EndPickUpTime);
-      }
-      if (FoodSellerName.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(FoodSellerName);
-      }
-      if (FoodSellerAddress.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(FoodSellerAddress);
       }
       if (IsReserved != false) {
         output.WriteRawTag(80);
@@ -2189,9 +2150,9 @@ namespace GrpcClient {
         output.WriteRawTag(8);
         output.WriteInt32(Id);
       }
-      if (FoodSellerId != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(FoodSellerId);
+      if (FoodSeller.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FoodSeller);
       }
       if (Title.Length != 0) {
         output.WriteRawTag(26);
@@ -2212,14 +2173,6 @@ namespace GrpcClient {
       if (EndPickUpTime.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(EndPickUpTime);
-      }
-      if (FoodSellerName.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(FoodSellerName);
-      }
-      if (FoodSellerAddress.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(FoodSellerAddress);
       }
       if (IsReserved != false) {
         output.WriteRawTag(80);
@@ -2242,8 +2195,8 @@ namespace GrpcClient {
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
       }
-      if (FoodSellerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FoodSellerId);
+      if (FoodSeller.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FoodSeller);
       }
       if (Title.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
@@ -2260,12 +2213,6 @@ namespace GrpcClient {
       if (EndPickUpTime.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(EndPickUpTime);
       }
-      if (FoodSellerName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FoodSellerName);
-      }
-      if (FoodSellerAddress.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FoodSellerAddress);
-      }
       if (IsReserved != false) {
         size += 1 + 1;
       }
@@ -2280,15 +2227,15 @@ namespace GrpcClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ReadFoodOfferResponse other) {
+    public void MergeFrom(ReadFoodOfferByIdResponse other) {
       if (other == null) {
         return;
       }
       if (other.Id != 0) {
         Id = other.Id;
       }
-      if (other.FoodSellerId != 0) {
-        FoodSellerId = other.FoodSellerId;
+      if (other.FoodSeller.Length != 0) {
+        FoodSeller = other.FoodSeller;
       }
       if (other.Title.Length != 0) {
         Title = other.Title;
@@ -2304,12 +2251,6 @@ namespace GrpcClient {
       }
       if (other.EndPickUpTime.Length != 0) {
         EndPickUpTime = other.EndPickUpTime;
-      }
-      if (other.FoodSellerName.Length != 0) {
-        FoodSellerName = other.FoodSellerName;
-      }
-      if (other.FoodSellerAddress.Length != 0) {
-        FoodSellerAddress = other.FoodSellerAddress;
       }
       if (other.IsReserved != false) {
         IsReserved = other.IsReserved;
@@ -2336,8 +2277,8 @@ namespace GrpcClient {
             Id = input.ReadInt32();
             break;
           }
-          case 16: {
-            FoodSellerId = input.ReadInt32();
+          case 18: {
+            FoodSeller = input.ReadString();
             break;
           }
           case 26: {
@@ -2358,14 +2299,6 @@ namespace GrpcClient {
           }
           case 58: {
             EndPickUpTime = input.ReadString();
-            break;
-          }
-          case 66: {
-            FoodSellerName = input.ReadString();
-            break;
-          }
-          case 74: {
-            FoodSellerAddress = input.ReadString();
             break;
           }
           case 80: {
@@ -2395,8 +2328,8 @@ namespace GrpcClient {
             Id = input.ReadInt32();
             break;
           }
-          case 16: {
-            FoodSellerId = input.ReadInt32();
+          case 18: {
+            FoodSeller = input.ReadString();
             break;
           }
           case 26: {
@@ -2417,14 +2350,6 @@ namespace GrpcClient {
           }
           case 58: {
             EndPickUpTime = input.ReadString();
-            break;
-          }
-          case 66: {
-            FoodSellerName = input.ReadString();
-            break;
-          }
-          case 74: {
-            FoodSellerAddress = input.ReadString();
             break;
           }
           case 80: {

@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Application.LogicInterfaces;
+using Domain;
 using Domain.DTOs;
 using Grpc.Core;
 using Grpc.Net.Client;
@@ -188,7 +189,7 @@ public class FoodSellerLogic : IFoodSellerLogic
         }     
     }
 
-    public async Task<ReadFoodSellerDTO> GetFoodSellerById(int accountId)
+    public async Task<FoodSeller> GetFoodSellerById(int accountId)
     {
         using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
         {
@@ -202,9 +203,9 @@ public class FoodSellerLogic : IFoodSellerLogic
             {
                 AccountId = accountId
             });
-             ReadFoodSellerDTO dto = new ReadFoodSellerDTO(response.AccountId, response.Email, response.PhoneNumber,
+             FoodSeller seller = new FoodSeller(response.AccountId, response.Email, response.PhoneNumber,
                  response.Name, response.Address);
-             return dto;
+             return seller;
         }
         catch (Exception e)
         {
@@ -215,7 +216,7 @@ public class FoodSellerLogic : IFoodSellerLogic
         
     }
 
-    public async Task<List<ReadFoodSellerDTO>> GetAllFoodSellers()
+    public async Task<List<FoodSeller>> GetAllFoodSellers()
     {
         try
         {
@@ -227,7 +228,7 @@ public class FoodSellerLogic : IFoodSellerLogic
                 PropertyNameCaseInsensitive = true
             };
 
-            List<ReadFoodSellerDTO> foodSellers = JsonSerializer.Deserialize<List<ReadFoodSellerDTO>>(Json, options)!;
+            List<FoodSeller> foodSellers = JsonSerializer.Deserialize<List<FoodSeller>>(Json, options)!;
 
             return foodSellers;
         }

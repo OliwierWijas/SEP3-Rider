@@ -2,6 +2,7 @@
 @using Domain
 @using Domain.DTOs
 @using System.Security.Claims
+@using Domain.Models
 @using HttpClients.ClientInterfaces
 @using Microsoft.AspNetCore.Components
 @inject NavigationManager NavMgr
@@ -19,63 +20,77 @@
         </div>
         <div class="content-central">
             <AuthorizeView Policy="MustBeFoodSeller">
+                <div class="subtitle"><h3>&#x2022 Create a new food offer &#x2022</h3></div>
+                <div class="foodOffer-container">
+                    <div class="card">
+                        <div class="form-group field">
+                            <label class="title-field">Title:</label>
+                            <input class="input-field"  id="title" type="text" @bind="Title" @bind:event="oninput"/>
+                        </div>
+                        <div class="form-group field">
+                            <label class="title-field">Description:</label>
+                            <textarea class="input-field-description" id="description" type="text" @bind="Description" @bind:event="oninput"></textarea>
+                        </div>
+                        <div class="form-group field">
+                            <label class="title-field" id>Price:</label>
+                            <input class="input-field" id="price" type="number" @bind="Price" @bind:event="oninput"/>
+                        </div>
+                        <div class="form-group field">
+                            <label class="title-field">Start pick-up date:</label>
+                            <RadzenDatePicker id="date" @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                        </div>
+                        <div class="form-group field">
+                            <label class="title-field" id="endDate">End pick-up date:    </label>
+                            <RadzenDatePicker id="date" @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
+                        </div>
+                        <div class="button-row">
+                            <button @onclick="CreateAsync" class="createbtn">Create</button>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(ErrorMessage))
+                    {
+                        <label style="color: red">@ErrorMessage</label>
+                    }
+                </div>
+                
                 @if (_foodOffers == null)
                 {
                 }
                 else if (!_foodOffers.Any())
                 {
-                <p>No food offers to display</p>
+                    <p>No food offers to display</p>
                 }
                 else
                 {
                     <div class="foodOffer-container">
                         @foreach (var item in _foodOffers)
                         {
-                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
-                                <div class="product-image"></div>
-                                <div class="product-title"><b>@item.Title</b></div>
-                                <div class="product-price">@item.Price DKK</div>
-                                <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
-                                <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
-                            </div>
+                            if (!item.IsReserved)
+                            {
+                                <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
+                                    <div class="product-image"></div>
+                                    <div class="product-title"><b>@item.Title</b></div>
+                                    <div class="product-price">@item.Price DKK</div>
+                                    <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
+                                    <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.Id}"))">
+                                    <div class="product-image"></div>
+                                    <div class="product-title"><b>@item.Title</b></div>
+                                    <div class="product-price">@item.Price DKK</div>
+                                    <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
+                                    <div class="product-end">End pick-up time: @item.EndPickupTime.ToString()</div>
+                                </div>
+                            }
+                            
                         }
                     </div>
                     
-                    <div class="subtitle"><h3>&#x2022 Create a new food offer &#x2022</h3></div>
-                    <div class="foodOffer-container">
-                        <div class="card">
-                            <div class="form-group field">
-                                <label class="title-field">Title:</label>
-                                <input class="input-field"  id="title" type="text" @bind="Title" @bind:event="oninput"/>
-                            </div>
-                            <div class="form-group field">
-                                <label class="title-field">Description:</label>
-                                <textarea class="input-field-description" id="description" type="text" @bind="Description" @bind:event="oninput"></textarea>
-                            </div>
-                            <div class="form-group field">
-                                <label class="title-field" id>Price:</label>
-                                <input class="input-field" id="price" type="number" @bind="Price" @bind:event="oninput"/>
-                            </div>
-                            <div class="form-group field">
-                                <label class="title-field">Start pick-up date:</label>
-                                <RadzenDatePicker id="date" @bind-Value=@StartPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-                            </div>
-                            <div class="form-group field">
-                                <label class="title-field" id="endDate">End pick-up date:    </label>
-                                <RadzenDatePicker id="date" @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
-                            </div>
-                            <div class="button-row">
-                                <button @onclick="CreateAsync" class="createbtn">Create</button>
-                            </div>
-                        </div>
-                        @if (!string.IsNullOrEmpty(ErrorMessage))
-                        {
-                            <label style="color: red">@ErrorMessage</label>
-                        }
-                    </div>
-            
                 }
-            
+
             </AuthorizeView>
         </div>
         <div class="content-footer bottom-0">
@@ -93,7 +108,7 @@
 
 @code {
     private int AccountId;
-    private List<ReadFoodOffersDTO> _foodOffers;
+    private List<FoodOffer> _foodOffers;
     private string ErrorMessage = "";
     private string Title = "";
     private string Description = "";
@@ -123,11 +138,13 @@
         try
         {
             await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute)));
+            _foodOffers = await FoodOfferService.GetFoodOffersByFoodSellerIdAsync(AccountId);
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             ErrorMessage = e.Message;
+            StateHasChanged();
         }
     }
 }

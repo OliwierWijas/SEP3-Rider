@@ -1,3 +1,7 @@
+.navbar, .nav-scrollable {
+    min-width: max-content;
+}
+
 #navbar-menu {
     height: 94vh;
     color: white;

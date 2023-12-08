@@ -8,14 +8,21 @@
     display: flex;
     width: 40vh;
     height: 50vh;
-    margin: 10px;
     padding: 10px;
+    margin: 10px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sellers-image {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
 }
 
 .sellers-name {

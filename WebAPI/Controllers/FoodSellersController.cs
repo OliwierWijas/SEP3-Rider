@@ -1,4 +1,5 @@
 ﻿using Application.LogicInterfaces;
+using Domain;
 using Domain.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -88,7 +89,7 @@ public class FoodSellersController : ControllerBase
     }
 
     [HttpGet("{accountId:int}")]
-    public async Task<ActionResult<ReadFoodSellerDTO>> GetAsync([FromRoute] int accountId)
+    public async Task<ActionResult<FoodSeller>> GetAsync([FromRoute] int accountId)
     {
         try
         { 
@@ -103,7 +104,7 @@ public class FoodSellersController : ControllerBase
     }
 
     [HttpGet, Authorize(Policy = "MustBeCustomer")]
-    public async Task<ActionResult<List<ReadFoodSellerDTO>>> GetAllAsync()
+    public async Task<ActionResult<List<FoodSeller>>> GetAllAsync()
     {
         try
         {

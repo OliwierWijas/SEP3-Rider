@@ -1,4 +1,5 @@
-﻿using Domain.DTOs;
+﻿using Domain;
+using Domain.DTOs;
 
 namespace Application.LogicInterfaces;
 
@@ -11,6 +12,6 @@ public interface IFoodSellerLogic
     Task UpdatePassword(FoodSellerUpdateDTO dto);
     Task UpdatePhoneNumber(FoodSellerUpdateDTO dto);
     Task DeleteAccount(int accountId);
-    Task<ReadFoodSellerDTO> GetFoodSellerById(int accountId);
-    Task<List<ReadFoodSellerDTO>> GetAllFoodSellers();
+    Task<FoodSeller> GetFoodSellerById(int accountId);
+    Task<List<FoodSeller>> GetAllFoodSellers();
 }

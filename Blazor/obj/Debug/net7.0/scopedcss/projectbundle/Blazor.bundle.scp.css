@@ -606,8 +606,6 @@ textarea[b-lytcjpabj0]{
 #price[b-dq0f1li1lm] {
     margin-left: 8px;
 }
-
-
 /* _content/Blazor/Pages/FoodSeller/ManageReservations.razor.rz.scp.css */
 .content-central[b-w1ykbjgvi1] {
     display: flex;
@@ -670,8 +668,15 @@ textarea[b-lytcjpabj0]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
 }
+
+.row[b-ci4vf3jic1] {
+    display: flex;
+    justify-content: center;
+}
+
 .home-item[b-ci4vf3jic1]{
     display: flex;
     width: 40vh;
@@ -898,6 +903,10 @@ main[b-r0yqwuvdyg] {
     }
 }
 /* _content/Blazor/Shared/NavMenu.razor.rz.scp.css */
+.navbar[b-6hj6azdo60], .nav-scrollable[b-6hj6azdo60] {
+    min-width: max-content;
+}
+
 #navbar-menu[b-6hj6azdo60] {
     height: 94vh;
     color: white;

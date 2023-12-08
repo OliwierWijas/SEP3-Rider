@@ -1,12 +1,13 @@
 @page "/CustomerDisplayFoodOffer/{id:int}"
 @using System.Security.Claims
-@using Domain
 @using Domain.DTOs
+@using Domain.Models
 @using HttpClients.ClientInterfaces
 @inject NavigationManager Navmgr
 @inject IFoodOfferService foodOfferService
 @inject IReservationService reservationService
 @attribute [Authorize]
+
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -16,44 +17,45 @@
             <a>Customer</a>
             <a>Food &#x2022 Offer &#x2022 Details</a>
         </div>
-        <AuthorizeView Policy="MustBeCustomer">
-        @if (foodOffer is not null)
-        {
-            <div class="food-offer">
-                <div class="product-image"></div>
-                <div class = "product-info">
-                    <div class = "product-title">@foodOffer.Title</div>
-                    @if (foodOffer.IsReserved)
-                                    {
-                                        <div style="font-weight: bold">Reservation number: @reservationNumber</div>
-                                    }
-                    <div><span class="oi oi-map-marker"/>  @foodOffer.FoodSellerName, @foodOffer.FoodSellerAddress</div>
-                    <div><span class="oi oi-clock"/>  @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</div>
-                    <div class = "product-price">@foodOffer.Price DKK</div>
-                    <div style="font-weight: bold">What is in the package?</div>
-                    <div >@foodOffer.Description</div>
-                </div>
-                  @if (foodOffer.IsCompleted)
-                                {
-                                    <label>This food offer is completed.</label>
-                                }
-                                else if (foodOffer.IsReserved)
-                                {
-                                    <div class="button-row">
-                                        <button @onclick="CancelAsync" class="btn">Cancel reservation</button>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="button-row">
-                                        <button @onclick="ReserveAsync" class="btn">Reserve</button>
-                                    </div>
-                                }
-            </div>
-                <label>@ErrorMessage</label>
-        }
-        </AuthorizeView>
-        
+        <div class="content-central">
+            <AuthorizeView Policy="MustBeCustomer">
+                @if (foodOffer is not null)
+                {
+                    <div class="food-offer">
+                        <div class="product-image col-sm-12 col-lg-3" ></div>
+                        <div class = "product-info col-sm-12 col-lg-8" >
+                            <div class = "product-title">@foodOffer.Title</div>
+                            @if (foodOffer.IsReserved)
+                            {
+                                <div style="font-weight: bold">Reservation number: @reservationNumber</div>
+                            }
+                            <div><span class="oi oi-map-marker"/>  @foodOffer.FoodSeller.Name, @foodOffer.FoodSeller.Address</div>
+                            <div><span class="oi oi-clock"/>  @foodOffer.StartPickupTime.ToString() - @foodOffer.EndPickupTime.ToString()</div>
+                            <div class = "product-price">@foodOffer.Price DKK</div>
+                            <div style="font-weight: bold">What is in the package?</div>
+                            <div >@foodOffer.Description</div>
+                        </div>
+                        @if (foodOffer.IsCompleted)
+                        {
+                            <label>This food offer is completed.</label>
+                        }
+                        else if (foodOffer.IsReserved)
+                        {
+                            <div class="button-row col-sm-12 col-lg-1" >
+                                <button @onclick="CancelAsync" class="btn">Cancel reservation</button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="button-row col-sm-12 col-lg-1" >
+                                <button @onclick="ReserveAsync" class="btn">Reserve</button>
+                            </div>
+                        }
+                    </div>
+                    <label>@ErrorMessage</label>
+                }
+            </AuthorizeView>
+        </div>
         <div class="content-footer bottom-0">
             <div class="footer-title">Too Fresh Too Waste</div>
             <div class="footer-address">
@@ -71,7 +73,7 @@
     private string ErrorMessage = "";
     [Parameter] 
     public int id { get; set; }
-    private ReadFoodOffersDTO foodOffer { get; set; }
+    private FoodOffer foodOffer { get; set; }
     private int reservationNumber;
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -89,7 +91,7 @@
         foodOffer = await foodOfferService.GetFoodOfferByIdAsync(id);
         if (foodOffer.IsReserved)
         {
-            IEnumerable<ReadCustomerReservationDTO> temp = await reservationService.ReadCustomerReservations(AccountId);
+            IEnumerable<Reservation> temp = await reservationService.ReadCustomerReservations(AccountId);
             reservationNumber = temp.FirstOrDefault(r => r.FoodOfferId == id).ReservationNumber;
         }
     }
@@ -105,6 +107,7 @@
         {
             Console.WriteLine(e);
             ErrorMessage = e.Message;
+            StateHasChanged();
         }
     }
     
@@ -119,6 +122,7 @@
         {
             Console.WriteLine(e);
             ErrorMessage = e.Message;
+            StateHasChanged();
         }
     }
 

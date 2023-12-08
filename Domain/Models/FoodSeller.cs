@@ -1,6 +1,6 @@
-namespace Domain.DTOs;
+﻿namespace Domain;
 
-public class ReadFoodSellerDTO
+public class FoodSeller
 {
     public int AccountId { get; set; }
     public string Email { get; set; }
@@ -8,7 +8,7 @@ public class ReadFoodSellerDTO
     public string Name { get; set; }
     public string Address { get; set; }
 
-    public ReadFoodSellerDTO(int accountId, string email, string phoneNumber, string name, string address)
+    public FoodSeller(int accountId, string email, string phoneNumber, string name, string address)
     {
         AccountId = accountId;
         Email = email;

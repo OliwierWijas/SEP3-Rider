@@ -2,6 +2,7 @@ using System.Text.Json;
 using Application.LogicInterfaces;
 using Domain;
 using Domain.DTOs;
+using Domain.Models;
 using Grpc.Core;
 using Grpc.Net.Client;
 using GrpcClient;
@@ -45,7 +46,7 @@ public class FoodOfferLogic: IFoodOfferLogic
         }
     }
 
-    public async Task<List<ReadFoodOffersDTO>> ReadAvailableFoodOffers()
+    public async Task<List<FoodOffer>> ReadAvailableFoodOffers()
     {
         try
         {
@@ -57,7 +58,7 @@ public class FoodOfferLogic: IFoodOfferLogic
                 PropertyNameCaseInsensitive = true
             };
 
-            List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(Json, options);
+            List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(Json, options);
 
             return foodOffers;
         }
@@ -68,7 +69,7 @@ public class FoodOfferLogic: IFoodOfferLogic
         }
     }
 
-    public async Task<List<ReadFoodOffersDTO>> ReadFoodOffersByFoodSellerId(int foodSellerId)
+    public async Task<List<FoodOffer>> ReadFoodOffersByFoodSellerId(int foodSellerId)
     {
         try
         {
@@ -85,7 +86,7 @@ public class FoodOfferLogic: IFoodOfferLogic
                 PropertyNameCaseInsensitive = true
             };
             
-            List<ReadFoodOffersDTO> foodOffers = JsonSerializer.Deserialize<List<ReadFoodOffersDTO>>(Json, options);
+            List<FoodOffer> foodOffers = JsonSerializer.Deserialize<List<FoodOffer>>(Json, options);
             
             return foodOffers;
         }
@@ -134,26 +135,28 @@ public class FoodOfferLogic: IFoodOfferLogic
         }
     }
 
-    public async Task<ReadFoodOffersDTO> ReadFoodOfferById(int id)
+    public async Task<FoodOffer> ReadFoodOfferById(int id)
     {
         try
         {
-            ReadFoodOfferResponse response = await client.readFoodOfferByIdAsync(new ReadFoodOfferByIdRequest
+            ReadFoodOfferByIdResponse response = await client.readFoodOfferByIdAsync(new ReadFoodOfferByIdRequest
             {
                 Id = id
             });
             
             string JsonStartTime = response.StartPickUpTime;
             string JsonEndTime = response.EndPickUpTime;
-            JsonSerializerOptions? options = new JsonSerializerOptions
+            string JsonFoodSeller = response.FoodSeller;
+            JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
                 PropertyNameCaseInsensitive = true
             };
             MyDate? start = JsonSerializer.Deserialize<MyDate>(JsonStartTime, options);
             MyDate? end = JsonSerializer.Deserialize<MyDate>(JsonEndTime, options);
-            ReadFoodOffersDTO dto = new ReadFoodOffersDTO(response.Id, response.FoodSellerId, response.Title, response.Description,
-                response.Price, start, end, response.FoodSellerName, response.FoodSellerAddress, response.IsReserved,
+            FoodSeller? foodSeller = JsonSerializer.Deserialize<FoodSeller>(JsonFoodSeller, options);
+            FoodOffer dto = new FoodOffer(response.Id, foodSeller, response.Title, response.Description,
+                response.Price, start, end, response.IsReserved,
                 response.IsCompleted);
             return dto;
         }

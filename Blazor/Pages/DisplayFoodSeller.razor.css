@@ -2,44 +2,102 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
-.seller-info{
-    width: 70vh;
-    height: 20vh;
-   margin-bottom: 2vh;
-}
-.rate-drop{
-    width: 6vh;
-    height: 4vh;
+
+.subtitle {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-.rate-but{
-    margin-bottom: 2vh;
-    margin-top: 1vh;
-    width: 6vh;
-    height: 4vh;
-    border: 1px solid lightgrey;
-   
-}
-.comment-text{
-    width: 70vh;
+.seller-info {
+    display: flex;
+    width: 63vh;
     height: 40vh;
-    border: 1px solid lightgrey;
-   
+    margin: 10px;
+    padding: 10px;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.comment-but{
-    width: 10vh;
-    height: 4vh;
-    border: 1px solid lightgrey;
-    margin-top: 1vh;
-    margin-bottom: 2vh;
+.inf-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-top: 10px;
 }
-.customer-comment{
-    width: 70vh;
+
+.seller-image {
+    background-color: rgb(128, 128, 128);
+    width: 36vh;
+    height: 36vh;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.rate-drop {
+    margin-right: 10px;
+}
+
+.btn {
+    margin: 10px 5px;
+    background-color: #185a37;
+    padding: 5px 20px 5px 20px;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: auto;
+    text-decoration-color: white;
+    color: white;
+}
+
+.createbtn:hover {
+    background-color: white;
+}
+
+.comment-text {
+    width: 62vh;
     height: 20vh;
     border: 1px solid lightgrey;
-    
-    
+    margin-bottom: 1vh;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    margin: 40px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 991.98px) {
+    .seller-info {
+        width: 100%;
+        max-width: none;
+    }
+
+    .comment-text {
+        width: 100%;
+        max-width: none;
+    }
+
+    .comment-container {
+        width: 100%;
+        max-width: none;
+    }
 }

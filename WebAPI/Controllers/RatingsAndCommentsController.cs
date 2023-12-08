@@ -1,5 +1,6 @@
 ﻿using Application.LogicInterfaces;
 using Domain.DTOs;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -79,7 +80,7 @@ public class RatingsAndCommentsController : ControllerBase
     }
     
     [HttpGet, Route("Comments/{foodSellerId:int}")]
-    public async Task<ActionResult<List<ReadCustomerReservationDTO>>> GetCommentsByFoodSellerIdAsync([FromRoute]int foodSellerId)
+    public async Task<ActionResult<List<Comment>>> GetCommentsByFoodSellerIdAsync([FromRoute]int foodSellerId)
     {
         try
         {

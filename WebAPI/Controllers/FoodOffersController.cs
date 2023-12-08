@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Application.LogicInterfaces;
 using Domain;
 using Domain.DTOs;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +36,7 @@ public class FoodOffersController: ControllerBase
     }
     
     [HttpPatch, Authorize(Policy = "MustBeFoodSeller")]
-    public async Task<ActionResult> UpdateAsync(FoodOffer foodOffer)
+    public async Task<ActionResult> UpdateAsync([FromBody] FoodOffer foodOffer)
     {
         try
         {
@@ -94,7 +96,7 @@ public class FoodOffersController: ControllerBase
     }
 
     [HttpGet, Route("FoodOffer/{id:int}"), Authorize(Policy = "MustBeCustomer")]
-    public async Task<ActionResult<ReadFoodOffersDTO>> GetFoodOfferByIdAsync([FromRoute] int id)
+    public async Task<ActionResult<FoodOffer>> GetFoodOfferByIdAsync([FromRoute] int id)
     {
         try
         {
@@ -107,6 +109,4 @@ public class FoodOffersController: ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    
-
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.DTOs;
+using Domain.Models;
 
 namespace Application.LogicInterfaces;
 
@@ -9,7 +10,7 @@ public interface IRatingAndCommentLogic
     Task CreateComment(CommentBasicDTO dto);
     Task UpdateRating(RatingBasicDTO dto);
     Task DeleteComment(int commentId);
-    Task<List<ReadCommentDTO>> ReadCommentsByFoodSellerId(int foodSellerId);
+    Task<List<Comment>> ReadCommentsByFoodSellerId(int foodSellerId);
     Task<double> ReadAverageRatingByFoodSellerId(int foodSellerId);
     Task<int> ReadRating(ReadRatingDTO dto);
 }

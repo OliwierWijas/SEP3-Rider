@@ -1,6 +1,5 @@
 @page "/FoodSellersOverview"
 @using Domain
-@using Domain.DTOs
 @using System.Security.Claims
 @using HttpClients.ClientInterfaces
 @inject NavigationManager NavMgr
@@ -13,31 +12,32 @@
     </div>
     <div class="content">
         <div class="content-header">
-            <a>Food Seller</a>
-            <a>Food &#x2022 Sellers</a>
+            <a>Customer</a>
+            <a>Food &#x2022 Sellers &#x2022 Overview</a>
         </div>
         <div class="content-central">
-           <AuthorizeView Policy="MustBeCustomer">
-               @if (foodSellers == null)
-               {
-               }
-               else if (!foodSellers.Any())
-               {
-                   <p>No food sellers to display</p>
-               }
-               else
-               {
-                   @foreach (var item in foodSellers)
-                   {
-                       <div class="sellers col-6 col-lg-4"  @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
-                           <h3 class ="sellers-name">@item.Name</h3>
-                           <div class="sellers-address"><b>@item.Address</b></div>
-                           <div class="sellers-phoneNo"><b>@item.PhoneNumber</b></div>
-                       </div>
-                   }
+            <AuthorizeView Policy="MustBeCustomer">
+                @if (foodSellers == null)
+                {
+                }
+                else if (!foodSellers.Any())
+                {
+                    <p>No food sellers to display</p>
+                }
+                else
+                {
+                    @foreach (var item in foodSellers)
+                    {
+                        <div class="sellers col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
+                            <div class="sellers-image"></div>
+                            <div class="sellers-name"><b>@item.Name</b></div>
+                            <div class="sellers-address">@item.Address</div>
+                            <div class="sellers-phoneNo">@item.PhoneNumber</div>
+                        </div>
+                    }
                        
-               }
-           </AuthorizeView>
+                }
+            </AuthorizeView>
         </div>
         
         <div class="content-footer bottom-0">
@@ -58,7 +58,7 @@
 
 @code {
     private int AccountId;
-    private List<ReadFoodSellerDTO> foodSellers;
+    private List<FoodSeller> foodSellers;
     private string ErrorMessage = "";
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;

@@ -1,58 +1,11 @@
 ﻿@page "/ManageReservations"
 @using HttpClients.ClientInterfaces
-@using Domain.DTOs
 @using System.Security.Claims
-@using Domain
+@using Domain.Models
 @inject NavigationManager NavMgr
 @inject IReservationService ReservationService;
 
 @attribute [Authorize]
-<!--<AuthorizeView Policy="MustBeFoodSeller">
-    <label>Reservations: </label>
-    @if (_reservations == null)
-    {
-    }
-    else if (!_reservations.Any())
-    {
-        <p>No reservations to display</p>
-    }
-    else
-    {
-        @foreach (var item in _reservations)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.ReservationNumber}"))">
-                <h3>@item.Title</h3>
-                <h6>Reservation Number : @item.ReservationNumber</h6>
-                <h6>@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</h6>
-            </div>
-        }
-
-    }
-    <label>Completed Reservations: </label>
-    @if (_completedReservations == null)
-    {
-    }
-    else if (!_completedReservations.Any())
-    {
-        <p>No completed reservations to display</p>
-    }
-    else
-    {
-        @foreach (var item in _completedReservations)
-        {
-            <div class="card" style=" height: 200px; width: 100%" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.ReservationNumber}"))">
-                <h3>@item.Title</h3>
-                <h6>Reservation Number : @item.ReservationNumber</h6>
-                <h6>@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</h6>
-            </div>
-        }
-
-    }
-
-</AuthorizeView>
--->
-
-
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -124,10 +77,11 @@
 </div>
 
 
+
 @code {
     private int AccountId;
-    private IEnumerable<ReadFoodSellerReservationDTO> _reservations;
-    private IEnumerable<ReadFoodSellerReservationDTO> _completedReservations;
+    private IEnumerable<Reservation> _reservations;
+    private IEnumerable<Reservation> _completedReservations;
     private string ErrorMessage = "";
 
     [CascadingParameter]
@@ -143,7 +97,7 @@
         if (!_isLoggedIn) return;
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
-        IEnumerable<ReadFoodSellerReservationDTO> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
+        IEnumerable<Reservation> temp = await ReservationService.ReadFoodSellerReservations(AccountId);
         _reservations = temp.Where(r => r.IsCompleted == false);
         _completedReservations = temp.Where(r => r.IsCompleted);
     }

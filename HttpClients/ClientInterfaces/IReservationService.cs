@@ -1,4 +1,5 @@
 ﻿using Domain.DTOs;
+using Domain.Models;
 
 namespace HttpClients.ClientInterfaces;
 
@@ -8,9 +9,9 @@ public interface IReservationService
     Task CompleteAsync(int reservationNumber);
     Task DeleteAsync(int reservationNumber);
     
-    Task<IEnumerable<ReadCustomerReservationDTO>> ReadCustomerReservations(int customerId);
+    Task<IEnumerable<Reservation>> ReadCustomerReservations(int customerId);
 
-    Task<IEnumerable<ReadFoodSellerReservationDTO>> ReadFoodSellerReservations(int foodSellerId);
+    Task<IEnumerable<Reservation>> ReadFoodSellerReservations(int foodSellerId);
 
     
 }

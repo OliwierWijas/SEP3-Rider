@@ -1,8 +1,9 @@
-namespace Domain;
+namespace Domain.Models;
 
 public class FoodOffer
 {
     public int Id { get; set; }
+    public FoodSeller FoodSeller { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
     public double Price { get; set; }
@@ -11,9 +12,10 @@ public class FoodOffer
     public bool IsReserved { get; set; }
     public bool IsCompleted { get; set; }
 
-    public FoodOffer(int id, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime, bool isReserved, bool isCompleted)
+    public FoodOffer(int id, FoodSeller foodSeller, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime, bool isReserved, bool isCompleted)
     {
         Id = id;
+        FoodSeller = foodSeller;
         Title = title;
         Description = description;
         Price = price;

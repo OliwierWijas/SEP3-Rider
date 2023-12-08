@@ -42,16 +42,15 @@ message ReadFoodOffersListResponse
 {
     string list = 1;
 }
-message ReadFoodOfferResponse{
+
+message ReadFoodOfferByIdResponse{
     int32 id = 1;
-    int32 foodSellerId =2 ;
+    string foodSeller =2 ;
     string title=3;
     string description=4;
     double price=5;
     string startPickUpTime=6;
     string endPickUpTime=7;
-    string foodSellerName=8;
-    string foodSellerAddress=9;
     bool isReserved=10;
     bool isCompleted=11;
 }
@@ -62,5 +61,5 @@ service FoodOfferService {
     rpc readFoodOffersByFoodSellerId(ReadFoodOffersByFoodSellerIdRequest) returns (ReadFoodOffersListResponse);
     rpc updateFoodOffer(UpdateFoodOfferRequest) returns (FoodOfferEmptyResponse);
     rpc deleteFoodOffer(DeleteFoodOfferRequest) returns (FoodOfferEmptyResponse);
-    rpc readFoodOfferById(ReadFoodOfferByIdRequest) returns (ReadFoodOfferResponse);
+    rpc readFoodOfferById(ReadFoodOfferByIdRequest) returns (ReadFoodOfferByIdResponse);
 }

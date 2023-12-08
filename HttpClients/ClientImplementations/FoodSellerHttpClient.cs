@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
+using Domain;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
 
@@ -50,7 +51,7 @@ public class FoodSellerHttpClient : IFoodSellerService
         }    
     }
 
-    public async Task<ReadFoodSellerDTO> GetAsync(int accountId)
+    public async Task<FoodSeller> GetAsync(int accountId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/FoodSellers/{accountId}");
@@ -59,14 +60,14 @@ public class FoodSellerHttpClient : IFoodSellerService
         {
             throw new Exception(content);
         }
-        ReadFoodSellerDTO dto = JsonSerializer.Deserialize<ReadFoodSellerDTO>(content, new JsonSerializerOptions
+        FoodSeller seller = JsonSerializer.Deserialize<FoodSeller>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
         })!;
-        return dto;
+        return seller;
     }
 
-    public async Task<List<ReadFoodSellerDTO>> GetAllAsync()
+    public async Task<List<FoodSeller>> GetAllAsync()
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
@@ -76,10 +77,10 @@ public class FoodSellerHttpClient : IFoodSellerService
         {
             throw new Exception(content);
         }
-        List<ReadFoodSellerDTO> dtos = JsonSerializer.Deserialize<List<ReadFoodSellerDTO>>(content, new JsonSerializerOptions
+        List<FoodSeller> sellers = JsonSerializer.Deserialize<List<FoodSeller>>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
         })!;
-        return dtos;
+        return sellers;
     }
 }

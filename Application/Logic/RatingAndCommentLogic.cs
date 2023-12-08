@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
 using Application.LogicInterfaces;
+using Domain;
 using Domain.DTOs;
+using Domain.Models;
 using Grpc.Core;
 using Grpc.Net.Client;
 using GrpcClient;
@@ -101,7 +103,7 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
         }
     }
 
-    public async Task<List<ReadCommentDTO>> ReadCommentsByFoodSellerId(int foodSellerId)
+    public async Task<List<Comment>> ReadCommentsByFoodSellerId(int foodSellerId)
     {
         try
         {
@@ -118,7 +120,7 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
                 PropertyNameCaseInsensitive = true
             };
             
-            List<ReadCommentDTO> comments = JsonSerializer.Deserialize<List<ReadCommentDTO>>(Json, options)!;
+            List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(Json, options)!;
 
             return comments;
         }

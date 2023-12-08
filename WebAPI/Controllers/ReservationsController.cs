@@ -1,5 +1,6 @@
 ﻿using Application.LogicInterfaces;
 using Domain.DTOs;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,8 +48,8 @@ public class ReservationsController : ControllerBase
         }
     }
     
-    [HttpGet, Route("CustomerReservations/{customerId:int}"), Authorize(Policy = "MustBeCustomer")]
-    public async Task<ActionResult<IEnumerable<ReadCustomerReservationDTO>>> GetCustomerReservationsAsync([FromRoute]int customerId)
+    [HttpGet, Route("CustomerReservations/{customerId:int}"), AllowAnonymous]
+    public async Task<ActionResult<IEnumerable<Reservation>>> GetCustomerReservationsAsync([FromRoute]int customerId)
     {
         try
         {
@@ -62,8 +63,8 @@ public class ReservationsController : ControllerBase
         }
     }
     
-    [HttpGet, Route("FoodSellerReservations/{foodSellerId:int}"), Authorize(Policy = "MustBeFoodSeller")]
-    public async Task<ActionResult<IEnumerable<ReadFoodSellerReservationDTO>>> GetFoodSellerReservationsAsync([FromRoute]int foodSellerId)
+    [HttpGet, Route("FoodSellerReservations/{foodSellerId:int}"), AllowAnonymous]
+    public async Task<ActionResult<IEnumerable<Reservation>>> GetFoodSellerReservationsAsync([FromRoute]int foodSellerId)
     {
         try
         {

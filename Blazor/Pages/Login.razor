@@ -2,8 +2,7 @@
 @using HttpClients.ClientInterfaces
 @inject IAuthService AuthService
 @inject NavigationManager NavMgr
-<AuthorizeView>
-    <NotAuthorized>
+
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -54,8 +53,7 @@
         </div>
     </div>
 </div>
-    </NotAuthorized>
-</AuthorizeView>
+
 @code {
     private string _email = "";
     private string _password ="";
@@ -74,6 +72,7 @@
         {
             Console.WriteLine(e);
             _errorLabel = $"Error: {e.Message}";
+            StateHasChanged();
         }
     }
 }

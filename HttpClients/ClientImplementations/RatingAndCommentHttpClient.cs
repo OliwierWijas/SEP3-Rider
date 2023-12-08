@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using Domain.DTOs;
+using Domain.Models;
 using HttpClients.ClientInterfaces;
 
 namespace HttpClients.ClientImplementations;
@@ -66,7 +67,7 @@ public class RatingAndCommentHttpClient : IRatingAndCommentService
         } 
     }
 
-    public async Task<List<ReadCommentDTO>> ReadCommentsByFoodSellerIdAsync(int foodSellerId)
+    public async Task<List<Comment>> ReadCommentsByFoodSellerIdAsync(int foodSellerId)
     {
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/Comments/{foodSellerId}");
@@ -76,7 +77,7 @@ public class RatingAndCommentHttpClient : IRatingAndCommentService
             throw new Exception(content);
         }
 
-        List<ReadCommentDTO> comments = JsonSerializer.Deserialize<List<ReadCommentDTO>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
         return comments;
     }
 

@@ -129,4 +129,48 @@
     margin-left: 8px;
 }
 
+@media screen and (max-width: 768px) {
+    .card,
+    .product {
+        width: 90%;
+        max-width: none;
+    }
 
+    .input-field,
+    .input-field-description,
+    .title-field,
+    #date,
+    #description,
+    #title,
+    #price{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .createbtn {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card,
+    .product {
+        width: 100%;
+        max-width: none;
+        margin-left: 0px;
+    }
+
+    .input-field,
+    .input-field-description,
+    .title-field,
+    #date,
+    #description,
+    #title,
+    #price{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .createbtn {
+        margin-left: 0px;
+    }
+}
