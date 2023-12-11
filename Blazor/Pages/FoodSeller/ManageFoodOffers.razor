@@ -8,7 +8,6 @@
 @inject NavigationManager NavMgr
 @inject IFoodOfferService FoodOfferService
 @attribute [Authorize]
-
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -90,7 +89,10 @@
         </div>
     </div>
 </div>
-
+<Modal ShowModal="_showModal">
+    <p>You have successfully added a food offer!</p>
+    <button @onclick="@Proceed">OK</button>
+</Modal>
 
 @code {
     private int AccountId;
@@ -101,7 +103,7 @@
     private double Price;
     private DateTime StartPickupTime = DateTime.Now;
     private DateTime EndPickupTime = DateTime.Now;
-
+    private bool _showModal;
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
@@ -125,6 +127,7 @@
         {
             await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute)));
             _foodOffers = await FoodOfferService.GetFoodOffersByFoodSellerIdAsync(AccountId);
+            _showModal = true;
         }
         catch (Exception e)
         {
@@ -132,5 +135,10 @@
             ErrorMessage = e.Message;
             StateHasChanged();
         }
+    }
+    private void Proceed()
+    {
+        _showModal = false;
+        StateHasChanged();
     }
 }

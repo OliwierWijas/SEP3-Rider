@@ -46,8 +46,8 @@
                             else
                             {
                                 <div>
-                                    <button @onclick="UpdateAsync" class="btn">Edit Food Offer</button>
-                                    <button @onclick="DeleteAsync" class="btn">Delete Food Offer</button>
+                                    <button @onclick="ConfirmUpdate" class="btn">Edit Food Offer</button>
+                                    <button @onclick="ConfirmDelete" class="btn">Delete Food Offer</button>
                                 </div>
                                     
                             }
@@ -70,6 +70,23 @@
         </div>
     </div>
 </AuthorizeView>
+<Modal ShowModal="_showUpdateModal">
+    <p>Are you sure you want to update the food offer?</p>
+    <button @onclick="@ProceedUpdate">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
+<Modal ShowModal="_showConfirmationModal">
+    <p>You have successfully changed the food offer details</p>
+    <button @onclick="@CancelOrEndAction">OK</button>
+</Modal>
+<Modal ShowModal="_showDeleteModal">
+    <p>Are you sure you want to delete the food offer?</p>
+    <button @onclick="@ProceedDelete">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
+<Modal ShowModal="_showDeleteConfirmationModal">
+    <p>You have successfully deleted the food offer</p>
+</Modal>
 @code {
     private int AccountId;
     private string ErrorMessage = "";
@@ -78,6 +95,10 @@
     private double Price = 0.0;
     private DateTime StartPickupTime = DateTime.Now;
     private DateTime EndPickupTime = DateTime.Now;
+    private bool _showUpdateModal;
+    private bool _showConfirmationModal;
+    private bool _showDeleteModal;
+    private bool _showDeleteConfirmationModal;
     [Parameter] 
     public int id { get; set; }
 
@@ -97,7 +118,6 @@
         userClaims = user.Claims.AsEnumerable();
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         foodOffer = await foodOfferService.GetFoodOfferAsync(AccountId, id);
-        Console.WriteLine(foodOffer.Title);
         Title = foodOffer.Title;
         Description = foodOffer.Description;
         Price = foodOffer.Price;
@@ -121,8 +141,16 @@
             {
                 FoodSeller foodSeller = new FoodSeller(0, "", "", "", "");
                 foodOffer = new FoodOffer(id, foodSeller, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute), foodOffer.IsReserved, foodOffer.IsCompleted);
-                Console.WriteLine(foodOffer.ToString());
+                _showConfirmationModal = true;
                 await foodOfferService.UpdateAsync(foodOffer);
+                foodOffer = await foodOfferService.GetFoodOfferAsync(AccountId, id);
+                Title = foodOffer.Title;
+                Description = foodOffer.Description;
+                Price = foodOffer.Price;
+                MyDate date = foodOffer.StartPickupTime;
+                StartPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
+                date = foodOffer.EndPickupTime;
+                EndPickupTime = new DateTime(date.year, date.month, date.day, date.hour, date.minute, 0, 0);
             }
         }
         catch (Exception e)
@@ -137,7 +165,9 @@
         try
         {
             ErrorMessage = "";
+            _showDeleteConfirmationModal = true;
             await foodOfferService.DeleteAsync(id);
+            Thread.Sleep(4000);
             Navmgr.NavigateTo("/ManageFoodOffers");
 
         }
@@ -147,6 +177,32 @@
             StateHasChanged();
         }
     }
-    
+
+    private void ConfirmUpdate()
+    {
+        _showUpdateModal = true;
+        StateHasChanged();
+    }
+    private void ConfirmDelete()
+    {
+        _showDeleteModal = true;
+        StateHasChanged();
+    }
+    private void ProceedUpdate()
+    {
+        _showUpdateModal = false;
+        UpdateAsync();
+    } 
+    private void ProceedDelete()
+    {
+        _showUpdateModal = false;
+        DeleteAsync();
+    }
+    private void CancelOrEndAction()
+    {
+        _showUpdateModal = false;
+        _showConfirmationModal = false;
+        StateHasChanged();
+    }
 }
 }

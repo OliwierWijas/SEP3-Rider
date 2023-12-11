@@ -641,19 +641,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mara\\.nuget\\packages\\": {}
+    "C:\\Users\\Dominika\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\Mara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Application\\obj\\",
+      "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mara\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -665,8 +665,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mara\\RiderProjects\\SEP3-Rider\\Domain\\Domain.csproj"
+            "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Domain\\Domain.csproj"
             }
           }
         }
@@ -716,7 +716,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

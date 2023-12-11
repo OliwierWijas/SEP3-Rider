@@ -37,11 +37,11 @@
                      @if (reservation.IsCompleted)
                      {
                          <div style="font-weight: bold">This reservation is already completed, therefore you cannot perform any actions.</div>
-                         <button @onclick="CompleteAsync" class="btn" disabled>Complete Reservation</button>
+                         <button @onclick="ConfirmCompleteAction" class="btn" disabled>Complete Reservation</button>
                      }
                      else
                      {
-                         <button @onclick="CompleteAsync" class="btn">Complete Reservation</button>
+                         <button @onclick="ConfirmCompleteAction" class="btn">Complete Reservation</button>
                      }
                  </div>
              </div>
@@ -59,10 +59,20 @@
         </div>
     </div>
 </div>
-
+<Modal ShowModal="_showConfirmationModal">
+    <p>You have successfully completed the reservation!</p>
+    <button @onclick="@Proceed">OK</button>
+</Modal>
+<Modal ShowModal="_showCompleteModal">
+    <p>Are you sure you want to cancel your reservation?</p>
+    <button @onclick="@ProceedComplete">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
 @code {
     private int AccountId;
     private string ErrorMessage = "";
+    private bool _showConfirmationModal;
+    private bool _showCompleteModal;
     [Parameter] 
     public int id { get; set; }
 
@@ -90,8 +100,8 @@
         try
         {
             ErrorMessage = "";
+            _showConfirmationModal = true;
             await ReservationService.CompleteAsync(reservation.ReservationNumber);
-            Navmgr.NavigateTo("/ManageReservations");
 
         }
         catch (Exception e)
@@ -100,5 +110,26 @@
             StateHasChanged();
         }
     }
-    
+    private void Proceed()
+    {
+        _showConfirmationModal = false;
+        Navmgr.NavigateTo("/ManageReservations");
+    }
+
+    private void ProceedComplete()
+    {
+        _showCompleteModal = false;
+        CompleteAsync();
+    }
+    private void CancelOrEndAction()
+    {
+        _showConfirmationModal = false;
+        _showCompleteModal = false;
+        StateHasChanged();
+    }
+    private void ConfirmCompleteAction()
+    {
+        _showCompleteModal = true;
+        StateHasChanged();
+    }
 }

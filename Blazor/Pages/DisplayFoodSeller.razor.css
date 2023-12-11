@@ -11,31 +11,33 @@
     margin-bottom: 30px;
 }
 
+[class*="col-"] {
+    float: left;
+    padding: 5px;
+}
 .seller-info {
-    display: flex;
-    width: 65vh;
-    height: 40vh;
-    margin: 10px;
+    width: 90%;
+    height: fit-content;
+    margin: 70px 5px 10px 0px;
     padding: 10px;
-    flex-direction: row;
     border-radius: 5px;
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s;
 }
-
 .inf-container {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    margin-top: 10px;
+    align-items: flex-start;
 }
 
 .seller-image {
-    background-color: rgb(128, 128, 128);
-    width: 320px;
-    height: 340px;
+    background-color: gray;
+    width: 36vh;
+    height: 36vh;
     border-radius: 5px;
-    margin: 10px;
+    flex-shrink: 0;
+    margin-right: 20px;
 }
 
 .rating {
@@ -60,22 +62,13 @@
     text-decoration-color: white;
     color: white;
 }
-
-.comment-text {
-    width: 65vh;
-    height: 20vh;
-    border: 1px solid lightgrey;
-    margin-bottom: 1vh;
-}
-
 .comment-container {
     display: flex;
+    background-color: white;
     flex-direction: column;
-    width: 65vh;
+    width: 90%;
     height: fit-content;
-    margin: 40px 10px 10px 10px;
-    justify-content: center;
-    align-items: center;
+    margin: 10px 10px 10px 10px;
     border-radius: 5px;
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -104,5 +97,28 @@
     .comment-container {
         width: 100%;
         max-width: none;
+        margin: 5px;
     }
+}
+textarea{
+    width: 90%;
+    resize: vertical;
+    padding:5px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height:50px;
+}
+#commentLine{
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+#customer-info{
+    display: flex;
+    justify-content: space-between;
+}
+.comment-name{
+  padding: 5px;
+    font-weight: bold;
 }

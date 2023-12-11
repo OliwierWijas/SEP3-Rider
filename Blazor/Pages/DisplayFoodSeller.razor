@@ -7,80 +7,80 @@
 @inject IRatingAndCommentService RatingAndCommentService
 @attribute [Authorize]
 <div class="main-content">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
-    <div class="content">
-        <div class="content-header">
-            <a>Food Seller</a>
-            <a>Display &#x2022 Food &#x2022 Seller</a>
-        </div>
-        <div class="content-central">
+<div class="sidebar">
+    <NavMenu/>
+</div>
+<div class="content">
+<div class="content-header">
+    <a>Food Seller</a>
+    <a>Display &#x2022 Food &#x2022 Seller</a>
+</div>
+<div class="content-central">
+    @if (foodSeller != null)
+    {
+        <div class="seller-info">
             <AuthorizeView>
-                @if (foodSeller != null)
-                {
-                    <div class="subtitle"><h3>&#x2022 Food Seller &#x2022</h3></div>
-                    <div class="card seller-info">
-                        <div class="seller-image"></div>
-                        <div class="inf-container">
-                            <div class="form-group field">
-                                <h5><b>Name:</b> @foodSeller.Name </h5>
-                            </div>
-                            <div class="form-group field">
-                                <h5><b>Email:</b> @foodSeller.Email </h5>
-                            </div>
-                            <div class="form-group field">
-                                <h5><b>Address:</b> @foodSeller.Address </h5>
-                            </div>
-                            <div class="form-group field">
-                                <h5><b>Phone number:</b> @foodSeller.PhoneNumber </h5>
-                            </div>
-                            <div class="form-group field">
-                                <h5><b>Average rating:</b> @averageRating </h5>
-                            </div>
-                        </div>
-                    </div>
-                }
+            <div class="seller-image col-sm-12 col-lg-3"></div>
+            <div class="inf-container  col-sm-12 col-lg-6">
+                <div class="form-group field">
+                    <h4 style="font-weight: bold"> @foodSeller.Name </h4>
+                </div>
+                <div class="form-group field">
+                    <h5><span class="oi oi-envelope-closed"/> @foodSeller.Email </h5>
+                </div>
+                <div class="form-group field">
+                    <h5><span class="oi oi-map-marker"/> @foodSeller.Address </h5>
+                </div>
+                <div class="form-group field">
+                    <h5><span class="oi oi-phone"/> @foodSeller.PhoneNumber </h5>
+                </div>
+                <div class="form-group field">
+                    <h5><b>Average rating:</b> @averageRating </h5>
+                </div>
+            </div>
             </AuthorizeView>
             <AuthorizeView Policy="MustBeCustomer">
-                <div class="rating">
+                <div class="rating col-sm-12 col-lg-3">
                     <div class="rate-drop">
                         <RadzenDropDown @bind-Value=@value Data=@rates/>
                     </div>
                     <button @onclick="CreateRatingAsync" class="btn">Rate</button>
                 </div>
             </AuthorizeView>
-            <AuthorizeView>
-                <h5><b>Comments:</b></h5>
-            </AuthorizeView> 
-            <AuthorizeView Policy="MustBeCustomer">
-                <textarea placeholder="Write a comment..." type="text" @bind="comment" class="comment-text"/>
-                <button @onclick="CreateCommentAsync" class="btn comment-but">Comment</button>
-            </AuthorizeView>
-            <AuthorizeView>
-                @if (comments == null)
-                {
-                }
-                else if (!comments.Any())
-                {
-                    <p>No comments to display.</p>
-                }
-                else
-                {
+        </div>
+    }
+<AuthorizeView Policy="MustBeCustomer">
+    <div id = "commentLine">
+        <textarea placeholder="Write a comment..." type="text" @bind="comment" class="comment-text"/>
+        <button @onclick="CreateCommentAsync" class="btn">Comment</button>
+    </div>
+</AuthorizeView>
+<AuthorizeView>
+    @if (comments == null)
+{
+}
+else if (!comments.Any())
+{
+    <p>No comments to display.</p>
+}
+else
+{
             
-                    @foreach (var item in comments)
-                    {
-                        <div class="comment-container card col-6 col-lg-4">
-                            <div class="comment-name">@item.Customer.FirstName @item.Customer.LastName</div>
-                            <div class="comment-date">@item.Date.ToStringWithOutHourAndMinutes()</div>
-                            <div class="comment-content">@item.Content</div>
-                        </div>
-                    }
+        @foreach (var item in comments)
+        {
+            <div class="comment-container col-6 col-lg-4">
+                <div id = "customer-info">
+                    <div class="comment-name">@item.Customer.FirstName @item.Customer.LastName</div>
+                    <div style = "padding: 5px">@item.Date.ToStringWithOutHourAndMinutes()</div>  
+                </div>
+                <div style = "padding: 10px">@item.Content</div>
+            </div>
+    }
                
 
-                }
+    }
     
-            </AuthorizeView>
+</AuthorizeView>
         </div>
         <div class="content-footer bottom-0">
             <div class="footer-title">Too Fresh Too Waste</div>
@@ -93,6 +93,8 @@
         </div>
     </div>
 </div>
+
+
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;

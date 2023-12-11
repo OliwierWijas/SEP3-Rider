@@ -8,6 +8,7 @@
 @inject NavigationManager NavMgr
 @attribute [Authorize]
 
+
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -60,10 +61,10 @@
                     }
                     <div class="button-row col-12 col-md-8">
                         <div class="col-6">
-                            <button @onclick="Update" class="button">Update Account</button>
+                            <button @onclick="ConfirmUpdateAction" class="button">Update Account</button>
                         </div>
                         <div class="col-6">
-                            <button @onclick="Delete" class="button">Delete Account</button>
+                            <button @onclick="ConfirmDeleteAction" class="button">Delete Account</button>
                         </div>
                     </div>
                 </div>
@@ -80,7 +81,20 @@
         </div>
     </div>
 </div>
-
+<Modal ShowModal="_showUpdateModal">
+    <p>Are you sure you want to edit your account information?</p>
+    <button @onclick="@ProceedUpdate">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
+<Modal ShowModal="_showConfirmationModal">
+    <p>@_message</p>
+    <button @onclick="@CancelOrEndAction">OK</button>
+</Modal>
+<Modal ShowModal="_showDeleteModal">
+    <p>Are you sure you want to delete your account?</p>
+    <button @onclick="@ProceedDelete">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
 
 @code {
     private CustomerUpdateDTO customerDto = null!;
@@ -94,6 +108,10 @@
     private int Number = 0;
     private string City = "";
     private string ErrorMessage = "";
+    private bool _showUpdateModal;
+    private bool _showConfirmationModal;
+    private bool _showDeleteModal;
+    private String _message = "";
 
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
@@ -128,7 +146,9 @@
                     Email = "";
                     Password = "";
                     PhoneNumber = "";
-                    ErrorMessage = "Update proceeded.";
+                    _message = "You have successfully changed your account details";
+                    _showConfirmationModal = true;
+                    StateHasChanged();
                 }
             }
             catch (Exception e)
@@ -142,7 +162,7 @@
             try
             {
                 ErrorMessage = "";
-                if (string.IsNullOrEmpty(foodSellerDto.Email) && string.IsNullOrEmpty(foodSellerDto.Password) && string.IsNullOrEmpty(foodSellerDto.PhoneNumber) && string.IsNullOrEmpty(foodSellerDto.Name) && (string.IsNullOrEmpty(foodSellerDto.Street) || Number <= 0 || string.IsNullOrEmpty(foodSellerDto.City)))
+                if (string.IsNullOrEmpty(foodSellerDto.Email) && string.IsNullOrEmpty(foodSellerDto.Password) && string.IsNullOrEmpty(foodSellerDto.PhoneNumber) && string.IsNullOrEmpty(foodSellerDto.Name) && ((string.IsNullOrEmpty(foodSellerDto.Street) || Number <= 0 || string.IsNullOrEmpty(foodSellerDto.City))))
                     ErrorMessage = "No information provided.";
                 else
                 {
@@ -154,7 +174,9 @@
                     Street = "";
                     Number = 0;
                     City = "";
-                    ErrorMessage = "Update proceeded.";
+                    _message = "You have successfully changed your account details";
+                    _showConfirmationModal = true;
+                    StateHasChanged();
                 }
             }
             catch (Exception e)
@@ -175,10 +197,12 @@
             try
             {
                 ErrorMessage = "";
+                _message = "You have successfully deleted your account.";
+                _showConfirmationModal = true;
+                StateHasChanged();
                 await CustomerService.DeleteAsync(AccountId);
-                ErrorMessage = "Delete proceeded.";
+                Thread.Sleep(4000);
                 await AuthService.LogoutAsync();
-                NavMgr.NavigateTo("/");
             }
             catch (Exception e)
             {
@@ -191,8 +215,10 @@
             try
             {
                 ErrorMessage = "";
+                _message = "You have successfully deleted your account.";
+                _showConfirmationModal = true;
+                StateHasChanged();
                 await FoodSellerService.DeleteAsync(AccountId);
-                ErrorMessage = "Delete proceeded.";
                 await AuthService.LogoutAsync();
                 NavMgr.NavigateTo("/");
             }
@@ -205,4 +231,35 @@
         }
     }
 
+    private void ConfirmUpdateAction()
+    {
+        _showUpdateModal = true;
+        StateHasChanged();
+    }
+
+    private void ConfirmDeleteAction()
+    {
+        _showDeleteModal = true;
+        StateHasChanged();
+    }
+    private void ProceedUpdate()
+    {
+        _showUpdateModal = false;
+        StateHasChanged();
+        Update();
+    }
+
+    private void ProceedDelete()
+    {
+        _showDeleteModal = false;
+        StateHasChanged();  
+        Delete();
+    }
+    private void CancelOrEndAction()
+    {
+        _showUpdateModal = false;
+        _showConfirmationModal = false;
+        _showDeleteModal = false;
+        StateHasChanged();
+    }
 }

@@ -20,36 +20,48 @@
                 @if (_reservations == null)
                 {
                 }
-                else if (!_reservations.Any())
-                {
-                    <p>No reservations to display.</p>
-                }
                 else
                 {
                     <div class="subtitle"><h5>Uncompleted reservations:</h5></div>
                     <div class="reservation-container">
-                        @foreach (var item in _reservations)
+                        @if (!_reservations.Any())
                         {
-                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                                <div class="product-image"></div>
-                                <div class="product-title"><b>@item.Title</b></div>
-                                <div class="product-seller">@item.FoodSeller.Name</div>
-                                <div class="product-price">@item.Price DKK</div>
-                            </div>
+                            <p>No reservations to display.</p>
                         }
+                        else
+                        {
+                          @foreach (var item in _reservations)
+                          {
+                              <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                  <div class="product-image"></div>
+                                  <div class="product-title"><b>@item.Title</b></div>
+                                  <div class="product-seller">@item.FoodSeller.Name</div>
+                                  <div class="product-price">@item.Price DKK</div>
+                              </div>
+                          }  
+                        }
+                        
                     </div>
                     
                     <div class="subtitle"><h5>Completed reservations:</h5></div>
                     <div class="reservation-container">
-                        @foreach (var item in _completedReservations)
+                        @if (!_completedReservations.Any())
                         {
-                            <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                                <div class="product-image" id="productElements"></div>
-                                <div class="product-title" id="productElements"><b>@item.Title</b></div>
-                                <div class="product-seller" id="productElements">@item.FoodSeller.Name</div>
-                                <div class="product-price" id="productElements">@item.Price DKK</div>
-                            </div>
+                            <p>No reservations to display.</p>
                         }
+                        else
+                        {
+                           @foreach (var item in _completedReservations)
+                           {
+                               <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
+                                   <div class="product-image" id="productElements"></div>
+                                   <div class="product-title" id="productElements"><b>@item.Title</b></div>
+                                   <div class="product-seller" id="productElements">@item.FoodSeller.Name</div>
+                                   <div class="product-price" id="productElements">@item.Price DKK</div>
+                               </div>
+                           }  
+                        }
+                       
                     </div>
             
                 }

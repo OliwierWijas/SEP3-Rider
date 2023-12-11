@@ -3,6 +3,7 @@
 @using Domain.DTOs
 @inject ICustomerService CustomerService
 @inject IFoodSellerService FoodSellerService
+@inject NavigationManager NavMgr
 <div class="main-content">
     <div class="sidebar">
         <NavMenu/>
@@ -101,7 +102,10 @@
         </div>
     </div>
 </div>
-
+<Modal ShowModal="_showModal">
+    <p>You have successfully created an Account! You should log in now!</p>
+    <button @onclick="@Proceed">Let's log in!</button>
+</Modal>
 @code {
     private string CustomerFirstName = "";
     private string CustomerLastName = "";
@@ -113,6 +117,7 @@
     private int Number = 0;
     private string City = "";
     private string ErrorMessage = "";
+    private bool _showModal;
 
     private bool registerAsCustomer = true;
 
@@ -134,6 +139,7 @@
                 PhoneNumber = "";
                 Password = "";
                 ErrorMessage = "";
+                _showModal = true;
             }
             else
             {
@@ -148,7 +154,9 @@
                 PhoneNumber = "";
                 Password = "";
                 ErrorMessage = "";
+                _showModal = true;
             }
+            
         }
         catch (Exception e)
         {
@@ -156,5 +164,10 @@
             ErrorMessage = e.Message;
             StateHasChanged();
         }
+    }
+    private void Proceed()
+    {
+        _showModal = false;
+        NavMgr.NavigateTo("/Login");
     }
 }

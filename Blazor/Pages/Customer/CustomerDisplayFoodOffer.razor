@@ -42,7 +42,7 @@
                         else if (foodOffer.IsReserved)
                         {
                             <div class="button-row col-sm-12 col-lg-1" >
-                                <button @onclick="CancelAsync" class="btn">Cancel reservation</button>
+                                <button @onclick="ConfirmCancelAction" class="btn">Cancel reservation</button>
                             </div>
                         }
                         else
@@ -67,7 +67,15 @@
         </div>
     </div>
 </div>
-
+<Modal ShowModal="_showConfirmationModal">
+    <p>@_message</p>
+    <button @onclick="@Proceed">OK</button>
+</Modal>
+<Modal ShowModal="_showCancelModal">
+    <p>Are you sure you want to cancel your reservation?</p>
+    <button @onclick="@ProceedCancel">Yes</button>
+    <button @onclick="@CancelOrEndAction">No, cancel</button>
+</Modal>
 @code {
     private int AccountId;
     private string ErrorMessage = "";
@@ -79,6 +87,9 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
+    private bool _showConfirmationModal;
+    private bool _showCancelModal;
+    private String _message = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -100,8 +111,10 @@
     {
         try
         {
+            _message = "You have successfully canceled the reservation!";
+            StateHasChanged();
+            _showConfirmationModal = true;
             await reservationService.DeleteAsync(reservationNumber);
-            Navmgr.NavigateTo("/ReservationsOverview");
         }
         catch (Exception e)
         {
@@ -115,8 +128,10 @@
     {
         try
         {
+            _message = "You have successfully reserved the food offer!";
+            StateHasChanged();
+            _showConfirmationModal = true;
             await reservationService.CreateAsync(new ReservationCreationDTO(AccountId, id));
-            Navmgr.NavigateTo("/ReservationsOverview");
         }
         catch (Exception e)
         {
@@ -125,5 +140,28 @@
             StateHasChanged();
         }
     }
+    private void Proceed()
+    {
+        _showConfirmationModal = false;
+        Navmgr.NavigateTo("/ReservationsOverview");
+    }
+
+    private void ProceedCancel()
+    {
+        _showCancelModal = false;
+        CancelAsync();
+    }
+    private void CancelOrEndAction()
+    {
+        _showConfirmationModal = false;
+        _showCancelModal = false;
+        StateHasChanged();
+    }
+    private void ConfirmCancelAction()
+    {
+        _showCancelModal = true;
+        StateHasChanged();
+    }
+
 
 }
