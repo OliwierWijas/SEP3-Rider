@@ -341,7 +341,7 @@
 
 .seller-info[b-hvm59tntmh] {
     display: flex;
-    width: 63vh;
+    width: 65vh;
     height: 40vh;
     margin: 10px;
     padding: 10px;
@@ -360,8 +360,8 @@
 
 .seller-image[b-hvm59tntmh] {
     background-color: rgb(128, 128, 128);
-    width: 36vh;
-    height: 36vh;
+    width: 320px;
+    height: 340px;
     border-radius: 5px;
     margin: 10px;
 }
@@ -389,12 +389,8 @@
     color: white;
 }
 
-.createbtn:hover[b-hvm59tntmh] {
-    background-color: white;
-}
-
 .comment-text[b-hvm59tntmh] {
-    width: 62vh;
+    width: 65vh;
     height: 20vh;
     border: 1px solid lightgrey;
     margin-bottom: 1vh;
@@ -403,8 +399,8 @@
 .comment-container[b-hvm59tntmh] {
     display: flex;
     flex-direction: column;
-    width: 40vh;
-    height: 50vh;
+    width: 65vh;
+    height: fit-content;
     margin: 40px 10px 10px 10px;
     justify-content: center;
     align-items: center;
@@ -415,8 +411,17 @@
 
 @media (max-width: 991.98px) {
     .seller-info[b-hvm59tntmh] {
-        width: 100%;
-        max-width: none;
+        flex-direction: column; 
+        width: fit-content;
+        border: 1px solid #808080;
+    }
+
+    .seller-image[b-hvm59tntmh] {
+        background-color: rgb(128, 128, 128);
+        width: 310px;
+        height: 340px;
+        border-radius: 5px;
+        margin: 10px;
     }
 
     .comment-text[b-hvm59tntmh] {
