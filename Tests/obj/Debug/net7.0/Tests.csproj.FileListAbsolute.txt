@@ -243,3 +243,13 @@ C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Tests\obj\Debug\net7.0\refint\Tests.dl
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Tests\obj\Debug\net7.0\Tests.pdb
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Tests\obj\Debug\net7.0\Tests.genruntimeconfig.cache
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Tests\obj\Debug\net7.0\ref\Tests.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\Microsoft.Extensions.Http.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\HttpClients.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\HttpClients.pdb
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\Moq.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Tests\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
