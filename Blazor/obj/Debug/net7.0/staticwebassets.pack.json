@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\images\\bowl-removebg-preview.png"
     },
     {
+      "Id": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\images\\donut-removebg-preview.png",
+      "PackagePath": "staticwebassets\\images\\donut-removebg-preview.png"
+    },
+    {
       "Id": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\images\\pizza-removebg-preview.png",
       "PackagePath": "staticwebassets\\images\\pizza-removebg-preview.png"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ipGHX8T/EFazo2borjFJJtTYa4LXH4ViJjG+4Ey2FQg=",
+  "Hash": "0kJ/+daFG368/HmMg6ScHJPY35CbK7hOn9TGt54d6bk=",
   "Source": "Blazor",
   "BasePath": "_content/Blazor",
   "Mode": "Default",
@@ -1018,6 +1018,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\bowl-removebg-preview.png"
+    },
+    {
+      "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\images\\donut-removebg-preview.png",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "images/donut-removebg-preview.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\donut-removebg-preview.png"
     },
     {
       "Identity": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Blazor\\wwwroot\\images\\pizza-removebg-preview.png",
