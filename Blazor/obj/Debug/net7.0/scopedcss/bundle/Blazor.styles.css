@@ -456,6 +456,7 @@ textarea[b-hvm59tntmh]{
     border: 1px solid #808080;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s;
+    display: flex;
 }
 [class*="col-"][b-lytcjpabj0] {
     float: left;
@@ -552,6 +553,19 @@ textarea[b-lytcjpabj0]{
     transform: scale(1.1);
 }
 /* _content/Blazor/Pages/FoodSeller/ManageFoodOffers.razor.rz.scp.css */
+.image-upload[b-dq0f1li1lm] {
+    width: auto;
+    min-height: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.button-row[b-dq0f1li1lm] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .content-central[b-dq0f1li1lm] {
     display: flex;
     flex-wrap: wrap;
@@ -565,6 +579,7 @@ textarea[b-lytcjpabj0]{
     justify-content: center;
     flex-direction: row;
     margin-bottom: 20px;
+    margin-top: 6vh;
 }
 
 .card[b-dq0f1li1lm] {
@@ -660,11 +675,10 @@ textarea[b-lytcjpabj0]{
 
 .createbtn[b-dq0f1li1lm] {
     margin-top: 40px;
+    margin-bottom: 60px;
     border: 1px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
-    height: 25px;
-    margin-left: 50px;
 }
 
 .createbtn:hover[b-dq0f1li1lm] {

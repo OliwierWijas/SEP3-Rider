@@ -1,4 +1,17 @@
-﻿.content-central {
+﻿.image-upload {
+    width: auto;
+    min-height: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-central {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,6 +24,7 @@
     justify-content: center;
     flex-direction: row;
     margin-bottom: 20px;
+    margin-top: 6vh;
 }
 
 .card {
@@ -106,11 +120,10 @@
 
 .createbtn {
     margin-top: 40px;
+    margin-bottom: 60px;
     border: 1px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
-    height: 25px;
-    margin-left: 50px;
 }
 
 .createbtn:hover {
