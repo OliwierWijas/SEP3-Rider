@@ -1464,19 +1464,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oliwi\\.nuget\\packages\\": {}
+    "C:\\Users\\Dominika\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1488,8 +1488,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj"
+            "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj"
             }
           }
         }
@@ -1536,7 +1536,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

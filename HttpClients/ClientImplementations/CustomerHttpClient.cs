@@ -15,8 +15,6 @@ public class CustomerHttpClient : ICustomerService
     {
         _client = client;
         _authService = authService;
-
-
     }
 
     public async Task CreateAsync(CustomerCreationDTO dto)

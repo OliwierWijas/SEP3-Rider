@@ -1,6 +1,9 @@
 ﻿@using HttpClients.ClientInterfaces
 @inject IAuthService AuthService
 @inject NavigationManager NavMgr
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@using System.Security.Claims
 <div class="top-row ps-3 navbar navbar-dark" id="navbar-logo">
     <div class="container-fluid">
         <a class="navbar-brand">Too Fresh To Waste</a>
@@ -53,6 +56,12 @@
                     <span class="oi oi-book" aria-hidden="true"></span> Manage Reservations
                 </NavLink>
             </div>
+            
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="" @onclick="() => { NavMgr.NavigateTo(uriUser); }" >
+                    <span class="oi oi-thumb-up" aria-hidden="true"></span> View My Profile
+                </NavLink>
+            </div>
         </AuthorizeView>
         
         <AuthorizeView>
@@ -83,10 +92,27 @@
     
     private static string uriLogOut = "/";
     private static string uriLogIn = "/Login";
+    private static string uriUser = "/";
 
+   
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+    private bool _isLoggedIn;
+    private IEnumerable<Claim> userClaims;
+    int AccountId = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        _isLoggedIn = user.Identity != null;
+        if (!_isLoggedIn) return;
+        userClaims = user.Claims.AsEnumerable();
+        AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
+        uriUser = $"/DisplayFoodSeller/{AccountId}";
+    }
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
-
 }
