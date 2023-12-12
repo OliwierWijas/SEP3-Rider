@@ -19,6 +19,24 @@ public class Customer
 
     public override string ToString()
     {
-        return $"{nameof(FirstName)}: {FirstName}, {nameof(LastName)}: {LastName}, {nameof(Email)}: {Email}, {nameof(PhoneNumber)}: {PhoneNumber}, {nameof(Password)}: {Password}";
+        return $"{FirstName} {LastName} {Email} {PhoneNumber} {Password}";
+    }
+
+    protected bool Equals(Customer other)
+    {
+        return FirstName == other.FirstName && LastName == other.LastName && Email == other.Email && PhoneNumber == other.PhoneNumber && Password == other.Password;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((Customer)obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(FirstName, LastName, Email, PhoneNumber, Password);
     }
 }

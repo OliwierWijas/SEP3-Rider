@@ -29,4 +29,9 @@ public class FoodSeller
         if (obj.GetType() != this.GetType()) return false;
         return Equals((FoodSeller)obj);
     }
+
+    public override string ToString()
+    {
+        return $"{AccountId} {Email} {PhoneNumber} {Name} {Address}";
+    }
 }

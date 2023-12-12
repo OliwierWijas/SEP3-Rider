@@ -16,4 +16,22 @@ public class Comment
         Date = date;
         Content = content;
     }
+
+    protected bool Equals(Comment other)
+    {
+        return Id == other.Id && Customer.Equals(other.Customer) && FoodSeller.Equals(other.FoodSeller) && Date.Equals(other.Date) && Content == other.Content;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((Comment)obj);
+    }
+
+    public override string ToString()
+    {
+        return $"{Id} {Customer.ToString()} {FoodSeller.ToString()} {Date.ToString()} {Content}";
+    }
 }
