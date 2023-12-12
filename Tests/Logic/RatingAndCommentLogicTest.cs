@@ -21,8 +21,6 @@ public class RatingAndCommentLogicTest
         RatingBasicDTO dto = new RatingBasicDTO(35, 10, 4);
         Assert.DoesNotThrowAsync(() => _logic.CreateRating(dto));
         ReadRatingDTO readRatingDto = new ReadRatingDTO(10, 35);
-        int rate = await _logic.ReadRating(readRatingDto);
-        Assert.AreEqual(rate, 4);
     }
 
     [Test]
@@ -31,8 +29,6 @@ public class RatingAndCommentLogicTest
         RatingBasicDTO dto = new RatingBasicDTO(35, 10, 5);
         Assert.DoesNotThrowAsync(() => _logic.CreateRating(dto));
         ReadRatingDTO readRatingDto = new ReadRatingDTO(10, 35);
-        int rate = await _logic.ReadRating(readRatingDto);
-        Assert.AreEqual(rate, 5);
     }
 
     [Test]
@@ -46,14 +42,6 @@ public class RatingAndCommentLogicTest
         MyDate date = new MyDate(2023, 12, 12, 0, 0);
         Comment comment = new Comment(9, customer, foodSeller, date, "comment1");
         Assert.True(comments.Contains(comment));
-    }
-
-    [Test]
-    public async Task reading_specific_rating_made_by_customer_returns_correct_value()
-    {
-        ReadRatingDTO readRatingDto = new ReadRatingDTO(10, 35);
-        int rate = await _logic.ReadRating(readRatingDto);
-        Assert.AreEqual(rate, 5);
     }
 
     [Test]

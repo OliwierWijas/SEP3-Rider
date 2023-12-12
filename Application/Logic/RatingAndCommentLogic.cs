@@ -148,23 +148,4 @@ public class RatingAndCommentLogic : IRatingAndCommentLogic
             throw new Exception(message[3]);
         }
     }
-
-    public async Task<int> ReadRating(ReadRatingDTO dto)
-    {
-        try
-        {
-            ReadRatingResponse response = await client.readRatingAsync(new ReadRatingRequest
-            {
-                CustomerId = dto.CustomerId,
-                FoodSellerId = dto.FoodSellerId
-            });
-
-            return response.Rate;
-        }
-        catch (Exception e)
-        {
-            string[] message = e.Message.Split("\"");
-            throw new Exception(message[3]);
-        }
-    }
 }

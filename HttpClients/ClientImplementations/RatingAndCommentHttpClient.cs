@@ -21,55 +21,55 @@ public class RatingAndCommentHttpClient : IRatingAndCommentService
 
     public async Task CreateRatingAsync(RatingBasicDTO dto)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage message = await _client.PostAsJsonAsync("/Ratings", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        }    
+        }
     }
 
     public async Task CreateCommentAsync(CommentBasicDTO dto)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage message = await _client.PostAsJsonAsync("/Comments", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        } 
+        }
     }
 
     public async Task UpdateRatingAsync(RatingBasicDTO dto)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage message = await _client.PatchAsJsonAsync("/Ratings", dto);
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        } 
+        }
     }
 
     public async Task DeleteCommentAsync(int commentId)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         _client.DefaultRequestHeaders.Add("MustBeCustomer", "customer");
         HttpResponseMessage message = await _client.DeleteAsync($"/Comments/{commentId}");
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
             throw new Exception(content);
-        } 
+        }
     }
 
     public async Task<List<Comment>> ReadCommentsByFoodSellerIdAsync(int foodSellerId)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/Comments/{foodSellerId}");
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
@@ -77,42 +77,27 @@ public class RatingAndCommentHttpClient : IRatingAndCommentService
             throw new Exception(content);
         }
 
-        List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(content, new JsonSerializerOptions{PropertyNameCaseInsensitive = true})!;
+        List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(content,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
         return comments;
     }
 
     public async Task<double> ReadAverageRatingByFoodSellerIdAsync(int foodSellerId)
     {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authService.token);
         HttpResponseMessage response = await _client.GetAsync($"/Ratings/{foodSellerId}");
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(content);
         }
-        
+
         if (double.TryParse(content, out double averageRating))
         {
             return averageRating;
         }
+
         throw new InvalidOperationException("Unable to parse the average rating.");
 
-    }
-
-    public async Task<int> ReadRatingAsync(ReadRatingDTO dto)
-    {
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
-        HttpResponseMessage response = await _client.PostAsJsonAsync("/Ratings", dto);
-        string content = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception(content);
-        }
-
-        if (int.TryParse(content, out int rating))
-        {
-            return rating;
-        }
-        throw new InvalidOperationException("Unable to parse the rating.");
     }
 }

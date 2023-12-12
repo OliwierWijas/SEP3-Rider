@@ -12,5 +12,4 @@ public interface IRatingAndCommentLogic
     Task DeleteComment(int commentId);
     Task<List<Comment>> ReadCommentsByFoodSellerId(int foodSellerId);
     Task<double> ReadAverageRatingByFoodSellerId(int foodSellerId);
-    Task<int> ReadRating(ReadRatingDTO dto);
 }

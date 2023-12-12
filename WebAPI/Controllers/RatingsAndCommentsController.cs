@@ -108,18 +108,4 @@ public class RatingsAndCommentsController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    [HttpPost, Route("ReadRatings")]
-    public async Task<ActionResult<int>> GetRatingAsync([FromBody] ReadRatingDTO dto)
-    {
-        try
-        {
-            var result = await logic.ReadRating(dto);
-            return Ok(result);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return StatusCode(500, e.Message);
-        }
-    }
 }
