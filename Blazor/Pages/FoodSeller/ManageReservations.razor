@@ -31,7 +31,7 @@
                         @foreach (var item in _reservations)
                         {
                             <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.FoodOfferId}"))">
-                                <div class="product-image"></div>
+                                <img class="product-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                                 <div class="product-title"><b>@item.Title</b></div>
                                 <div class="product-reznr">Reservation number: @item.ReservationNumber</div>
                                 <div class="product-time">@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</div>
@@ -52,7 +52,7 @@
                         @foreach (var item in _completedReservations)
                         {
                             <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayReservation/{item.FoodOfferId}"))">
-                                <div class="product-image"></div>
+                                <img class="product-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                                 <div class="product-title"><b>@item.Title</b></div>
                                 <div class="product-reznr">@item.ReservationNumber</div>
                                 <div class="product-time">@item.StartPickUpTime.ToString() - @item.EndPickUpTime.ToString()</div>

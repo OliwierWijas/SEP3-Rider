@@ -36,7 +36,8 @@ public class FoodOfferLogic: IFoodOfferLogic
                 {
                     WriteIndented = true,
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                })
+                }),
+                Photo = dto.Photo
             });
         }
         catch (Exception e)
@@ -155,10 +156,11 @@ public class FoodOfferLogic: IFoodOfferLogic
             MyDate? start = JsonSerializer.Deserialize<MyDate>(JsonStartTime, options);
             MyDate? end = JsonSerializer.Deserialize<MyDate>(JsonEndTime, options);
             FoodSeller? foodSeller = JsonSerializer.Deserialize<FoodSeller>(JsonFoodSeller, options);
-            FoodOffer dto = new FoodOffer(response.Id, foodSeller, response.Title, response.Description,
+            FoodOffer foodOffer = new FoodOffer(response.Id, foodSeller, response.Title, response.Description,
                 response.Price, start, end, response.IsReserved,
                 response.IsCompleted);
-            return dto;
+            foodOffer.Photo = response.Photo;
+            return foodOffer;
         }
         catch (Exception e)
         {

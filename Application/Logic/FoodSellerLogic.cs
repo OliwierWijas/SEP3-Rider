@@ -29,7 +29,8 @@ public class FoodSellerLogic : IFoodSellerLogic
                 City = dto.City,
                 PhoneNumber = dto.PhoneNumber,
                 Email = dto.Email,
-                Password = dto.Password
+                Password = dto.Password,
+                Photo = dto.Photo
             });
         }
         catch (Exception e)
@@ -225,6 +226,23 @@ public class FoodSellerLogic : IFoodSellerLogic
             List<FoodSeller> foodSellers = JsonSerializer.Deserialize<List<FoodSeller>>(Json, options)!;
 
             return foodSellers;
+        }
+        catch (Exception e)
+        {
+            string[] message = e.Message.Split("\"");
+            throw new Exception(message[3]);
+        }
+    }
+
+    public async Task<string> GetFoodSellerPhoto(int id)
+    {
+        try
+        {
+            GetPhotoResponse response = await client.GetFoodSellerPhotoAsync(new GetPhotoRequest()
+            {
+                AccountId = id
+            });
+            return response.Photo;
         }
         catch (Exception e)
         {

@@ -29,7 +29,7 @@
                     @foreach (var item in foodSellers)
                     {
                         <div class="sellers col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/DisplayFoodSeller/{item.AccountId}"))">
-                            <div class="sellers-image"></div>
+                            <img class="sellers-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                             <div class="sellers-name"><b>@item.Name</b></div>
                             <div class="sellers-address">@item.Address</div>
                             <div class="sellers-phoneNo">@item.PhoneNumber</div>
@@ -75,5 +75,4 @@
         AccountId = Int32.Parse(userClaims.FirstOrDefault(c => c.Type.Equals("ID"))!.Value);
         foodSellers = await FoodSellerService.GetAllAsync();
     }
-    
 }

@@ -11,6 +11,7 @@ message CreateFoodOfferRequest
     double price = 4;
     string startPickUpTime = 5;
     string endPickUpTime = 6;
+    string photo = 7;
 }
 
 message ReadAvailableFoodOffersRequest {}
@@ -38,6 +39,7 @@ message DeleteFoodOfferRequest
     int32 foodOfferId = 1;
 }
 message FoodOfferEmptyResponse {}
+
 message ReadFoodOffersListResponse
 {
     string list = 1;
@@ -53,6 +55,7 @@ message ReadFoodOfferByIdResponse{
     string endPickUpTime=7;
     bool isReserved=10;
     bool isCompleted=11;
+    string photo = 12;
 }
 
 service FoodOfferService {

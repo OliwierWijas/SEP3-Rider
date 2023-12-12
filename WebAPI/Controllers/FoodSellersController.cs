@@ -117,4 +117,19 @@ public class FoodSellersController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+
+    [HttpGet("photo/{accountId:int}")]
+    public async Task<ActionResult<string>> GetFoodSellerPhotoAsync([FromRoute] int accountId)
+    {
+        try
+        {
+            var result = await foodSellerLogic.GetFoodSellerPhoto(accountId);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

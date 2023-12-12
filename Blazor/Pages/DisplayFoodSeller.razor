@@ -20,24 +20,24 @@
     {
         <div class="seller-info">
             <AuthorizeView>
-            <div class="seller-image col-sm-12 col-lg-3"></div>
-            <div class="inf-container  col-sm-12 col-lg-6">
-                <div class="form-group field">
-                    <h4 style="font-weight: bold"> @foodSeller.Name </h4>
+                <img class="seller-image col-sm-12 col-lg-3" src="@($"data:image/png;base64,{base64}")" alt="Uploaded Image"/>
+                <div class="inf-container  col-sm-12 col-lg-6">
+                    <div class="form-group field">
+                        <h4 style="font-weight: bold"> @foodSeller.Name </h4>
+                    </div>
+                    <div class="form-group field">
+                        <h5><span class="oi oi-envelope-closed"/> @foodSeller.Email </h5>
+                    </div>
+                    <div class="form-group field">
+                        <h5><span class="oi oi-map-marker"/> @foodSeller.Address </h5>
+                    </div>
+                    <div class="form-group field">
+                        <h5><span class="oi oi-phone"/> @foodSeller.PhoneNumber </h5>
+                    </div>
+                    <div class="form-group field">
+                        <h5><b>Average rating:</b> @averageRating </h5>
+                    </div>
                 </div>
-                <div class="form-group field">
-                    <h5><span class="oi oi-envelope-closed"/> @foodSeller.Email </h5>
-                </div>
-                <div class="form-group field">
-                    <h5><span class="oi oi-map-marker"/> @foodSeller.Address </h5>
-                </div>
-                <div class="form-group field">
-                    <h5><span class="oi oi-phone"/> @foodSeller.PhoneNumber </h5>
-                </div>
-                <div class="form-group field">
-                    <h5><b>Average rating:</b> @averageRating </h5>
-                </div>
-            </div>
             </AuthorizeView>
             <AuthorizeView Policy="MustBeCustomer">
                 <div class="rating col-sm-12 col-lg-3">
@@ -109,6 +109,7 @@ else
     private double averageRating;
     private int value = 5;
     IEnumerable<int> rates;
+    private string base64 = "";
 
 
     protected override async Task OnInitializedAsync()
@@ -123,6 +124,7 @@ else
         comments = await RatingAndCommentService.ReadCommentsByFoodSellerIdAsync(id);
         averageRating = await RatingAndCommentService.ReadAverageRatingByFoodSellerIdAsync(id);
         rates = new[] { 1, 2, 3, 4, 5 };
+        base64 = await FoodSellerService.GetPhotoAsync(id);
     }
 
     private async Task CreateCommentAsync()

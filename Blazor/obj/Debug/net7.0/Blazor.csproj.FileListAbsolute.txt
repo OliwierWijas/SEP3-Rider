@@ -382,3 +382,4 @@ C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Page
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Login.razor.rz.scp.css
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\ManageAccount.razor.rz.scp.css
 C:\Users\Dominika\Desktop\SEP3\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Modal.razor.rz.scp.css
+C:\Users\oliwi\RiderProjects\SEP3-Rider\Blazor\obj\Debug\net7.0\scopedcss\Pages\Modal.razor.rz.scp.css

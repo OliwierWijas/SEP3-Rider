@@ -42,6 +42,10 @@
                             <label class="title-field" id="endDate">End pick-up date:    </label>
                             <RadzenDatePicker id="date" @bind-Value=@EndPickupTime ShowTime="true" ShowSeconds="true" HoursStep="1.5" MinutesStep="5" SecondsStep="10" DateFormat="MM/dd/yyyy HH:mm"/>
                         </div>
+                        <div class="image-upload">
+                            <h4 class="upload-item">Upload Image</h4>
+                            <InputFile class="upload-item upload-input" accept="image/*" OnChange="@(args => HandleFileChange(args))"/>
+                        </div>
                         <div class="button-row">
                             <button @onclick="CreateAsync" class="createbtn">Create</button>
                         </div>
@@ -65,7 +69,7 @@
                         @foreach (var item in _foodOffers)
                         {
                             <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/FoodSellerDisplayFoodOffer/{item.Id}"))">
-                                <div class="product-image"></div>
+                                <img class="product-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                                 <div class="product-title"><b>@item.Title</b></div>
                                 <div class="product-price">@item.Price DKK</div>
                                 <div class="product-start">Start pick-up time: @item.StartPickupTime.ToString()</div>
@@ -108,6 +112,7 @@
     public Task<AuthenticationState> AuthState { get; set; } = null!;
     private bool _isLoggedIn;
     private IEnumerable<Claim> userClaims;
+    private string base64String = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -125,7 +130,7 @@
         ErrorMessage = "";
         try
         {
-            await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute)));
+            await FoodOfferService.CreateAsync(new FoodOfferCreationDTO(AccountId, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute), base64String));
             _foodOffers = await FoodOfferService.GetFoodOffersByFoodSellerIdAsync(AccountId);
             _showModal = true;
         }
@@ -140,5 +145,19 @@
     {
         _showModal = false;
         StateHasChanged();
+    }
+    
+    async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        using (var stream = file.OpenReadStream())
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await stream.CopyToAsync(memoryStream);
+                base64String = Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
     }
 }

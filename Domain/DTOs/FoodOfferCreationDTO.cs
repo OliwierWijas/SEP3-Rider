@@ -8,8 +8,9 @@ public class FoodOfferCreationDTO
     public double Price { get; set; }
     public MyDate StartPickupTime { get; set; }
     public MyDate EndPickupTime { get; set; }
+    public string Photo { get; set; }
 
-    public FoodOfferCreationDTO(int foodSellerId, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime)
+    public FoodOfferCreationDTO(int foodSellerId, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime, string photo)
     {
         FoodSellerId = foodSellerId;
         Title = title;
@@ -17,5 +18,6 @@ public class FoodOfferCreationDTO
         Price = price;
         StartPickupTime = startPickupTime;
         EndPickupTime = endPickupTime;
+        Photo = photo;
     }
 }

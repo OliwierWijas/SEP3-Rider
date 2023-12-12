@@ -36,7 +36,7 @@
                     @foreach (var item in _foodOffers)
                     {
                         <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.Id}"))">
-                            <div class="product-image"></div>
+                            <img class="product-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                             <div class="product-title"><b>@item.Title</b></div>
                             <div class="product-seller">@item.FoodSeller.Name</div>
                             <div class="product-price">@item.Price DKK</div>

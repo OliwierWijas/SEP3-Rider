@@ -83,4 +83,16 @@ public class FoodSellerHttpClient : IFoodSellerService
         })!;
         return sellers;
     }
+
+    public async Task<string> GetPhotoAsync(int accountId)
+    {
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_authService.token);
+        HttpResponseMessage response = await _client.GetAsync($"/FoodSellers/photo/{accountId}");
+        string content = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(content);
+        }
+        return content;
+    }
 }

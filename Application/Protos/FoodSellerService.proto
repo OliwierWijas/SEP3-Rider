@@ -11,6 +11,7 @@ message CreateFoodSellerRequest {
   string phone_number = 5;
   string email = 6;
   string password = 7;
+  string photo = 8;
 }
 
 message UpdateFoodSellerNameRequest {
@@ -51,6 +52,10 @@ message GetAllFoodSellersRequest {
 
 }
 
+message GetPhotoRequest {
+  int32 accountId = 1;
+}
+
 message FoodSellerEmptyResponse {
 }
 message GetFoodSellerByIdResponse{
@@ -65,6 +70,10 @@ message GetAllFoodSellersResponse {
   string list = 1;
 }
 
+message GetPhotoResponse {
+  string photo = 1;
+}
+
 service FoodSellerService {
   rpc CreateFoodSeller(CreateFoodSellerRequest) returns (FoodSellerEmptyResponse);
   rpc UpdateName(UpdateFoodSellerNameRequest) returns (FoodSellerEmptyResponse);
@@ -75,4 +84,5 @@ service FoodSellerService {
   rpc DeleteAccount(DeleteFoodSellerAccountRequest) returns (FoodSellerEmptyResponse);
   rpc GetFoodSellerById(GetFoodSellerByIdRequest) returns (GetFoodSellerByIdResponse);
   rpc GetAllFoodSellers(GetAllFoodSellersRequest) returns (GetAllFoodSellersResponse);
+  rpc GetFoodSellerPhoto(GetPhotoRequest) returns (GetPhotoResponse);
 }

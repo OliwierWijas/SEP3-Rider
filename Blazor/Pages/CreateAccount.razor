@@ -68,6 +68,13 @@
                     <div class="col-8 col-lg-12">
                         <input class="register-field" placeholder="Password" type="password" @bind="Password" @bind:event="oninput"/>
                     </div>
+                    @if (!registerAsCustomer)
+                    {
+                        <div class="image-upload">
+                            <h4 class="upload-item">Upload Image</h4>
+                            <InputFile class="upload-item upload-input" accept="image/*" OnChange="@(args => HandleFileChange(args))"/>
+                        </div>
+                    }
                     @if (!string.IsNullOrEmpty(ErrorMessage))
                     {
                         <label class="register-field" style="color: red">@ErrorMessage</label>
@@ -118,8 +125,22 @@
     private string City = "";
     private string ErrorMessage = "";
     private bool _showModal;
-
     private bool registerAsCustomer = true;
+    string base64String = string.Empty;
+
+    async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        using (var stream = file.OpenReadStream())
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await stream.CopyToAsync(memoryStream);
+                base64String = Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+    }
 
     private async Task Register()
     {
@@ -143,7 +164,7 @@
             }
             else
             {
-                await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, Street, Number, City ,Email, PhoneNumber, Password));
+                await FoodSellerService.CreateAsync(new FoodSellerCreationDTO(SellerName, Street, Number, City ,Email, PhoneNumber, Password, base64String));
                 CustomerFirstName = "";
                 CustomerLastName = "";
                 SellerName = "";

@@ -24,42 +24,43 @@ namespace GrpcClient {
     static FoodOfferServiceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Qcm90b3MvRm9vZE9mZmVyU2VydmljZS5wcm90bxIJZm9vZE9mZmVyIpEB",
+            "Ch1Qcm90b3MvRm9vZE9mZmVyU2VydmljZS5wcm90bxIJZm9vZE9mZmVyIqAB",
             "ChZDcmVhdGVGb29kT2ZmZXJSZXF1ZXN0EhQKDGZvb2RTZWxsZXJJZBgBIAEo",
             "BRINCgV0aXRsZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRINCgVwcmlj",
             "ZRgEIAEoARIXCg9zdGFydFBpY2tVcFRpbWUYBSABKAkSFQoNZW5kUGlja1Vw",
-            "VGltZRgGIAEoCSIgCh5SZWFkQXZhaWxhYmxlRm9vZE9mZmVyc1JlcXVlc3Qi",
-            "OwojUmVhZEZvb2RPZmZlcnNCeUZvb2RTZWxsZXJJZFJlcXVlc3QSFAoMZm9v",
-            "ZFNlbGxlcklkGAEgASgFIiYKGFJlYWRGb29kT2ZmZXJCeUlkUmVxdWVzdBIK",
-            "CgJpZBgBIAEoBSKQAQoWVXBkYXRlRm9vZE9mZmVyUmVxdWVzdBITCgtmb29k",
-            "T2ZmZXJJZBgBIAEoBRINCgV0aXRsZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgD",
-            "IAEoCRINCgVwcmljZRgEIAEoARIXCg9zdGFydFBpY2tVcFRpbWUYBSABKAkS",
-            "FQoNZW5kUGlja1VwVGltZRgGIAEoCSItChZEZWxldGVGb29kT2ZmZXJSZXF1",
-            "ZXN0EhMKC2Zvb2RPZmZlcklkGAEgASgFIhgKFkZvb2RPZmZlckVtcHR5UmVz",
-            "cG9uc2UiKgoaUmVhZEZvb2RPZmZlcnNMaXN0UmVzcG9uc2USDAoEbGlzdBgB",
-            "IAEoCSLHAQoZUmVhZEZvb2RPZmZlckJ5SWRSZXNwb25zZRIKCgJpZBgBIAEo",
-            "BRISCgpmb29kU2VsbGVyGAIgASgJEg0KBXRpdGxlGAMgASgJEhMKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJEg0KBXByaWNlGAUgASgBEhcKD3N0YXJ0UGlja1VwVGlt",
-            "ZRgGIAEoCRIVCg1lbmRQaWNrVXBUaW1lGAcgASgJEhIKCmlzUmVzZXJ2ZWQY",
-            "CiABKAgSEwoLaXNDb21wbGV0ZWQYCyABKAgy4QQKEEZvb2RPZmZlclNlcnZp",
-            "Y2USVwoPY3JlYXRlRm9vZE9mZmVyEiEuZm9vZE9mZmVyLkNyZWF0ZUZvb2RP",
-            "ZmZlclJlcXVlc3QaIS5mb29kT2ZmZXIuRm9vZE9mZmVyRW1wdHlSZXNwb25z",
-            "ZRJrChdyZWFkQXZhaWxhYmxlRm9vZE9mZmVycxIpLmZvb2RPZmZlci5SZWFk",
-            "QXZhaWxhYmxlRm9vZE9mZmVyc1JlcXVlc3QaJS5mb29kT2ZmZXIuUmVhZEZv",
-            "b2RPZmZlcnNMaXN0UmVzcG9uc2USdQoccmVhZEZvb2RPZmZlcnNCeUZvb2RT",
-            "ZWxsZXJJZBIuLmZvb2RPZmZlci5SZWFkRm9vZE9mZmVyc0J5Rm9vZFNlbGxl",
-            "cklkUmVxdWVzdBolLmZvb2RPZmZlci5SZWFkRm9vZE9mZmVyc0xpc3RSZXNw",
-            "b25zZRJXCg91cGRhdGVGb29kT2ZmZXISIS5mb29kT2ZmZXIuVXBkYXRlRm9v",
-            "ZE9mZmVyUmVxdWVzdBohLmZvb2RPZmZlci5Gb29kT2ZmZXJFbXB0eVJlc3Bv",
-            "bnNlElcKD2RlbGV0ZUZvb2RPZmZlchIhLmZvb2RPZmZlci5EZWxldGVGb29k",
-            "T2ZmZXJSZXF1ZXN0GiEuZm9vZE9mZmVyLkZvb2RPZmZlckVtcHR5UmVzcG9u",
-            "c2USXgoRcmVhZEZvb2RPZmZlckJ5SWQSIy5mb29kT2ZmZXIuUmVhZEZvb2RP",
-            "ZmZlckJ5SWRSZXF1ZXN0GiQuZm9vZE9mZmVyLlJlYWRGb29kT2ZmZXJCeUlk",
-            "UmVzcG9uc2VCD1ABqgIKR3JwY0NsaWVudGIGcHJvdG8z"));
+            "VGltZRgGIAEoCRINCgVwaG90bxgHIAEoCSIgCh5SZWFkQXZhaWxhYmxlRm9v",
+            "ZE9mZmVyc1JlcXVlc3QiOwojUmVhZEZvb2RPZmZlcnNCeUZvb2RTZWxsZXJJ",
+            "ZFJlcXVlc3QSFAoMZm9vZFNlbGxlcklkGAEgASgFIiYKGFJlYWRGb29kT2Zm",
+            "ZXJCeUlkUmVxdWVzdBIKCgJpZBgBIAEoBSKQAQoWVXBkYXRlRm9vZE9mZmVy",
+            "UmVxdWVzdBITCgtmb29kT2ZmZXJJZBgBIAEoBRINCgV0aXRsZRgCIAEoCRIT",
+            "CgtkZXNjcmlwdGlvbhgDIAEoCRINCgVwcmljZRgEIAEoARIXCg9zdGFydFBp",
+            "Y2tVcFRpbWUYBSABKAkSFQoNZW5kUGlja1VwVGltZRgGIAEoCSItChZEZWxl",
+            "dGVGb29kT2ZmZXJSZXF1ZXN0EhMKC2Zvb2RPZmZlcklkGAEgASgFIhgKFkZv",
+            "b2RPZmZlckVtcHR5UmVzcG9uc2UiKgoaUmVhZEZvb2RPZmZlcnNMaXN0UmVz",
+            "cG9uc2USDAoEbGlzdBgBIAEoCSLWAQoZUmVhZEZvb2RPZmZlckJ5SWRSZXNw",
+            "b25zZRIKCgJpZBgBIAEoBRISCgpmb29kU2VsbGVyGAIgASgJEg0KBXRpdGxl",
+            "GAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEg0KBXByaWNlGAUgASgBEhcK",
+            "D3N0YXJ0UGlja1VwVGltZRgGIAEoCRIVCg1lbmRQaWNrVXBUaW1lGAcgASgJ",
+            "EhIKCmlzUmVzZXJ2ZWQYCiABKAgSEwoLaXNDb21wbGV0ZWQYCyABKAgSDQoF",
+            "cGhvdG8YDCABKAky4QQKEEZvb2RPZmZlclNlcnZpY2USVwoPY3JlYXRlRm9v",
+            "ZE9mZmVyEiEuZm9vZE9mZmVyLkNyZWF0ZUZvb2RPZmZlclJlcXVlc3QaIS5m",
+            "b29kT2ZmZXIuRm9vZE9mZmVyRW1wdHlSZXNwb25zZRJrChdyZWFkQXZhaWxh",
+            "YmxlRm9vZE9mZmVycxIpLmZvb2RPZmZlci5SZWFkQXZhaWxhYmxlRm9vZE9m",
+            "ZmVyc1JlcXVlc3QaJS5mb29kT2ZmZXIuUmVhZEZvb2RPZmZlcnNMaXN0UmVz",
+            "cG9uc2USdQoccmVhZEZvb2RPZmZlcnNCeUZvb2RTZWxsZXJJZBIuLmZvb2RP",
+            "ZmZlci5SZWFkRm9vZE9mZmVyc0J5Rm9vZFNlbGxlcklkUmVxdWVzdBolLmZv",
+            "b2RPZmZlci5SZWFkRm9vZE9mZmVyc0xpc3RSZXNwb25zZRJXCg91cGRhdGVG",
+            "b29kT2ZmZXISIS5mb29kT2ZmZXIuVXBkYXRlRm9vZE9mZmVyUmVxdWVzdBoh",
+            "LmZvb2RPZmZlci5Gb29kT2ZmZXJFbXB0eVJlc3BvbnNlElcKD2RlbGV0ZUZv",
+            "b2RPZmZlchIhLmZvb2RPZmZlci5EZWxldGVGb29kT2ZmZXJSZXF1ZXN0GiEu",
+            "Zm9vZE9mZmVyLkZvb2RPZmZlckVtcHR5UmVzcG9uc2USXgoRcmVhZEZvb2RP",
+            "ZmZlckJ5SWQSIy5mb29kT2ZmZXIuUmVhZEZvb2RPZmZlckJ5SWRSZXF1ZXN0",
+            "GiQuZm9vZE9mZmVyLlJlYWRGb29kT2ZmZXJCeUlkUmVzcG9uc2VCD1ABqgIK",
+            "R3JwY0NsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodOfferRequest), global::GrpcClient.CreateFoodOfferRequest.Parser, new[]{ "FoodSellerId", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodOfferRequest), global::GrpcClient.CreateFoodOfferRequest.Parser, new[]{ "FoodSellerId", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime", "Photo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadAvailableFoodOffersRequest), global::GrpcClient.ReadAvailableFoodOffersRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOffersByFoodSellerIdRequest), global::GrpcClient.ReadFoodOffersByFoodSellerIdRequest.Parser, new[]{ "FoodSellerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOfferByIdRequest), global::GrpcClient.ReadFoodOfferByIdRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -67,7 +68,7 @@ namespace GrpcClient {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.DeleteFoodOfferRequest), global::GrpcClient.DeleteFoodOfferRequest.Parser, new[]{ "FoodOfferId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.FoodOfferEmptyResponse), global::GrpcClient.FoodOfferEmptyResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOffersListResponse), global::GrpcClient.ReadFoodOffersListResponse.Parser, new[]{ "List" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOfferByIdResponse), global::GrpcClient.ReadFoodOfferByIdResponse.Parser, new[]{ "Id", "FoodSeller", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime", "IsReserved", "IsCompleted" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.ReadFoodOfferByIdResponse), global::GrpcClient.ReadFoodOfferByIdResponse.Parser, new[]{ "Id", "FoodSeller", "Title", "Description", "Price", "StartPickUpTime", "EndPickUpTime", "IsReserved", "IsCompleted", "Photo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -114,6 +115,7 @@ namespace GrpcClient {
       price_ = other.price_;
       startPickUpTime_ = other.startPickUpTime_;
       endPickUpTime_ = other.endPickUpTime_;
+      photo_ = other.photo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -195,6 +197,18 @@ namespace GrpcClient {
       }
     }
 
+    /// <summary>Field number for the "photo" field.</summary>
+    public const int PhotoFieldNumber = 7;
+    private string photo_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Photo {
+      get { return photo_; }
+      set {
+        photo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -216,6 +230,7 @@ namespace GrpcClient {
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Price, other.Price)) return false;
       if (StartPickUpTime != other.StartPickUpTime) return false;
       if (EndPickUpTime != other.EndPickUpTime) return false;
+      if (Photo != other.Photo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -229,6 +244,7 @@ namespace GrpcClient {
       if (Price != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Price);
       if (StartPickUpTime.Length != 0) hash ^= StartPickUpTime.GetHashCode();
       if (EndPickUpTime.Length != 0) hash ^= EndPickUpTime.GetHashCode();
+      if (Photo.Length != 0) hash ^= Photo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -271,6 +287,10 @@ namespace GrpcClient {
         output.WriteRawTag(50);
         output.WriteString(EndPickUpTime);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -305,6 +325,10 @@ namespace GrpcClient {
         output.WriteRawTag(50);
         output.WriteString(EndPickUpTime);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -332,6 +356,9 @@ namespace GrpcClient {
       }
       if (EndPickUpTime.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(EndPickUpTime);
+      }
+      if (Photo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Photo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -362,6 +389,9 @@ namespace GrpcClient {
       }
       if (other.EndPickUpTime.Length != 0) {
         EndPickUpTime = other.EndPickUpTime;
+      }
+      if (other.Photo.Length != 0) {
+        Photo = other.Photo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -402,6 +432,10 @@ namespace GrpcClient {
             EndPickUpTime = input.ReadString();
             break;
           }
+          case 58: {
+            Photo = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -439,6 +473,10 @@ namespace GrpcClient {
           }
           case 50: {
             EndPickUpTime = input.ReadString();
+            break;
+          }
+          case 58: {
+            Photo = input.ReadString();
             break;
           }
         }
@@ -1925,6 +1963,7 @@ namespace GrpcClient {
       endPickUpTime_ = other.endPickUpTime_;
       isReserved_ = other.isReserved_;
       isCompleted_ = other.isCompleted_;
+      photo_ = other.photo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2042,6 +2081,18 @@ namespace GrpcClient {
       }
     }
 
+    /// <summary>Field number for the "photo" field.</summary>
+    public const int PhotoFieldNumber = 12;
+    private string photo_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Photo {
+      get { return photo_; }
+      set {
+        photo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2066,6 +2117,7 @@ namespace GrpcClient {
       if (EndPickUpTime != other.EndPickUpTime) return false;
       if (IsReserved != other.IsReserved) return false;
       if (IsCompleted != other.IsCompleted) return false;
+      if (Photo != other.Photo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2082,6 +2134,7 @@ namespace GrpcClient {
       if (EndPickUpTime.Length != 0) hash ^= EndPickUpTime.GetHashCode();
       if (IsReserved != false) hash ^= IsReserved.GetHashCode();
       if (IsCompleted != false) hash ^= IsCompleted.GetHashCode();
+      if (Photo.Length != 0) hash ^= Photo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2136,6 +2189,10 @@ namespace GrpcClient {
         output.WriteRawTag(88);
         output.WriteBool(IsCompleted);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2182,6 +2239,10 @@ namespace GrpcClient {
         output.WriteRawTag(88);
         output.WriteBool(IsCompleted);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2218,6 +2279,9 @@ namespace GrpcClient {
       }
       if (IsCompleted != false) {
         size += 1 + 1;
+      }
+      if (Photo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Photo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2257,6 +2321,9 @@ namespace GrpcClient {
       }
       if (other.IsCompleted != false) {
         IsCompleted = other.IsCompleted;
+      }
+      if (other.Photo.Length != 0) {
+        Photo = other.Photo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2309,6 +2376,10 @@ namespace GrpcClient {
             IsCompleted = input.ReadBool();
             break;
           }
+          case 98: {
+            Photo = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2358,6 +2429,10 @@ namespace GrpcClient {
           }
           case 88: {
             IsCompleted = input.ReadBool();
+            break;
+          }
+          case 98: {
+            Photo = input.ReadString();
             break;
           }
         }

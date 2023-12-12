@@ -1869,19 +1869,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dominika\\.nuget\\packages\\": {}
+    "C:\\Users\\oliwi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\Dominika\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dominika\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1893,11 +1893,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\Application\\Application.csproj"
+            "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\Application\\Application.csproj"
             },
-            "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {
-              "projectPath": "C:\\Users\\Dominika\\Desktop\\SEP3\\SEP3-Rider\\HttpClients\\HttpClients.csproj"
+            "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj": {
+              "projectPath": "C:\\Users\\oliwi\\RiderProjects\\SEP3-Rider\\HttpClients\\HttpClients.csproj"
             }
           }
         }
@@ -1957,7 +1957,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

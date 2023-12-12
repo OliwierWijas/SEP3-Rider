@@ -10,4 +10,5 @@ public interface IFoodSellerService
     Task DeleteAsync(int accountId);
     Task<FoodSeller> GetAsync(int accountId);
     Task<List<FoodSeller>> GetAllAsync();
+    Task<string> GetPhotoAsync(int accountId);
 }

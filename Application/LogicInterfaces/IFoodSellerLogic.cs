@@ -14,4 +14,5 @@ public interface IFoodSellerLogic
     Task DeleteAccount(int accountId);
     Task<FoodSeller> GetFoodSellerById(int accountId);
     Task<List<FoodSeller>> GetAllFoodSellers();
+    Task<string> GetFoodSellerPhoto(int id);
 }

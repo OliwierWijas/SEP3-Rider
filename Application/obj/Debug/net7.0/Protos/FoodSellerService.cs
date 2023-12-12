@@ -25,50 +25,53 @@ namespace GrpcClient {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5Qcm90b3MvRm9vZFNlbGxlclNlcnZpY2UucHJvdG8SCmZvb2RTZWxsZXIi",
-            "jAEKF0NyZWF0ZUZvb2RTZWxsZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSDgoG",
+            "mwEKF0NyZWF0ZUZvb2RTZWxsZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSDgoG",
             "c3RyZWV0GAIgASgJEg4KBm51bWJlchgDIAEoBRIMCgRjaXR5GAQgASgJEhQK",
             "DHBob25lX251bWJlchgFIAEoCRINCgVlbWFpbBgGIAEoCRIQCghwYXNzd29y",
-            "ZBgHIAEoCSI+ChtVcGRhdGVGb29kU2VsbGVyTmFtZVJlcXVlc3QSEQoJYWNj",
-            "b3VudElkGAEgASgFEgwKBG5hbWUYAiABKAkiYQoeVXBkYXRlRm9vZFNlbGxl",
-            "ckFkZHJlc3NSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBRIOCgZzdHJlZXQY",
-            "AiABKAkSDgoGbnVtYmVyGAMgASgFEgwKBGNpdHkYBCABKAkiTAoiVXBkYXRl",
-            "Rm9vZFNlbGxlclBob25lTnVtYmVyUmVxdWVzdBIRCglhY2NvdW50SWQYASAB",
-            "KAUSEwoLcGhvbmVOdW1iZXIYAiABKAkiQAocVXBkYXRlRm9vZFNlbGxlckVt",
-            "YWlsUmVxdWVzdBIRCglhY2NvdW50SWQYASABKAUSDQoFZW1haWwYAiABKAki",
-            "RgofVXBkYXRlRm9vZFNlbGxlclBhc3N3b3JkUmVxdWVzdBIRCglhY2NvdW50",
-            "SWQYASABKAUSEAoIcGFzc3dvcmQYAiABKAkiMwoeRGVsZXRlRm9vZFNlbGxl",
-            "ckFjY291bnRSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBSItChhHZXRGb29k",
-            "U2VsbGVyQnlJZFJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFIhoKGEdldEFs",
-            "bEZvb2RTZWxsZXJzUmVxdWVzdCIZChdGb29kU2VsbGVyRW1wdHlSZXNwb25z",
-            "ZSJxChlHZXRGb29kU2VsbGVyQnlJZFJlc3BvbnNlEhEKCWFjY291bnRJZBgB",
-            "IAEoBRINCgVlbWFpbBgCIAEoCRITCgtwaG9uZU51bWJlchgDIAEoCRIMCgRu",
-            "YW1lGAQgASgJEg8KB2FkZHJlc3MYBSABKAkiKQoZR2V0QWxsRm9vZFNlbGxl",
-            "cnNSZXNwb25zZRIMCgRsaXN0GAEgASgJMoEHChFGb29kU2VsbGVyU2Vydmlj",
-            "ZRJcChBDcmVhdGVGb29kU2VsbGVyEiMuZm9vZFNlbGxlci5DcmVhdGVGb29k",
-            "U2VsbGVyUmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVz",
-            "cG9uc2USWgoKVXBkYXRlTmFtZRInLmZvb2RTZWxsZXIuVXBkYXRlRm9vZFNl",
-            "bGxlck5hbWVSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29kU2VsbGVyRW1wdHlS",
-            "ZXNwb25zZRJgCg1VcGRhdGVBZGRyZXNzEiouZm9vZFNlbGxlci5VcGRhdGVG",
-            "b29kU2VsbGVyQWRkcmVzc1JlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxs",
-            "ZXJFbXB0eVJlc3BvbnNlElwKC1VwZGF0ZUVtYWlsEiguZm9vZFNlbGxlci5V",
-            "cGRhdGVGb29kU2VsbGVyRW1haWxSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29k",
-            "U2VsbGVyRW1wdHlSZXNwb25zZRJiCg5VcGRhdGVQYXNzd29yZBIrLmZvb2RT",
-            "ZWxsZXIuVXBkYXRlRm9vZFNlbGxlclBhc3N3b3JkUmVxdWVzdBojLmZvb2RT",
-            "ZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVzcG9uc2USaAoRVXBkYXRlUGhvbmVO",
-            "dW1iZXISLi5mb29kU2VsbGVyLlVwZGF0ZUZvb2RTZWxsZXJQaG9uZU51bWJl",
-            "clJlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJlc3BvbnNl",
-            "EmAKDURlbGV0ZUFjY291bnQSKi5mb29kU2VsbGVyLkRlbGV0ZUZvb2RTZWxs",
-            "ZXJBY2NvdW50UmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5",
-            "UmVzcG9uc2USYAoRR2V0Rm9vZFNlbGxlckJ5SWQSJC5mb29kU2VsbGVyLkdl",
-            "dEZvb2RTZWxsZXJCeUlkUmVxdWVzdBolLmZvb2RTZWxsZXIuR2V0Rm9vZFNl",
-            "bGxlckJ5SWRSZXNwb25zZRJgChFHZXRBbGxGb29kU2VsbGVycxIkLmZvb2RT",
-            "ZWxsZXIuR2V0QWxsRm9vZFNlbGxlcnNSZXF1ZXN0GiUuZm9vZFNlbGxlci5H",
-            "ZXRBbGxGb29kU2VsbGVyc1Jlc3BvbnNlQg9QAaoCCkdycGNDbGllbnRiBnBy",
-            "b3RvMw=="));
+            "ZBgHIAEoCRINCgVwaG90bxgIIAEoCSI+ChtVcGRhdGVGb29kU2VsbGVyTmFt",
+            "ZVJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFEgwKBG5hbWUYAiABKAkiYQoe",
+            "VXBkYXRlRm9vZFNlbGxlckFkZHJlc3NSZXF1ZXN0EhEKCWFjY291bnRJZBgB",
+            "IAEoBRIOCgZzdHJlZXQYAiABKAkSDgoGbnVtYmVyGAMgASgFEgwKBGNpdHkY",
+            "BCABKAkiTAoiVXBkYXRlRm9vZFNlbGxlclBob25lTnVtYmVyUmVxdWVzdBIR",
+            "CglhY2NvdW50SWQYASABKAUSEwoLcGhvbmVOdW1iZXIYAiABKAkiQAocVXBk",
+            "YXRlRm9vZFNlbGxlckVtYWlsUmVxdWVzdBIRCglhY2NvdW50SWQYASABKAUS",
+            "DQoFZW1haWwYAiABKAkiRgofVXBkYXRlRm9vZFNlbGxlclBhc3N3b3JkUmVx",
+            "dWVzdBIRCglhY2NvdW50SWQYASABKAUSEAoIcGFzc3dvcmQYAiABKAkiMwoe",
+            "RGVsZXRlRm9vZFNlbGxlckFjY291bnRSZXF1ZXN0EhEKCWFjY291bnRJZBgB",
+            "IAEoBSItChhHZXRGb29kU2VsbGVyQnlJZFJlcXVlc3QSEQoJYWNjb3VudElk",
+            "GAEgASgFIhoKGEdldEFsbEZvb2RTZWxsZXJzUmVxdWVzdCIkCg9HZXRQaG90",
+            "b1JlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFIhkKF0Zvb2RTZWxsZXJFbXB0",
+            "eVJlc3BvbnNlInEKGUdldEZvb2RTZWxsZXJCeUlkUmVzcG9uc2USEQoJYWNj",
+            "b3VudElkGAEgASgFEg0KBWVtYWlsGAIgASgJEhMKC3Bob25lTnVtYmVyGAMg",
+            "ASgJEgwKBG5hbWUYBCABKAkSDwoHYWRkcmVzcxgFIAEoCSIpChlHZXRBbGxG",
+            "b29kU2VsbGVyc1Jlc3BvbnNlEgwKBGxpc3QYASABKAkiIQoQR2V0UGhvdG9S",
+            "ZXNwb25zZRINCgVwaG90bxgBIAEoCTLSBwoRRm9vZFNlbGxlclNlcnZpY2US",
+            "XAoQQ3JlYXRlRm9vZFNlbGxlchIjLmZvb2RTZWxsZXIuQ3JlYXRlRm9vZFNl",
+            "bGxlclJlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJlc3Bv",
+            "bnNlEloKClVwZGF0ZU5hbWUSJy5mb29kU2VsbGVyLlVwZGF0ZUZvb2RTZWxs",
+            "ZXJOYW1lUmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNlbGxlckVtcHR5UmVz",
+            "cG9uc2USYAoNVXBkYXRlQWRkcmVzcxIqLmZvb2RTZWxsZXIuVXBkYXRlRm9v",
+            "ZFNlbGxlckFkZHJlc3NSZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29kU2VsbGVy",
+            "RW1wdHlSZXNwb25zZRJcCgtVcGRhdGVFbWFpbBIoLmZvb2RTZWxsZXIuVXBk",
+            "YXRlRm9vZFNlbGxlckVtYWlsUmVxdWVzdBojLmZvb2RTZWxsZXIuRm9vZFNl",
+            "bGxlckVtcHR5UmVzcG9uc2USYgoOVXBkYXRlUGFzc3dvcmQSKy5mb29kU2Vs",
+            "bGVyLlVwZGF0ZUZvb2RTZWxsZXJQYXNzd29yZFJlcXVlc3QaIy5mb29kU2Vs",
+            "bGVyLkZvb2RTZWxsZXJFbXB0eVJlc3BvbnNlEmgKEVVwZGF0ZVBob25lTnVt",
+            "YmVyEi4uZm9vZFNlbGxlci5VcGRhdGVGb29kU2VsbGVyUGhvbmVOdW1iZXJS",
+            "ZXF1ZXN0GiMuZm9vZFNlbGxlci5Gb29kU2VsbGVyRW1wdHlSZXNwb25zZRJg",
+            "Cg1EZWxldGVBY2NvdW50EiouZm9vZFNlbGxlci5EZWxldGVGb29kU2VsbGVy",
+            "QWNjb3VudFJlcXVlc3QaIy5mb29kU2VsbGVyLkZvb2RTZWxsZXJFbXB0eVJl",
+            "c3BvbnNlEmAKEUdldEZvb2RTZWxsZXJCeUlkEiQuZm9vZFNlbGxlci5HZXRG",
+            "b29kU2VsbGVyQnlJZFJlcXVlc3QaJS5mb29kU2VsbGVyLkdldEZvb2RTZWxs",
+            "ZXJCeUlkUmVzcG9uc2USYAoRR2V0QWxsRm9vZFNlbGxlcnMSJC5mb29kU2Vs",
+            "bGVyLkdldEFsbEZvb2RTZWxsZXJzUmVxdWVzdBolLmZvb2RTZWxsZXIuR2V0",
+            "QWxsRm9vZFNlbGxlcnNSZXNwb25zZRJPChJHZXRGb29kU2VsbGVyUGhvdG8S",
+            "Gy5mb29kU2VsbGVyLkdldFBob3RvUmVxdWVzdBocLmZvb2RTZWxsZXIuR2V0",
+            "UGhvdG9SZXNwb25zZUIPUAGqAgpHcnBjQ2xpZW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodSellerRequest), global::GrpcClient.CreateFoodSellerRequest.Parser, new[]{ "Name", "Street", "Number", "City", "PhoneNumber", "Email", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.CreateFoodSellerRequest), global::GrpcClient.CreateFoodSellerRequest.Parser, new[]{ "Name", "Street", "Number", "City", "PhoneNumber", "Email", "Password", "Photo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerNameRequest), global::GrpcClient.UpdateFoodSellerNameRequest.Parser, new[]{ "AccountId", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerAddressRequest), global::GrpcClient.UpdateFoodSellerAddressRequest.Parser, new[]{ "AccountId", "Street", "Number", "City" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.UpdateFoodSellerPhoneNumberRequest), global::GrpcClient.UpdateFoodSellerPhoneNumberRequest.Parser, new[]{ "AccountId", "PhoneNumber" }, null, null, null, null),
@@ -77,9 +80,11 @@ namespace GrpcClient {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.DeleteFoodSellerAccountRequest), global::GrpcClient.DeleteFoodSellerAccountRequest.Parser, new[]{ "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetFoodSellerByIdRequest), global::GrpcClient.GetFoodSellerByIdRequest.Parser, new[]{ "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetAllFoodSellersRequest), global::GrpcClient.GetAllFoodSellersRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetPhotoRequest), global::GrpcClient.GetPhotoRequest.Parser, new[]{ "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.FoodSellerEmptyResponse), global::GrpcClient.FoodSellerEmptyResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetFoodSellerByIdResponse), global::GrpcClient.GetFoodSellerByIdResponse.Parser, new[]{ "AccountId", "Email", "PhoneNumber", "Name", "Address" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetAllFoodSellersResponse), global::GrpcClient.GetAllFoodSellersResponse.Parser, new[]{ "List" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetAllFoodSellersResponse), global::GrpcClient.GetAllFoodSellersResponse.Parser, new[]{ "List" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.GetPhotoResponse), global::GrpcClient.GetPhotoResponse.Parser, new[]{ "Photo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -127,6 +132,7 @@ namespace GrpcClient {
       phoneNumber_ = other.phoneNumber_;
       email_ = other.email_;
       password_ = other.password_;
+      photo_ = other.photo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -220,6 +226,18 @@ namespace GrpcClient {
       }
     }
 
+    /// <summary>Field number for the "photo" field.</summary>
+    public const int PhotoFieldNumber = 8;
+    private string photo_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Photo {
+      get { return photo_; }
+      set {
+        photo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -242,6 +260,7 @@ namespace GrpcClient {
       if (PhoneNumber != other.PhoneNumber) return false;
       if (Email != other.Email) return false;
       if (Password != other.Password) return false;
+      if (Photo != other.Photo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -256,6 +275,7 @@ namespace GrpcClient {
       if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (Photo.Length != 0) hash ^= Photo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -302,6 +322,10 @@ namespace GrpcClient {
         output.WriteRawTag(58);
         output.WriteString(Password);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -340,6 +364,10 @@ namespace GrpcClient {
         output.WriteRawTag(58);
         output.WriteString(Password);
       }
+      if (Photo.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Photo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -370,6 +398,9 @@ namespace GrpcClient {
       }
       if (Password.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      if (Photo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Photo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -403,6 +434,9 @@ namespace GrpcClient {
       }
       if (other.Password.Length != 0) {
         Password = other.Password;
+      }
+      if (other.Photo.Length != 0) {
+        Photo = other.Photo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -447,6 +481,10 @@ namespace GrpcClient {
             Password = input.ReadString();
             break;
           }
+          case 66: {
+            Photo = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -488,6 +526,10 @@ namespace GrpcClient {
           }
           case 58: {
             Password = input.ReadString();
+            break;
+          }
+          case 66: {
+            Photo = input.ReadString();
             break;
           }
         }
@@ -2231,6 +2273,195 @@ namespace GrpcClient {
 
   }
 
+  public sealed partial class GetPhotoRequest : pb::IMessage<GetPhotoRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetPhotoRequest> _parser = new pb::MessageParser<GetPhotoRequest>(() => new GetPhotoRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetPhotoRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoRequest(GetPhotoRequest other) : this() {
+      accountId_ = other.accountId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoRequest Clone() {
+      return new GetPhotoRequest(this);
+    }
+
+    /// <summary>Field number for the "accountId" field.</summary>
+    public const int AccountIdFieldNumber = 1;
+    private int accountId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AccountId {
+      get { return accountId_; }
+      set {
+        accountId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetPhotoRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetPhotoRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AccountId != other.AccountId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AccountId != 0) hash ^= AccountId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AccountId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(AccountId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AccountId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(AccountId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AccountId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccountId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetPhotoRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AccountId != 0) {
+        AccountId = other.AccountId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            AccountId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            AccountId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class FoodSellerEmptyResponse : pb::IMessage<FoodSellerEmptyResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2245,7 +2476,7 @@ namespace GrpcClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[9]; }
+      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2397,7 +2628,7 @@ namespace GrpcClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[10]; }
+      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2734,7 +2965,7 @@ namespace GrpcClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[11]; }
+      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2900,6 +3131,195 @@ namespace GrpcClient {
             break;
           case 10: {
             List = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GetPhotoResponse : pb::IMessage<GetPhotoResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetPhotoResponse> _parser = new pb::MessageParser<GetPhotoResponse>(() => new GetPhotoResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetPhotoResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcClient.FoodSellerServiceReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoResponse(GetPhotoResponse other) : this() {
+      photo_ = other.photo_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPhotoResponse Clone() {
+      return new GetPhotoResponse(this);
+    }
+
+    /// <summary>Field number for the "photo" field.</summary>
+    public const int PhotoFieldNumber = 1;
+    private string photo_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Photo {
+      get { return photo_; }
+      set {
+        photo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetPhotoResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetPhotoResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Photo != other.Photo) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Photo.Length != 0) hash ^= Photo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Photo.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Photo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Photo.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Photo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Photo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Photo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetPhotoResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Photo.Length != 0) {
+        Photo = other.Photo;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Photo = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Photo = input.ReadString();
             break;
           }
         }

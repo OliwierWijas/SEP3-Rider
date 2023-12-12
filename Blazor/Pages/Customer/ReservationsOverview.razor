@@ -33,7 +33,7 @@
                           @foreach (var item in _reservations)
                           {
                               <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                                  <div class="product-image"></div>
+                                  <img class="product-image" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                                   <div class="product-title"><b>@item.Title</b></div>
                                   <div class="product-seller">@item.FoodSeller.Name</div>
                                   <div class="product-price">@item.Price DKK</div>
@@ -54,7 +54,7 @@
                            @foreach (var item in _completedReservations)
                            {
                                <div class="product col-6 col-lg-4" @onclick="@(() => NavMgr.NavigateTo($"/CustomerDisplayFoodOffer/{item.FoodOfferId}"))">
-                                   <div class="product-image" id="productElements"></div>
+                                   <img class="product-image" id="productElements" src="@($"data:image/png;base64,{@item.Photo}")" alt="Uploaded Image"/>
                                    <div class="product-title" id="productElements"><b>@item.Title</b></div>
                                    <div class="product-seller" id="productElements">@item.FoodSeller.Name</div>
                                    <div class="product-price" id="productElements">@item.Price DKK</div>

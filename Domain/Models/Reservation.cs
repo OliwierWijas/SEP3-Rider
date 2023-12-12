@@ -12,6 +12,7 @@ public class Reservation
     public FoodSeller? FoodSeller { get; set; }
     public Customer? Customer { get; set; }
     public bool IsCompleted { get; set; }
+    public string Photo { get; set; }
 
     public Reservation(int foodOfferId, string title, string description, double price, MyDate startPickUpTime, MyDate endPickUpTime, int reservationNumber, FoodSeller foodSeller, Customer customer, bool isCompleted)
     {

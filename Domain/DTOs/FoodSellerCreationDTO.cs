@@ -9,8 +9,9 @@ public class FoodSellerCreationDTO
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
     public string Password { get; set; }
+    public string Photo { get; set; }
 
-    public FoodSellerCreationDTO(string name, string street, int number, string city, string email, string phoneNumber, string password)
+    public FoodSellerCreationDTO(string name, string street, int number, string city, string email, string phoneNumber, string password, string photo)
     {
         Name = name;
         Street = street;
@@ -19,5 +20,6 @@ public class FoodSellerCreationDTO
         Email = email;
         PhoneNumber = phoneNumber;
         Password = password;
+        Photo = photo;
     }
 }
