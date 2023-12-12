@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClients", "HttpClients\HttpClients.csproj", "{C0E32D35-FD65-4F17-9549-EB4EDF377379}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{01C3D01E-C996-4CDA-AB65-FA1AEF58E384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{C0E32D35-FD65-4F17-9549-EB4EDF377379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E32D35-FD65-4F17-9549-EB4EDF377379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E32D35-FD65-4F17-9549-EB4EDF377379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C3D01E-C996-4CDA-AB65-FA1AEF58E384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C3D01E-C996-4CDA-AB65-FA1AEF58E384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C3D01E-C996-4CDA-AB65-FA1AEF58E384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C3D01E-C996-4CDA-AB65-FA1AEF58E384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -191,12 +191,6 @@ public class FoodSellerLogic : IFoodSellerLogic
 
     public async Task<FoodSeller> GetFoodSellerById(int accountId)
     {
-        using var channel = GrpcChannel.ForAddress("http://localhost:8080", new GrpcChannelOptions
-        {
-            Credentials = ChannelCredentials.Insecure
-        });
-        var client = new FoodSellerService.FoodSellerServiceClient(channel);
-        
         try
         {
              GetFoodSellerByIdResponse response = await client.GetFoodSellerByIdAsync(new GetFoodSellerByIdRequest

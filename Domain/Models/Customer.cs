@@ -16,4 +16,9 @@ public class Customer
         PhoneNumber = phoneNumber;
         Password = password;
     }
+
+    public override string ToString()
+    {
+        return $"{nameof(FirstName)}: {FirstName}, {nameof(LastName)}: {LastName}, {nameof(Email)}: {Email}, {nameof(PhoneNumber)}: {PhoneNumber}, {nameof(Password)}: {Password}";
+    }
 }

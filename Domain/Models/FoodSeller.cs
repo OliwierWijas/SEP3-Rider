@@ -16,4 +16,17 @@ public class FoodSeller
         Name = name;
         Address = address;
     }
+
+    protected bool Equals(FoodSeller other)
+    {
+        return AccountId == other.AccountId && Email == other.Email && PhoneNumber == other.PhoneNumber && Name == other.Name && Address == other.Address;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((FoodSeller)obj);
+    }
 }

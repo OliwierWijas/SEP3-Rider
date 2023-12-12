@@ -26,4 +26,9 @@ public class Reservation
         Customer = customer;
         IsCompleted = isCompleted;
     }
+
+    public override string ToString()
+    {
+        return $"{nameof(FoodOfferId)}: {FoodOfferId}, {nameof(Title)}: {Title}, {nameof(Description)}: {Description}, {nameof(Price)}: {Price}, {nameof(StartPickUpTime)}: {StartPickUpTime}, {nameof(EndPickUpTime.ToString)}: {EndPickUpTime.ToString()}, {nameof(ReservationNumber)}: {ReservationNumber}, {nameof(FoodSeller)}: {FoodSeller}, {nameof(IsCompleted)}: {IsCompleted}";
+    }
 }
