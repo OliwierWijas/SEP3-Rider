@@ -25,7 +25,7 @@ public class FoodSellerHttpClientTest
     public async Task creating_food_seller_makes_an_account()
     {
         
-        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("FoodSeller1", "Main Street", 4, "Horsens", "EmailFoodSeller@via.dk", "11223344", "password");
+        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("FoodSeller1", "Main Street", 4, "Horsens", "EmailFoodSeller@via.dk", "11223344", "password", "");
         await _client.CreateAsync(dto);
         _authClient.OnAuthStateChanged = principal => { claimsPrincipal = principal;}; 
         await _authClient.LoginAsync("EmailFoodSeller@via.dk", "password");
@@ -38,7 +38,7 @@ public class FoodSellerHttpClientTest
     [Test]
     public async Task creating_food_seller_with_already_exsisting_information_throws_exception()
     {
-        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("FoodSeller1", "Main Street", 4, "Horsens", "EmailFoodSeller@via.dk", "11223344", "password");
+        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("FoodSeller1", "Main Street", 4, "Horsens", "EmailFoodSeller@via.dk", "11223344", "password", "");
         Assert.CatchAsync<Exception>(() => _client.CreateAsync(dto));
     }
     [Test]

@@ -17,7 +17,7 @@ public class FoodSellerLogicTest
     [Test]
     public async Task creating_food_seller_makes_an_account()
     {
-        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller@via.dk", "123455432", "Password123");
+        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller@via.dk", "123455432", "Password123", "");
         await _logic.CreateAsync(dto);
         LoginLogic loginLogic = new LoginLogic(new GRPCService());
         LoginDTO loginDto = new LoginDTO
@@ -40,14 +40,14 @@ public class FoodSellerLogicTest
     [Test]
     public async Task creating_food_seller_with_existing_email_throws_an_exception()
     {
-        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller@via.dk", "123455432", "Password123");
+        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller@via.dk", "123455432", "Password123", "");
         Assert.CatchAsync<Exception>(() => _logic.CreateAsync(dto));
     }
     
     [Test]
     public async Task creating_food_seller_with_existing_phone_number_throws_an_exception()
     {
-        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller1@via.dk", "123455432", "Password123");
+        FoodSellerCreationDTO dto = new FoodSellerCreationDTO("Name", "Street", 10, "Horsens", "FoodSeller1@via.dk", "123455432", "Password123", "");
         Assert.CatchAsync<Exception>(() => _logic.CreateAsync(dto));
     }
 

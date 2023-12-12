@@ -21,7 +21,7 @@ public class FoodOfferLogicTest
         MyDate start = new MyDate(2023, 12, 11, 10, 00);
         MyDate end = new MyDate(2023, 12, 12, 10, 00);
         FoodSeller foodSeller = new FoodSeller(35, "", "", "Name", "Street 10, Horsens");
-        FoodOfferCreationDTO dto = new FoodOfferCreationDTO(35, "Title", "Description", 100, start, end);
+        FoodOfferCreationDTO dto = new FoodOfferCreationDTO(35, "Title", "Description", 100, start, end, "");
         Assert.DoesNotThrowAsync(() => _logic.CreateAsync(dto));
         FoodOffer foodOffer = await _logic.ReadFoodOfferById(16);
         Assert.That(foodOffer.Id, Is.EqualTo(16));
