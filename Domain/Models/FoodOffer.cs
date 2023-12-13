@@ -11,7 +11,7 @@ public class FoodOffer
     public MyDate EndPickupTime { get; set; }
     public bool IsReserved { get; set; }
     public bool IsCompleted { get; set; }
-    public string Photo { get; set; }
+    public string? Photo { get; set; }
 
     public FoodOffer(int id, FoodSeller foodSeller, string title, string description, double price, MyDate startPickupTime, MyDate endPickupTime, bool isReserved, bool isCompleted)
     {

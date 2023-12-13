@@ -40,6 +40,7 @@ public class FoodOffersController: ControllerBase
     {
         try
         {
+            Console.WriteLine("WebApi: " + foodOffer.Price);
             await foodOfferLogic.UpdateFoodOffer(foodOffer);
             return Ok();
         }

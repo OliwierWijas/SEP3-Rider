@@ -140,9 +140,9 @@
             else
             {
                 FoodSeller foodSeller = new FoodSeller(0, "", "", "", "");
-                foodOffer = new FoodOffer(id, foodSeller, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute), foodOffer.IsReserved, foodOffer.IsCompleted);
+                FoodOffer newfoodOffer = new FoodOffer(id, foodSeller, Title, Description, Price, new MyDate(StartPickupTime.Year, StartPickupTime.Month, StartPickupTime.Day, StartPickupTime.Hour, StartPickupTime.Minute), new MyDate(EndPickupTime.Year, EndPickupTime.Month, EndPickupTime.Day, EndPickupTime.Hour, EndPickupTime.Minute), foodOffer.IsReserved, foodOffer.IsCompleted);
                 _showConfirmationModal = true;
-                await foodOfferService.UpdateAsync(foodOffer);
+                await foodOfferService.UpdateAsync(newfoodOffer);
                 foodOffer = await foodOfferService.GetFoodOfferAsync(AccountId, id);
                 Title = foodOffer.Title;
                 Description = foodOffer.Description;

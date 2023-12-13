@@ -42,6 +42,7 @@ public class FoodOfferHttpClient : IFoodOfferService
         if (!message.IsSuccessStatusCode)
         {
             string content = await message.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
             throw new Exception(content);
         } 
     }

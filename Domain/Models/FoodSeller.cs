@@ -7,7 +7,7 @@ public class FoodSeller
     public string PhoneNumber { get; set; }
     public string Name { get; set; }
     public string Address { get; set; }
-    public string Photo { get; set; }
+    public string? Photo { get; set; }
 
     public FoodSeller(int accountId, string email, string phoneNumber, string name, string address)
     {
